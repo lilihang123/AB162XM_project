@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: Apache-2.0
+
+description: Airoha True Random Number Generator
+
+compatible: "airoha,air-trng"
+
+include: base.yaml
+
+properties:
+    reg:
+        required: true
+
+    von-neumann-extractor:
+        type: boolean
+
+    ring-oscillator-combination:
+        type: int
+        default: 0x7F    # enable all ring oscillator
+        description: ring oscillator combination enable bits
+            1  <=> enable H-FIRO
+            2  <=> enable H-RO
+            4  <=> enable H-GARO
+            8  <=> enable H-GARO2
+            16 <=> enable H-GARO3
+            32 <=> enable H-GARO4
+            64 <=> enable H-GARO5
+
+    timeout-cycles:
+        type: int
+        default: 1024

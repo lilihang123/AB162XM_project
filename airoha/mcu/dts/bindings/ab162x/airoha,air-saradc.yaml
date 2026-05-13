@@ -1,0 +1,100 @@
+description: |
+  SARADC.
+
+compatible: "airoha,air-saradc"
+
+include: [base.yaml]
+
+properties:
+  reg:
+    required: true
+
+  gain:
+    type: string
+    description: |
+      Gain selection:
+      - ADC_GAIN_1_6: x 1/6
+      - ADC_GAIN_1_5: x 1/5
+      - ADC_GAIN_1_4: x 1/4
+      - ADC_GAIN_1_3: x 1/3
+      - ADC_GAIN_2_5: x 2/5
+      - ADC_GAIN_1_2: x 1/2
+      - ADC_GAIN_2_3: x 2/3
+      - ADC_GAIN_4_5: x 4/5
+      - ADC_GAIN_1:   x 1
+      - ADC_GAIN_2:   x 2
+      - ADC_GAIN_3:   x 3
+      - ADC_GAIN_4:   x 4
+      - ADC_GAIN_6:   x 6
+      - ADC_GAIN_8:   x 8
+      - ADC_GAIN_12:  x 12
+      - ADC_GAIN_16:  x 16
+      - ADC_GAIN_24:  x 24
+      - ADC_GAIN_32:  x 32
+      - ADC_GAIN_64:  x 64
+      - ADC_GAIN_128: x 128
+    enum:
+      - "ADC_GAIN_1_6"
+      - "ADC_GAIN_1_5"
+      - "ADC_GAIN_1_4"
+      - "ADC_GAIN_1_3"
+      - "ADC_GAIN_2_5"
+      - "ADC_GAIN_1_2"
+      - "ADC_GAIN_2_3"
+      - "ADC_GAIN_4_5"
+      - "ADC_GAIN_1"
+      - "ADC_GAIN_2"
+      - "ADC_GAIN_3"
+      - "ADC_GAIN_4"
+      - "ADC_GAIN_6"
+      - "ADC_GAIN_8"
+      - "ADC_GAIN_12"
+      - "ADC_GAIN_16"
+      - "ADC_GAIN_24"
+      - "ADC_GAIN_32"
+      - "ADC_GAIN_64"
+      - "ADC_GAIN_128"
+
+  reference:
+    type: string
+    description: |
+      Reference selection:
+      - ADC_REF_VDD_1:     VDD
+      - ADC_REF_VDD_1_2:   VDD/2
+      - ADC_REF_VDD_1_3:   VDD/3
+      - ADC_REF_VDD_1_4:   VDD/4
+      - ADC_REF_INTERNAL:  Internal
+      - ADC_REF_EXTERNAL0: External, input 0
+      - ADC_REF_EXTERNAL1: External, input 1
+    enum:
+      - "ADC_REF_VDD_1"
+      - "ADC_REF_VDD_1_2"
+      - "ADC_REF_VDD_1_3"
+      - "ADC_REF_VDD_1_4"
+      - "ADC_REF_INTERNAL"
+      - "ADC_REF_EXTERNAL0"
+      - "ADC_REF_EXTERNAL1"
+
+  acquisition_time:
+      type: int
+      description: |
+        Acquisition time.
+        Use the ADC_ACQ_TIME macro to compose the value for this property
+        or pass ADC_ACQ_TIME_DEFAULT to use the default setting for a given
+        hardware (e.g. when the hardware does not allow to configure the
+        acquisition time).
+  
+  channel_id:
+    type: int
+    description: |
+      ADC channel id to be used for the channel.
+
+  resolution:
+    type: int
+    description: |
+      ADC resolution to be used for that channel.
+
+  oversampling:
+    type: int
+    description: |
+      Oversampling setting to be used for that channel.

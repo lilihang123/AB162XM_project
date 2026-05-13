@@ -1,0 +1,165 @@
+# -*- coding: UTF-8 -*-
+#
+# * Copyright Statement:
+# *
+# * (C) 2023  Airoha Technology Corp. All rights reserved.
+# *
+# * This software/firmware and related documentation ("Airoha Software") are
+# * protected under relevant copyright laws. The information contained herein
+# * is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.
+# * Without the prior written permission of Airoha and/or its licensors,
+# * any reproduction, modification, use or disclosure of Airoha Software,
+# * and information contained herein, in whole or in part, shall be strictly prohibited.
+# * You may only use, reproduce, modify, or distribute (as applicable) Airoha Software
+# * if you have agreed to and been bound by the applicable license agreement with
+# * Airoha ("License Agreement") and been granted explicit permission to do so within
+# * the License Agreement ("Permitted User").  If you are not a Permitted User,
+# * please cease any access or use of Airoha Software immediately.
+# * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+# * THAT AIROHA SOFTWARE RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES
+# * ARE PROVIDED TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL
+# * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+# * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+# * NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+# * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+# * SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+# * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+# * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+# * CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA
+# * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+# * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND
+# * CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,
+# * AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,
+# * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+# * AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.
+# *
+# * Airoha restricted information */
+
+dockerq_image: 'mtkdocker01:5000/srv_airoha/ubuntu.22.04:matter_0.16.9'
+
+
+ab1623m_evk__prebuilt_hal_src_protected:
+    proj: airoha/mcu/samples/templates/multi_thread
+    target: AIR_PREBUILT_LIB_INSTALL_SPECIAL_PATTERN_hal_src_protected
+    library: airoha/mcu/prebuilt/hal/ab162x/lib/libhal_src_protected.a
+    repo_path: airoha/mcu/modules/hal/airoha/ab162x/src_protected
+    compatible: ['bt_data', 'smart_home']
+    multi_thread:
+        # path relative to airoha/mcu/templates/multi_thread
+        DTC_OVERLAY_FILE: config/ab1623m_evk/app.overlay
+        CONF_FILE: config/ab1623m_evk/multi_thread.conf
+
+
+ab1623m_evk__prebuilt_swla:
+    proj: airoha/mcu/samples/templates/multi_thread
+    target: AIR_PREBUILT_LIB_INSTALL_SPECIAL_PATTERN_..__airoha__mcu__subsys__airoha__swla
+    library: airoha/mcu/prebuilt/system/ab162x/swla/lib_swla.a
+    repo_path: airoha/mcu/subsys/airoha/swla
+    compatible: ['bt_data', 'smart_home']
+    multi_thread:
+        # path relative to airoha/mcu/templates/multi_thread
+        DTC_OVERLAY_FILE: config/ab1623m_evk/app.overlay
+        CONF_FILE: config/ab1623m_evk/multi_thread.conf
+
+ab1623m_evk__prebuilt_offline_dump:
+    proj: airoha/mcu/samples/templates/multi_thread
+    target: AIR_PREBUILT_LIB_INSTALL_SPECIAL_PATTERN_..__airoha__mcu__subsys__airoha__offline_dump
+    library: airoha/mcu/prebuilt/system/ab162x/swla/lib_offline_dump.a
+    repo_path: airoha/mcu/subsys/airoha/offline_dump
+    compatible: ['bt_data', 'smart_home']
+    multi_thread:
+        # path relative to airoha/mcu/templates/multi_thread
+        DTC_OVERLAY_FILE: config/ab1623m_evk/app.overlay
+        CONF_FILE: config/ab1623m_evk/multi_thread.conf
+
+ab1623m_evk__prebuilt_system_online_dump:
+    proj: airoha/mcu/samples/templates/multi_thread
+    target: AIR_PREBUILT_LIB_INSTALL_SPECIAL_PATTERN_..__airoha__mcu__subsys__airoha__system_online_dump
+    library: airoha/mcu/prebuilt/system/ab162x/system_online_dump/lib_system_online_dump.a
+    repo_path: airoha/mcu/subsys/airoha/system_online_dump
+    compatible: ['bt_data', 'smart_home']
+    multi_thread:
+        # path relative to airoha/mcu/templates/multi_thread
+        DTC_OVERLAY_FILE: config/ab1623m_evk/app.overlay
+        CONF_FILE: config/ab1623m_evk/multi_thread.conf
+
+
+ab1623m_evk__prebuilt_exception_handler:
+    proj: airoha/mcu/samples/templates/multi_thread
+    target: AIR_PREBUILT_LIB_INSTALL_SPECIAL_PATTERN_..__airoha__mcu__subsys__airoha__exception_handler
+    library: airoha/mcu/prebuilt/system/ab162x/exception_handler/lib_exception_handler.a
+    repo_path: airoha/mcu/subsys/airoha/exception_handler
+    compatible: ['bt_data', 'smart_home']
+    multi_thread:
+        # path relative to airoha/mcu/templates/multi_thread
+        DTC_OVERLAY_FILE: config/ab1623m_evk/app.overlay
+        CONF_FILE: config/ab1623m_evk/multi_thread.conf
+
+ab1623m_evk__prebuilt_logging:
+    proj: airoha/mcu/samples/templates/multi_thread
+    target: AIR_PREBUILT_LIB_INSTALL_SPECIAL_PATTERN_..__airoha__mcu__subsys__airoha__logging
+    library: airoha/mcu/prebuilt/system/ab162x/logging/lib_logging.a
+    repo_path: airoha/mcu/subsys/airoha/logging
+    compatible: ['bt_data', 'smart_home']
+    multi_thread:
+        # path relative to airoha/mcu/templates/multi_thread
+        DTC_OVERLAY_FILE: config/ab1623m_evk/app.overlay
+        CONF_FILE: config/ab1623m_evk/multi_thread.conf
+
+ab1623m_evk__prebuilt_hid_plc:
+    proj: airoha/mcu/applications/hid_dongle_ref_design
+    target: AIR_PREBUILT_LIB_INSTALL_SPECIAL_PATTERN_hid_plc
+    library: airoha/mcu/prebuilt/middleware/airoha/hid_plc/libhid_plc.a
+    repo_path: airoha/mcu/subsys/airoha/hid_plc_protected
+    compatible: ['bt_data']
+    hid_dongle_ref_design:
+        # path relative to airoha/mcu/applications/hid_dongle_ref_design
+        DTC_OVERLAY_FILE: config/ab1620dm_evk/app.overlay
+        CONF_FILE: config/ab1620dm_evk/hid_dongle_ref_design_flash_boot_m20.conf
+
+
+ab1623m_evb__prebuilt_pka_zephyr_le:
+    proj: airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+    target: AIR_PREBUILT_LIB_INSTALL_SPECIAL_PATTERN_pka_zephyrle
+    library: airoha/mcu/prebuilt/middleware/airoha/bluetooth/ab162x/controller/libpka_zephyrle_asic.a
+    repo_path: airoha/mcu/subsys/airoha/pka_protected/pikachu_plugin
+    compatible: ['bt_data']
+    hci_relay_mode:
+        # path relative to airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/hci_relay_mode_flash_boot.conf
+
+
+ab1623m_evb__prebuilt_pka_zephyr_multi_protocol:
+    proj: airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+    target: AIR_PREBUILT_LIB_INSTALL_SPECIAL_PATTERN_pka_zephyrmultipro
+    library: airoha/mcu/prebuilt/middleware/airoha/bluetooth/ab162x/controller/libpka_zephyrmultipro.a
+    repo_path: airoha/mcu/subsys/airoha/pka_protected/pikachu_plugin
+    compatible: ['smart_home']
+    hci_relay_mode:
+        # path relative to airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/hci_relay_mode_multi_protocol_flash_boot.conf
+
+
+ab1623m_evb__prebuilt_pka_zephyr_le_ranging:
+    proj: airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+    target: AIR_PREBUILT_LIB_INSTALL_SPECIAL_PATTERN_pka_zephyrleranging
+    library: airoha/mcu/prebuilt/middleware/airoha/bluetooth/ab162x/controller/libpka_zephyrleranging.a
+    repo_path: airoha/mcu/subsys/airoha/pka_protected/pikachu_plugin
+    compatible: ['bt_data', 'smart_home']
+    hci_relay_mode:
+        # path relative to airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/hci_relay_mode_le_ranging.conf
+
+ab1623m_evb__prebuilt_pka_zephyr_multi_protocol_dualpan:
+    proj: airoha/mcu/applications/light_bulb_dualpan
+    target: AIR_PREBUILT_LIB_INSTALL_SPECIAL_PATTERN_pka_zephyrmultipro_dualpan
+    library: airoha/mcu/prebuilt/middleware/airoha/bluetooth/ab162x/controller/libpka_zephyrmultipro_dualpan.a
+    repo_path: airoha/mcu/subsys/airoha/pka_protected/pikachu_plugin
+    compatible: ['smart_home']
+    light_bulb_dualpan:
+        # path relative to airoha/mcu/applications/light_bulb_dualpan
+        DTC_OVERLAY_FILE: config/ab1623m_evk/light_bulb.overlay
+        CONF_FILE: config/ab1623m_evk/light_bulb_flash_booting.conf

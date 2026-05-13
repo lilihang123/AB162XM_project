@@ -1,0 +1,140 @@
+description: |
+  Airoha family UART.
+
+compatible: "airoha,air-uart"
+
+include: [base.yaml]
+
+properties:
+    tx-pin:
+      type: int
+      description: |
+        IMPORTANT: This option will only be used if the new pin control driver
+        is not enabled. It will be deprecated in the future.
+
+        The TX pin to use.
+
+        For pins P0.0 through P0.31, use the pin number. For example,
+        to use P0.16 for TX, set:
+
+          tx-pin = <16>;
+
+        For pins P1.0 through P1.31, add 32 to the pin number. For
+        example, to use P1.2 for TX, set:
+
+          tx-pin = <34>;  /* 32 + 2 */
+
+    rx-pin:
+      type: int
+      description: |
+        IMPORTANT: This option will only be used if the new pin control driver
+        is not enabled. It will be deprecated in the future.
+
+        The RX pin to use. The pin numbering scheme is the same as the
+        tx-pin property's.
+
+    rts-pin:
+      type: int
+      description: |
+        IMPORTANT: This option will only be used if the new pin control driver
+        is not enabled. It will be deprecated in the future.
+
+        The RTS pin to use. The pin numbering scheme is the same as the
+        tx-pin property's.
+
+    cts-pin:
+      type: int
+      description: |
+        IMPORTANT: This option will only be used if the new pin control driver
+        is not enabled. It will be deprecated in the future.
+
+        The CTS pin to use. The pin numbering scheme is the same as the
+        tx-pin property's.
+
+    rx-pull-up:
+      type: boolean
+      description: |
+        IMPORTANT: This option will only be used if the new pin control driver
+        is not enabled. It will be deprecated in the future.
+
+        Enable pull-up resistor on the RX pin.
+
+    cts-pull-up:
+      type: boolean
+      description: |
+        IMPORTANT: This option will only be used if the new pin control driver
+        is not enabled. It will be deprecated in the future.
+
+        Enable pull-up resistor on the CTS pin.
+
+    hw-flow-control:
+      type: boolean  
+      description: |
+        Set to enable RTS/CTS flow control at boot time.
+
+    sw-flow-control:
+      type: boolean 
+      description: |
+        Set to enable xon/xoff flow control at boot time.
+
+    current-speed:
+        type: int
+        description: |
+          Initial baud rate setting for UART. Only a fixed set of baud
+          rates are selectable on these devices.
+        enum:
+          - 1200
+          - 2400
+          - 4800
+          - 9600
+          - 14400
+          - 19200
+          - 28800
+          - 31250
+          - 38400
+          - 56000
+          - 57600
+          - 76800
+          - 115200
+          - 230400
+          - 250000
+          - 460800
+          - 921600
+          - 1000000
+          - 2000000
+          - 3000000
+          - 3200000
+          - 6000000
+          - 8666000
+
+    data-bits:
+      type: int
+      description: |
+        data bits 0:5-bit/1:6-bit/2:7-bit/3:8-bit/4:9-bit
+
+    stop-bits:
+      type: int
+      description: |
+        stop bits 0:1 bit/1:2bit
+
+    parity:
+      type: int
+      description: |
+        Configures the parity of the adapter. Enumeration id 0 for none, 1 for odd
+        and 2 for even parity. Default to none if not specified.
+
+    flow_ctrl:
+      type: int
+      description: |
+        Configures uart sw flow ctrl ,2:enable sw flow ctrl ,1:enable hw flow ctrl , 0:disable flow ctrl
+
+    tbuf-size:
+      type: int
+      description: |
+        Size of the buffer for transmission
+
+
+    rbuf-size:
+      type: int
+      description: |
+        Size of the buffer for reception

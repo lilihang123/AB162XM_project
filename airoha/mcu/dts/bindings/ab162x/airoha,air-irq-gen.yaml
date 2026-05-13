@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: Apache-2.0
+
+description: Airoha Interrupt Generator Between Cores
+
+compatible: "airoha,air-irq-gen"
+
+include: base.yaml
+
+properties:
+    reg:
+        required: true
+
+    label:
+        required: false

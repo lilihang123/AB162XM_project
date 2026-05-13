@@ -1,0 +1,16 @@
+NOTICE
+
+This SDK is provided by Airoha and is licensed under the Airoha Software License Agreement.
+
+Certain modules in this SDK incorporate third-party open source and commercial software,
+including but not limited to Apache License 2.0, BSD 2-Clause, and other commercial licenses.
+
+For details regarding the specific modules and their corresponding licenses, please refer to:
+    mcu/doc/3rd-party_Software_Component_Guide.html
+
+For modules using Apache License 2.0, Airoha modifications can be found in the NOTICE file
+or source code comments within the respective module folder.
+
+For further information, please contact Airoha or refer to the relevant documentation.
+
+Copyright (C) 2026 Airoha Technology Corp. All rights reserved.

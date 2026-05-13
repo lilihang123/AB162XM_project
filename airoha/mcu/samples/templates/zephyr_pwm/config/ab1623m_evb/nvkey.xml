@@ -1,0 +1,10 @@
+<NvKeyTable Version="2.0">
+	 <NVKey KeyID="0x0003" Name="app level">
+		<Value>0x1122334455667788</Value>
+	</NVKey>
+
+	<NVKey KeyID="demo/boot_count">
+		<Value>0x4E61BC</Value>
+	</NVKey>
+
+</NvKeyTable>

@@ -1,0 +1,9 @@
+Software name:                           MCUBoot
+Brief:                                   MCUboot is a secure bootloader for 32-bits microcontrollers.
+Path:                                    airoha\mcu\applications\mcuboot
+Category:                                Open source software(OSS)
+Software maker:                          main contributer (https://github.com/d3zd3z, https://github.com/utzig)
+OSS download link:                       https://github.com/mcu-tools/mcuboot
+License:                                 Apache License 2.0
+Evidence of license agreement:           https://github.com/mcu-tools/mcuboot/blob/main/LICENSE
+Version:                                 2.1.0

@@ -1,0 +1,149 @@
+/* Copyright Statement:
+ *
+ * (C) 2024  Airoha Technology Corp. All rights reserved.
+ *
+ * This software/firmware and related documentation ("Airoha Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.
+ * Without the prior written permission of Airoha and/or its licensors,
+ * any reproduction, modification, use or disclosure of Airoha Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ * You may only use, reproduce, modify, or distribute (as applicable) Airoha Software
+ * if you have agreed to and been bound by the applicable license agreement with
+ * Airoha ("License Agreement") and been granted explicit permission to do so within
+ * the License Agreement ("Permitted User").  If you are not a Permitted User,
+ * please cease any access or use of Airoha Software immediately.
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT AIROHA SOFTWARE RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES
+ * ARE PROVIDED TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL
+ * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.
+ */
+
+/ {
+	chosen {
+		zephyr,ieee802154 = &ieee802154_thread;
+        zephyr,entropy = &trng;
+	};
+};
+
+&ieee802154_thread {
+	status = "okay";
+};
+
+&pinctrl {
+	gpio0_default: gpio0_default {
+		gpio9{
+			/* for low power, need to pull down */
+			pinmux = <GPIO_9_GPIO9>;
+			bias-pull-down;
+		};
+		gpio10{
+		        /* for low power, need to pull down */
+			pinmux = <GPIO_10_GPIO10>;
+			bias-pull-down;
+		};
+		gpio19{
+			pinmux = <GPIO_19_DEBUGMON9>;
+		};
+		gpio20{
+			pinmux = <GPIO_20_DEBUGMON10>;
+		};
+		gpio21{
+			pinmux = <GPIO_21_DEBUGMON11>;
+		};
+		gpio22{
+			pinmux = <GPIO_22_DEBUGMON12>;
+		};
+
+		gpio5{
+			pinmux = <GPIO_5_DEBUGMON5>;
+			bias-pull-up;
+		};
+
+		gpio6{
+			pinmux = <GPIO_6_DEBUGMON6>;
+			bias-pull-up;
+		};
+		gpio23{
+			pinmux = <GPIO_23_DEBUGMON13>;
+			bias-pull-up;
+		};
+		gpio24{
+			pinmux = <GPIO_24_DEBUGMON14>;
+			bias-pull-up;
+		};
+		gpio25{
+			pinmux = <GPIO_25_DEBUGMON15>;
+			bias-pull-up;
+		};
+
+		gpio34{
+			pinmux = <GPIO_34_DEBUGMON2>;
+			bias-pull-up;
+		};
+
+        gpio35{
+			pinmux = <GPIO_35_DEBUGMON3>;
+			bias-pull-up;
+		};
+
+        gpio4{
+			pinmux = <GPIO_4_DEBUGMON4>;
+			bias-pull-up;
+		};
+		gpio17{
+			/*<GPIO_17_UART1_TXD>, <GPIO_17_DEBUGMON7>*/
+			pinmux = <GPIO_17_UART1_TXD>;
+		};
+		gpio18{
+			/*<GPIO_18_UART1_RXD>, <GPIO_18_DEBUGMON8>*/
+			pinmux = <GPIO_18_UART1_RXD>;
+			bias-pull-up;
+		};
+	};
+
+	gpio1_default: gpio1_default {
+
+	};
+};
+
+/* template for changing watchdog timeout seconds */
+&wdt0 {
+    timeout-sec = <60>;
+};
+
+/* Must meet the following conditions.
+ * 1. VIO18 always on. save flash pwr on latency(5ms).
+ * 2. sysram non retention always disable. save sysram restore latency(8ms).
+ */
+/ {
+	power-states {
+	    state0: state0 {
+	        compatible = "zephyr,power-state";
+	        power-state-name = "runtime-idle";
+	        substate-id = <1>;
+	        min-residency-us = <3000000>;
+	        exit-latency-us = <5000>;
+	    };
+	    state1: state1 {
+	        compatible = "zephyr,power-state";
+	        power-state-name = "suspend-to-ram";
+	        substate-id = <1>;
+	        min-residency-us = <3000000>;
+	        exit-latency-us = <5000>;
+	    };
+	};
+};

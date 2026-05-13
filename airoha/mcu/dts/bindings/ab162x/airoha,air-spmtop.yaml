@@ -1,0 +1,13 @@
+description: |
+  Airoha system power management.
+
+compatible: "airoha,air-spmtop"
+
+include: [base.yaml]
+
+properties:
+    reg:
+      required: true
+
+    label:
+      required: false

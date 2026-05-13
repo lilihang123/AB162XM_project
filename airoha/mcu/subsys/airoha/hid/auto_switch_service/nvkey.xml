@@ -1,0 +1,12 @@
+<NvKeyTable Version="2.0">
+    <NVKey KeyID="0x4080" Name="NVID_APP_DYNAMIC_POWER_CONTROL_INFO" Domain="USER_DATA">
+        <Field name="used" type="uint8_t" value="0x01" description="used" />
+        <Field name="vpa" type="uint8_t" value="0x02" description="vpa" />
+        <Field name="tx_gc" type="uint8_t" value="0x3D" description="tx_gc" />
+        <Field name="reserve" type="array" value="0x000000" description="reserve" />
+    </NVKey>
+    <NVKey KeyID="0x4081" Name="NVID_APP_POWER_CONTROL_MODE" Domain="USER_DATA">
+        <Field name="used" type="uint8_t" value="0x01" description="used" />
+        <Field name="mode" type="uint8_t" value="0x00" description="mode" />
+    </NVKey>
+</NvKeyTable>

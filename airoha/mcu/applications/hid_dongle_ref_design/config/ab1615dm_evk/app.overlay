@@ -1,0 +1,135 @@
+/* Copyright Statement:
+ *
+ * (C) 2025  Airoha Technology Corp. All rights reserved.
+ *
+ * This software/firmware and related documentation ("Airoha Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.
+ * Without the prior written permission of Airoha and/or its licensors,
+ * any reproduction, modification, use or disclosure of Airoha Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ * You may only use, reproduce, modify, or distribute (as applicable) Airoha Software
+ * if you have agreed to and been bound by the applicable license agreement with
+ * Airoha ("License Agreement") and been granted explicit permission to do so within
+ * the License Agreement ("Permitted User").  If you are not a Permitted User,
+ * please cease any access or use of Airoha Software immediately.
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("AIROHA SOFTWARE")
+ * RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES ARE PROVIDED
+ * TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL
+ * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.
+ */
+
+/* SPDX-License-Identifier: Apache-2.0 */
+
+#include <airoha/ab161x/flash_partitions/dual_slot_1MB_w_images.dtsi>
+
+&spi0 {
+    frequency = <1000000>;
+    status = "okay";
+    e0213a332: e0213a332@0{
+        compatible = "epd,e0213a332";
+        reg= <0>;
+        rst_pin = <24>;
+        busy_pin = <4>;
+        dc_pin = <20>;
+        status = "okay";
+    };
+
+    jd79668a: jd79668a@0{
+        compatible = "epd,jd79668a";
+        reg= <0>;
+        rst_pin = <24>;
+        busy_pin = <4>;
+        dc_pin = <20>;
+        status = "okay";
+    };
+};
+
+&pinctrl {
+    gpio0_default: gpio0_default {
+        gpio0{
+            pinmux = <GPIO_0_AP_JTMS>; //jtag
+        };
+        gpio1{
+            pinmux = <GPIO_1_AP_JTCK>; //jtag
+        };
+        /* Disable Uart0 for controller Debug.*/
+        gpio2{
+            pinmux = <GPIO_2_UART0_RXD>; //uart0 rx
+            bias-pull-up;
+        };
+        gpio3{
+            pinmux = <GPIO_3_UART0_TXD>; //uart0 tx
+            output-enable;
+        };
+        /*
+        gpio2{
+            pinmux = <GPIO_2_DEBUGMON2>; //Controller debug BLE RX en signal
+        };
+        gpio3{
+            pinmux = <GPIO_3_DEBUGMON3>; //Controller debug BLE TX en signal
+        };
+        */
+        gpio4{
+            pinmux = <GPIO_4_GPIO4_EINT4>; //EPD BUSY
+        };
+        gpio19{
+            pinmux = <GPIO_9_SPI0_SCK>; // SPI pin.
+        };
+        gpio20{
+            pinmux = <GPIO_10_GPIO20_EINT20>; // SPI pin.
+            output-enable;
+        };
+        gpio21{
+            pinmux = <GPIO_11_SPI0_MOSI>; // SPI pin.
+        };
+        gpio22{
+            pinmux = <GPIO_12_SPI0_CS0>; // SPI pin.
+            bias-pull-up;
+        };
+        gpio23{
+            pinmux = <GPIO_13_GPIO23_EINT23>; // Controller IDS debug pin.
+            output-enable;
+        };
+        gpio24{
+            pinmux = <GPIO_14_GPIO24_EINT24>; // EPD RST pin
+            bias-pull-up;
+            output-enable;
+        };
+        gpio38{
+            pinmux = <GPIO_22_GPIO38_EINT38>; // Controller IDS debug pin.
+            output-enable;
+        };
+        gpio39{
+            pinmux = <GPIO_23_GPIO39_EINT39>; // EPD POWER ON
+            output-enable;
+            output-high;
+        };
+        gpio46{
+            pinmux = <GPIO_26_UART1_TXD>; // UART1 TX
+            output-enable;
+        };
+        gpio47{
+            pinmux = <GPIO_27_UART1_RXD>; // UART1 RX
+            bias-pull-up;
+        };
+    };
+
+    gpio1_default: gpio1_default {
+
+    };
+};

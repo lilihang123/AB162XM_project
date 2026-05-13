@@ -1,0 +1,138 @@
+/* Copyright Statement:
+ *
+ * (C) 2024  Airoha Technology Corp. All rights reserved.
+ *
+ * This software/firmware and related documentation ("Airoha Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.
+ * Without the prior written permission of Airoha and/or its licensors,
+ * any reproduction, modification, use or disclosure of Airoha Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ * You may only use, reproduce, modify, or distribute (as applicable) Airoha Software
+ * if you have agreed to and been bound by the applicable license agreement with
+ * Airoha ("License Agreement") and been granted explicit permission to do so within
+ * the License Agreement ("Permitted User").  If you are not a Permitted User,
+ * please cease any access or use of Airoha Software immediately.
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT AIROHA SOFTWARE RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES
+ * ARE PROVIDED TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL
+ * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.
+ */
+
+/ {
+	chosen {
+		zephyr,ieee802154 = &ieee802154_thread;
+        zephyr,entropy = &trng;
+	};
+};
+
+&ieee802154_thread {
+	status = "okay";
+};
+
+&uart0 {
+    status = "okay";
+    current-speed = < 0x2DC6C0 >;
+    data-bits = <3>;
+    stop-bits = <1>;
+    parity = <0>;
+	tbuf-size = <512>;
+	rbuf-size = <512>;
+};
+
+&pinctrl {
+	gpio0_default: gpio0_default {
+		gpio9{
+			pinmux = <GPIO_9_GPIO9>;
+		};
+		gpio10{
+			pinmux = <GPIO_10_GPIO10>;
+		};
+		gpio19{
+			pinmux = <GPIO_19_DEBUGMON9>;
+		};
+		gpio20{
+			pinmux = <GPIO_20_DEBUGMON10>;
+		};
+		gpio21{
+			pinmux = <GPIO_21_EINT21>;
+			bias-pull-up;
+			debounce = <20>;
+		};
+		gpio22{
+			pinmux = <GPIO_22_DEBUGMON12>;
+		};
+
+		gpio5{
+			pinmux = <GPIO_5_DEBUGMON5>;
+			bias-pull-up;
+		};
+
+		gpio6{
+			pinmux = <GPIO_6_DEBUGMON6>;
+			bias-pull-up;
+		};
+		gpio23{
+			pinmux = <GPIO_23_GPIO23>;
+			bias-pull-up;
+		};
+		gpio24{
+			pinmux = <GPIO_24_DEBUGMON14>;
+			bias-pull-up;
+		};
+		gpio25{
+			pinmux = <GPIO_25_DEBUGMON15>;
+			bias-pull-up;
+		};
+        gpio4{
+			pinmux = <GPIO_4_DEBUGMON4>;
+			bias-pull-up;
+		};
+		gpio17{
+			pinmux = <GPIO_17_UART1_TXD>;
+		};
+		gpio18{
+			pinmux = <GPIO_18_UART1_RXD>;
+			bias-pull-up;
+		};
+		gpio34{
+			pinmux = <GPIO_34_PWM0>;
+			output-enable;
+		};
+		gpio35{
+			pinmux = <GPIO_35_RTC_LED0>;
+			output-enable;
+		};
+		gpio36{
+			pinmux = <GPIO_36_RTC_LED1>;
+			output-enable;
+		};
+		gpio37{
+			pinmux = <GPIO_37_RTC_LED2>;
+			output-enable;
+		};
+		
+	};
+
+	gpio1_default: gpio1_default {
+
+	};
+};
+
+/* template for changing watchdog timeout seconds */
+&wdt0 {
+    timeout-sec = <60>;
+};

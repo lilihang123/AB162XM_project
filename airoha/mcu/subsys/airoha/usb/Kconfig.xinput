@@ -1,0 +1,91 @@
+# Copyright Statement:
+#
+# (C) 2025  Airoha Technology Corp. All rights reserved.
+#
+# This software/firmware and related documentation ("Airoha Software") are
+# protected under relevant copyright laws. The information contained herein
+# is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.
+# Without the prior written permission of Airoha and/or its licensors,
+# any reproduction, modification, use or disclosure of Airoha Software,
+# and information contained herein, in whole or in part, shall be strictly prohibited.
+
+# Xinput USB mode configuration
+config AIR_USB_XINPUT_ENABLE
+	bool "Enable Xinput USB mode support"
+	depends on AIR_USB_ENABLE
+	default n
+	help
+	  Enable Xinput USB mode support for gaming devices.
+	  When enabled, the device can switch between HID mode and Xinput mode.
+	  Xinput mode uses Vendor Specific Class (0xFF5D) for Xbox controller compatibility.
+
+if AIR_USB_XINPUT_ENABLE
+
+config USB_XINPUT_VID
+	hex "Xinput mode USB Vendor ID"
+	default 0x0E8D
+	help
+	  USB Vendor ID for Xinput mode.
+	  Default is MediaTek VID (0x0E8D).
+	  Can be modified to customized VID as needed.
+
+config USB_XINPUT_PID
+	hex "Xinput mode USB Product ID"
+	default 0x0842
+	help
+	  USB Product ID for Xinput mode.
+	  Default is 0x0842.
+	  Can be modified to customized PID as needed.
+
+config USB_XINPUT_DEVICE_PRODUCT
+	string "Xinput mode USB Product String"
+	default "Airoha Xinput Project"
+	help
+	  USB Product string for Xinput mode.
+	  This string will be used as the product name when device is in Xinput mode.
+	  Default is "Airoha Xinput Project".
+
+config USB_XINPUT_DEVICE_BCD
+	hex "Xinput mode USB Device BCD"
+	default 0x0100
+	help
+	  USB Device BCD for Xinput mode.
+	  This value will be used for bcdDevice field in device descriptor.
+	  Default is 0x0100.
+
+config USB_XINPUT_INT_IN_EP_INTERVAL
+	int "Xinput IN endpoint polling interval (ms)"
+	default 4
+	range 1 255
+	help
+	  Polling interval for Xinput IN endpoint in milliseconds.
+	  This controls how often the device can send data to the host.
+	  Default is 4ms for balanced performance.
+	  Recommended values:
+	    - 1ms: Fastest response, suitable for high-performance gaming
+	    - 4ms: Balanced performance and power consumption
+	    - 8ms: Lower power consumption
+
+config USB_XINPUT_INT_OUT_EP_INTERVAL
+	int "Xinput OUT endpoint polling interval (ms)"
+	default 8
+	range 1 255
+	help
+	  Polling interval for Xinput OUT endpoint in milliseconds.
+	  This controls how often the host can send data to the device (e.g., rumble commands).
+	  Default is 8ms.
+	  Recommended values:
+	    - 4ms: Faster response
+	    - 8ms: Standard setting, suitable for most applications
+
+config USB_XINPUT_HID_DEVICE_COUNT
+	int "Number of HID devices in Xinput mode"
+	default 0
+	range 0 4
+	help
+	  Specifies the number of HID devices to be created when in Xinput mode.
+	  This affects how many HID interfaces will be available when the device
+	  is operating in Xinput mode.
+	  Default is 0 devices.
+
+endif # AIR_USB_XINPUT_ENABLE

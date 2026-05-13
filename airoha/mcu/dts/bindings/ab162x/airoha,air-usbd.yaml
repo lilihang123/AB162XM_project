@@ -1,0 +1,18 @@
+description: |
+    Airoha USB device controller
+
+compatible: "airoha,air-usbd"
+
+include: usb-ep.yaml
+
+properties:
+  reg:
+    required: true
+
+  interrupts:
+    required: true
+
+  ram-size:
+    type: int
+    required: true
+    description: Size of USB dedicated RAM.

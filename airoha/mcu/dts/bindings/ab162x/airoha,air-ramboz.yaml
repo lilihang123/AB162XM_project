@@ -1,0 +1,64 @@
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+    This is a representation of the ramboz sensor
+
+compatible: "airoha,air-ramboz"
+
+include: base.yaml
+
+properties:
+    reg:
+      required: true
+
+    interrupts:
+      required: true
+
+    direction:
+        type: int
+        default: 0
+        description: |
+         close led
+
+
+    mode:
+        type: int
+        default: 0
+        description: |
+         led active output value
+
+    filter_period:
+        type: int
+        default: 9
+        description: |
+         z sum irq thr setting
+
+    fast_sample_period:
+        type: int
+        default: 10
+        description: |
+         A reg:sample period 
+
+    slow_sample_period:
+        type: int
+        default: 255
+        description: |
+         A reg: sample period -> led open time
+
+    fast_roll_period:
+        type: int
+        default: 10
+        description: |
+         A reg: debounce conut setting
+
+    pin_led:
+        type: int
+        default: 12
+        description: |
+         pinb
+
+    pin_mcu_ctrl:
+        type: int
+        default: 13
+        description: |
+         pinb

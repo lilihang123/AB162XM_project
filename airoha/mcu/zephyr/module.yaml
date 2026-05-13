@@ -1,0 +1,16 @@
+name: airoha
+build:
+  cmake: .
+  # cmake-ext: True
+  kconfig: Kconfig.airoha
+  # NOTE: Kconfig-ext cannot be specified as True,
+  # otherwise the ZEPHYR_AIROHA_KCONFIG variable
+  # needs to be set in modules/modules.cmake
+  settings:
+    dts_root: .
+    soc_root: .
+    arch_root: .
+    board_root: .
+    module_ext_root: .
+
+

@@ -1,0 +1,20 @@
+[manifest]
+path = zephyr
+file = west.yml
+
+[zephyr]
+base = zephyr
+
+[build]
+# Specifies the type of build files that CMake generates by default.
+#    build.ninjia: Ninja
+#    Makefile: Unix Makefiles
+generator = Ninja
+# generator = Unix Makefiles
+
+# Specifies the directory format for file generation at build time.
+dir-fmt = out/{board}/{app}
+
+# Add some extra cmake parameters, like the current zephyr version.
+cmake-args = -DBUILD_VERSION=zephyr-v3.7.1
+

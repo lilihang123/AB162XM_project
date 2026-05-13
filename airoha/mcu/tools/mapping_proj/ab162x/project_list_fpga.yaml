@@ -1,0 +1,339 @@
+# -*- coding: UTF-8 -*-
+#
+# * Copyright Statement:
+# *
+# * (C) 2023  Airoha Technology Corp. All rights reserved.
+# *
+# * This software/firmware and related documentation ("Airoha Software") are
+# * protected under relevant copyright laws. The information contained herein
+# * is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.
+# * Without the prior written permission of Airoha and/or its licensors,
+# * any reproduction, modification, use or disclosure of Airoha Software,
+# * and information contained herein, in whole or in part, shall be strictly prohibited.
+# * You may only use, reproduce, modify, or distribute (as applicable) Airoha Software
+# * if you have agreed to and been bound by the applicable license agreement with
+# * Airoha ("License Agreement") and been granted explicit permission to do so within
+# * the License Agreement ("Permitted User").  If you are not a Permitted User,
+# * please cease any access or use of Airoha Software immediately.
+# * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+# * THAT AIROHA SOFTWARE RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES
+# * ARE PROVIDED TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL
+# * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+# * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+# * NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+# * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+# * SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+# * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+# * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+# * CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA
+# * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+# * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND
+# * CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,
+# * AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,
+# * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+# * AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.
+# *
+# * Airoha restricted information */
+
+dockerq_image: 'mtkdocker01:5000/srv_airoha/ubuntu.22.04:matter_0.16.9'
+
+
+ab1620_fpga__multi_thread:
+    proj: airoha/mcu/samples/templates/multi_thread
+    multi_thread:
+        # path relative to airoha/mcu/templates/multi_thread
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/multi_thread.conf
+        # config board by project
+
+
+ab1620_fpga__multi_thread_with_mcuboot:
+    proj: airoha/mcu/samples/templates/multi_thread
+    sysbuild_conf: config/ab1620_fpga/sysbuild_with_mcuboot.conf
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab1620_fpga/mcuboot.overlay
+        CONF_FILE: config/ab1620_fpga/air_mcuboot.conf
+    multi_thread:
+        # path relative to airoha/mcu/templates/multi_thread
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/multi_thread.conf
+
+
+ab1620_fpga__single_thread:
+    proj: airoha/mcu/samples/templates/single_thread
+    single_thread:
+        # path relative to airoha/mcu/templates/single_thread
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/single_thread.conf
+
+
+ab1620_fpga__dvt_multi_thread:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/multi_thread
+    multi_thread:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/multi_thread
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/multi_thread.conf
+        # config board by project
+
+
+ab1620_fpga__dvt_single_thread:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/single_thread
+    single_thread:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/single_thread
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/single_thread.conf
+
+
+ab1620_fpga__dvt_flash:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/flash
+    flash:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/flash
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/dvt.conf
+
+
+ab1620_fpga__dvt_cache:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/cache
+    cache:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/cache
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/dvt.conf
+
+
+ab1620_fpga__dvt_ccni:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/ccni
+    ccni:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/ccni
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/dvt.conf
+
+
+ab1620_fpga__dvt_smph:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/smph
+    smph:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/smph
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/dvt.conf
+
+
+ab1620_fpga__dvt_esc:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/esc
+    esc:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/esc
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/dvt.conf
+
+
+ab1620_fpga__dvt_dma:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/dma
+    dma:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/dma
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/dvt.conf
+
+
+ab1620_fpga__dvt_audio:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/audio
+    audio:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/audio
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/dvt.conf
+
+
+ab1620_fpga__hci_relay_mode:
+    proj: airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+    hci_relay_mode:
+        # path relative to airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/hci_relay_mode.conf
+
+ab1620_fpga__hci_relay_mode_flash_boot:
+    proj: airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+    hci_relay_mode:
+        # path relative to airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/hci_relay_mode_flash_boot.conf
+
+ab162x_libs__hci_relay_mode:
+    proj: airoha/mcu/samples/subsys/ab162x_libs/bluetooth/hci_relay_mode
+    hci_relay_mode:
+        # path relative to airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/hci_relay_mode.conf
+
+ab1620_fpga__hci_relay_mode_multi_protocol:
+    proj: airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+    hci_relay_mode:
+        # path relative to airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/hci_relay_mode_multi_protocol.conf
+
+
+ab1620_fpga__hci_relay_mode_multi_protocol_flash_boot:
+    proj: airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+    hci_relay_mode:
+        # path relative to airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/hci_relay_mode_multi_protocol_flash_boot.conf
+
+ab1620_fpga__cosim:
+    proj: airoha/mcu/samples/subsys/ab162x/bluetooth/cosim
+    cosim:
+        # path relative to airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/cosim.conf
+
+
+ab1620_fpga__dvt_i2c:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/i2c
+    i2c:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/i2c
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/dvt.conf
+
+ab1620_fpga__dvt_rtc:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/rtc
+    rtc:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/rtc
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/dvt.conf
+
+ab1620_fpga__dvt_pwm:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/pwm
+    pwm:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/pwm
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/dvt.conf
+
+ab1620_fpga__dvt_led:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/led
+    led:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/pwm
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/dvt.conf
+
+ab1620_fpga__dvt_spim:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/spim
+    spim:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/spim
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/dvt.conf
+
+ab1620_fpga__dvt_argb:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/argb
+    argb:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/argb
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/dvt.conf
+
+ab1620_fpga__usb_hid_demo:
+    proj: airoha/mcu/samples/subsys/ab162x/usb/usb_hid_demo
+    usb_hid_demo:
+        # path relative to airoha/mcu/samples/subsys/ab162x/usb/usb_hid_demo
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/usb_hid_demo.conf
+
+ab1620_fpga__dvt_crypto_engine:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/crypto_engine
+    crypto_engine:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/crypto_engine
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/single_thread.conf
+
+ab1620_fpga__hid_dongle_ref_design:
+    proj: airoha/mcu/applications/hid_dongle_ref_design
+    hid_dongle_ref_design:
+        # path relative to airoha/mcu/applications/hid_dongle_ref_design
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/hid_dongle_ref_design_flash.conf
+
+ab1620_fpga__openthread_cli:
+    proj: airoha/mcu/samples/subsys/ab162x/openthread/cli
+    cli:
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/openthread_cli.conf
+
+ab1620_fpga__openthread_cli_flash_boot:
+    proj: airoha/mcu/samples/subsys/ab162x/openthread/cli
+    cli:
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/openthread_cli_flash_boot.conf
+
+ab1620_fpga__download_agent:
+    proj: airoha/mcu/applications/download_agent
+    download_agent:
+        # path relative to airoha/mcu/applications/download_agent
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/download_agent.conf
+
+
+ab1620_fpga__light_bulb:
+    proj: airoha/mcu/applications/light_bulb
+    light_bulb:
+        # path relative to airoha/mcu/applications/light_bulb
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/light_bulb_flash.conf
+
+ab1620_fpga__coprocessor:
+    proj: airoha/mcu/samples/subsys/ab162x/openthread/coprocessor
+    coprocessor:
+        # path relative to airoha/mcu/samples/subsys/ab162x/openthread/coprocessor
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/coprocessor.conf
+
+ab1620_fpga__coprocessor_flash_boot:
+    proj: airoha/mcu/samples/subsys/ab162x/openthread/coprocessor
+    coprocessor:
+        # path relative to airoha/mcu/samples/subsys/ab162x/openthread/coprocessor
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/coprocessor_flash_boot.conf
+
+ab1620_fpga__coprocessor_ncp:
+    proj: airoha/mcu/samples/subsys/ab162x/openthread/coprocessor
+    coprocessor:
+        # path relative to airoha/mcu/samples/subsys/ab162x/openthread/coprocessor
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/coprocessor_ncp.conf
+
+ab1620_fpga__hid_ref_mouse:
+    proj: airoha/mcu/applications/hid_device_ref_design_mouse
+    hid_device_ref_design_mouse:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_mouse
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/hid_device_ref_design_mouse.conf
+
+ab1620_fpga__hid_ref_mouse_flash_boot:
+    proj: airoha/mcu/applications/hid_device_ref_design_mouse
+    hid_device_ref_design_mouse:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_mouse
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app_flash_boot.overlay
+        CONF_FILE: config/ab1620_fpga/hid_device_ref_design_mouse_flash_boot.conf
+
+ab1620_fpga__dvt_qdec:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/qdec
+    qdec:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/pwm
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/dvt.conf
+
+ab1620_fpga__ccni_example:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/ccni_example
+    ccni_example:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/ccni_example
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/ccni_example_ram.conf
+
+ab1620_fpga__dvt_spm_extslp:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/spm_extslp
+    spm_extslp:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/spm_extslp
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/spm_extslp_ram.conf
+
+ab1620_fpga__dvt_systempm_example:
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/systempm_example
+    systempm_example:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/systempm_example
+        DTC_OVERLAY_FILE: config/ab1620_fpga/app.overlay
+        CONF_FILE: config/ab1620_fpga/systempm_example_ram.conf

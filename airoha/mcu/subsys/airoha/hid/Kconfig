@@ -1,0 +1,376 @@
+# Copyright Statement:
+#
+# (C) 2025  Airoha Technology Corp. All rights reserved.
+#
+# This software/firmware and related documentation ("Airoha Software") are
+# protected under relevant copyright laws. The information contained herein
+# is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.
+# Without the prior written permission of Airoha and/or its licensors,
+# any reproduction, modification, use or disclosure of Airoha Software,
+# and information contained herein, in whole or in part, shall be strictly prohibited.
+# You may only use, reproduce, modify, or distribute (as applicable) Airoha Software
+# if you have agreed to and been bound by the applicable license agreement with
+# Airoha ("License Agreement") and been granted explicit permission to do so within
+# the License Agreement ("Permitted User").  If you are not a Permitted User,
+# please cease any access or use of Airoha Software immediately.
+# BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+# THAT AIROHA SOFTWARE RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES
+# ARE PROVIDED TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL
+# WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+# NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+# SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+# SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+# THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+# THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+# CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA
+# SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+# STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND
+# CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,
+# AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,
+# OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+# AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.
+
+config AIR_HID_SCENARIO_SERVICE
+	bool "Use Airoha's HID scenario."
+
+
+config AIR_HID_DEVICE_SCENARIO_SERVICE_BT_MODE
+    bool "support Airoha HID device scenario service bt mode"
+    default n
+    depends on AIR_HID_SCENARIO_SERVICE
+    help
+      Enable bt mode scenario service
+
+config AIR_HID_DEVICE_SCENARIO_SERVICE_GAMING_MODE
+    bool "support Airoha HID device scenario service gaming mode"
+    default n
+    depends on AIR_HID_SCENARIO_SERVICE
+    help
+      Enable gaming mode scenario service
+
+config AIR_HID_DEVICE_SCENARIO_SERVICE_USB_MODE
+    bool "support Airoha HID device scenario service usb mode"
+    default n
+    depends on AIR_HID_SCENARIO_SERVICE
+    help
+      Enable USB mode scenario service
+
+
+config AIR_HID_DEVICE_SCENARIO_SERVICE_KEY_REMAP
+    bool "support Airoha HID device scenario service key remap"
+    default n
+    depends on AIR_HID_SCENARIO_SERVICE
+    help
+      Enable key remap service
+
+config AIR_WHEEL_REMAP
+    bool "support wheel key remap"
+    default n
+    depends on AIR_HID_DEVICE_SCENARIO_SERVICE_KEY_REMAP
+    help
+      Enable wheel key remap
+
+config AIR_REMAP_FN_KEY
+    bool "support remap fn key"
+    default n
+    depends on AIR_HID_DEVICE_SCENARIO_SERVICE_KEY_REMAP
+    help
+      Enable remap fn key
+
+
+config AIR_PURE_GAMING_DONGLE_ENABLE
+  bool "Use Airoha's HID Dongle scenario."
+  # need structure definitions in hid_common.h
+  select AIR_HID_COMMON_SERVICE
+
+config AIR_PURE_GAMING_DONGLE_MS_ENABLE
+	bool "Use Airoha's HID Dongle Mouse scenario."
+
+config AIR_PURE_GAMING_DONGLE_GAMEPAD_ENABLE
+	bool "Use Airoha's HID Dongle gamepad scenario."
+
+config AIR_PURE_GAMING_DONGLE_KB_ENABLE
+	bool "Use Airoha's HID Dongle Keyboard scenario."
+
+config AIR_PURE_GAMING_CUSTOM_PROTOCOL_ENABLE
+	bool "enable custom protocol."
+
+config AIR_PURE_GAMING_CUSTOM_PROTOCOL_HID_MIXING_ENABLE
+	bool "enable custom protocol and hid packet mixing feature."
+
+config AIR_HID_DUMMY_REPORT_RATE
+	bool "Airoha Hid Dummy Report Rate"
+
+config AIR_HID_SUSPEND_RESUME_DEVICE
+	bool "Airoha Hid Suspend Resume Device"
+
+config AIR_HID_DISABLE_SOF_INTR
+	bool "Disable SOF interrupt"
+	default n
+
+config AIR_HID_AUTO_SWITCH_PHY
+	bool "Airoha Hid Auto Swtich Phy"
+
+config AIR_HID_AUTO_SWITCH_TX_POWER
+	bool "Airoha Hid Auto Swtich Tx Power"
+
+if AIR_HID_SCENARIO_SERVICE
+endif # AIR_HID_SCENARIO_SERVICE
+
+
+
+config AIR_HID_PLC
+    bool "Airoha HID PLC"
+    default n
+    depends on AIR_PURE_GAMING_DONGLE_ENABLE
+    help
+      Enable airoha HID PLC
+
+config AIR_HID_PLC_CALCULATE
+    bool "Airoha HID PLC CALCULATE STATISTICS"
+    default y
+    depends on AIR_PURE_GAMING_DONGLE_ENABLE
+    help
+      Enable airoha HID PLC CALCULATE STATISTICS
+
+config AIR_HID_PLC_BIG_DRIFT_PKT
+    bool "Airoha HID PLC BIG DRIFT PACKET"
+    default n
+    depends on AIR_PURE_GAMING_DONGLE_ENABLE
+    help
+      Enable airoha HID PLC BIG DRIFT PACKET
+
+config AIR_HID_PLC_BIG_DRIFT_THRESHOLD
+    int "Airoha HID PLC BIG DRIFT THRESHOLD"
+    default 50
+    depends on AIR_PURE_GAMING_DONGLE_ENABLE
+    help
+      Enable airoha HID PLC BIG DRIFT THRESHOLD
+
+config AIR_HID_PLC_BIG_DRIFT_DPI
+    int "Airoha HID PLC BIG DRIFT DPI"
+    default 10000
+    depends on AIR_PURE_GAMING_DONGLE_ENABLE
+    help
+      Enable airoha HID PLC BIG DRIFT DPI
+
+config AIR_HID_PLC_WITH_RESEND
+    bool "Airoha HID PLC & Resend Co-existence"
+    default n
+    depends on AIR_PURE_GAMING_DONGLE_ENABLE
+    help
+      Enable airoha HID PLC WITH RESEND
+
+config AIR_HID_CP_DEBUG_LOG
+    bool "Airoha HID CRITICAL PATH DEBUG LOG"
+    default n
+    depends on AIR_PURE_GAMING_DONGLE_ENABLE
+    help
+      Enable airoha HID CRITICAL PATH DEBUG LOG
+
+config AIR_HID_CP_DEBUG_GPIO
+    bool "Airoha HID CRITICAL PATH DEBUG GPIO"
+    default n
+    depends on AIR_PURE_GAMING_DONGLE_ENABLE
+    help
+      Enable airoha HID CRITICAL PATH DEBUG GPIO
+
+config AIR_HID_CP_PROCESS_MOUSE_ENABLE
+    bool "Airoha HID critical path support to handle data from mouse"
+    default y
+    depends on AIR_PURE_GAMING_DONGLE_ENABLE
+    help
+      Enable airoha HID critical path feature of processing data from mouse
+
+config AIR_HID_CP_PROCESS_KBD_DATA_ENABLE
+    bool "Airoha HID critical path support to handle data from key remap"
+    default n
+    depends on AIR_PURE_GAMING_DONGLE_ENABLE
+    help
+      Enable airoha HID critical path feature of processing data from key remap
+
+config AIR_HID_CP_PROCESS_NKEY_ENABLE
+    bool "Airoha HID critical path support to handle NKEY"
+    default n
+    depends on AIR_PURE_GAMING_DONGLE_ENABLE
+    help
+      Enable airoha HID critical path feature of processing data from nkey
+
+config AIR_HID_CP_TRIGGER_USB_ANCHOR
+    int "Airoha HID critical path trigger USB anchor"
+    default 40
+    help
+      usb tx trigger time which align with BT, unit: us
+
+# if AIR_HID_CP_PROCESS_KBD_DATA_ENABLE
+
+# # define in airoha/common, but not reference by Kconfig.common...
+# # need to be fixed by app owner
+# config AIR_HID_COMMON_MEMORY
+#     bool "Airoha HID Common Memory"
+#     default n
+#     help
+#       Enable airoha HID common memory
+
+# endif # AIR_HID_CP_PROCESS_KBD_DATA_ENABLE
+
+config AIR_HID_CP_PROCESS_GAME_CONTROLLER_DATA_ENABLE
+    bool "Airoha HID critical path support to handle data from game controller"
+    default n
+    depends on AIR_PURE_GAMING_DONGLE_ENABLE
+    # need structure definitions in hid_common.h
+    select AIR_HID_COMMON_SERVICE
+    help
+      Enable airoha HID critical path feature of processing data from game controller
+
+config AIR_GAME_CONTROLLER_9B_DATA
+    bool "Game Controller hid len is 9B in air"
+    default n
+    help
+      Enable Game Controller hid len is 9B in air
+
+config AIR_GAME_CONTROLLER_12BIT_ADC
+    bool "Game Controller adc data is 12 bits"
+    default n
+    help
+      Enable Game Controller adc data is 12 bits
+
+config AIR_MICROSOFT_SWIFT_PAIR
+    bool "Enable microsoft swift pair"
+    default n
+    depends on AIR_HID_DEVICE_SCENARIO_SERVICE_BT_MODE
+    help
+      Enable microsoft swift pair
+
+config AIR_SHORTEN_DEVICE_NAME
+    string "shorten device name shown"
+    default "mouse"
+    help
+      shorten device name displaied on PC
+
+
+config AIR_2_4G_DEVICE_APPEARANCE
+    int "identity of 2.4g device appearance"
+    default 48
+    help
+      Identity of 2.4g device appearance. The device with the specified ID that dongle looking for when pairing
+
+config AIR_SYNC_REPORT_RATE_BETWEEN_USB_AND_2_4G
+    bool "sync report rate between usb and 2.4G mode"
+    default n
+    help
+      sync report rate between usb and 2.4G mode
+
+config AIR_HID_DEVICE_2_4G_DEFAULT_REPORT_RATE
+    int "The default report rate of 2.4G scenario"
+    default 8000
+    help
+      The default report rate of 2.4G scenario.
+
+config AIR_HID_DEVICE_USB_DEFAULT_REPORT_RATE
+    int "The default report rate of USB scenario"
+    default 8000
+    help
+      The default report rate of USB scenario.
+
+config AIR_RUNTIME_BT_TRIGGER
+    bool "Run time bt trigger when sensor config"
+    default n
+    help
+      Run time bt trigger when sensor config.
+
+config AIR_DISABLE_LC_SLEEP
+    bool "disable LC sleep"
+    default n
+    help
+      Disable LC Sleep
+
+config AIR_EXPAND_MACRO
+    bool "Key remap macro expand"
+    default n
+    help
+      Key remap macro expand.
+
+config AIR_HID_REPORT_QUICK_START
+    bool "Start HID Report quick"
+    default n
+    help
+      start HID report traffic once ULL connected event is received
+
+config AIR_HID_OUTPUT_REPORT_NOTIFY
+    bool "hid output report notify"
+    default n
+    help
+      generate hid output report notification
+
+config AIR_ADV_CONTENT_CHANGE_INTERVAL
+    int "Advertising content switch interval"
+    default 0
+    help
+      Multiple adv, advertising content switch interval
+
+config AIR_MUTIPLE_ADV_SUPPORT
+    bool "Support multiple advertising"
+    default n
+    help
+      Support multiple advertising
+
+config AIR_EXTERNAL_BUCK_GPIO_MODE
+    bool "external buck gpio mode"
+    default n
+    help
+      set gpio control external/internal buck
+
+config AIR_EXTERNAL_BUCK_GPIO_MODE_PIN
+    int "pin of external buck gpio mode"
+    default 18
+    help
+      pin of set gpio control external/internal buck
+
+config AIR_USING_DEFAULT_RISCV_TRIGGER_TIME
+    bool "using default riscv trigger time"
+    default n
+
+
+config AIR_DEFAULT_RISCV_TRIGGER_TIME_RR_125HZ
+    int "riscv trigger timer in us for 125hz RR"
+    default 255
+    help
+      riscv trigger timer for 125hz RR
+
+config AIR_DEFAULT_RISCV_TRIGGER_TIME_RR_250HZ
+    int "riscv trigger timer in us for 250hz RR"
+    default 255
+    help
+      riscv trigger timer for 250hz RR
+
+config AIR_DEFAULT_RISCV_TRIGGER_TIME_RR_500HZ
+    int "riscv trigger timer in us for 500hz RR"
+    default 255
+    help
+      riscv trigger timer for 500hz RR
+
+config AIR_DEFAULT_RISCV_TRIGGER_TIME_RR_1000HZ
+    int "riscv trigger timer in us for 1000hz RR"
+    default 255
+    help
+      riscv trigger timer for 1000hz RR
+
+config AIR_DEFAULT_RISCV_TRIGGER_TIME_RR_2000HZ
+    int "riscv trigger timer in us for 2000hz RR"
+    default 255
+    help
+      riscv trigger timer for 2000hz RR
+
+config AIR_DEFAULT_RISCV_TRIGGER_TIME_RR_4000HZ
+    int "riscv trigger timer in us for 4000hz RR"
+    default 255
+    help
+      riscv trigger timer for 4000hz RR
+
+config AIR_DEFAULT_RISCV_TRIGGER_TIME_RR_8000HZ
+    int "riscv trigger timer in us for 8000hz RR"
+    default 255
+    help
+      riscv trigger timer for 8000hz RR

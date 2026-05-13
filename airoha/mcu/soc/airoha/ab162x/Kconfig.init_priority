@@ -1,0 +1,244 @@
+# init level early start
+config UART_EARLY_INIT_PRIORITY
+	int
+	default 0
+# init level early end
+
+
+# init level pre_kernel 1 start
+config INTC_INIT_PRIORITY
+	int
+	default 1
+
+config FLASH_CFG_INIT_PRIORITY
+	int
+	default 2
+
+config FPGA_CLOCK_INIT_PRIORITY
+	int
+	default 14
+
+config CLOCK_INIT_PRIORITY
+	int
+	default 15
+
+config GPIO_INIT_PRIORITY
+	int
+	default 25
+
+config PINMUX_INIT_PRIORITY
+	int
+	default 26
+
+config CCM_INIT_PRIORITY
+	int
+	default 27
+
+config CORE_STATUS_BOOT_INIT_PRIORITY
+	int
+	default 28
+
+config SERIAL_INIT_PRIORITY
+	int
+	default 29
+
+config LOG_EARLY_INIT_PRIORITY
+	int
+	default 30
+
+config SLEEP_MANAGER_INIT_PRIORITY
+	int
+	default 31
+
+config RAM_BLOCKS_CONTROL_INIT_PRIORITY
+	int
+	default 32
+
+config PD_DOMAIN_CONTROL_INIT_PRIORITY
+	int
+	default 33
+
+config I2C_INIT_PRIORITY
+	int
+	default 34
+
+config SPIM_INIT_PRIORITY
+	int
+	default 35
+
+config SPIS_INIT_PRIORITY
+	int
+	default 36
+
+config TRNG_INIT_PRIORITY
+	int
+	default 37
+
+config CACHE_INIT_PRIORITY
+	int
+	default 40
+
+config FLASH_INIT_PRIORITY
+	int
+	default 45
+
+config ESC_DEVICE_INIT_PRIORITY
+	int
+	default 46
+
+config PARTITION_TABLE_INIT_PRIORITY
+	int
+	default 47
+
+config PWM_INIT_PRIORITY
+	int
+	default 48
+
+config PWM_DMA_INIT_PRIORITY
+	int
+	default 49
+
+config LED_INIT_PRIORITY
+	int
+	default 50
+
+config CCNI_INIT_PRIORITY
+	int
+	default 52
+
+config MOUSE_SENSOR_PREINIT_PRIORITY
+	int
+	default 54
+
+config RTC_INIT_PRIORITY
+	int
+	default 55
+
+config IRRX_INIT_PRIORITY
+	int
+	default 56
+
+# init level pre_kernel 1 end
+
+
+# init level pre_kernel 2 start
+config NVDATA_INIT_PRIORITY
+	int
+	default 10
+
+config PMU_INIT_PRIORITY
+	int
+	default 15
+
+config BATTER_MANAGEMENT_INIT_PRIORITY
+	int
+	default 16
+
+config DCXO_INIT_PRIORITY
+	int
+	default 20
+
+config DVFS_INIT_PRIORITY
+	int
+	default 21
+
+config LOG_INIT_PRIORITY
+	int
+	default 25
+
+config WDT_INIT_PRIORITY
+	int
+	default 29
+
+config EXCEPTION_DUMP_INIT_PRIORITY
+	int
+	default 30
+
+config OFFLINE_DUMP_INIT_PRIORITY
+	int
+	default 31
+
+config BOOT_REASON_INIT_PRIORITY
+	int
+	default 40
+
+config SYS_HANG_TRACER_INIT_PRIORITY
+	int
+	default 45
+
+config USB_INIT_PRIORITY
+	int
+	default 50
+
+config OST_INIT_PRIORITY
+	int
+	default 95
+
+config SWLA_INIT_PRIORITY
+	int
+	default 96
+
+config MOUSE_SENSOR_INIT_PRIORITY
+	int
+	default 97
+
+config IO_EXPANDER_SENSOR_INIT_PRIORITY
+	int
+	default 97
+
+config START_RISCV_INIT_PRIORITY
+	int
+	default 99
+# init level pre_kernel 2 end
+
+
+# init level post_kernel start
+config DAEMON_WORK_Q_INIT_PRIORITY
+	int
+	default 0
+
+config SHELL_BACKEND_SERIAL_INIT_PRIORITY
+	int
+	default 1
+
+config USB_VBUS_DETECT_INIT_PRIORITY
+	int
+	default 50
+
+config IEEE802154_INIT_PRIORITY
+	int
+	default 79
+
+config RACE_CMD_INIT_PRIORITY
+	int
+	default 98
+
+config MPU_INIT_PRIORITY
+	int
+	default 99
+
+config SAR_ADC_INIT_PRIORITY
+	int
+	default 99
+
+config AIOADC_INIT_PRIORITY
+	int
+	default 99
+
+# init level post_kernel end
+
+
+# init level application start
+config DVFS_INIT_END_PRIORITY
+	int
+	default 98
+
+config BUILD_INFO_INIT_PRIORITY
+	int
+	default 99
+
+config CORE_STATUS_ACTIVE_INIT_PRIORITY
+	int
+	default 99
+
+# init level application end

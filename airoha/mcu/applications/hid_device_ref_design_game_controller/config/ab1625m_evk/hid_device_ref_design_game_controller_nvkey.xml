@@ -1,0 +1,104 @@
+<NvKeyTable Version="2.0">
+	 <NVKey KeyID="0x0003" Name="app level">
+		<Value>0x1122334455667788</Value>
+	</NVKey>
+
+	<NVKey KeyID="demo/boot_count">
+		<Value>0x4E61BC</Value>
+	</NVKey>
+
+	<NVKey KeyID="0x1002" Name="NVIDPRODUCT_GATEGORY">
+		<Field name="product_category" type="array" value="4142313632354D5F47414D45504144" description="AB1625M_GAMEPAD" />
+	</NVKey>
+
+	<NVKey KeyID="0x1839" Name="NVID_BT_HOST_RELAY_ENABLE" Domain="TEST_USE_DATA">
+		<Value>0x0000</Value>
+	</NVKey>
+
+    <NVKey KeyID="0x2020" Name="NVID_CAL_VBAT_ADC_CAL_TABLE" Domain="BASEBAND">
+        <Value>0x000222001900140070301027000000000000000000000000000000000000000000000000000000000000</Value>
+    </NVKey>
+    <NVKey KeyID="0x2021" Name="NVID_CAL_VBAT_VOLT_CFG" Domain="BASEBAND">
+        <Value>0x036810000000000000F00A0000480D00007A0D0000AC0D0000100E0000740E0000D80E00003C0F0000A00F000004100000361000000000000000000000000000000000000000000000000000000000000000000000</Value>
+    </NVKey>
+    <NVKey KeyID="0x3746" Name="NVID_VPA_VOLTAGE">
+        <Value>0x01</Value>
+    </NVKey>
+	<NVKey KeyID="0x3755" Name="NVID_RF_0V96_TXGC">
+        <Value>0x360036003600360036003600360036003600</Value>
+     </NVKey>
+	<NVKey KeyID="0x6000" Name="NVID_POWER_SAVING_TIMEOUT">
+		<OTA StructureNAME = "struct power_saving_timeout" Update="True" />
+		<Field name="power_saving_active_timeout" type="uint16_t" value="0x001E" description="Power Saving Active Timeout" />
+		<Field name="power_saving_idle1_timeout" type="uint16_t" value="0xFFFF" description="Power Saving Idle1 Timeout" />
+		<Field name="power_saving_idle2_timeout" type="uint16_t" value="0xFFFF" description="Power Saving Idle2 Timeout" />
+		<Field name="power_saving_standby_timeout" type="uint16_t" value="0x0000" description="Power Saving Standby Timeout" />
+		<Field name="2_4G_pairing_timeout" type="uint16_t" value="0x003C" description="2.4G Pairing Timeout" />
+		<Field name="2_4G_reconnect_timeout" type="uint16_t" value="0x000A" description="2.4G Reconnect Timeout" />
+		<Field name="BT_pairing_timeout" type="uint16_t" value="0x003C" description="BT Pairing Timeout" />
+		<Field name="BT_reconnect_timeout" type="uint16_t" value="0x001E" description="BT Reconnect Timeout" />
+	</NVKey>
+
+	<NVKey KeyID="0x6005" Name="NVID_HID_EXPRESS_FEATURES">
+		<Field name="riscv_trigger_time_0" type="uint16_t" value="0x00B2" description="risc-v trigger time at 125 report rate" />
+		<Field name="riscv_trigger_time_1" type="uint16_t" value="0x00B2" description="risc-v trigger time at 250 report rate" />
+		<Field name="riscv_trigger_time_2" type="uint16_t" value="0x00B2" description="risc-v trigger time at 500 report rate" />
+		<Field name="riscv_trigger_time_3" type="uint16_t" value="0x00B2" description="risc-v trigger time at 1K report rate" />
+		<Field name="riscv_trigger_time_4" type="uint16_t" value="0x00B2" description="risc-v trigger time at 2K report rate" />
+		<Field name="riscv_trigger_time_5" type="uint16_t" value="0x00B2" description="risc-v trigger time at 4K report rate" />
+		<Field name="riscv_trigger_time_6" type="uint16_t" value="0x006A" description="risc-v trigger time at 8K report rate" />
+	</NVKey>
+
+	<NVKey KeyID="0x6400" Name="NVID_APP_GAME_CONTROLLER_JOYSTICK_X">
+		<Field name="min_voltage" type="uint32_t" value="0x0007a120" description="Min voltage" />
+		<Field name="max_voltage" type="uint32_t" value="0x00231860" description="Max voltage" />
+		<Field name="zero_voltage" type="uint32_t" value="0x0016e360" description="Zero voltage" />
+		<Field name="zero_deadzone_min_voltage" type="uint32_t" value="0x00149970" description="Zero deadzone max voltage" />
+		<Field name="zero_deadzone_max_voltage" type="uint32_t" value="0x00192d50" description="Zero deadzone min voltage" />
+	</NVKey>
+
+	<NVKey KeyID="0x6401" Name="NVID_APP_GAME_CONTROLLER_JOYSTICK_Y">
+		<Field name="min_voltage" type="uint32_t" value="0x0006ddd0" description="Min voltage" />
+		<Field name="max_voltage" type="uint32_t" value="0x00286f90" description="Max voltage" />
+		<Field name="zero_voltage" type="uint32_t" value="0x0016e360" description="Zero voltage" />
+		<Field name="zero_deadzone_min_voltage" type="uint32_t" value="0x00149970" description="Zero deadzone max voltage" />
+		<Field name="zero_deadzone_max_voltage" type="uint32_t" value="0x00192d50" description="Zero deadzone min voltage" />
+	</NVKey>
+
+	<NVKey KeyID="0x6402" Name="NVID_APP_GAME_CONTROLLER_JOYSTICK_Z">
+		<Field name="min_voltage" type="uint32_t" value="0x0006ddd0" description="Min voltage" />
+		<Field name="max_voltage" type="uint32_t" value="0x002625a0" description="Max voltage" />
+		<Field name="zero_voltage" type="uint32_t" value="0x0016e360" description="Zero voltage" />
+		<Field name="zero_deadzone_min_voltage" type="uint32_t" value="0x00149970" description="Zero deadzone max voltage" />
+		<Field name="zero_deadzone_max_voltage" type="uint32_t" value="0x00192d50" description="Zero deadzone min voltage" />
+	</NVKey>
+
+	<NVKey KeyID="0x6403" Name="NVID_APP_GAME_CONTROLLER_JOYSTICK_RZ">
+		<Field name="min_voltage" type="uint32_t" value="0x00086470" description="Min voltage" />
+		<Field name="max_voltage" type="uint32_t" value="0x002625a0" description="Max voltage" />
+		<Field name="zero_voltage" type="uint32_t" value="0x0016e360" description="Zero voltage" />
+		<Field name="zero_deadzone_min_voltage" type="uint32_t" value="0x00149970" description="Zero deadzone max voltage" />
+		<Field name="zero_deadzone_max_voltage" type="uint32_t" value="0x00192d50" description="Zero deadzone min voltage" />
+	</NVKey>
+
+	<NVKey KeyID="0x6410" Name="NVID_APP_GAME_CONTROLLER_TRIGGER_L">
+		<Field name="full_release_voltage" type="uint32_t" value="0x0018df30" description="Full Release voltage" />
+		<Field name="full_press_voltage" type="uint32_t" value="0x0021b8d0" description="Full Press voltage" />
+		<Field name="zero_deadzone_voltage" type="uint32_t" value="0x0019a280" description="Zero voltage" />
+	</NVKey>
+
+	<NVKey KeyID="0x6411" Name="NVID_APP_GAME_CONTROLLER_TRIGGER_R">
+		<Field name="full_release_voltage" type="uint32_t" value="0x0014e790" description="Full Release voltage" />
+		<Field name="full_press_voltage" type="uint32_t" value="0x000c3500" description="Full Press voltage" />
+		<Field name="zero_deadzone_voltage" type="uint32_t" value="0x00142440" description="Zero voltage" />
+	</NVKey>
+
+	<NVKey KeyID="0x6601" Name="NVID_APP_USB_MODE" Domain="USER_DATA">
+		<Value>0x01</Value>
+	</NVKey>
+
+	<NVKey KeyID="0x4010" Name="NVID_SYS_EXP_DUMP_MODE" Domain="MP_DATA">
+	<Value>0xB400B400</Value>
+	</NVKey>
+
+</NvKeyTable>

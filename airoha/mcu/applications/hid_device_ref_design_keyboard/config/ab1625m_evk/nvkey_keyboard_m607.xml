@@ -1,0 +1,42 @@
+<NvKeyTable Version="2.0">
+
+	<NVKey KeyID="0x1002" Name="NVIDPRODUCT_GATEGORY">
+		<Field name="product_category" type="array" value="4142313632354D5F4B4559424F415244" description="AB1625M_KEYBOARD" />
+	</NVKey>
+
+    <NVKey KeyID="0x2020" Name="NVID_CAL_VBAT_ADC_CAL_TABLE" Domain="BASEBAND">
+        <Value>0x000022001900000070301027000000000000000000000000000000000000000000000000000000000000</Value>
+    </NVKey>
+    <NVKey KeyID="0x2021" Name="NVID_CAL_VBAT_VOLT_CFG" Domain="BASEBAND">
+        <Value>0x03B80B000000000000F00A0000480D00007A0D0000AC0D0000100E0000740E0000D80E00003C0F0000A00F000004100000361000000000000000000000000000000000000000000000000000000000000000000000</Value>
+    </NVKey>
+
+	<NVKey KeyID="0x6000" Name="NVID_POWER_SAVING_TIMEOUT">
+		<OTA StructureNAME = "struct power_saving_timeout" Update="True" />
+		<Field name="power_saving_active_timeout" type="uint16_t" value="0x003C" description="Power Saving Active Timeout" />
+		<Field name="power_saving_idle1_timeout" type="uint16_t" value="0xFFFF" description="Power Saving Idle1 Timeout" />
+		<Field name="power_saving_idle2_timeout" type="uint16_t" value="0xFFFF" description="Power Saving Idle2 Timeout" />
+		<Field name="power_saving_standby_timeout" type="uint16_t" value="0x0000" description="Power Saving Standby Timeout" />
+		<Field name="2_4G_pairing_timeout" type="uint16_t" value="0x003C" description="2.4G Pairing Timeout" />
+		<Field name="2_4G_reconnect_timeout" type="uint16_t" value="0x000A" description="2.4G Reconnect Timeout" />
+		<Field name="BT_pairing_timeout" type="uint16_t" value="0x003C" description="BT Pairing Timeout" />
+		<Field name="BT_reconnect_timeout" type="uint16_t" value="0x001E" description="BT Reconnect Timeout" />
+	</NVKey>
+
+	<NVKey KeyID="0x6005" Name="NVID_HID_EXPRESS_FEATURES">
+		<Field name="hid_express_features" type="uint32_t" value="0x00000000" description="HID Express Features" />
+		<Field name="riscv_trigger_time_0" type="uint8_t" value="0xAA" description="risc-v trigger time at 125 report rate" />
+		<Field name="riscv_trigger_time_1" type="uint8_t" value="0xAA" description="risc-v trigger time at 250 report rate" />
+		<Field name="riscv_trigger_time_2" type="uint8_t" value="0xAA" description="risc-v trigger time at 500 report rate" />
+		<Field name="riscv_trigger_time_3" type="uint8_t" value="0xAA" description="risc-v trigger time at 1K report rate" />
+		<Field name="riscv_trigger_time_4" type="uint8_t" value="0xAA" description="risc-v trigger time at 2K report rate" />
+		<Field name="riscv_trigger_time_5" type="uint8_t" value="0xAA" description="risc-v trigger time at 4K report rate" />
+		<Field name="riscv_trigger_time_6" type="uint8_t" value="0x4A" description="risc-v trigger time at 8K report rate" />
+	</NVKey>
+
+	<!-- not reset after exception dump during development stage -->
+	<NVKey KeyID="0x4010" Name="NVID_SYS_EXP_DUMP_MODE" Domain="MP_DATA">
+		<Value>0x94009400</Value>
+	</NVKey>
+
+</NvKeyTable>

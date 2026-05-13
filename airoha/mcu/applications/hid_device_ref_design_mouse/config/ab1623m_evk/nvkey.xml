@@ -1,0 +1,34 @@
+<NvKeyTable Version="2.0">
+	 <NVKey KeyID="0x0003" Name="app level">
+		<Value>0x1122334455667788</Value>
+	</NVKey>
+
+	<NVKey KeyID="demo/boot_count">
+		<Value>0x4E61BC</Value>
+	</NVKey>
+
+	<NVKey KeyID="0x1002" Name="NVIDPRODUCT_GATEGORY">
+		<Field name="product_category" type="array" value="4142313632334D4F555345" description="AB1623M_MOUSE" />
+	</NVKey>
+
+	<NVKey KeyID="0x1839" Name="NVID_BT_HOST_RELAY_ENABLE" Domain="TEST_USE_DATA">
+		<Value>0x0000</Value>
+	</NVKey>
+
+	<NVKey KeyID="0x6000" Name="NVID_POWER_SAVING_TIMEOUT">
+		<OTA StructureNAME = "struct power_saving_timeout" Update="True" />
+		<Field name="power_saving_active_timeout" type="uint16_t" value="0x000A" description="Power Saving Active Timeout" />
+		<Field name="power_saving_idle1_timeout" type="uint16_t" value="0x000A" description="Power Saving Idle1 Timeout" />
+		<Field name="power_saving_idle2_timeout" type="uint16_t" value="0x000A" description="Power Saving Idle2 Timeout" />
+		<Field name="power_saving_standby_timeout" type="uint16_t" value="0x0000" description="Power Saving Standby Timeout" />
+		<Field name="2_4G_pairing_timeout" type="uint16_t" value="0x003C" description="2.4G Pairing Timeout" />
+		<Field name="2_4G_reconnect_timeout" type="uint16_t" value="0x000A" description="2.4G Reconnect Timeout" />
+		<Field name="BT_pairing_timeout" type="uint16_t" value="0x003C" description="BT Pairing Timeout" />
+		<Field name="BT_reconnect_timeout" type="uint16_t" value="0x001E" description="BT Reconnect Timeout" />
+	</NVKey>
+
+	<NVKey KeyID="0x4010" Name="NVID_SYS_EXP_DUMP_MODE" Domain="MP_DATA">
+	<Value>0xB400B400</Value>
+	</NVKey>
+
+</NvKeyTable>

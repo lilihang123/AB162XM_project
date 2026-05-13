@@ -1,0 +1,224 @@
+# Copyright Statement:                                                                                                     
+#                                                                                                                          
+# (C) 2025  Airoha Technology Corp. All rights reserved.                                                                   
+#                                                                                                                          
+# This software/firmware and related documentation ("Airoha Software") are                                                 
+# protected under relevant copyright laws. The information contained herein                                                
+# is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.                              
+# Without the prior written permission of Airoha and/or its licensors,                                                     
+# any reproduction, modification, use or disclosure of Airoha Software,                                                    
+# and information contained herein, in whole or in part, shall be strictly prohibited.                                     
+# You may only use, reproduce, modify, or distribute (as applicable) Airoha Software                                       
+# if you have agreed to and been bound by the applicable license agreement with                                            
+# Airoha ("License Agreement") and been granted explicit permission to do so within                                        
+# the License Agreement ("Permitted User").  If you are not a Permitted User,                                              
+# please cease any access or use of Airoha Software immediately.                                                           
+# BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES                                              
+# THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("AIROHA SOFTWARE")                                                    
+# RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES ARE PROVIDED                                                             
+# TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL                                             
+# WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF                                   
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.                                                    
+# NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE                                                  
+# SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR                                                    
+# SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH                                                  
+# THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES                                     
+# THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES                             
+# CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA                                        
+# SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR                                         
+# STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND                                     
+# CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,                                         
+# AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,                                                       
+# OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO                                                
+# AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.                                                                                
+#                                                                                                                          
+
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_AB1620
+    bool "Airoha ab1620 SoC"
+    select ARM_ON_ENTER_CPU_IDLE_PREPARE_HOOK
+    select ARCH_HAS_TRUSTED_EXECUTION
+    select BUILTIN_STACK_GUARD
+    select REQUIRES_FULL_LIBC
+    select SOC_SERIES_AB162X
+    select ARM_TRUSTZONE_M
+    select CPU_HAS_ARM_MPU
+    select CPU_HAS_ARM_SAU
+    select CPU_CORTEX_M33
+    select CPU_HAS_FPU
+    select CPU_HAS_TEE
+    select ARMV8_M_SE
+    select HAS_PM
+    select FPU
+    select ARM
+    help
+      Enable support for ab1620 MCU series
+
+
+config SOC_AB1620D
+    bool "Airoha ab1620d SoC"
+    select ARM_ON_ENTER_CPU_IDLE_PREPARE_HOOK
+    select ARCH_HAS_TRUSTED_EXECUTION
+    select BUILTIN_STACK_GUARD
+    select REQUIRES_FULL_LIBC
+    select SOC_SERIES_AB162X
+    select ARM_TRUSTZONE_M
+    select CPU_HAS_ARM_MPU
+    select CPU_HAS_ARM_SAU
+    select CPU_CORTEX_M33
+    select CPU_HAS_FPU
+    select CPU_HAS_TEE
+    select ARMV8_M_SE
+    select HAS_PM
+    select FPU
+    select ARM
+    help
+      Enable support for ab1620d MCU series
+
+
+config SOC_AB1620DM
+    bool "Airoha ab1620dm SoC"
+    select ARM_ON_ENTER_CPU_IDLE_PREPARE_HOOK
+    select ARCH_HAS_TRUSTED_EXECUTION
+    select BUILTIN_STACK_GUARD
+    select REQUIRES_FULL_LIBC
+    select SOC_SERIES_AB162X
+    select ARM_TRUSTZONE_M
+    select CPU_HAS_ARM_MPU
+    select CPU_HAS_ARM_SAU
+    select CPU_CORTEX_M33
+    select CPU_HAS_FPU
+    select CPU_HAS_TEE
+    select ARMV8_M_SE
+    select HAS_PM
+    select FPU
+    select ARM
+    help
+      Enable support for ab1620dm MCU series
+
+
+config SOC_AB1623
+    bool "Airoha ab1623 SoC"
+    select ARM_ON_ENTER_CPU_IDLE_PREPARE_HOOK
+    select ARCH_HAS_TRUSTED_EXECUTION
+    select BUILTIN_STACK_GUARD
+    select REQUIRES_FULL_LIBC
+    select SOC_SERIES_AB162X
+    select ARM_TRUSTZONE_M
+    select CPU_HAS_ARM_MPU
+    select CPU_HAS_ARM_SAU
+    select CPU_CORTEX_M33
+    select CPU_HAS_FPU
+    select CPU_HAS_TEE
+    select ARMV8_M_SE
+    select HAS_PM
+    select FPU
+    select ARM
+    help
+      Enable support for ab1623 MCU series
+
+
+config SOC_AB1623M
+    bool "Airoha ab1623m SoC"
+    select ARM_ON_ENTER_CPU_IDLE_PREPARE_HOOK
+    select ARCH_HAS_TRUSTED_EXECUTION
+    select BUILTIN_STACK_GUARD
+    select REQUIRES_FULL_LIBC
+    select SOC_SERIES_AB162X
+    select ARM_TRUSTZONE_M
+    select CPU_HAS_ARM_MPU
+    select CPU_HAS_ARM_SAU
+    select CPU_CORTEX_M33
+    select CPU_HAS_FPU
+    select CPU_HAS_TEE
+    select ARMV8_M_SE
+    select HAS_PM
+    select FPU
+    select ARM
+    help
+      Enable support for ab1623m MCU series
+
+
+config SOC_AB1625M
+    bool "Airoha ab1625m SoC"
+    select ARM_ON_ENTER_CPU_IDLE_PREPARE_HOOK
+    select ARCH_HAS_TRUSTED_EXECUTION
+    select BUILTIN_STACK_GUARD
+    select REQUIRES_FULL_LIBC
+    select SOC_SERIES_AB162X
+    select ARM_TRUSTZONE_M
+    select CPU_HAS_ARM_MPU
+    select CPU_HAS_ARM_SAU
+    select CPU_CORTEX_M33
+    select CPU_HAS_FPU
+    select CPU_HAS_TEE
+    select ARMV8_M_SE
+    select HAS_PM
+    select FPU
+    select ARM
+    help
+      Enable support for ab1625m MCU series
+
+
+config AIR_PADDING_AROUND_RAM_TEXT_ENABLE
+    bool "add padding before or after RAM text"
+    default n
+    help
+      For ab162x series chips, all RAM code are placed on TCM, and the latency of TCM is 1T.
+      And for MCU core, it has the highest priority for access these TCM, unlike the round-robin
+      behavior of DMA or other cores accssing TCM.
+      This means that if the programmer writes the forever loop in RAM code( ex. "b ." ),
+      the access of DMA or other cores to TCM will become extremely slow !!!
+      In order to avoid the above problems, it is necessary to provide a special mechanism in layout
+      to separate code and data with padding.
+
+choice AIR_PADDING_AROUND_RAM_TEXT_ALIGNMENT_SIZE
+    prompt "alignment of padding around ram text"
+    default AIR_PADDING_AROUND_RAM_TEXT_ALIGNMENT_64K
+    depends on AIR_PADDING_AROUND_RAM_TEXT_ENABLE
+
+config AIR_PADDING_AROUND_RAM_TEXT_ALIGNMENT_16K
+    bool "specifies the paddin alignment around RAM code is 16K"
+    help
+      A trade-off choice to avoid extremely slow problem and minimize the waste of RAM resources.
+
+config AIR_PADDING_AROUND_RAM_TEXT_ALIGNMENT_32K
+    bool "specifies the paddin alignment around RAM code is 32K"
+    help
+      A trade-off choice to avoid extremely slow problem and minimize the waste of RAM resources.
+
+config AIR_PADDING_AROUND_RAM_TEXT_ALIGNMENT_64K
+    bool "specifies the paddin alignment around RAM code is 64K"
+    help
+      TCM is equipped with an arbiter every 64KB in hardware.
+
+
+endchoice # AIR_PADDING_AROUND_RAM_TEXT_ALIGNMENT_SIZE
+
+
+config AIR_RISCV_ROOT_PATH
+    string
+    default "../risc-v"
+    help
+        path relative to mcu root directory
+
+config AIR_RISCV_BUILD
+    bool
+    default y if AIR_RISCV_PROJ_PATH != ""
+
+config AIR_RISCV_PROJ_PATH
+    string "related riscv project path to riscv root folder for building riscv firmware"
+    default ""
+    depends on AIR_RISCV_ROOT_PATH != ""
+
+config AIR_RISCV_FEATURE
+    string "feature.mk path related to AIR_RISCV_PROJ_PATH"
+    depends on AIR_RISCV_PROJ_PATH != ""
+
+
+config AIR_FPGA_ENV_ENABLE
+    bool "indicate that it is now in the development stage of FPGA"
+
+
+rsource "*/Kconfig"

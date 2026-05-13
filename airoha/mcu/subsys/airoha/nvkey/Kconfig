@@ -1,0 +1,156 @@
+# Copyright Statement:                                                                                                     
+#                                                                                                                          
+# (C) 2025  Airoha Technology Corp. All rights reserved.                                                                   
+#                                                                                                                          
+# This software/firmware and related documentation ("Airoha Software") are                                                 
+# protected under relevant copyright laws. The information contained herein                                                
+# is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.                              
+# Without the prior written permission of Airoha and/or its licensors,                                                     
+# any reproduction, modification, use or disclosure of Airoha Software,                                                    
+# and information contained herein, in whole or in part, shall be strictly prohibited.                                     
+# You may only use, reproduce, modify, or distribute (as applicable) Airoha Software                                       
+# if you have agreed to and been bound by the applicable license agreement with                                            
+# Airoha ("License Agreement") and been granted explicit permission to do so within                                        
+# the License Agreement ("Permitted User").  If you are not a Permitted User,                                              
+# please cease any access or use of Airoha Software immediately.                                                           
+# BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES                                              
+# THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("AIROHA SOFTWARE")                                                    
+# RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES ARE PROVIDED                                                             
+# TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL                                             
+# WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF                                   
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.                                                    
+# NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE                                                  
+# SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR                                                    
+# SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH                                                  
+# THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES                                     
+# THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES                             
+# CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA                                        
+# SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR                                         
+# STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND                                     
+# CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,                                         
+# AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,                                                       
+# OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO                                                
+# AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.                                                                                
+#                                                                                                                          
+
+# SPDX-License-Identifier: Apache-2.0
+
+config AIR_NVKEY_ENABLE
+	bool "Use simple nvkey API to store data"
+	default y if SETTINGS && SETTINGS_NVS && NVS
+	default n
+
+if AIR_NVKEY_ENABLE
+
+STORAGE_PARTITION_PATH := $(dt_nodelabel_path,storage_partition)
+STORAGE_PARTITION_SIZE_IN_K := $(dt_node_reg_size_int,$(STORAGE_PARTITION_PATH),0,K)
+# STORAGE_PARTITION_SIZE_IN_4K := $(dt_node_reg_size_int,$(STORAGE_PARTITION_PATH),0,K)/4
+
+STORAGE_OTA_PARTITION_PATH := $(dt_nodelabel_path,storage_ota_partition)
+STORAGE_OTA_PARTITION_SIZE_IN_K := $(dt_node_reg_size_int,$(STORAGE_OTA_PARTITION_PATH),0,K)
+
+config STORAGE_PARTITION_SIZE
+	int
+	default $(STORAGE_PARTITION_SIZE_IN_K)
+
+
+# needed by kconfig of settings
+config SETTINGS_NVS_SECTOR_COUNT
+	int "Sector count of the NVS settings area"
+	# Stupid and inefficient calculation method,
+	# but Kconfig does not support arithmetic operations, only calculated by this method.
+	default 4 if $(STORAGE_PARTITION_SIZE_IN_K) = 16
+	default 5 if $(STORAGE_PARTITION_SIZE_IN_K) = 20
+	default 6 if $(STORAGE_PARTITION_SIZE_IN_K) = 24
+	default 7 if $(STORAGE_PARTITION_SIZE_IN_K) = 28
+	default 8 if $(STORAGE_PARTITION_SIZE_IN_K) = 32
+	default 9 if $(STORAGE_PARTITION_SIZE_IN_K) = 36
+	default 10 if $(STORAGE_PARTITION_SIZE_IN_K) = 40
+	default 12 if $(STORAGE_PARTITION_SIZE_IN_K) = 48
+	default 16 if $(STORAGE_PARTITION_SIZE_IN_K) = 64
+	default 18 if $(STORAGE_PARTITION_SIZE_IN_K) = 72
+	default 20 if $(STORAGE_PARTITION_SIZE_IN_K) = 80
+	default 24 if $(STORAGE_PARTITION_SIZE_IN_K) = 96
+	default 28 if $(STORAGE_PARTITION_SIZE_IN_K) = 112
+	default 32 if $(STORAGE_PARTITION_SIZE_IN_K) = 128
+
+
+config STORAGE_OTA_PARTITION_SIZE
+	int
+	default $(STORAGE_OTA_PARTITION_SIZE_IN_K)
+
+
+# needed by kconfig of settings
+config NVS_OTA_PARTITION_SECTOR_COUNT
+	int "Sector count of the NVS OTA partition"
+	default 0 if $(STORAGE_OTA_PARTITION_SIZE_IN_K) = 0
+	default 4 if $(STORAGE_OTA_PARTITION_SIZE_IN_K) = 16
+	default 5 if $(STORAGE_OTA_PARTITION_SIZE_IN_K) = 20
+	default 6 if $(STORAGE_OTA_PARTITION_SIZE_IN_K) = 24
+	default 7 if $(STORAGE_OTA_PARTITION_SIZE_IN_K) = 28
+	default 8 if $(STORAGE_OTA_PARTITION_SIZE_IN_K) = 32
+	default 9 if $(STORAGE_OTA_PARTITION_SIZE_IN_K) = 36
+	default 10 if $(STORAGE_OTA_PARTITION_SIZE_IN_K) = 40
+	default 12 if $(STORAGE_OTA_PARTITION_SIZE_IN_K) = 48
+	default 16 if $(STORAGE_OTA_PARTITION_SIZE_IN_K) = 64
+	default 18 if $(STORAGE_OTA_PARTITION_SIZE_IN_K) = 72
+	default 20 if $(STORAGE_OTA_PARTITION_SIZE_IN_K) = 80
+	default 24 if $(STORAGE_OTA_PARTITION_SIZE_IN_K) = 96
+	default 28 if $(STORAGE_OTA_PARTITION_SIZE_IN_K) = 112
+	default 32 if $(STORAGE_OTA_PARTITION_SIZE_IN_K) = 128
+
+
+config GEN_DEFAULT_NVS_BIN
+	bool "generate some default values for nvkey"
+	default n
+
+config GEN_DEFAULT_NVS_BIN_RELEASE
+	bool "generate some default values with mp flag for nvkey"
+	depends on GEN_DEFAULT_NVS_BIN
+	default y if GEN_DEFAULT_NVS_BIN
+	default n
+
+choice GEN_DEFAULT_NVS_BIN_REPEAT_PROCESS_STRATEGY
+	prompt "choose a strategy to process repeat nvkeys"
+	default NVS_REPEAT_STRATEGY_USE_LAST
+	help
+		provide several processing strategies to handle cases where
+		nvs/nvkey items with the same id exist betweeen different nvkey.xml"
+
+config NVS_REPEAT_STRATEGY_ERROR
+	bool "disable NVS ID duplication and prompt by build errors"
+
+config NVS_REPEAT_STRATEGY_USE_FIRST
+	bool "enable NVS ID duplication and use the value at the first occurrence"
+
+config NVS_REPEAT_STRATEGY_USE_LAST
+	bool "enable NVS ID duplication and use the value at the last occurrence"
+
+endchoice
+
+config GEN_DEFAULT_NVS_BIN_REPEAT_PROCESS_STRATEGY_STR
+	string
+	default "ERROR" if NVS_REPEAT_STRATEGY_ERROR
+	default "USE_FIRST" if NVS_REPEAT_STRATEGY_USE_FIRST
+	default "USE_LAST" if NVS_REPEAT_STRATEGY_USE_LAST
+
+
+config AIR_NVKEY_APP_LEVEL_FILE
+	string "path to the file relative to the project CMakeLists.txt that contains valid nvkey data"
+	default "config/${BOARD}/nvkey.xml"
+
+
+config AIR_NVKEY_LEN_MAX
+	int
+	default 1024
+
+
+config AIR_NVKEY_ASYNC_ENABLE
+	bool "allows to use APIs with the non_blocking to write nvkey data asynchronously"
+	depends on AIR_DAEMON_WORKQUEUE_ENABLE && AIR_NVKEY_ENABLE
+
+config AIR_NVKEY_GC_IN_IDLE_ENABLE
+	bool "enable nvkey gc in idle task"
+	depends on AIR_NVKEY_ENABLE
+
+endif # AIR_NVKEY_ENABLE

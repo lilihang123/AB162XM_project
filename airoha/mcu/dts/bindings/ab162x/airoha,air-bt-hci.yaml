@@ -1,0 +1,16 @@
+descryption: Bluetooth HCI using the AIROHA system
+
+compatible: "airoha,air-bt-hci.yaml"
+
+include: bt-hci.yaml
+
+properties:
+  bt-hci-name: 
+    default: "Airoha HCI"
+  bt-hci-bus:
+    default: "BT_HCI_DRIVER_BUS_VIRTUAL"
+  bt-hci-quirks:
+    default: "BT_QUIRK_NO_AUTO_DLE"
+  
+
+

@@ -1,0 +1,1041 @@
+# -*- coding: UTF-8 -*-
+#
+# * Copyright Statement:
+# *
+# * (C) 2023  Airoha Technology Corp. All rights reserved.
+# *
+# * This software/firmware and related documentation ("Airoha Software") are
+# * protected under relevant copyright laws. The information contained herein
+# * is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.
+# * Without the prior written permission of Airoha and/or its licensors,
+# * any reproduction, modification, use or disclosure of Airoha Software,
+# * and information contained herein, in whole or in part, shall be strictly prohibited.
+# * You may only use, reproduce, modify, or distribute (as applicable) Airoha Software
+# * if you have agreed to and been bound by the applicable license agreement with
+# * Airoha ("License Agreement") and been granted explicit permission to do so within
+# * the License Agreement ("Permitted User").  If you are not a Permitted User,
+# * please cease any access or use of Airoha Software immediately.
+# * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+# * THAT AIROHA SOFTWARE RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES
+# * ARE PROVIDED TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL
+# * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+# * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+# * NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+# * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+# * SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+# * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+# * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+# * CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA
+# * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+# * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND
+# * CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,
+# * AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,
+# * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+# * AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.
+# *
+# * Airoha restricted information */
+
+dockerq_image: 'mtkdocker01:5000/srv_airoha/ubuntu.22.04:matter_0.16.9'
+
+
+ab1623m_evb__multi_thread_tcm_boot:
+    proj: airoha/mcu/samples/templates/multi_thread
+    multi_thread:
+        # path relative to airoha/mcu/templates/multi_thread
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/multi_thread_ram.conf
+
+
+ab1623m_evb__multi_thread:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/templates/multi_thread
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    multi_thread:
+        # path relative to airoha/mcu/templates/multi_thread
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/multi_thread.conf
+
+
+ab1623m_evk__multi_thread:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/templates/multi_thread
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    multi_thread:
+        # path relative to airoha/mcu/templates/multi_thread
+        DTC_OVERLAY_FILE: config/ab1623m_evk/app.overlay
+        CONF_FILE: config/ab1623m_evk/multi_thread.conf
+
+
+ab1625m_evk__multi_thread_external_flash:
+    sysbuild_conf: config/ab1625m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/multi_thread
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    multi_thread:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/multi_thread
+        DTC_OVERLAY_FILE: config/ab1625m_evk/app.overlay
+        CONF_FILE: config/ab1625m_evk/multi_thread.conf
+
+
+ab1625m_evk__multi_thread_m607_spi_communication:
+    sysbuild_conf: config/ab1625m_evk/sysbuild_with_mcuboot_m607.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/multi_thread
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    multi_thread:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/multi_thread
+        DTC_OVERLAY_FILE: config/ab1625m_evk/app_m607.overlay
+        CONF_FILE: config/ab1625m_evk/multi_thread_m607.conf
+
+
+ab1623m_evk__performance_setting_nvs:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/performance_setting_nvs
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    performance_setting_nvs:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/performance_setting_nvs
+        DTC_OVERLAY_FILE: config/ab1623m_evk/app.overlay
+        CONF_FILE: config/ab1623m_evk/multi_thread.conf
+
+
+ab1623m_evb__single_thread:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/templates/single_thread
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    single_thread:
+        # path relative to airoha/mcu/templates/single_thread
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/single_thread.conf
+
+ab1623m_evb__dvt_hw_keyscan:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/hw_keyscan
+    mcuboot:
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hw_keyscan:
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/hw_keyscan.conf
+
+ab1623m_evb__usb_hid_demo:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/subsys/ab162x/usb/usb_hid_demo
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    usb_hid_demo:
+        # path relative to airoha/mcu/samples/subsys/ab162x/usb/usb_hid_demo
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/usb_hid_demo.conf
+
+ab1623m_evb__dvt_usb_1:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/usb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    usb:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/usb
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/dvt_usb_1.conf
+
+ab1623m_evb__dvt_usb_2:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/usb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    usb:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/usb
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/dvt_usb_2.conf
+
+ab1623m_evb__dvt_usb_3:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/usb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    usb:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/usb
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/dvt_usb_3.conf
+
+ab1623m_evb__dvt_usb_4:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/usb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    usb:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/usb
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/dvt_usb_4.conf
+
+ab1623m_evb__dvt_usb_5:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/usb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    usb:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/usb
+        DTC_OVERLAY_FILE: config/ab1623m_evb/cdc_app.overlay
+        CONF_FILE: config/ab1623m_evb/dvt_usb_5.conf
+
+ab1623m_evb__dvt_usb_6:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/usb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    usb:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/usb
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/dvt_usb_6.conf
+
+ab1623m_evb__dvt_usb_7:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/usb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    usb:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/usb
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/dvt_usb_7.conf
+
+ab1623m_evb__hqa_usb_1:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/hqa/usb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    usb:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/hqa/usb
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/hqa_usb_1.conf
+
+ab1623m_evb__hqa_usb_2:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/hqa/usb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    usb:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/hqa/usb
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/hqa_usb_2.conf
+
+ab1623m_evb__hqa_usb_3:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/hqa/usb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    usb:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/hqa/usb
+        DTC_OVERLAY_FILE: config/ab1623m_evb/cdc_app.overlay
+        CONF_FILE: config/ab1623m_evb/hqa_usb_3.conf
+
+ab1623m_evb__hqa_usb_4:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/hqa/usb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    usb:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/hqa/usb
+        DTC_OVERLAY_FILE: config/ab1623m_evb/cdc_app.overlay
+        CONF_FILE: config/ab1623m_evb/hqa_usb_4.conf
+
+ab1623m_evb__hqa_usb_5:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/hqa/usb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    usb:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/hqa/usb
+        DTC_OVERLAY_FILE: config/ab1623m_evb/hqa_usb_5.overlay
+        CONF_FILE: config/ab1623m_evb/hqa_usb_5.conf
+
+ab1623m_evb__hqa_usb_6:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/hqa/usb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    usb:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/hqa/usb
+        DTC_OVERLAY_FILE: config/ab1623m_evb/hqa_usb_6.overlay
+        CONF_FILE: config/ab1623m_evb/hqa_usb_6.conf
+
+ab1623m_evb__hqa_usb_7:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/hqa/usb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    usb:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/hqa/usb
+        DTC_OVERLAY_FILE: config/ab1623m_evb/hqa_usb_7.overlay
+        CONF_FILE: config/ab1623m_evb/hqa_usb_7.conf
+
+ab1623m_evb__hqa_usb_8:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/hqa/usb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    usb:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/hqa/usb
+        DTC_OVERLAY_FILE: config/ab1623m_evb/hqa_usb_8.overlay
+        CONF_FILE: config/ab1623m_evb/hqa_usb_8.conf
+
+ab1623m_evb__hid_ref_mouse_tcm_boot:
+    proj: airoha/mcu/applications/hid_device_ref_design_mouse
+    hid_device_ref_design_mouse:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_mouse
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/hid_device_ref_design_mouse.conf
+
+ab1623m_evk__hid_ref_mouse_sc:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_ms_security_connection
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hid_ms_security_connection:
+        # path relative to airoha/mcu/applications/hid_ms_security_connection
+        DTC_OVERLAY_FILE: config/ab1623m_evk/hid_device_ref_design_mouse_m20.overlay
+        CONF_FILE: config/ab1623m_evk/hid_device_ref_design_mouse_m20.conf
+
+ab1623m_evk__hid_ref_mouse_m20:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_device_ref_design_mouse
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hid_device_ref_design_mouse:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_mouse
+        DTC_OVERLAY_FILE: config/ab1623m_evk/hid_device_ref_design_mouse_m20.overlay
+        CONF_FILE: config/ab1623m_evk/hid_device_ref_design_mouse_m20.conf
+
+ab1623m_evk__hid_ref_mouse_m20_pro:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_device_ref_design_mouse
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hid_device_ref_design_mouse:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_mouse
+        DTC_OVERLAY_FILE: config/ab1623m_evk/hid_device_ref_design_mouse_m20_pro.overlay
+        CONF_FILE: config/ab1623m_evk/hid_device_ref_design_mouse_m20_pro.conf
+
+ab1623m_evk__hid_ref_mouse_m20_basic_fw:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_device_ref_design_mouse
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hid_device_ref_design_mouse:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_mouse
+        DTC_OVERLAY_FILE: config/ab1623m_evk/hid_device_ref_design_mouse_m20_basic_fw.overlay
+        CONF_FILE: config/ab1623m_evk/hid_device_ref_design_mouse_m20_basic_fw.conf
+
+ab1623m_evk__hid_ref_mouse_m21:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_device_ref_design_mouse
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_fota_bl_dfu.conf
+    hid_device_ref_design_mouse:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_mouse
+        DTC_OVERLAY_FILE: config/ab1623m_evk/hid_device_ref_design_mouse_m21.overlay
+        CONF_FILE: config/ab1623m_evk/hid_device_ref_design_mouse_m21.conf
+
+ab1623m_evk__hid_ref_mouse_m22:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_device_ref_design_mouse
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hid_device_ref_design_mouse:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_mouse
+        DTC_OVERLAY_FILE: config/ab1623m_evk/hid_device_ref_design_mouse_m22.overlay
+        CONF_FILE: config/ab1623m_evk/hid_device_ref_design_mouse_m22.conf
+
+ab1625m_evk__hid_ref_mouse:
+    sysbuild_conf: config/ab1625m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_device_ref_design_mouse
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hid_device_ref_design_mouse:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_mouse
+        DTC_OVERLAY_FILE: config/ab1625m_evk/hid_device_ref_design_mouse.overlay
+        CONF_FILE: config/ab1625m_evk/hid_device_ref_design_mouse.conf
+
+ab1623m_evk__find_my_device_dual_mode:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/find_my_device
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    find_my_device:
+        # path relative to airoha/mcu/applications/find_my_device
+        DTC_OVERLAY_FILE: config/ab1623m_evk/find_my_device_double_mode.overlay
+        CONF_FILE: config/ab1623m_evk/find_my_device_double_mode.conf
+
+ab1623m_evk__find_my_device_dual_mode_mr_evk:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/find_my_device
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    find_my_device:
+        # path relative to airoha/mcu/applications/find_my_device
+        DTC_OVERLAY_FILE: config/ab1623m_evk/find_my_device_mr_evk.overlay
+        CONF_FILE: config/ab1623m_evk/find_my_device_mr_evk.conf
+
+
+ab1625m_evk__find_my_device_cs_test:
+    sysbuild_conf: config/ab1625m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/find_my_device
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    find_my_device:
+        # path relative to airoha/mcu/applications/find_my_device
+        DTC_OVERLAY_FILE: config/ab1625m_evk/find_my_device_double_mode.overlay
+        CONF_FILE: config/ab1625m_evk/find_my_device_cs_test.conf
+
+ab1625m_evk__find_my_device_dual_mode:
+    sysbuild_conf: config/ab1625m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/find_my_device
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    find_my_device:
+        # path relative to airoha/mcu/applications/find_my_device
+        DTC_OVERLAY_FILE: config/ab1625m_evk/find_my_device_double_mode.overlay
+        CONF_FILE: config/ab1625m_evk/find_my_device_double_mode.conf
+
+ab1625m_evk__find_my_device_dual_mode_cust:
+    sysbuild_conf: config/ab1625m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/find_my_device
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    find_my_device:
+        # path relative to airoha/mcu/applications/find_my_device
+        DTC_OVERLAY_FILE: config/ab1625m_evk/find_my_device_double_mode_cust.overlay
+        CONF_FILE: config/ab1625m_evk/find_my_device_double_mode_cust.conf
+
+ab1625m_evk__find_my_device_dual_mode_cust_b:
+    sysbuild_conf: config/ab1625m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/find_my_device
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    find_my_device:
+        # path relative to airoha/mcu/applications/find_my_device
+        DTC_OVERLAY_FILE: config/ab1625m_evk/find_my_device_double_mode_cust_b.overlay
+        CONF_FILE: config/ab1625m_evk/find_my_device_double_mode_cust.conf
+
+ab1625m_evk__find_my_device_cust_buzzer_test:
+    sysbuild_conf: config/ab1625m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/find_my_device
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    find_my_device:
+        # path relative to airoha/mcu/applications/find_my_device
+        DTC_OVERLAY_FILE: config/ab1625m_evk/find_my_device_double_mode_cust.overlay
+        CONF_FILE: config/ab1625m_evk/find_my_device_cust_buzzer_test.conf
+
+ab1625m_evk__hid_ref_keyboard:
+    sysbuild_conf: config/ab1625m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_device_ref_design_keyboard
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hid_device_ref_design_keyboard:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_keyboard
+        DTC_OVERLAY_FILE: config/ab1625m_evk/hid_device_ref_design_keyboard.overlay
+        CONF_FILE: config/ab1625m_evk/hid_device_ref_design_keyboard.conf
+
+
+ab1625m_evk__hid_ref_keyboard_m607:
+    sysbuild_conf: config/ab1625m_evk/sysbuild_keyboard_m607.conf
+    proj: airoha/mcu/applications/hid_device_ref_design_keyboard
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hid_device_ref_design_keyboard:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_keyboard
+        DTC_OVERLAY_FILE: config/ab1625m_evk/keyboard_m607.overlay
+        CONF_FILE: config/ab1625m_evk/keyboard_m607.conf
+
+
+ab1625m_evk__hid_ref_game_controller:
+    sysbuild_conf: config/ab1625m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_device_ref_design_game_controller
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_fota_bl_dfu.conf
+    hid_device_ref_design_game_controller:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_game_controller
+        DTC_OVERLAY_FILE: config/ab1625m_evk/hid_device_ref_design_game_controller.overlay
+        CONF_FILE: config/ab1625m_evk/hid_device_ref_design_game_controller.conf
+
+ab1625m_evk__hid_ref_game_controller_gc701:
+    sysbuild_conf: config/ab1625m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_device_ref_design_game_controller
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_fota_bl_dfu.conf
+    hid_device_ref_design_game_controller:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_game_controller
+        DTC_OVERLAY_FILE: config/ab1625m_evk/hid_device_ref_design_game_controller_gc701.overlay
+        CONF_FILE: config/ab1625m_evk/hid_device_ref_design_game_controller_gc701.conf
+
+ab1623m_evb__hid_ref_mouse_slt_lv:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/slt/hid_device_ref_design_mouse_slt
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hid_device_ref_design_mouse_slt:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_mouse
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app_flash_boot.overlay
+        CONF_FILE: config/ab1623m_evb/hid_device_ref_design_mouse_flash_boot_slt_lv.conf
+
+ab1623m_evb__hid_ref_mouse_slt_nv:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/slt/hid_device_ref_design_mouse_slt
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hid_device_ref_design_mouse_slt:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_mouse
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app_flash_boot.overlay
+        CONF_FILE: config/ab1623m_evb/hid_device_ref_design_mouse_flash_boot_slt_nv.conf
+
+ab1623m_evb__hid_ref_mouse_slt_hv:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/slt/hid_device_ref_design_mouse_slt
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hid_device_ref_design_mouse_slt:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_mouse
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app_flash_boot.overlay
+        CONF_FILE: config/ab1623m_evb/hid_device_ref_design_mouse_flash_boot_slt_hv.conf
+
+ab1623m_evb__hid_ref_mouse_sfc_slt:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/slt/hid_device_ref_design_mouse_sfc_slt
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot_single_slot_dfu.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_single_slot.conf
+    hid_device_ref_design_mouse_sfc_slt:
+        # path relative to airoha/mcu/applications/hid_device_ref_design_mouse
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app_flash_boot.overlay
+        CONF_FILE: config/ab1623m_evb/hid_device_ref_design_mouse_flash_boot_sfc_slt.conf
+
+ab1620d_evk__hogp_dongle_ref_design:
+    sysbuild_conf: config/ab1620d_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_dongle_ref_design
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hid_dongle_ref_design:
+        # path relative to airoha/mcu/applications/hid_dongle_ref_design
+        DTC_OVERLAY_FILE: config/ab1620d_evk/app.overlay
+        CONF_FILE: config/ab1620d_evk/hid_dongle_ref_design_hogp.conf
+
+ab1620d_evk__hid_dongle_ref_design:
+    sysbuild_conf: config/ab1620d_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_dongle_ref_design
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot_single_slot_1MB.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_single_slot.conf
+    hid_dongle_ref_design:
+        # path relative to airoha/mcu/applications/hid_dongle_ref_design
+        DTC_OVERLAY_FILE: config/ab1620d_evk/app.overlay
+        CONF_FILE: config/ab1620d_evk/hid_dongle_ref_design_flash_boot.conf
+
+ab1620dm_evk__hid_dongle_ref_design_m21:
+    sysbuild_conf: config/ab1620dm_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_dongle_ref_design
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_fota_bl_dfu.conf
+    hid_dongle_ref_design:
+        # path relative to airoha/mcu/applications/hid_dongle_ref_design
+        DTC_OVERLAY_FILE: config/ab1620dm_evk/app.overlay
+        CONF_FILE: config/ab1620dm_evk/hid_dongle_ref_design_flash_boot_m21.conf
+
+ab1620dm_evk__hid_dongle_ref_design_m20_basic_fw:
+    sysbuild_conf: config/ab1620dm_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_dongle_ref_design
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_fota_bl_dfu.conf
+    hid_dongle_ref_design:
+        # path relative to airoha/mcu/applications/hid_dongle_ref_design
+        DTC_OVERLAY_FILE: config/ab1620dm_evk/app.overlay
+        CONF_FILE: config/ab1620dm_evk/hid_dongle_ref_design_flash_boot_m20_basic_fw.conf
+
+ab1620dm_evk__hid_dongle_ref_design_m20:
+    sysbuild_conf: config/ab1620dm_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_dongle_ref_design
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hid_dongle_ref_design:
+        # path relative to airoha/mcu/applications/hid_dongle_ref_design
+        DTC_OVERLAY_FILE: config/ab1620dm_evk/app.overlay
+        CONF_FILE: config/ab1620dm_evk/hid_dongle_ref_design_flash_boot_m20.conf
+
+ab1620dm_evk__hid_dongle_ref_design_kb:
+    sysbuild_conf: config/ab1620dm_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_dongle_ref_design
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hid_dongle_ref_design:
+        # path relative to airoha/mcu/applications/hid_dongle_ref_design
+        DTC_OVERLAY_FILE: config/ab1620dm_evk/app.overlay
+        CONF_FILE: config/ab1620dm_evk/hid_dongle_ref_design_flash_boot_kb.conf
+
+
+ab1620dm_evk__hid_dongle_ref_design_m607:
+    sysbuild_conf: config/ab1620dm_evk/sysbuild_keyboard_m607.conf
+    proj: airoha/mcu/applications/hid_dongle_ref_design
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hid_dongle_ref_design:
+        # path relative to airoha/mcu/applications/hid_dongle_ref_design
+        DTC_OVERLAY_FILE: config/ab1620dm_evk/keyboard_m607.overlay
+        CONF_FILE: config/ab1620dm_evk/keyboard_m607.conf
+
+
+ab1620dm_evk__hid_dongle_ref_design_game_controller:
+    sysbuild_conf: config/ab1620dm_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_dongle_ref_design
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hid_dongle_ref_design:
+        # path relative to airoha/mcu/applications/hid_dongle_ref_design
+        DTC_OVERLAY_FILE: config/ab1620dm_evk/app.overlay
+        CONF_FILE: config/ab1620dm_evk/hid_dongle_ref_design_flash_boot_game_controller.conf
+
+ab1620dm_evk__hid_dongle_ref_design_game_controller_gc701:
+    sysbuild_conf: config/ab1620dm_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/hid_dongle_ref_design
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_fota_bl_dfu.conf
+    hid_dongle_ref_design:
+        # path relative to airoha/mcu/applications/hid_dongle_ref_design
+        DTC_OVERLAY_FILE: config/ab1620dm_evk/app.overlay
+        CONF_FILE: config/ab1620dm_evk/hid_dongle_ref_design_flash_boot_game_controller_gc701.conf
+
+ab1623m_evb__hci_relay_mode_tcm_boot:
+    proj: airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+    hci_relay_mode:
+        # path relative to airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/hci_relay_mode.conf
+
+
+ab1623m_evb__hci_relay_mode:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hci_relay_mode:
+        # path relative to airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/hci_relay_mode_flash_boot.conf
+
+ab1623m_evb__hci_relay_mode_le_ranging:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hci_relay_mode:
+        # path relative to airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/hci_relay_mode_le_ranging.conf
+
+ab1623m_evb__hci_relay_mode_slp:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hci_relay_mode:
+        # path relative to airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/hci_relay_mode_slp.conf
+
+ab1623m_evb__download_agent:
+    proj: airoha/mcu/applications/download_agent
+    download_agent:
+        # path relative to airoha/mcu/applications/download_agent
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/download_agent.conf
+
+ab1623m_evb__hci_relay_mode_multi_protocol_tcm_boot:
+    proj: airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+    hci_relay_mode:
+        # path relative to airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/hci_relay_mode_multi_protocol.conf
+
+
+ab1623m_evb__hci_relay_mode_multi_protocol:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    hci_relay_mode:
+        # path relative to airoha/mcu/samples/subsys/ab162x/bluetooth/hci_relay_mode
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/hci_relay_mode_multi_protocol_flash_boot.conf
+
+ab1623m_evb__openthread_cli:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/subsys/ab162x/openthread/cli
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    cli:
+        # path relative to airoha/mcu/samples/subsys/ab162x/openthread/cli
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/openthread_cli_flash_boot.conf
+
+ab1623m_evb__openthread_cli_ftd:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/subsys/ab162x/openthread/cli
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    cli:
+        # path relative to airoha/mcu/samples/subsys/ab162x/openthread/cli
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/openthread_cli_ftd_flash_boot.conf
+
+ab1623m_evb__openthread_cli_mtd:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/subsys/ab162x/openthread/cli
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    cli:
+        # path relative to airoha/mcu/samples/subsys/ab162x/openthread/cli
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/openthread_cli_mtd_flash_boot.conf
+
+ab1623m_evb__ot_performance:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/subsys/ab162x/openthread/performance_test
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    performance_test:
+        # path relative to airoha/mcu/samples/subsys/ab162x/openthread/cli
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/openthread_performace_flash_boot.conf
+
+ab1623m_evk__rcp:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/subsys/ab162x/openthread/rcp
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot_single_slot_dfu.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_single_slot_uart_dfu.conf
+    rcp:
+        # path relative to airoha/mcu/samples/subsys/ab162x/openthread/rcp
+        DTC_OVERLAY_FILE: config/ab1623m_evk/app.overlay
+        CONF_FILE: config/ab1623m_evk/rcp_flash_boot.conf
+
+ab1623m_evb__coprocessor_ncp:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/subsys/ab162x/openthread/rcp
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    rcp:
+        # path relative to airoha/mcu/samples/subsys/ab162x/openthread/rcp
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/coprocessor_ncp.conf
+
+ab1623m_evb__btp_mode:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/subsys/ab162x/bluetooth/btp_mode
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    btp_mode:
+        # path relative to airoha/mcu/samples/subsys/ab162x/bluetooth/btp_mode
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/btp_mode_flash_boot.conf
+
+ab1623m_evk__light_bulb:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/light_bulb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_ble_fota.conf
+    light_bulb:
+        # path relative to airoha/mcu/applications/light_bulb
+        DTC_OVERLAY_FILE: config/ab1623m_evk/light_bulb.overlay
+        CONF_FILE: config/ab1623m_evk/light_bulb_flash_booting.conf
+
+ab1623m_evk__light_bulb_ot_log:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/light_bulb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_ble_fota.conf
+    light_bulb:
+        # path relative to airoha/mcu/applications/light_bulb
+        DTC_OVERLAY_FILE: config/ab1623m_evk/light_bulb.overlay
+        CONF_FILE: config/ab1623m_evk/light_bulb_flash_booting_ot_log.conf
+
+ab1623m_evk__light_bulb_dualpan:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/light_bulb_dualpan
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_ble_fota.conf
+    light_bulb_dualpan:
+        # path relative to airoha/mcu/applications/dualpan_light_bulb
+        DTC_OVERLAY_FILE: config/ab1623m_evk/light_bulb.overlay
+        CONF_FILE: config/ab1623m_evk/light_bulb_flash_booting.conf
+        
+ab1623m_evk__light_switch:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/light_switch
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_ble_fota.conf
+    light_switch:
+        # path relative to airoha/mcu/applications/light_switch
+        DTC_OVERLAY_FILE: config/ab1623m_evk/light_switch.overlay
+        CONF_FILE: config/ab1623m_evk/light_switch_flash_booting.conf
+
+ab1623m_evk__light_switch_ot_log:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/light_switch
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_ble_fota.conf
+    light_switch:
+        # path relative to airoha/mcu/applications/light_switch
+        DTC_OVERLAY_FILE: config/ab1623m_evk/light_switch.overlay
+        CONF_FILE: config/ab1623m_evk/light_switch_flash_booting_ot_log.conf
+
+ab1623m_evb__dvt_audio:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/audio
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    audio:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/audio
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/dvt.conf
+
+ab1623m_evb__dvt_coremark:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/coremark
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    coremark:
+        # path relative to airoha/mcu/templates/single_thread
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/coremark.conf
+
+ab1623m_evb__hello_world:
+    proj: zephyr/samples/hello_world
+    hello_world:
+        # path relative to zephyr/samples/hello_world
+        DTC_OVERLAY_FILE:
+        CONF_FILE:
+
+
+ab1623m_evb__dvt_riscv:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/riscv_general
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    riscv_general:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/riscv_general
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/dvt_riscv.conf
+
+ab1623m_evb__dvt_sleep_wakeup:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/sleep_wakeup
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot_single_slot_dfu.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_single_slot.conf
+    sleep_wakeup:
+        # path relative to airoha/mcu/samples/test_loads/ab162x/dvt/sleep_wakeup
+        DTC_OVERLAY_FILE: config/ab1623m_evb/hid_device_ref_design_mouse.overlay
+        CONF_FILE: config/ab1623m_evb/hid_device_ref_design_mouse.conf
+
+ab1623m_evb__zigbee_cli:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/zigbee/cli
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot_single_slot_2MB_with_NVRAM.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_single_slot_NVRAM.conf
+    cli:
+        # path relative to airoha/mcu/samples/subsys/ab162x/zigbee/cli
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/zigbee_cli_flash_boot.conf
+
+ab1623m_evb__zigbee_openthread_cli:
+    sysbuild_conf: config/ab1623m_evb/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/samples/test_loads/ab162x/dvt/zigbee/openthread_cli
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot_single_slot_2MB_with_NVRAM.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_single_slot_NVRAM.conf
+    openthread_cli:
+        # path relative to airoha/mcu/samples/subsys/ab162x/zigbee/cli
+        DTC_OVERLAY_FILE: config/ab1623m_evb/app.overlay
+        CONF_FILE: config/ab1623m_evb/openthread_cli.conf
+
+ab1623m_evk__zigbee_light_bulb:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/zigbee_light_bulb
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot_single_slot_2MB_with_NVRAM.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_single_slot_NVRAM.conf
+    zigbee_light_bulb:
+        # path relative to airoha/mcu/applications/zigbee_light_bulb
+        DTC_OVERLAY_FILE: config/ab1623m_evk/zigbee_light_bulb.overlay
+        CONF_FILE: config/ab1623m_evk/zigbee_light_bulb.conf
+
+ab1623m_evk__zigbee_coordinator:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/zigbee_coordinator
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot_single_slot_2MB_with_NVRAM.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_single_slot_NVRAM.conf
+    zigbee_coordinator:
+        # path relative to airoha/mcu/applications/zigbee_coordinator
+        DTC_OVERLAY_FILE: config/ab1623m_evk/zigbee_coordinator.overlay
+        CONF_FILE: config/ab1623m_evk/zigbee_coordinator.conf
+
+ab1623m_evk__zigbee_light_switch:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/zigbee_light_switch
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot_single_slot_2MB_with_NVRAM.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot_single_slot_NVRAM.conf
+    zigbee_light_switch:
+        # path relative to airoha/mcu/applications/zigbee_light_bulb
+        DTC_OVERLAY_FILE: config/ab1623m_evk/zigbee_light_switch.overlay
+        CONF_FILE: config/ab1623m_evk/zigbee_light_switch.conf

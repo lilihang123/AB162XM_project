@@ -1,0 +1,145 @@
+# Copyright Statement:                                                                                                     
+#                                                                                                                          
+# (C) 2025  Airoha Technology Corp. All rights reserved.                                                                   
+#                                                                                                                          
+# This software/firmware and related documentation ("Airoha Software") are                                                 
+# protected under relevant copyright laws. The information contained herein                                                
+# is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.                              
+# Without the prior written permission of Airoha and/or its licensors,                                                     
+# any reproduction, modification, use or disclosure of Airoha Software,                                                    
+# and information contained herein, in whole or in part, shall be strictly prohibited.                                     
+# You may only use, reproduce, modify, or distribute (as applicable) Airoha Software                                       
+# if you have agreed to and been bound by the applicable license agreement with                                            
+# Airoha ("License Agreement") and been granted explicit permission to do so within                                        
+# the License Agreement ("Permitted User").  If you are not a Permitted User,                                              
+# please cease any access or use of Airoha Software immediately.                                                           
+# BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES                                              
+# THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("AIROHA SOFTWARE")                                                    
+# RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES ARE PROVIDED                                                             
+# TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL                                             
+# WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF                                   
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.                                                    
+# NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE                                                  
+# SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR                                                    
+# SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH                                                  
+# THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES                                     
+# THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES                             
+# CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA                                        
+# SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR                                         
+# STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND                                     
+# CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,                                         
+# AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,                                                       
+# OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO                                                
+# AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.                                                                                
+#                                                                                                                          
+
+# SPDX-License-Identifier: Apache-2.0
+
+CONFIG_SOC_AB1615=y
+CONFIG_SOC_FAMILY_AIROHA=y
+CONFIG_BOARD_AIROHA_AB1615_FPGA=y
+CONFIG_AIR_FPGA_ENV_ENABLE=y
+CONFIG_AIR_EXCEPTION_HANDLER_ENABLE=y
+
+# Enable MPU
+CONFIG_ARM_MPU=y
+
+# Refer to the description in zephyr/Knconfig.zephyr
+CONFIG_USE_DT_CODE_PARTITION=y
+
+CONFIG_USERSPACE=n
+
+CONFIG_AIR_INTC=y
+
+CONFIG_CORTEX_M_SYSTICK=n
+CONFIG_AIR_OST=y
+
+CONFIG_TICKLESS_KERNEL=n
+CONFIG_AIR_SWLA_ENABLE=n
+
+# Incompatible with the suspend and resume design of Flash Drive,
+# a lot of code needs to be put into RAM, but the native ISR_WRAPPER dependency is too complicated.
+CONFIG_GEN_SW_ISR_TABLE=n
+CONFIG_GEN_ISR_TABLES=n
+
+
+# Settings depends on FLASH_MAP & FLASH_PAGE_LAYOUT
+CONFIG_AIR_FLASH=y
+CONFIG_FLASH_MAP=y
+CONFIG_FLASH_PAGE_LAYOUT=y
+
+CONFIG_NVS=n
+CONFIG_SETTINGS=n
+CONFIG_SETTINGS_NVS=n
+CONFIG_SETTINGS_DYNAMIC_HANDLERS=n
+
+# Toolchain can disassemble all sections not just '.text',
+# because Airoha has implemented some sections such as .tcm_text, etc.
+# This option is turned off by default because it can greatly affect project build times.
+# Developers can open it themselves at the project level if desired.
+CONFIG_OUTPUT_DISASSEMBLY=n
+CONFIG_OUTPUT_DISASSEMBLE_ALL=n
+
+# To be on the safe side, if an orphan section is found,
+# a build error will be triggered directly to avoid unpredictable runtime problems.
+CONFIG_LINKER_ORPHAN_SECTION_ERROR=y
+
+
+# Estimated according to the number of threads that may appear,
+# it is best to use MULTIQ for scheduling.
+# Scheduling Algorithm    number of threads
+# DUMB                    [0, 3]
+# MULTIQ                  [4, 20]
+# SCALABLE                >20
+CONFIG_SCHED_MULTIQ=y
+
+# After the release of v3.5.0, zephyr uses Picolibc as the C standard library by default.
+# After CPP is turned on, PICOLIBC cannot be seleceted.
+# The specific logic is defined in LIBC_IMPLEMENTATION in zephyr/lib/libc/kconfig.
+# The kconfig file has changed significantly in v3.5.0.
+CONFIG_MINIMAL_LIBC=n
+CONFIG_NEWLIB_LIBC=n
+CONFIG_NEWLIB_LIBC_NANO=n
+CONFIG_PICOLIBC=y
+
+# see zephyr/lib/os/Kconfig.heap for detail
+# saving about 1KB flash memory
+CONFIG_SYS_HEAP_SMALL_ONLY=y
+CONFIG_SYS_HEAP_RUNTIME_STATS=y
+
+CONFIG_BUILD_OUTPUT_HEX=y
+CONFIG_OUTPUT_SYMBOLS=y
+
+CONFIG_CPP=y
+CONFIG_STD_CPP17=y
+
+
+# serialize printk() calls to avoid race conditions when using vsnprintf
+CONFIG_PRINTK_SYNC=y
+
+CONFIG_IDLE_STACK_SIZE=1024
+
+CONFIG_AIR_GEN_DOWNLOAD_CFG_ENABLE=y
+CONFIG_STD_C17=y
+
+CONFIG_AIR_CACHE=y
+CONFIG_ARCH_CACHE=n
+CONFIG_EXTERNAL_CACHE=y
+
+CONFIG_AIR_OST=y
+CONFIG_CORTEX_M_SYSTICK=n
+
+CONFIG_AIR_CLOCK_CONTROL=y
+
+# PMU related
+CONFIG_AIR_PMU=y
+
+# zephyr/cmake/compiler/gcc/compiler_flags.cmake
+# -save-temps=obj
+# Note: only enable this kconfig when debug build system
+#       which will significantly increase the size of the project output folder
+CONFIG_COMPILER_SAVE_TEMPS=y
+
+
+# boot reason check not ready now
+CONFIG_AIR_BOOTREASON_CHECK_ENABLE=n

@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: Apache-2.0
+
+description: Airoha Misc
+
+compatible: "airoha,air-misc"
+
+include: base.yaml
+
+properties:
+    reg:
+        required: true
+
+    label:
+        required: false

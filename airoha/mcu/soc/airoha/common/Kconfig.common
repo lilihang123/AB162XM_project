@@ -1,0 +1,179 @@
+# Copyright Statement:                                                                                                     
+#                                                                                                                          
+# (C) 2025  Airoha Technology Corp. All rights reserved.                                                                   
+#                                                                                                                          
+# This software/firmware and related documentation ("Airoha Software") are                                                 
+# protected under relevant copyright laws. The information contained herein                                                
+# is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.                              
+# Without the prior written permission of Airoha and/or its licensors,                                                     
+# any reproduction, modification, use or disclosure of Airoha Software,                                                    
+# and information contained herein, in whole or in part, shall be strictly prohibited.                                     
+# You may only use, reproduce, modify, or distribute (as applicable) Airoha Software                                       
+# if you have agreed to and been bound by the applicable license agreement with                                            
+# Airoha ("License Agreement") and been granted explicit permission to do so within                                        
+# the License Agreement ("Permitted User").  If you are not a Permitted User,                                              
+# please cease any access or use of Airoha Software immediately.                                                           
+# BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES                                              
+# THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("AIROHA SOFTWARE")                                                    
+# RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES ARE PROVIDED                                                             
+# TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL                                             
+# WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF                                   
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.                                                    
+# NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE                                                  
+# SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR                                                    
+# SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH                                                  
+# THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES                                     
+# THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES                             
+# CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA                                        
+# SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR                                         
+# STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND                                     
+# CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,                                         
+# AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,                                                       
+# OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO                                                
+# AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.                                                                                
+#                                                                                                                          
+
+# SPDX-License-Identifier: Apache-2.0
+
+if SOC_FAMILY_AIROHA
+
+config BOOT_TIME_MEASUREMENT
+    bool "enable boot time measure, include MCUBoot and Main application"
+    default n
+
+
+config WRAP_PRINTK
+    bool "wrap printk function to add newlines if needed"
+    default y
+
+
+config AIR_MEMCPY_MEMSET_OPTIMIZE
+    bool "Use Airoha's memcpy/memset function"
+    default y if !CPU_CORTEX_M0PLUS
+    help
+       use airoha memcpy/memset to speed up.
+
+
+config AIR_C_LIB_ALLOCATION_API_WRAP_ENABLE
+    bool "wrap malloc/calloc/realloc/free... C lib functions to zephyr kernel apis"
+    default y
+
+
+config AIR_Z_ALLOCATION_DEBUG_ENABLE
+    bool "wrap k_malloc/k_calloc/k_realloc/k_aligned_alloc/k_free... zephyr kernel function, add some debug information"
+    # 1. small change to debug heap question in mcuboot
+    # 2. to avoid multiple definition question of "boot_banner"
+    default y if !MCUBOOT
+
+
+config AIR_STACK_CHECK_FAIL_HOOK_WRAP_ENABLE
+    bool "enable wrap __stack_chk_fail so that we can trigger exception dump when stack check fail because of stack corruption"
+
+
+choice
+    prompt "Compiler mechanism for stack protection"
+    default AIR_STACK_PROTECT_NONE_ENABLE
+
+config AIR_STACK_PROTECT_ALL_ENABLE
+    bool "-fstack-protector-all"
+    select AIR_STACK_CHECK_FAIL_HOOK_WRAP_ENABLE
+
+config AIR_STACK_PROTECT_STRONG_ENABLE
+    bool "-fstack-protector-strong"
+    select AIR_STACK_CHECK_FAIL_HOOK_WRAP_ENABLE
+
+config AIR_STACK_PROTECT_ENABLE
+    bool "-fstack-protector"
+    select AIR_STACK_CHECK_FAIL_HOOK_WRAP_ENABLE
+
+config AIR_STACK_PROTECT_NONE_ENABLE
+    bool "no stack protection"
+
+endchoice
+
+
+config AIR_GEN_DOWNLOAD_CFG_ENABLE
+    bool "generate flash_download.cfg for airoha's download tool"
+    default n
+
+
+config AIR_STD_ARM_BOOT_METHOD_ENABLE
+    bool "Vector Table at header of firmware, n means reset_handler at header of firmware"
+    default y
+
+
+config AIR_PROJ_LEVEL_LINKER_SNIPPETS_ENABLE
+    bool "allow project level linker script snippets to be used in SoC common linker scripte templates"
+    default n
+
+
+config AIR_PROJ_RESERVED_RAM_BYTES
+    int "limit the amount of RAM remaining to at least this value"
+    default 0
+    help
+       measures required by the project request to limit RAM usage
+
+
+config AIR_PROJ_RESERVED_FLASH_BYTES
+    int "limit the amount of flash memory remaining to at least this value"
+    default 0
+    help
+       measures required by the project request to limit FLASH memory usage
+
+
+config AIR_PROJ_RETENTION_RAM_MAX_USAGE_BYTES
+    int "limit the amount of retention RAM to ensure low power"
+    default $(dt_chosen_reg_size_int,$(DT_CHOSEN_Z_SRAM),0)
+    help
+      measures required by the project request to ensure low power
+
+config AIR_BYPASS_FLASH_RETURN_READY_ENABLE
+    bool "bypass Flash_ReturnReady in  isrC_main to avoid long time flash erase issue."
+    default y if AIR_PRODUCT_TYPE_MOUSE
+
+config AIR_BYPASS_SYSLOG_WITH_LOG_FLOW_ENABLE
+    bool "bypass syslog but stil run log flow to aviod bt timing issue."
+    default y
+
+choice
+    prompt "Booting Method"
+    default FLASH_BOOTING
+
+
+# cannot depens on !XIP, or else there is dependence loop
+config TCM_BOOTING
+    bool "booting from TCM"
+# useful option when zephyr firmware is chain-loaded,
+# for example, by a debugger or a bootloader
+    select INIT_ARCH_HW_AT_BOOT
+    help
+       At the FPGA development stage, use the debugger to load and run ELF directly.
+       Also used for projects with special needs, such as self-update bootloader or download agent.
+
+config IROM_BOOTING
+    bool "booting from IROM"
+    select INIT_ARCH_HW_AT_BOOT
+    select XIP
+    help
+       In some environments, the flash is not ready, and we need to use JTAG to download the elf completely
+       to IROM, and then move some data to SRAM by ourself.
+
+config FLASH_BOOTING
+    bool "booting from flash"
+    select XIP
+    select INIT_ARCH_HW_AT_BOOT
+    depends on AIR_FLASH
+    help
+      When ELF is too large and RAM booting is not applicable, and after the flash driver
+      and other verifications pass, use the Airoha download tool to download the binary firmware to the flash device and execute it.
+
+endchoice
+
+rsource "daemon_work_q/Kconfig"
+
+rsource "bsp_flash/Kconfig"
+
+rsource "bdm/Kconfig"
+
+
+endif # SOC_FAMILY_AIROHA

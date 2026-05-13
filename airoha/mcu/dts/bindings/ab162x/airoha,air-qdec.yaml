@@ -1,0 +1,86 @@
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+    This is a representation of the qdec sensor
+
+compatible: "airoha,air-qdec"
+
+include: base.yaml
+
+properties:
+    reg:
+      required: true
+
+    interrupts:
+      required: true
+
+    led_force_off:
+        type: int
+        default: 0
+        description: |
+         close led
+
+
+    led_active_output:
+        type: int
+        default: 0
+        description: |
+         led active output value
+
+    z_sum_thr:
+        type: int
+        default: 2
+        description: |
+         z sum irq thr setting
+
+    smp_period_a:
+        type: int
+        default: 3
+        description: |
+         A reg:sample period 
+
+    led_period_a:
+        type: int
+        default: 3
+        description: |
+         A reg: sample period -> led open time
+
+    dbc_count_a:
+        type: int
+        default: 0
+        description: |
+         A reg: debounce conut setting
+
+    smp_period_b:
+        type: int
+        default: 10
+        description: |
+         B reg:sample period 
+
+    led_period_b:
+        type: int
+        default: 10
+        description: |
+         B reg: sample period -> led open time
+
+    dbc_count_b:
+        type: int
+        default: 10
+        description: |
+         B reg: debounce conut setting
+    pina:
+        type: int
+        default: 0
+        description: |
+         pina
+
+    pinb:
+        type: int
+        default: 1
+        description: |
+         pinb
+    pin_led:
+        type: int
+        default: 4
+        description: |
+         led pin

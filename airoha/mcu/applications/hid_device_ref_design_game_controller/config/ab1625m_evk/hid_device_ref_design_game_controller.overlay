@@ -1,0 +1,298 @@
+/* Copyright Statement:
+ *
+ * (C) 2024  Airoha Technology Corp. All rights reserved.
+ *
+ * This software/firmware and related documentation ("Airoha Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.
+ * Without the prior written permission of Airoha and/or its licensors,
+ * any reproduction, modification, use or disclosure of Airoha Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ * You may only use, reproduce, modify, or distribute (as applicable) Airoha Software
+ * if you have agreed to and been bound by the applicable license agreement with
+ * Airoha ("License Agreement") and been granted explicit permission to do so within
+ * the License Agreement ("Permitted User").  If you are not a Permitted User,
+ * please cease any access or use of Airoha Software immediately.
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT AIROHA SOFTWARE RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES
+ * ARE PROVIDED TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL
+ * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.
+ */
+
+&uart1 {
+    status = "okay";
+    current-speed = < 0xE1000 >;
+    data-bits = <3>;
+    stop-bits = <1>;
+    parity = <0>;
+    tbuf-size = <0>;
+    rbuf-size = <0>;
+};
+&uart2 {
+    status = "okay";
+    current-speed = < 0xE1000 >;
+    data-bits = <3>;
+    stop-bits = <1>;
+    parity = <0>;
+    tbuf-size = <0>;
+    rbuf-size = <0>;
+};
+
+&i2c1 {
+    status = "okay";
+	frequency = <400000>;
+    aw95124: aw95124@0 {
+        compatible = "awinic,aw95124";
+        reg= <0>;
+		reset_pin = <1>;
+        irq_pin = <0>;
+		i2c_addr = <0x22>;
+		status = "okay";
+    };
+};
+
+&pinctrl {
+
+	gpio0_default: gpio0_default {
+		/** Left Joystick Y1 adc setting */
+		gpio26{
+			pinmux = <GPIO_26_AUXADC1_SARADC0_AIODIFF0_SADIFF0>;
+		};
+		/** Left Joystick X1 adc setting */
+		gpio27{
+			pinmux = <GPIO_27_AUXADC2_SARADC1_AIODIFF0_SADIFF0>;
+		};
+		/** Right Joystick Y1 adc setting */
+		gpio28{
+			pinmux = <GPIO_28_AUXADC3_SARADC2_AIODIFF1_SADIFF1_AMIC>;
+		};
+		/** Right Joystick X1 adc setting */
+		gpio29{
+			pinmux = <GPIO_29_AUXADC4_SARADC3_AIODIFF1_SADIFF1_AMIC>;
+		};
+
+		/** Left Joystick button setting */
+		gpio10{
+			pinmux = <GPIO_10_EINT10>;
+			bias-pull-up;
+			debounce = <10>;
+		};
+		/** Right Joystick button setting */
+		gpio11{
+			pinmux = <GPIO_11_EINT11>;
+			bias-pull-up;
+			debounce = <10>;
+		};
+
+		/** Left Trigger adc setting */
+		gpio30{
+			pinmux = <GPIO_30_AUXADC5_SARADC4_SADIFF2>;
+		};
+		/** Right Trigger adc setting */
+		gpio31{
+			pinmux = <GPIO_31_AUXADC6_SARADC5_SADIFF2>;
+		};
+
+		/** Left Trigger button setting */
+		gpio17{
+			pinmux = <GPIO_17_EINT17>;
+			bias-pull-up;
+			debounce = <10>;
+		};
+		/** Right Trigger button setting */
+		gpio23{
+			pinmux = <GPIO_23_EINT23>;
+			bias-pull-up;
+			debounce = <10>;
+		};
+
+		/** LB setting */
+		gpio16{
+			pinmux = <GPIO_16_EINT16>;
+			bias-pull-up;
+			debounce = <10>;
+		};
+		/** RB setting */
+		gpio20{
+			pinmux = <GPIO_20_EINT20>;
+			bias-pull-up;
+			debounce = <10>;
+		};
+
+		/** Halt-switch setting */
+		/** D_Up setting */
+		gpio21{
+			pinmux = <GPIO_21_EINT21>;
+			bias-pull-up;
+			debounce = <10>;
+		};
+		/** D_Down setting */
+		gpio22{
+			pinmux = <GPIO_22_EINT22>;
+			bias-pull-up;
+			debounce = <10>;
+		};
+		/** D_Left setting */
+		gpio24{
+			pinmux = <GPIO_24_EINT24>;
+			bias-pull-up;
+			debounce = <10>;
+		};
+		/** D_Right setting */
+		gpio33{
+			pinmux = <GPIO_33_EINT33>;
+			bias-pull-up;
+			debounce = <10>;
+		};
+
+		/** ABXY Button setting */
+		/** A setting */
+		gpio13{
+			pinmux = <GPIO_13_EINT13>;
+			bias-pull-up;
+			debounce = <10>;
+		};
+		/** B setting */
+		gpio15{
+			pinmux = <GPIO_15_EINT15>;
+			bias-pull-up;
+			debounce = <10>;
+		};
+		/** X setting */
+		gpio12{
+			pinmux = <GPIO_12_EINT12>;
+			bias-pull-up;
+			debounce = <10>;
+		};
+		/** Y setting */
+		gpio14{
+			pinmux = <GPIO_14_EINT14>;
+			bias-pull-up;
+			debounce = <10>;
+		};
+
+		/** HOME key */
+		gpio19{
+			pinmux = <GPIO_19_EINT19>;
+			bias-pull-up;
+			debounce = <10>;
+		};
+
+		/** Slide Switch BT Mode */
+		gpio32{
+			pinmux = <GPIO_32_EINT32>;
+			bias-pull-up;
+		};
+
+		/** Slide Switch Gaming Mode */
+		gpio43{
+			pinmux = <GPIO_43_EINT43>;
+			bias-pull-up;
+		};
+
+		/** Expand IO setting */
+		/** Expand IO I2C */
+		gpio4{
+			pinmux = <GPIO_4_I3C1_SDA>;
+			bias-pull-up;
+		};
+		gpio5{
+			pinmux = <GPIO_5_I3C1_SCL>;
+			bias-pull-up;
+		};
+		/** Expand IO INT & RST */
+		gpio0{
+			pinmux = <GPIO_0_EINT0>;
+			bias-pull-up;
+		};
+		gpio1{
+			pinmux = <GPIO_1_GPIO1>;
+			output-enable;
+			output-high;
+		};
+
+		/* BSP EXTERNAL Flash Related GPIO Setting */
+		/* 0x0C00_0000, 64MB, SPIM 2( high speed ) */
+		group34{
+			pinmux = <GPIO_34_SPI_MST2_HS_CS0>;
+		};
+		group35{
+			pinmux = <GPIO_35_SPI_MST2_HS_MOSI>;
+		};
+		group36{
+			pinmux = <GPIO_36_SPI_MST2_HS_MISO>;
+		};
+		group37{
+			pinmux = <GPIO_37_SPI_MST2_HS_SCK>;
+		};
+
+		/* 0x0200_0000, 4MB, SPIM 1 */
+		group44{
+			pinmux = <GPIO_44_SPI_MST1_SCK>;
+		};
+		group45{
+			pinmux = <GPIO_45_SPI_MST1_MOSI>;
+		};
+		group46{
+			pinmux = <GPIO_46_SPI_MST1_MISO>;
+		};
+		group47{
+			pinmux = <GPIO_47_SPI_MST1_CS0>;
+		};
+		/* BSP EXTERNAL Flash Related GPIO Setting */
+
+		/** Airoha Internal Debug Use, default not used */
+		/*
+		gpio38{
+			pinmux = <GPIO_38_GPIO38>;
+			output-enable;
+			output-high;
+		};
+		gpio39{
+			pinmux = <GPIO_39_GPIO39>;
+			output-enable;
+			output-high;
+		};
+		gpio40{
+			pinmux = <GPIO_40_GPIO40>;
+			output-enable;
+			output-high;
+		};
+		gpio41{
+			pinmux = <GPIO_41_GPIO41>;
+			output-enable;
+			output-high;
+		};
+		gpio42{
+			pinmux = <GPIO_42_GPIO42>;
+			output-enable;
+			output-high;
+		};
+		*/
+	};
+
+	gpio1_default: gpio1_default {
+
+	};
+};
+
+/* set WDT timeout to 5 second */
+&wdt0 {
+	timeout-sec = <5>;
+};
+
+
+

@@ -1,0 +1,121 @@
+# Copyright Statement:
+#
+# (C) 2025  Airoha Technology Corp. All rights reserved.
+#
+# This software/firmware and related documentation ("Airoha Software") are
+# protected under relevant copyright laws. The information contained herein
+# is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.
+# Without the prior written permission of Airoha and/or its licensors,
+# any reproduction, modification, use or disclosure of Airoha Software,
+# and information contained herein, in whole or in part, shall be strictly prohibited.
+# You may only use, reproduce, modify, or distribute (as applicable) Airoha Software
+# if you have agreed to and been bound by the applicable license agreement with
+# Airoha ("License Agreement") and been granted explicit permission to do so within
+# the License Agreement ("Permitted User").  If you are not a Permitted User,
+# please cease any access or use of Airoha Software immediately.
+# BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+# THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("AIROHA SOFTWARE")
+# RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES ARE PROVIDED
+# TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL
+# WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+# NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+# SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+# SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+# THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+# THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+# CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA
+# SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+# STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND
+# CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,
+# AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,
+# OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+# AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.
+#
+
+description: |
+    This is a representation of the PAW3395 optical motion sensor
+
+compatible: "pixart,paw3395"
+
+# include: airoha,air-spim.yaml
+
+properties:
+    reg:
+      type: int
+      required: true
+    lod:
+      type: string
+      enum:
+          - lift_cut_off_1mm
+          - lift_cut_off_2mm
+      default: lift_cut_off_1mm
+      description: |
+        LIFT CUT OFF,LOD
+    cpi:
+      type: int
+      default: 5000
+      description: |
+        value:50~26000
+    mode:
+      type: string
+      enum:
+        - high-performance
+        - low-power
+        - office
+        - cord
+      default: high-performance
+      description: |
+          Sensor mode
+    xy_direction:
+      type: string
+      enum:
+        - swap_xy
+        - inv_y
+        - inv_x
+        - inv_xy
+        - inv_x_and_swap_xy
+        - inv_y_and_swap_xy
+        - inv_xy_and_swap_xy
+        - not_inv_and_not_swap
+        - no_direction_adjustment
+      default: no_direction_adjustment
+      description: |
+          Sensor direction
+    rest_mode:
+      type: int
+      description: |
+          determine whether the sensor enters rest mode
+    motion_sync:
+      type: int
+      description: |
+          determine whether the sensor enable motion sync
+    ripple_control:
+      type: int
+      description: |
+          determine whether the sensor enable ripple control
+    angle_snap:
+      type: int
+      description: |
+          determine whether the sensor enable angle snap
+    rest1_period_time:
+      type: int
+      default: 1
+      description: |
+          rest1 led period time is : rest1_period_reg * 1, unit:ms
+          rest1_period_reg value 1~255,default 1*1 = 1 ms,
+          this value 1~255 ms
+    rest2_period_time:
+      type: int
+      default: 20
+      description: |
+          rest2 led period time is : rest2_period_reg * 4, unit:ms
+          rest2_period_reg value 1~255,default 5*4 = 20 ms
+          this value 4~1020 ms
+    rest3_period_time:
+      type: int
+      default: 160
+      description: |
+          rest3 led period time is : rest3_period_reg * 8, unit:ms
+          rest3_period_reg 1~255,default 20*8 = 160 ms
+          this value 8~2040 ms

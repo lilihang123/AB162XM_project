@@ -1,0 +1,8 @@
+#ifndef BT_PIKACHU_LIB_VERNO_H_IN
+#define BT_PIKACHU_LIB_VERNO_H_IN
+
+#define bt_pikachu_lib_build_time_str "@PKA_BUILD_TIME@";
+#define bt_pikachu_plugin_lib_lastest_commit_str "@PKAP_LAST_COMMIT@";
+#define bt_pikachu_lib_lastest_commit_str "@PKA_LAST_COMMIT@";
+
+#endif /* BT_PIKACHU_LIB_VERNO_H */

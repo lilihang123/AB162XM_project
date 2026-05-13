@@ -1,0 +1,14 @@
+<NvKeyTable Version="2.0">
+    <NVKey KeyID="0x0001" Name="SOC level">
+		<Value>0x1122334455667788</Value>
+	</NVKey>
+    <NVKey KeyID="0x1001" Name="NVID_NVDM_VERSION">		
+		<Field name="nvdm_version" type="array" value="0x00000000" description="" />
+	</NVKey>	
+	<NVKey KeyID="0x2045" Name="NVID_CAL_XO_CAPID" Domain="MP_DATA">
+		<Field name="trim_spec" type="uint8_t" value="0x02" description="trim spec" />
+		<Field name="cap_value" type="uint16_t" value="0x0086" description="capid val" />
+		<Field name="reserved" type="uint8_t" value="0x00" description="reserved" />
+	</NVKey>
+
+</NvKeyTable>

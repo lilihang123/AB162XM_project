@@ -1,0 +1,13 @@
+<NvKeyTable Version="2.0">
+    <NVKey KeyID="0x0002" Name="board level">
+		<Value>0x1122334455667788</Value>
+	</NVKey>
+
+    <NVKey KeyID="0x200C" Name="NVID_HQA_VOLT_CFG">
+		<Value>0x000005050A0704040400400000000000</Value>
+    </NVKey>
+
+	<NVKey KeyID="0x0001" Name="aaa">
+		<Value>0x887766554433221122334455667788</Value>
+	</NVKey>
+</NvKeyTable>

@@ -1,0 +1,7 @@
+This module includes software originally developed by The Mbed TLS Contributors for Mbed TLS project and licensed under Apache License 2.0.
+Modifications have been made to this module by Airoha Technology Corp.
+Copyright (C) 2024 The Mbed TLS Contributors
+Copyright (C) 2025 Airoha Technology Corp
+Modifications:
+2025-11-21 by Airoha - Support secp160r1 (check_config.h, ecp.h, ecp_cureves.c, ecp.c)
+2025-11-21 by Airoha - Airoha performance optimization (bignum_core.c, bignum.c, ecp_cureves.c, ecp.c)

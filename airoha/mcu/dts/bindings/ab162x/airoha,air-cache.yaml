@@ -1,0 +1,45 @@
+# SPDX-License-Identifier: Apache-2.0
+
+description: Airoha External CMSYS L1 Cache Controller
+
+compatible: "airoha,air-cache"
+
+include: base.yaml
+
+properties:
+    reg:
+        required: true
+
+    label:
+        required: false
+
+    remap-channel-num:
+        type: int
+        required: false
+        description: Number of cache controller remapping channels
+
+    cacheable-channel-num:
+        type: int
+        required: true
+        description: Number of cache controller cacheable channels
+
+    icache-line-size:
+        type: int
+        required: true
+
+    dcache-line-size:
+        type: int
+        required: true
+
+    cache-memory-size:
+        type: int
+        required: true
+        description: |
+            0 =>    0b00
+            8KB =>  0b01
+            16KB => 0b10
+            32KB => 0b11
+
+    cacheable-region-alignment:
+        type: int
+        required: true

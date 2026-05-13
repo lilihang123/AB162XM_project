@@ -1,0 +1,52 @@
+# SPDX-License-Identifier: Apache-2.0
+description: Airoha pinctrl
+
+compatible: "airoha,air-pinctrl"
+
+include: base.yaml
+
+child-binding:
+  description: |
+     This binding gives a base representation of the airoha pins configuration.
+  child-binding:
+    include:
+      - name: pincfg-node.yaml
+        property-allowlist:
+          - bias-high-impedance
+          - bias-pull-down
+          - bias-pull-up
+          - output-enable
+          - output-high
+          - input-schmitt-enable
+          - drive-strength
+          - slew-rate
+          - debounce
+
+    properties:
+      pinmux:
+        required: true
+        type: array
+        description: |
+          The array is expected to have up to two elements. The first element is
+          the pin the second optional element is the pin function.
+      # !!! for property int, it must has a default value !!!
+      drive-strength:
+        enum:
+          - 2
+          - 4
+          - 8
+          - 12
+        default: 4
+        description: |
+          The drive strength of a pin, in mA. The default value is 4mA, as this
+          is the power on reset value.
+      slew-rate:
+        default: 0
+        description: |
+          The slew rate of a pin. 0 corresponds to slow, and 1 corresponds to fast.
+          The default value is 0 (slow), as this is the power on reset value.
+      debounce:
+        type: int
+        default: 0
+        description: |
+          debounce uint :ms

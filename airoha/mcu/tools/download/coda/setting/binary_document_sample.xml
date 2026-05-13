@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BinaryDocument>
+  <!-- item list -->
+  <BDOC_ITEM1>
+    <SlicePack1>
+      <field1 type="uint8" value="0x01" />
+      <field2 type="uint16 value="0x0102" />
+    </SlicePack1>
+  </BDOC_ITEM1>
+  <RACE_LOG_OPEN>
+    <!-- SlicePack -->
+    <RequestFormat>
+      <!-- Slice -->
+      <packet_type type="uint8" value="0x05" />
+      <race_type type="uint8" value="0x5A" />
+      <packet_len type="uint16" value="__LEN_TO_END__" />
+      <race_id type="uint16" value="0x0500" />
+      <reserve type="uint32" value="0xFFFFFFFF" />
+    </RequestFormat>
+    <ResponseFormat>
+      <packet_type type="uint8" value="0x05" />
+      <race_type type="uint8" value="0x5B" />
+      <packet_len type="uint16" />
+      <race_id type="uint16" value="0x0500" />
+      <status type="uint8" />
+    </ResponseFormat>
+  </RACE_LOG_OPEN>
+  <RACE_LOG_CLOSE enable_log="false">
+    <RequestFormat>
+      <packet_type type="uint8" value="0x05" />
+      <race_type type="uint8" value="0x5A" />
+      <packet_len type="uint16" value="__LEN_TO_END__" />
+      <race_id type="uint16" value="0x0500" />
+      <reserve type="uint32" value="0x00000000" />
+    </RequestFormat>
+    <ResponseFormat>
+      <packet_type type="uint8" value="0x05" />
+      <race_type type="uint8" value="0x5B" />
+      <packet_len type="uint16" />
+      <race_id type="uint16" value="0x0500" />
+      <status type="uint8" />
+    </ResponseFormat>
+  </RACE_LOG_CLOSE>
+</BinaryDocument>

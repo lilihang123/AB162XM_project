@@ -1,0 +1,133 @@
+# Copyright Statement:
+#
+# (C) 2025  Airoha Technology Corp. All rights reserved.
+#
+# This software/firmware and related documentation ("Airoha Software") are
+# protected under relevant copyright laws. The information contained herein
+# is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.
+# Without the prior written permission of Airoha and/or its licensors,
+# any reproduction, modification, use or disclosure of Airoha Software,
+# and information contained herein, in whole or in part, shall be strictly prohibited.
+# You may only use, reproduce, modify, or distribute (as applicable) Airoha Software
+# if you have agreed to and been bound by the applicable license agreement with
+# Airoha ("License Agreement") and been granted explicit permission to do so within
+# the License Agreement ("Permitted User").  If you are not a Permitted User,
+# please cease any access or use of Airoha Software immediately.
+# BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+# THAT AIROHA SOFTWARE RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES
+# ARE PROVIDED TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL
+# WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+# NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+# SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+# SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+# THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+# THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+# CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA
+# SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+# STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND
+# CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,
+# AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,
+# OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+# AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.
+
+# BT_AIROHA must be added to BT_HCI_BUS_TYPE,
+# otherwise BT_RPMSG will be selected by default and a build error may occur.
+choice BT_HCI_BUS_TYPE
+    prompt "Bluetooth HCI driver"
+
+config BT_AIROHA
+    bool "AIROHA HCI driver"
+    help
+      AIROHA HCI bluetooth interface
+
+endchoice
+
+config BT_HCI_RESERVE
+    int
+    default 24 if BT_AIROHA
+    help
+      Headroom that the driver needs for sending and receiving buffers. Add a
+      new 'default' entry for each new driver.
+
+config BT_PKA_DM2L_STACK_SIZE
+    int "Size of the Bluetooth controller task stack"
+    default 2048
+    help
+      Size of the Bluetooth controller thread stack.
+
+config BT_PKA_DM2L_PRIO
+    # Hidden option for Bluetooth controller thread priority
+    int
+    default 5
+
+choice BT_PKA_LIB
+    prompt "Bluetooth Controller library"
+    default BT_PKA_LIB_LE
+
+config BT_PKA_LIB_COSIM
+    bool "BT COSIM lib"
+    help
+      Use COSIM lib
+
+config BT_PKA_LIB_LE
+    bool "BT LE lib"
+    help
+      Use LE lib
+
+config BT_PKA_LIB_MULTI_PROTOCOL
+    bool "BT LE & 802.15.4 lib"
+    help
+      Use LE and 802.15.4 lib
+
+config BT_PKA_LIB_LE_SUPPORT_RANGING
+    bool "BT LE Ranging lib"
+    help
+      Support LE ranging feature
+
+endchoice
+
+if BT_PKA_LIB_COSIM
+config SKIP_ZI
+    bool "Skip Init ZI region"
+    default y
+    help
+      For cosim inint speedup
+
+endif
+
+config BT_PKA_INST_TEST
+    bool "BT Instruction Test"
+    default n
+    help
+      Use test instruction
+if BT_PKA_INST_TEST
+config BT_PKA_INST_TEST_CASE
+    int "Test case number"
+    default 6
+    help
+      Test case number
+
+endif
+
+config AIR_AVM
+    bool "AVM Interface"
+    help
+      Using AVM architecture to generate HCI packet
+
+if AIR_AVM
+endif # AIR_AVM
+
+config AIR_BT_SMP_SC_ENABLE
+    bool "SMP Secure Connection Interface"
+    default y
+    help
+      Using SMP Secure Connection
+
+config AIR_BT_DEBUG_MONITOR_LOG
+    bool "Monitor protocol over air logging"
+	depends on AIR_LOGGING_ENABLE
+	select BT_MONITOR
+	help
+	  Use a custom logging protocol over the airoha logging protocol.
+

@@ -1,0 +1,120 @@
+# Copyright Statement:
+#
+# (C) 2025  Airoha Technology Corp. All rights reserved.
+#
+# This software/firmware and related documentation ("Airoha Software") are
+# protected under relevant copyright laws. The information contained herein
+# is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.
+# Without the prior written permission of Airoha and/or its licensors,
+# any reproduction, modification, use or disclosure of Airoha Software,
+# and information contained herein, in whole or in part, shall be strictly prohibited.
+# You may only use, reproduce, modify, or distribute (as applicable) Airoha Software
+# if you have agreed to and been bound by the applicable license agreement with
+# Airoha ("License Agreement") and been granted explicit permission to do so within
+# the License Agreement ("Permitted User").  If you are not a Permitted User,
+# please cease any access or use of Airoha Software immediately.
+# BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+# THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("AIROHA SOFTWARE")
+# RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES ARE PROVIDED
+# TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL
+# WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+# NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+# SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+# SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+# THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+# THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+# CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA
+# SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+# STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND
+# CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,
+# AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,
+# OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+# AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.
+#
+description: |
+    Airoha ARGB
+    middle Implement ARGB
+
+compatible: "airoha,air-argb"
+
+include: base.yaml
+
+properties:
+
+    argb_channel:
+        type: int
+        description: |
+            GPIO number Control
+
+    one_h_value:
+        type: int
+        default: 595
+        description: |
+            one_h_value
+
+    one_l_value:
+        type: int
+        default: 295
+        description: |
+            one_l_value
+
+    zero_h_value:
+        type: int
+        default: 295
+        description: |
+            zero_h_value
+
+    zero_l_value:
+        type: int
+        default: 595
+        description: |
+            zero_l_value
+
+    reset_value:
+        type: int
+        default: 80000
+        description: |
+            reset_value
+
+    pat_cnt:
+        type: int
+        default: 16
+        description: |
+            pat_cnt
+
+    bit_nonrev:
+        type: int
+        default: 1
+        description: |
+            bit_nonrev
+
+    ed_big:
+        type: int
+        default: 1
+        description: |
+            ed_big
+
+    nonalign:
+        type: int
+        default: 1
+        description: |
+            nonalign
+
+    auto_timer_val:
+        type: int
+        default: 16000000
+        description: |
+            auto_timer_val
+
+    dma_start_val:
+        type: int
+        default: 12000000
+        description: |
+            dma_start_val
+
+    pre_wake_val:
+        type: int
+        default: 1000000
+        description: |
+            pre_wake_val

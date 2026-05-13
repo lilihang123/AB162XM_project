@@ -1,0 +1,85 @@
+/* Copyright Statement:
+ *
+ * (C) 2025  Airoha Technology Corp. All rights reserved.
+ *
+ * This software/firmware and related documentation ("Airoha Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.
+ * Without the prior written permission of Airoha and/or its licensors,
+ * any reproduction, modification, use or disclosure of Airoha Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ * You may only use, reproduce, modify, or distribute (as applicable) Airoha Software
+ * if you have agreed to and been bound by the applicable license agreement with
+ * Airoha ("License Agreement") and been granted explicit permission to do so within
+ * the License Agreement ("Permitted User").  If you are not a Permitted User,
+ * please cease any access or use of Airoha Software immediately.
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT AIROHA SOFTWARE RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES
+ * ARE PROVIDED TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL
+ * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.
+ */
+
+#ifndef _HID_SCENARIO_DONGLE_H_
+#define _HID_SCENARIO_DONGLE_H_
+
+#if defined(AIR_PURE_GAMING_DONGLE_ENABLE)
+
+/* Includes ------------------------------------------------------------------*/
+#include <stdint.h>
+#include <zephyr/bluetooth/bluetooth.h>
+#include <zephyr/bluetooth/hci.h>
+#include <zephyr/drivers/gpio.h>
+#include <zephyr/drivers/flash.h>
+#include <zephyr/logging/log.h>
+#include <zephyr/kernel.h>
+#include <zephyr/devicetree.h>
+#include <zephyr/device.h>
+#include "air_usb.h"
+#include "air_usb_hid.h"
+#include "hal_ccni.h"
+#include "hal_ccni_config.h"
+#include "hal_usb.h"
+#include "hal_usb_internal.h"
+#include "hal_gpio.h"
+
+/* Public define -------------------------------------------------------------*/
+/* Public typedef ------------------------------------------------------------*/
+typedef struct {
+    air_usb_evt_cb_t usb_evt_cb;
+} hid_scenario_dongle_init_param_t;
+
+/* Public macro --------------------------------------------------------------*/
+/* Public variables ----------------------------------------------------------*/
+/* Public functions ----------------------------------------------------------*/
+extern int hid_scenario_dongle_mode_init(hid_scenario_dongle_init_param_t *init_param);
+extern int hid_scenario_dongle_mode_deinit(void);
+extern int hid_scenario_dongle_mode_open(void);
+extern int hid_scenario_dongle_mode_start(void);
+extern int hid_scenario_dongle_mode_stop(void);
+extern int hid_scenario_dongle_mode_close(void);
+extern int hid_scenario_dongle_mode_config(void);
+#if CONFIG_AIR_HID_CP_PROCESS_GAME_CONTROLLER_DATA_ENABLE
+#ifdef AIR_USB_XINPUT_ENABLE
+extern air_usb_mode_t hid_scenario_dongle_usb_mode_check(void);
+extern int hid_scenario_dongle_usb_mode_set(air_usb_mode_t mode);
+extern const struct device * hid_scenario_dongle_get_xinput_dev(void);
+#endif /* AIR_USB_XINPUT_ENABLE */
+#endif /* CONFIG_AIR_HID_CP_PROCESS_GAME_CONTROLLER_DATA_ENABLE */
+
+
+#endif /* AIR_PURE_GAMING_DONGLE_ENABLE */
+
+#endif /* _HID_SCENARIO_DONGLE_H_ */

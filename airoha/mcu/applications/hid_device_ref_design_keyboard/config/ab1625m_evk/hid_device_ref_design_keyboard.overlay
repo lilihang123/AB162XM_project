@@ -1,0 +1,185 @@
+/* Copyright Statement:
+ *
+ * (C) 2024  Airoha Technology Corp. All rights reserved.
+ *
+ * This software/firmware and related documentation ("Airoha Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.
+ * Without the prior written permission of Airoha and/or its licensors,
+ * any reproduction, modification, use or disclosure of Airoha Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ * You may only use, reproduce, modify, or distribute (as applicable) Airoha Software
+ * if you have agreed to and been bound by the applicable license agreement with
+ * Airoha ("License Agreement") and been granted explicit permission to do so within
+ * the License Agreement ("Permitted User").  If you are not a Permitted User,
+ * please cease any access or use of Airoha Software immediately.
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT AIROHA SOFTWARE RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES
+ * ARE PROVIDED TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL
+ * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.
+ */
+
+&spim0 {
+	frequency = <8000000>;
+	status = "okay";
+	paw3395: paw3395@0{
+		compatible = "pixart,paw3395";
+		reg= <0>;
+		cpi = <1600>;
+		lod = "lift_cut_off_1mm";
+		rest_mode = <0>;
+		motion_sync = <0>;
+		ripple_control = <0>;
+		angle_snap = <0>;
+		mode = "cord";
+		xy_direction = "no_direction_adjustment";
+		rest1_period_time = <1>;
+		rest2_period_time = <20>;
+		rest3_period_time = <160>;
+		status = "okay";
+	};
+};
+
+&uart1 {
+    status = "okay";
+    current-speed = < 0xE1000 >;
+    data-bits = <3>;
+    stop-bits = <1>;
+    parity = <0>;
+    tbuf-size = <0>;
+    rbuf-size = <0>;
+};
+&uart2 {
+    status = "okay";
+    current-speed = < 0xE1000 >;
+    data-bits = <3>;
+    stop-bits = <1>;
+    parity = <0>;
+    tbuf-size = <0>;
+    rbuf-size = <0>;
+};
+
+&pwm_dma0 {
+	led_rgb_frequency = <60>;
+	status = "okay";
+	channel_polarity = <1 1 1 1>;
+	rgb_gpio_channel = <0>;
+	rgb0: rgb@0{
+		compatible = "airoha,air-rgb";
+		reg = <0>;
+		gpio_control = <38>;
+		gpio_polarity = <1>;
+		r_channel = <1>;
+		g_channel = <2>;
+		b_channel = <3>;
+		port = <0>;
+		status = "okay";
+	};
+};
+
+&pinctrl {
+	gpio0_default: gpio0_default {
+
+		/*kb setting enable*/
+		gpio5{
+			pinmux = <GPIO_5_GPIO5>;
+			output-enable;
+			output-high;
+		};
+		gpio46{
+			pinmux = <GPIO_46_GPIO46>;
+			output-enable;
+			output-high;
+		};
+		gpio44{
+			pinmux = <GPIO_44_GPIO44>;
+			output-enable;
+			output-high;
+		};
+
+		/** kb row mux gpio setting **/
+		gpio6{
+			pinmux = <GPIO_6_GPIO6>;
+			output-enable;
+		};
+		gpio7{
+			pinmux = <GPIO_7_GPIO7>;
+			output-enable;
+		};
+		gpio8{
+			pinmux = <GPIO_8_GPIO8>;
+			output-enable;
+		};
+
+
+		/** kb col gpio setting **/
+		gpio26{
+			pinmux = <GPIO_26_AUXADC1_SARADC0_AIODIFF0_SADIFF0>;
+		};
+		gpio27{
+			pinmux = <GPIO_27_AUXADC2_SARADC1_AIODIFF0_SADIFF0>;
+		};
+		gpio28{
+			pinmux = <GPIO_28_AUXADC3_SARADC2_AIODIFF1_SADIFF1_AMIC>;
+		};
+		gpio29{
+			pinmux = <GPIO_29_AUXADC4_SARADC3_AIODIFF1_SADIFF1_AMIC>;
+		};
+		gpio30{
+			pinmux = <GPIO_30_AUXADC5_SARADC4_SADIFF2>;
+		};
+		gpio31{
+			pinmux = <GPIO_31_AUXADC6_SARADC5_SADIFF2>;
+		};
+		gpio32{
+			pinmux = <GPIO_32_AUXADC7_SARADC6_SADIFF3>;
+		};
+		gpio33{
+			pinmux = <GPIO_33_AUXADC8_SARADC7_SADIFF3>;
+		};
+		gpio34{
+			pinmux = <GPIO_34_AUXADC9_SARADC8_SADIFF4>;
+		};
+		gpio35{
+			pinmux = <GPIO_35_SARADC9_SADIFF4>;
+		};
+		gpio36{
+			pinmux = <GPIO_36_SARADC10_SADIFF5>;
+		};
+		gpio37{
+			pinmux = <GPIO_37_SARADC11_SADIFF5>;
+		};
+		gpio40{
+			pinmux = <GPIO_40_SARADC12_SADIFF6>;
+		};
+		gpio41{
+			pinmux = <GPIO_41_SARADC13_SADIFF6>;
+		};
+		gpio42{
+			pinmux = <GPIO_42_SARADC14_SADIFF7>;
+		};
+		gpio43{
+			pinmux = <GPIO_43_SARADC15_SADIFF7>;
+		};
+	};
+
+	gpio1_default: gpio1_default {
+
+	};
+};
+
+
+

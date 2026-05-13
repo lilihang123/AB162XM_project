@@ -1,0 +1,34 @@
+
+# Copyright (c) 2021 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+description: Airoha USB CDC DA port
+
+compatible: "airoha,air-usbda-cdc"
+
+include: uart-controller.yaml
+
+on-bus: usb
+
+properties:
+  tx-endpoint:
+    type: int
+    default: 1
+    description: The tx endpoint of usb device
+
+  rx-endpoint:
+    type: int
+    default: 1
+    description: The rx endpoint of usb device
+
+  tx-fifo-size:
+    type: int
+    default: 1024
+    description: |
+      Size of the virtual CDC ACM UART TX FIFO
+
+  rx-fifo-size:
+    type: int
+    default: 1024
+    description: |
+      Size of the virtual CDC ACM UART RX FIFO

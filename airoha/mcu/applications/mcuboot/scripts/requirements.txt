@@ -1,0 +1,7 @@
+cryptography>=2.6
+intelhex
+click
+cbor2
+setuptools
+pyyaml
+pytest

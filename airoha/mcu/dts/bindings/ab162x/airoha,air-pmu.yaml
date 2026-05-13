@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: Apache-2.0
+
+description: Airoha Power Management Unit
+
+compatible: "airoha,air-pmu"
+
+include: base.yaml
+
+properties:
+    reg:
+        required: true
+
+    label:
+        required: false
+
+    module-str:
+        type: string-array
+        required: false
+        description: pmu related modules name string
+

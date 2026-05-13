@@ -1,0 +1,100 @@
+# Copyright Statement:                                                                                                     
+#                                                                                                                          
+# (C) 2025  Airoha Technology Corp. All rights reserved.                                                                   
+#                                                                                                                          
+# This software/firmware and related documentation ("Airoha Software") are                                                 
+# protected under relevant copyright laws. The information contained herein                                                
+# is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.                              
+# Without the prior written permission of Airoha and/or its licensors,                                                     
+# any reproduction, modification, use or disclosure of Airoha Software,                                                    
+# and information contained herein, in whole or in part, shall be strictly prohibited.                                     
+# You may only use, reproduce, modify, or distribute (as applicable) Airoha Software                                       
+# if you have agreed to and been bound by the applicable license agreement with                                            
+# Airoha ("License Agreement") and been granted explicit permission to do so within                                        
+# the License Agreement ("Permitted User").  If you are not a Permitted User,                                              
+# please cease any access or use of Airoha Software immediately.                                                           
+# BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES                                              
+# THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("AIROHA SOFTWARE")                                                    
+# RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES ARE PROVIDED                                                             
+# TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL                                             
+# WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF                                   
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.                                                    
+# NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE                                                  
+# SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR                                                    
+# SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH                                                  
+# THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES                                     
+# THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES                             
+# CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA                                        
+# SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR                                         
+# STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND                                     
+# CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,                                         
+# AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,                                                       
+# OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO                                                
+# AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.                                                                                
+#                                                                                                                          
+
+# SPDX-License-Identifier: Apache-2.0
+
+menuconfig FLASH
+    bool "Flash Driver"
+    help
+      Include flash drivers in system config
+
+config AIR_FLASH
+    bool "Airoha Flash Controller"
+    # Because there are some dependencies inside the flash drivers when using settings
+    select FLASH
+    select FLASH_MAP
+    select FLASH_JESD216
+    select FLASH_JESD216_API
+    select FLASH_HAS_PAGE_LAYOUT
+    select FLASH_HAS_DRIVER_ENABLED
+    select FLASH_HAS_EXPLICIT_ERASE
+    depends on SOC_FAMILY_AIROHA
+
+config AIR_ESC
+    bool "Airoha ESC( External Serial Controller ) for RAM or Flash"
+    depends on SOC_FAMILY_AIROHA
+
+
+if AIR_FLASH
+
+
+
+endif # AIR_FLASH
+
+
+if AIR_ESC
+
+    choice AIR_ESC_DEVICE_TYPE
+        prompt "which type device ESC will connects to"
+        default AIR_ESC_WITH_FLASH
+
+    config AIR_ESC_NONE
+        bool "No any devices will be connected to ESC interface"
+
+    config AIR_ESC_WITH_RAM
+        bool "ESC interface connects to RAM device."
+
+    config AIR_ESC_WITH_FLASH
+        bool "ESC interface connects to Flash device."
+
+    endchoice # AIR_ESC_DEVICE_TYPE
+
+
+    choice AIR_ESC_RAM_TYPE
+        prompt "type of external device when ESC is connected to a RAM device"
+        default AIR_ESC_RAM_APS_1604M
+
+    config AIR_ESC_RAM_APS_1604M
+        bool "external ram device is APS1604M"
+
+    config AIR_ESC_RAM_MICRO_23A1024
+        bool "external ram device is MICRO_23A1024"
+
+    config AIR_ESC_RAM_APS6404L
+        bool "external ram device is APS6404M"
+
+    endchoice # AIR_ESC_PSRAM_TYPE
+
+endif # AIR_ESC

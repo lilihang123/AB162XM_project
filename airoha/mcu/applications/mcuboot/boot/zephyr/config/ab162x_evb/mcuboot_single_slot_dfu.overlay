@@ -1,0 +1,73 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
+/delete-node/ &main_flash_partitions;
+
+/ {
+    chosen {
+        zephyr,code-partition = &boot_partition;
+    };
+};
+
+&flash0 {
+    main_flash_partitions: partitions {
+        compatible = "airoha,air-flash-partitions", "fixed-partitions";
+        #address-cells = < 0x1 >;
+        #size-cells = < 0x1 >;
+        partiton_table: partition@0 {
+            label = "partition_table";
+            reg = < 0x0 0x1000 >;
+            id = < 0x0 >;
+            read-only;
+            download;
+            display_name = "PartitionTable";
+        };
+        security_header0: partition@1000 {
+            label = "secure_hdr0";
+            reg = < 0x1000 0x1000 >;
+            id = < 0x1 >;
+            read-only;
+            download;
+            display_name = "SecureHdr0";
+        };
+        factory_data: partition@2000 {
+            label = "factory_data";
+            /* offset of flash device, partition size */
+            reg = <0x2000 0x1000>;
+            id = <0x0000000D>;
+            read-only;
+        };
+        boot_partition: partition@3000 {
+            label = "bootloader";
+            reg = < 0x3000 0x18000 >;
+            id = < 0x8 >;
+            read-only;
+            download;
+            display_name = "BootLoader";
+        };
+        upgrade_info: partition@1b000 {
+            label = "upgrade_info";
+            /* offset of flash device, partition size */
+            reg = <0x1b000 0x1000>;
+            id = <0x0000000E>;
+            read-only;
+        };
+        slot0_partition: partition@1c000 {
+            label = "image-0";
+            reg = < 0x1c000 0x1DA000 >;
+            id = < 0xa >;
+            download;
+            display_name = "MCU_FW";
+        };
+        storage_partition: partition@1f6000 {
+            label = "storage";
+            reg = < 0x1f6000 0xA000 >;
+            id = < 0x18 >;
+            download;
+            display_name = "NV_Data";
+        };
+    };
+};
+
+&zephyr_udc0 {
+    maximum-speed = "full-speed";
+};

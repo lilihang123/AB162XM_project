@@ -1,0 +1,9 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
+#include <airoha/ab162x/flash_partitions/single_slot_1MB.dtsi>
+/ {
+    chosen {
+        zephyr,code-partition = &boot_partition;
+    };
+};
+

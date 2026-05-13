@@ -1,0 +1,9 @@
+<NvKeyTable Version="2.0">
+	<NVKey KeyID="0x4007" Name="NVID_PERI_LOG_SETTING" Domain="PERI_DATA">
+	<Value>0x8005005A</Value>
+	</NVKey>
+	<NVKey KeyID="0x4009" Name="NVID_PERI_LOG_CPU_SETTING" Domain="PERI_DATA">
+		<Value>0x101000000000000000000000000000005A</Value>
+	</NVKey>
+
+</NvKeyTable>

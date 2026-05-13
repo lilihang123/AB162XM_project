@@ -1,0 +1,6 @@
+<NvKeyTable Version="2.0">
+	<NVKey KeyID="0x4010" Name="NVID_SYS_EXP_DUMP_MODE" Domain="MP_DATA">
+	<Value>0xE100E100</Value>
+	</NVKey>
+
+</NvKeyTable>

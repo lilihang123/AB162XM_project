@@ -1,0 +1,13 @@
+<NvKeyTable Version="2.0">
+    <NVKey KeyID="0x0002" Name="board level">
+		<Value>0x1122334455667788</Value>
+	</NVKey>
+
+    <NVKey KeyID="0x0001" Name="board level">
+		<Field name="prop_a" type="uint8_t" value="0x11" description="property a" />
+		<Field name="prop_b" type="uint8_t" value="0x22" description="property b" />
+		<Field name="prop_c" type="uint16_t" value="0x4433" description="property c" />
+		<Field name="prop_d" type="uint32_t" value="0x88776655" description="property d" />
+		<Field name="prop_e" type="array" value="0x99AABBCCDD" description="property d" />
+	</NVKey>
+</NvKeyTable>

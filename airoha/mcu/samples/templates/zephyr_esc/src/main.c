@@ -1,0 +1,141 @@
+/* Copyright Statement:
+ *
+ * (C) 2025  Airoha Technology Corp. All rights reserved.
+ *
+ * This software/firmware and related documentation ("Airoha Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.
+ * Without the prior written permission of Airoha and/or its licensors,
+ * any reproduction, modification, use or disclosure of Airoha Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ * You may only use, reproduce, modify, or distribute (as applicable) Airoha Software
+ * if you have agreed to and been bound by the applicable license agreement with
+ * Airoha ("License Agreement") and been granted explicit permission to do so within
+ * the License Agreement ("Permitted User").  If you are not a Permitted User,
+ * please cease any access or use of Airoha Software immediately.
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT AIROHA SOFTWARE RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES
+ * ARE PROVIDED TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL
+ * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.
+ */
+
+
+#include <zephyr/kernel.h>
+#include <zephyr/devicetree.h>
+#include <zephyr/device.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "hal_esc.h"
+#include "hal_esc_internal.h"
+#include "hal_gpt.h"
+#include "hal_clock_internal.h"
+#include "hal_gpio.h"
+#include "hal.h"
+#include "hal_cache_internal.h"
+
+#include "air_chip.h"
+#include "hal_platform.h"
+
+#if defined(HAL_GPT_MODULE_ENABLED)
+#include "hal_gpt.h"
+#endif
+
+#include "memory_attribute.h"
+#include "autoconf.h"
+
+#ifdef CONFIG_AIR_WDT
+#include "wdt_airoha.h"
+#endif
+
+void feed_watch_dog(void);
+
+#define ESC_TEST_BASE 0x07001000
+#define  test_4B_size (16)
+int main(void)
+{
+    int i;
+    hal_esc_status_t ret;
+    volatile unsigned int *MEM32_BASE =(unsigned int*)ESC_TEST_BASE;
+    printk("MEM32_BASE 0x%p\r\n", MEM32_BASE);
+
+    hal_pinmux_set_function(17, 1);   //sio3
+    hal_pinmux_set_function(18, 1);   //sio2
+    hal_pinmux_set_function(19, 1);   //clk
+    hal_gpio_set_direction(19, HAL_GPIO_DIRECTION_OUTPUT);
+    hal_pinmux_set_function(20, 1);
+    hal_pinmux_set_function(21, 1);
+    hal_pinmux_set_function(22, 1);
+    hal_gpio_set_direction(19, HAL_GPIO_DIRECTION_OUTPUT);
+
+    hal_clock_enable(HAL_CLOCK_CG_ESC);
+    ret=hal_esc_init();
+
+    printk("esc init success:%d",ret);
+
+for (i = 0; i < test_4B_size; i++) {
+        MEM32_BASE[i] = 0x5a;
+        __DSB();
+         printk("MEM32_BASE_firstwrite[%d]:%x",i,MEM32_BASE[i]);
+    }
+    for (i = 0; i < test_4B_size; i++) {
+        if (MEM32_BASE[i] !=0x5a) {
+           printk("err1");
+            return -1;
+        } else {
+            MEM32_BASE[i] = 0xffffffff;
+        }
+        printk("MEM32_BASE_read[%d]:%x",i,MEM32_BASE[i]);
+    }
+
+    for (i = 0; i < test_4B_size; i++) {
+        if (MEM32_BASE[i] == 0xffffffff) {
+            MEM32_BASE[i] = 0x00;
+        } else {
+            printk("err2");
+            return -2;
+        }
+         printk("MEM32_BASE_secondread[%d]:%x",i,MEM32_BASE[i]);
+    }
+
+    for(;;){
+
+#if defined(HAL_GPT_MODULE_ENABLED)
+        hal_gpt_delay_ms(3000);
+#else
+        uint32_t count = 0x5A5A5A5A;
+        while(count--){
+            __asm__("mov r0, r0");
+        }
+#endif
+        feed_watch_dog();
+    }
+    return 0;
+}
+
+void feed_watch_dog(void)
+{
+#ifdef CONFIG_AIR_WDT
+    const struct device *wdt_dev =
+        device_get_binding(DT_NODE_FULL_NAME(DT_NODELABEL(wdt0)));
+    if(wdt_dev != NULL){
+        int wdt_ch = ((wdt_air_data_t*)(wdt_dev->data))->m_channel;
+        printk("[wdt] wdt_feed was called with dev: 0x%08X and channel %d\r\n", (unsigned int)wdt_dev, wdt_ch);
+        wdt_feed(wdt_dev, wdt_ch);
+    }
+#endif
+}

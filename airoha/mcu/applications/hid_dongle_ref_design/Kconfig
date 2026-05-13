@@ -1,0 +1,81 @@
+# Copyright Statement:
+#
+# (C) 2025  Airoha Technology Corp. All rights reserved.
+#
+# This software/firmware and related documentation ("Airoha Software") are
+# protected under relevant copyright laws. The information contained herein
+# is confidential and proprietary to Airoha Technology Corp. ("Airoha") and/or its licensors.
+# Without the prior written permission of Airoha and/or its licensors,
+# any reproduction, modification, use or disclosure of Airoha Software,
+# and information contained herein, in whole or in part, shall be strictly prohibited.
+# You may only use, reproduce, modify, or distribute (as applicable) Airoha Software
+# if you have agreed to and been bound by the applicable license agreement with
+# Airoha ("License Agreement") and been granted explicit permission to do so within
+# the License Agreement ("Permitted User").  If you are not a Permitted User,
+# please cease any access or use of Airoha Software immediately.
+# BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+# THAT AIROHA SOFTWARE RECEIVED FROM AIROHA AND/OR ITS REPRESENTATIVES
+# ARE PROVIDED TO RECEIVER ON AN "AS-IS" BASIS ONLY. AIROHA EXPRESSLY DISCLAIMS ANY AND ALL
+# WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+# NEITHER DOES AIROHA PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+# SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+# SUPPLIED WITH AIROHA SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+# THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+# THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+# CONTAINED IN AIROHA SOFTWARE. AIROHA SHALL ALSO NOT BE RESPONSIBLE FOR ANY AIROHA
+# SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+# STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND AIROHA'S ENTIRE AND
+# CUMULATIVE LIABILITY WITH RESPECT TO AIROHA SOFTWARE RELEASED HEREUNDER WILL BE,
+# AT AIROHA'S OPTION, TO REVISE OR REPLACE AIROHA SOFTWARE AT ISSUE,
+# OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+# AIROHA FOR SUCH AIROHA SOFTWARE AT ISSUE.
+
+menu "Zephyr Kernel"
+source "Kconfig.zephyr"
+endmenu
+
+
+config AIR_PURE_GAMING_FAST_PAIR_ENABLE
+    bool "Airoha fast pair service"
+    default n
+    help
+      Enable airoha HID dongle fastly is connect to HID mouse after reboot
+
+config AIR_PURE_GAMING_DEFAULT_REPORT_RATE
+    int "The default report rate"
+    default 8000
+    help
+      The default report rate.
+
+config AIR_M21_SAMPLE
+    bool "Airoha m21 Sample"
+    default n
+    help
+      Enable m21 sample
+
+config AIR_M20_SAMPLE
+    bool "Airoha m20 Sample"
+    default n
+    help
+      Enable m20 sample
+
+config AIR_DONGLE_OF_KEYBOARD_M607
+    bool "Airoha Dongle of Keyboard M607"
+    default n
+    help
+      Airoha dongle of keyboard m607 project
+
+config AIR_HOGP_DONGLE_ENABLE
+    bool "Airoha LE HOGP Office Dongle"
+    default n
+    help
+      Enable Airoha LE HOGP Office Dongle.
+
+config MCUBOOT_GENERATE_CONFIRMED_IMAGE
+    bool
+    default y
+
+config AIR_BT_RELAY_HOST_ENABLE
+    bool "AIR BT RELAY HOST"
+	default n
