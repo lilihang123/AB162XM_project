@@ -1039,3 +1039,15 @@ ab1623m_evk__zigbee_light_switch:
         # path relative to airoha/mcu/applications/zigbee_light_bulb
         DTC_OVERLAY_FILE: config/ab1623m_evk/zigbee_light_switch.overlay
         CONF_FILE: config/ab1623m_evk/zigbee_light_switch.conf
+
+ab1623m_evk__keychron_mouse_LM7:
+    sysbuild_conf: config/ab1623m_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/Keychron_LM7_design_mouse
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    Keychron_LM7_design_mouse:
+        # path relative to airoha/mcu/applications/Keychron_LM7_design_mouse
+        DTC_OVERLAY_FILE: config/ab1623m_evk/hid_device_ref_design_mouse_m20_pro.overlay
+        CONF_FILE: config/ab1623m_evk/hid_device_ref_design_mouse_m20_pro.conf
