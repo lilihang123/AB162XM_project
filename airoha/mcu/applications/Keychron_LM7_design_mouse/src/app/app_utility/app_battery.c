@@ -271,11 +271,13 @@ static bool app_battery__evt_key_event(const struct af_evt_header *evt_header)
     {
         case AK_5_CLICK:
         {
+            #ifdef M_KEY_DPI
             if(event->key_id == M_KEY_DPI)
             {
                 // app_battery_test_soc();
                 break;
             }
+            #endif
         }
         default: {
             break;

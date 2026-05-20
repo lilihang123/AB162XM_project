@@ -95,20 +95,19 @@
  *   84  /soc/pin-controller/gpio0_default/gpio22
  *   85  /soc/pin-controller/gpio0_default/gpio23
  *   86  /soc/pin-controller/gpio0_default/gpio24
- *   87  /soc/pin-controller/gpio0_default/gpio29
- *   88  /soc/pin-controller/gpio0_default/gpio3
- *   89  /soc/pin-controller/gpio0_default/gpio35
- *   90  /soc/pin-controller/gpio0_default/gpio36
- *   91  /soc/pin-controller/gpio0_default/gpio37
- *   92  /soc/pin-controller/gpio0_default/gpio45
- *   93  /soc/pin-controller/gpio0_default/gpio46
- *   94  /soc/pin-controller/gpio0_default/gpio47
- *   95  /soc/pin-controller/gpio0_default/gpio5
- *   96  /soc/pin-controller/gpio0_default/gpio6
- *   97  /soc/pwm_dma@42190000
- *   98  /soc/pwm_dma@42190000/rgb@0
- *   99  /soc/spim@421f0000
- *   100 /soc/spim@421f0000/paw3395@0
+ *   87  /soc/pin-controller/gpio0_default/gpio3
+ *   88  /soc/pin-controller/gpio0_default/gpio35
+ *   89  /soc/pin-controller/gpio0_default/gpio36
+ *   90  /soc/pin-controller/gpio0_default/gpio37
+ *   91  /soc/pin-controller/gpio0_default/gpio45
+ *   92  /soc/pin-controller/gpio0_default/gpio46
+ *   93  /soc/pin-controller/gpio0_default/gpio47
+ *   94  /soc/pin-controller/gpio0_default/gpio5
+ *   95  /soc/pin-controller/gpio0_default/gpio6
+ *   96  /soc/pwm_dma@42190000
+ *   97  /soc/pwm_dma@42190000/rgb@0
+ *   98  /soc/spim@421f0000
+ *   99  /soc/spim@421f0000/paw3395@0
  *
  * Definitions derived from these nodes in dependency order are next,
  * followed by /chosen nodes.
@@ -842,8 +841,8 @@
 	60, /* /soc/wdt1@42090030 */ \
 	61, /* /soc/flash-controller@40080000 */ \
 	72, /* /soc/led@42103000 */ \
-	97, /* /soc/pwm_dma@42190000 */ \
-	99, /* /soc/spim@421f0000 */
+	96, /* /soc/pwm_dma@42190000 */ \
+	98, /* /soc/spim@421f0000 */
 
 /* Existence and alternate IDs: */
 #define DT_N_S_soc_EXISTS 1
@@ -1947,16 +1946,16 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_NODELABEL_VARGS(fn, ...) fn(gpio0_default, __VA_ARGS__)
 
 /* Helper macros for child nodes of this node. */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_CHILD_NUM 21
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_CHILD_NUM_STATUS_OKAY 21
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_CHILD(fn) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37)
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_CHILD_SEP(fn, sep) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37)
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_CHILD_VARGS(fn, ...) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37, __VA_ARGS__)
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37, __VA_ARGS__)
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_CHILD_STATUS_OKAY(fn) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37)
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37)
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37, __VA_ARGS__)
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37, __VA_ARGS__)
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_CHILD_NUM 20
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_CHILD_NUM_STATUS_OKAY 20
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_CHILD(fn) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37)
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_CHILD_SEP(fn, sep) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37)
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_CHILD_VARGS(fn, ...) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37, __VA_ARGS__)
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37, __VA_ARGS__)
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_CHILD_STATUS_OKAY(fn) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37)
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37)
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37, __VA_ARGS__)
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36, __VA_ARGS__) DT_DEBRACKET_INTERNAL sep fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37, __VA_ARGS__)
 
 /* Node's dependency ordinal: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_ORD 16
@@ -1980,16 +1979,15 @@
 	84, /* /soc/pin-controller/gpio0_default/gpio22 */ \
 	85, /* /soc/pin-controller/gpio0_default/gpio23 */ \
 	86, /* /soc/pin-controller/gpio0_default/gpio24 */ \
-	87, /* /soc/pin-controller/gpio0_default/gpio29 */ \
-	88, /* /soc/pin-controller/gpio0_default/gpio3 */ \
-	89, /* /soc/pin-controller/gpio0_default/gpio35 */ \
-	90, /* /soc/pin-controller/gpio0_default/gpio36 */ \
-	91, /* /soc/pin-controller/gpio0_default/gpio37 */ \
-	92, /* /soc/pin-controller/gpio0_default/gpio45 */ \
-	93, /* /soc/pin-controller/gpio0_default/gpio46 */ \
-	94, /* /soc/pin-controller/gpio0_default/gpio47 */ \
-	95, /* /soc/pin-controller/gpio0_default/gpio5 */ \
-	96, /* /soc/pin-controller/gpio0_default/gpio6 */
+	87, /* /soc/pin-controller/gpio0_default/gpio3 */ \
+	88, /* /soc/pin-controller/gpio0_default/gpio35 */ \
+	89, /* /soc/pin-controller/gpio0_default/gpio36 */ \
+	90, /* /soc/pin-controller/gpio0_default/gpio37 */ \
+	91, /* /soc/pin-controller/gpio0_default/gpio45 */ \
+	92, /* /soc/pin-controller/gpio0_default/gpio46 */ \
+	93, /* /soc/pin-controller/gpio0_default/gpio47 */ \
+	94, /* /soc/pin-controller/gpio0_default/gpio5 */ \
+	95, /* /soc/pin-controller/gpio0_default/gpio6 */
 
 /* Existence and alternate IDs: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_EXISTS 1
@@ -6751,9 +6749,9 @@
 #define DT_N_S_soc_S_uart_42240000_P_hw_flow_control_EXISTS 1
 #define DT_N_S_soc_S_uart_42240000_P_sw_flow_control 0
 #define DT_N_S_soc_S_uart_42240000_P_sw_flow_control_EXISTS 1
-#define DT_N_S_soc_S_uart_42240000_P_current_speed 6000000
-#define DT_N_S_soc_S_uart_42240000_P_current_speed_ENUM_IDX 21
-#define DT_N_S_soc_S_uart_42240000_P_current_speed_ENUM_VAL_6000000_EXISTS 1
+#define DT_N_S_soc_S_uart_42240000_P_current_speed 921600
+#define DT_N_S_soc_S_uart_42240000_P_current_speed_ENUM_IDX 16
+#define DT_N_S_soc_S_uart_42240000_P_current_speed_ENUM_VAL_921600_EXISTS 1
 #define DT_N_S_soc_S_uart_42240000_P_current_speed_EXISTS 1
 #define DT_N_S_soc_S_uart_42240000_P_data_bits 3
 #define DT_N_S_soc_S_uart_42240000_P_data_bits_EXISTS 1
@@ -9035,7 +9033,7 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0_PARENT DT_N_S_soc_S_pin_controller_S_gpio0_default
 
 /* Node's index in its parent's list of children: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0_CHILD_IDX 16
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0_CHILD_IDX 15
 
 /* Helpers for dealing with node labels: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0_NODELABEL_NUM 0
@@ -9129,7 +9127,7 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1_PARENT DT_N_S_soc_S_pin_controller_S_gpio0_default
 
 /* Node's index in its parent's list of children: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1_CHILD_IDX 17
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1_CHILD_IDX 16
 
 /* Helpers for dealing with node labels: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1_NODELABEL_NUM 0
@@ -10051,100 +10049,6 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24_P_debounce_EXISTS 1
 
 /*
- * Devicetree node: /soc/pin-controller/gpio0_default/gpio29
- *
- * Node identifier: DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29
- *
- * (Descriptions have moved to the Devicetree Bindings Index
- * in the documentation.)
- */
-
-/* Node's full path: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_PATH "/soc/pin-controller/gpio0_default/gpio29"
-
-/* Node's name with unit-address: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_FULL_NAME "gpio29"
-
-/* Node parent (/soc/pin-controller/gpio0_default) identifier: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_PARENT DT_N_S_soc_S_pin_controller_S_gpio0_default
-
-/* Node's index in its parent's list of children: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_CHILD_IDX 14
-
-/* Helpers for dealing with node labels: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_NODELABEL_NUM 0
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_FOREACH_NODELABEL(fn) 
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_FOREACH_NODELABEL_VARGS(fn, ...) 
-
-/* Helper macros for child nodes of this node. */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_CHILD_NUM 0
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_CHILD_NUM_STATUS_OKAY 0
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_FOREACH_CHILD(fn) 
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_FOREACH_CHILD_SEP(fn, sep) 
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_FOREACH_CHILD_VARGS(fn, ...) 
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_FOREACH_CHILD_SEP_VARGS(fn, sep, ...) 
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_FOREACH_CHILD_STATUS_OKAY(fn) 
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_FOREACH_CHILD_STATUS_OKAY_SEP(fn, sep) 
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_FOREACH_CHILD_STATUS_OKAY_VARGS(fn, ...) 
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
-
-/* Node's dependency ordinal: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_ORD 87
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_ORD_STR_SORTABLE 00087
-
-/* Ordinals for what this node depends on directly: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_REQUIRES_ORDS \
-	16, /* /soc/pin-controller/gpio0_default */
-
-/* Ordinals for what depends directly on this node: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_SUPPORTS_ORDS /* nothing */
-
-/* Existence and alternate IDs: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_EXISTS 1
-
-/* Macros for properties that are special in the specification: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_REG_NUM 0
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_RANGES_NUM 0
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_FOREACH_RANGE(fn) 
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_IRQ_NUM 0
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_IRQ_LEVEL 0
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_STATUS_okay 1
-
-/* Pin control (pinctrl-<i>, pinctrl-names) properties: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_PINCTRL_NUM 0
-
-/* Generic property macros: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_bias_high_impedance 0
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_bias_high_impedance_EXISTS 1
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_bias_pull_up 1
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_bias_pull_up_EXISTS 1
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_bias_pull_down 0
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_bias_pull_down_EXISTS 1
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_drive_strength 4
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_drive_strength_ENUM_IDX 1
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_drive_strength_ENUM_VAL_4_EXISTS 1
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_drive_strength_EXISTS 1
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_input_schmitt_enable 0
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_input_schmitt_enable_EXISTS 1
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_output_enable 0
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_output_enable_EXISTS 1
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_output_high 0
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_output_high_EXISTS 1
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_slew_rate 0
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_slew_rate_EXISTS 1
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_pinmux {940 /* 0x3ac */}
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_pinmux_IDX_0 940
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_pinmux_IDX_0_EXISTS 1
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_pinmux_FOREACH_PROP_ELEM(fn) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29, pinmux, 0)
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_pinmux_FOREACH_PROP_ELEM_SEP(fn, sep) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29, pinmux, 0)
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_pinmux_FOREACH_PROP_ELEM_VARGS(fn, ...) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29, pinmux, 0, __VA_ARGS__)
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_pinmux_FOREACH_PROP_ELEM_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29, pinmux, 0, __VA_ARGS__)
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_pinmux_LEN 1
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_pinmux_EXISTS 1
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_debounce 0
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29_P_debounce_EXISTS 1
-
-/*
  * Devicetree node: /soc/pin-controller/gpio0_default/gpio3
  *
  * Node identifier: DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3
@@ -10183,8 +10087,8 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3_ORD 88
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3_ORD_STR_SORTABLE 00088
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3_ORD 87
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3_ORD_STR_SORTABLE 00087
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3_REQUIRES_ORDS \
@@ -10257,7 +10161,7 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35_PARENT DT_N_S_soc_S_pin_controller_S_gpio0_default
 
 /* Node's index in its parent's list of children: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35_CHILD_IDX 18
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35_CHILD_IDX 17
 
 /* Helpers for dealing with node labels: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35_NODELABEL_NUM 0
@@ -10277,8 +10181,8 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35_ORD 89
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35_ORD_STR_SORTABLE 00089
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35_ORD 88
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35_ORD_STR_SORTABLE 00088
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35_REQUIRES_ORDS \
@@ -10351,7 +10255,7 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36_PARENT DT_N_S_soc_S_pin_controller_S_gpio0_default
 
 /* Node's index in its parent's list of children: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36_CHILD_IDX 19
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36_CHILD_IDX 18
 
 /* Helpers for dealing with node labels: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36_NODELABEL_NUM 0
@@ -10371,8 +10275,8 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36_ORD 90
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36_ORD_STR_SORTABLE 00090
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36_ORD 89
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36_ORD_STR_SORTABLE 00089
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36_REQUIRES_ORDS \
@@ -10445,7 +10349,7 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37_PARENT DT_N_S_soc_S_pin_controller_S_gpio0_default
 
 /* Node's index in its parent's list of children: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37_CHILD_IDX 20
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37_CHILD_IDX 19
 
 /* Helpers for dealing with node labels: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37_NODELABEL_NUM 0
@@ -10465,8 +10369,8 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37_ORD 91
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37_ORD_STR_SORTABLE 00091
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37_ORD 90
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37_ORD_STR_SORTABLE 00090
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37_REQUIRES_ORDS \
@@ -10539,7 +10443,7 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45_PARENT DT_N_S_soc_S_pin_controller_S_gpio0_default
 
 /* Node's index in its parent's list of children: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45_CHILD_IDX 15
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45_CHILD_IDX 14
 
 /* Helpers for dealing with node labels: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45_NODELABEL_NUM 0
@@ -10559,8 +10463,8 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45_ORD 92
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45_ORD_STR_SORTABLE 00092
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45_ORD 91
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45_ORD_STR_SORTABLE 00091
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45_REQUIRES_ORDS \
@@ -10653,8 +10557,8 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46_ORD 93
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46_ORD_STR_SORTABLE 00093
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46_ORD 92
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46_ORD_STR_SORTABLE 00092
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46_REQUIRES_ORDS \
@@ -10747,8 +10651,8 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47_ORD 94
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47_ORD_STR_SORTABLE 00094
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47_ORD 93
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47_ORD_STR_SORTABLE 00093
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47_REQUIRES_ORDS \
@@ -10841,8 +10745,8 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5_ORD 95
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5_ORD_STR_SORTABLE 00095
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5_ORD 94
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5_ORD_STR_SORTABLE 00094
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5_REQUIRES_ORDS \
@@ -10935,8 +10839,8 @@
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6_ORD 96
-#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6_ORD_STR_SORTABLE 00096
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6_ORD 95
+#define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6_ORD_STR_SORTABLE 00095
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6_REQUIRES_ORDS \
@@ -11032,8 +10936,8 @@
 #define DT_N_S_soc_S_pwm_dma_42190000_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_pwm_dma_42190000_S_rgb_0, __VA_ARGS__)
 
 /* Node's dependency ordinal: */
-#define DT_N_S_soc_S_pwm_dma_42190000_ORD 97
-#define DT_N_S_soc_S_pwm_dma_42190000_ORD_STR_SORTABLE 00097
+#define DT_N_S_soc_S_pwm_dma_42190000_ORD 96
+#define DT_N_S_soc_S_pwm_dma_42190000_ORD_STR_SORTABLE 00096
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_soc_S_pwm_dma_42190000_REQUIRES_ORDS \
@@ -11041,7 +10945,7 @@
 
 /* Ordinals for what depends directly on this node: */
 #define DT_N_S_soc_S_pwm_dma_42190000_SUPPORTS_ORDS \
-	98, /* /soc/pwm_dma@42190000/rgb@0 */
+	97, /* /soc/pwm_dma@42190000/rgb@0 */
 
 /* Existence and alternate IDs: */
 #define DT_N_S_soc_S_pwm_dma_42190000_EXISTS 1
@@ -11184,12 +11088,12 @@
 #define DT_N_S_soc_S_pwm_dma_42190000_S_rgb_0_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_soc_S_pwm_dma_42190000_S_rgb_0_ORD 98
-#define DT_N_S_soc_S_pwm_dma_42190000_S_rgb_0_ORD_STR_SORTABLE 00098
+#define DT_N_S_soc_S_pwm_dma_42190000_S_rgb_0_ORD 97
+#define DT_N_S_soc_S_pwm_dma_42190000_S_rgb_0_ORD_STR_SORTABLE 00097
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_soc_S_pwm_dma_42190000_S_rgb_0_REQUIRES_ORDS \
-	97, /* /soc/pwm_dma@42190000 */
+	96, /* /soc/pwm_dma@42190000 */
 
 /* Ordinals for what depends directly on this node: */
 #define DT_N_S_soc_S_pwm_dma_42190000_S_rgb_0_SUPPORTS_ORDS /* nothing */
@@ -11275,8 +11179,8 @@
 #define DT_N_S_soc_S_spim_421f0000_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) fn(DT_N_S_soc_S_spim_421f0000_S_paw3395_0, __VA_ARGS__)
 
 /* Node's dependency ordinal: */
-#define DT_N_S_soc_S_spim_421f0000_ORD 99
-#define DT_N_S_soc_S_spim_421f0000_ORD_STR_SORTABLE 00099
+#define DT_N_S_soc_S_spim_421f0000_ORD 98
+#define DT_N_S_soc_S_spim_421f0000_ORD_STR_SORTABLE 00098
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_soc_S_spim_421f0000_REQUIRES_ORDS \
@@ -11284,7 +11188,7 @@
 
 /* Ordinals for what depends directly on this node: */
 #define DT_N_S_soc_S_spim_421f0000_SUPPORTS_ORDS \
-	100, /* /soc/spim@421f0000/paw3395@0 */
+	99, /* /soc/spim@421f0000/paw3395@0 */
 
 /* Existence and alternate IDs: */
 #define DT_N_S_soc_S_spim_421f0000_EXISTS 1
@@ -11413,12 +11317,12 @@
 #define DT_N_S_soc_S_spim_421f0000_S_paw3395_0_FOREACH_CHILD_STATUS_OKAY_SEP_VARGS(fn, sep, ...) 
 
 /* Node's dependency ordinal: */
-#define DT_N_S_soc_S_spim_421f0000_S_paw3395_0_ORD 100
-#define DT_N_S_soc_S_spim_421f0000_S_paw3395_0_ORD_STR_SORTABLE 00100
+#define DT_N_S_soc_S_spim_421f0000_S_paw3395_0_ORD 99
+#define DT_N_S_soc_S_spim_421f0000_S_paw3395_0_ORD_STR_SORTABLE 00099
 
 /* Ordinals for what this node depends on directly: */
 #define DT_N_S_soc_S_spim_421f0000_S_paw3395_0_REQUIRES_ORDS \
-	99, /* /soc/spim@421f0000 */
+	98, /* /soc/spim@421f0000 */
 
 /* Ordinals for what depends directly on this node: */
 #define DT_N_S_soc_S_spim_421f0000_S_paw3395_0_SUPPORTS_ORDS /* nothing */
@@ -11539,10 +11443,10 @@
 #define DT_CHOSEN_zephyr_logging_port_EXISTS       1
 
 /* Macros for iterating over all nodes and enabled nodes */
-#define DT_FOREACH_HELPER(fn) fn(DT_N) fn(DT_N_S_chosen) fn(DT_N_S_aliases) fn(DT_N_S_soc) fn(DT_N_S_soc_S_interrupt_controller_e000e100) fn(DT_N_S_soc_S_timer_e000e010) fn(DT_N_S_soc_S_memory_4000000) fn(DT_N_S_soc_S_memory_4060000) fn(DT_N_S_soc_S_memory_84064000) fn(DT_N_S_soc_S_misc_42010000) fn(DT_N_S_soc_S_ost_42170000) fn(DT_N_S_soc_S_wdt0_42090000) fn(DT_N_S_soc_S_wdt1_42090030) fn(DT_N_S_soc_S_cache_e0180000) fn(DT_N_S_soc_S_flash_controller_40080000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_0) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_2000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_3000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1b000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1c000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_109000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1f6000) fn(DT_N_S_soc_S_airoha_hci) fn(DT_N_S_soc_S_dma_40040000) fn(DT_N_S_soc_S_esc_40090000) fn(DT_N_S_soc_S_irq_gen_422b0000) fn(DT_N_S_soc_S_gpt_42150000) fn(DT_N_S_soc_S_rtc_42100000) fn(DT_N_S_soc_S_trng_40030000) fn(DT_N_S_soc_S_hw_semaphore_422a0000) fn(DT_N_S_soc_S_i2c_42210000) fn(DT_N_S_soc_S_i2c_400e0000) fn(DT_N_S_soc_S_gpio_420b0000) fn(DT_N_S_soc_S_gpio_420b0004) fn(DT_N_S_soc_S_pin_controller) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37) fn(DT_N_S_soc_S_pin_controller_S_gpio1_default) fn(DT_N_S_soc_S_spim_421f0000) fn(DT_N_S_soc_S_spim_421f0000_S_paw3395_0) fn(DT_N_S_soc_S_spim_42200000) fn(DT_N_S_soc_S_spim_400a0000) fn(DT_N_S_soc_S_spis_400b0000) fn(DT_N_S_soc_S_spis_pad_420e0000) fn(DT_N_S_soc_S_irtx_40050000) fn(DT_N_S_soc_S_irrx_40060000) fn(DT_N_S_soc_S_argb_42180000) fn(DT_N_S_soc_S_pwm_dma_42190000) fn(DT_N_S_soc_S_pwm_dma_42190000_S_rgb_0) fn(DT_N_S_soc_S_pwm_dma_421a0000) fn(DT_N_S_soc_S_pwm_421b0000) fn(DT_N_S_soc_S_pwm_421c0000) fn(DT_N_S_soc_S_pwm_421d0000) fn(DT_N_S_soc_S_led_42103000) fn(DT_N_S_soc_S_led_42103000_S_channel0) fn(DT_N_S_soc_S_led_42103000_S_channel1) fn(DT_N_S_soc_S_led_42103000_S_channel2) fn(DT_N_S_soc_S_uart_42240000) fn(DT_N_S_soc_S_uart_42250000) fn(DT_N_S_soc_S_uart_42260000) fn(DT_N_S_soc_S_usbd_41020000) fn(DT_N_S_soc_S_hw_keyscan_421e0000) fn(DT_N_S_soc_S_ieee802154_thread_a0060000) fn(DT_N_S_soc_S_ieee802154_custom_a0060000) fn(DT_N_S_soc_S_qdec_42101000) fn(DT_N_S_soc_S_ramboz_42102000) fn(DT_N_S_soc_S_saradc_400d0000) fn(DT_N_S_soc_S_sdadc_40070000) fn(DT_N_S_soc_S_spmcfg_42130000) fn(DT_N_S_soc_S_spmtop_42120000) fn(DT_N_S_soc_S_srampwrctrl_42104000) fn(DT_N_S_soc_S_clock_42030000) fn(DT_N_S_soc_S_pmu_42108000) fn(DT_N_S_cpus) fn(DT_N_S_cpus_S_cpu_0) fn(DT_N_S_power_states) fn(DT_N_S_power_states_S_state0) fn(DT_N_S_power_states_S_state1)
-#define DT_FOREACH_OKAY_HELPER(fn) fn(DT_N) fn(DT_N_S_chosen) fn(DT_N_S_aliases) fn(DT_N_S_soc) fn(DT_N_S_soc_S_interrupt_controller_e000e100) fn(DT_N_S_soc_S_memory_4000000) fn(DT_N_S_soc_S_memory_4060000) fn(DT_N_S_soc_S_memory_84064000) fn(DT_N_S_soc_S_misc_42010000) fn(DT_N_S_soc_S_ost_42170000) fn(DT_N_S_soc_S_wdt0_42090000) fn(DT_N_S_soc_S_wdt1_42090030) fn(DT_N_S_soc_S_cache_e0180000) fn(DT_N_S_soc_S_flash_controller_40080000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_0) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_2000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_3000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1b000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1c000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_109000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1f6000) fn(DT_N_S_soc_S_airoha_hci) fn(DT_N_S_soc_S_dma_40040000) fn(DT_N_S_soc_S_esc_40090000) fn(DT_N_S_soc_S_irq_gen_422b0000) fn(DT_N_S_soc_S_gpt_42150000) fn(DT_N_S_soc_S_rtc_42100000) fn(DT_N_S_soc_S_trng_40030000) fn(DT_N_S_soc_S_hw_semaphore_422a0000) fn(DT_N_S_soc_S_i2c_42210000) fn(DT_N_S_soc_S_i2c_400e0000) fn(DT_N_S_soc_S_gpio_420b0000) fn(DT_N_S_soc_S_gpio_420b0004) fn(DT_N_S_soc_S_pin_controller) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37) fn(DT_N_S_soc_S_pin_controller_S_gpio1_default) fn(DT_N_S_soc_S_spim_421f0000) fn(DT_N_S_soc_S_spim_421f0000_S_paw3395_0) fn(DT_N_S_soc_S_spim_400a0000) fn(DT_N_S_soc_S_spis_400b0000) fn(DT_N_S_soc_S_spis_pad_420e0000) fn(DT_N_S_soc_S_irtx_40050000) fn(DT_N_S_soc_S_irrx_40060000) fn(DT_N_S_soc_S_argb_42180000) fn(DT_N_S_soc_S_pwm_dma_42190000) fn(DT_N_S_soc_S_pwm_dma_42190000_S_rgb_0) fn(DT_N_S_soc_S_pwm_dma_421a0000) fn(DT_N_S_soc_S_pwm_421b0000) fn(DT_N_S_soc_S_pwm_421c0000) fn(DT_N_S_soc_S_pwm_421d0000) fn(DT_N_S_soc_S_led_42103000) fn(DT_N_S_soc_S_led_42103000_S_channel0) fn(DT_N_S_soc_S_led_42103000_S_channel1) fn(DT_N_S_soc_S_led_42103000_S_channel2) fn(DT_N_S_soc_S_uart_42240000) fn(DT_N_S_soc_S_uart_42250000) fn(DT_N_S_soc_S_uart_42260000) fn(DT_N_S_soc_S_usbd_41020000) fn(DT_N_S_soc_S_hw_keyscan_421e0000) fn(DT_N_S_soc_S_qdec_42101000) fn(DT_N_S_soc_S_ramboz_42102000) fn(DT_N_S_soc_S_saradc_400d0000) fn(DT_N_S_soc_S_sdadc_40070000) fn(DT_N_S_soc_S_spmcfg_42130000) fn(DT_N_S_soc_S_spmtop_42120000) fn(DT_N_S_soc_S_srampwrctrl_42104000) fn(DT_N_S_soc_S_clock_42030000) fn(DT_N_S_soc_S_pmu_42108000) fn(DT_N_S_cpus) fn(DT_N_S_cpus_S_cpu_0) fn(DT_N_S_power_states) fn(DT_N_S_power_states_S_state0) fn(DT_N_S_power_states_S_state1)
-#define DT_FOREACH_VARGS_HELPER(fn, ...) fn(DT_N, __VA_ARGS__) fn(DT_N_S_chosen, __VA_ARGS__) fn(DT_N_S_aliases, __VA_ARGS__) fn(DT_N_S_soc, __VA_ARGS__) fn(DT_N_S_soc_S_interrupt_controller_e000e100, __VA_ARGS__) fn(DT_N_S_soc_S_timer_e000e010, __VA_ARGS__) fn(DT_N_S_soc_S_memory_4000000, __VA_ARGS__) fn(DT_N_S_soc_S_memory_4060000, __VA_ARGS__) fn(DT_N_S_soc_S_memory_84064000, __VA_ARGS__) fn(DT_N_S_soc_S_misc_42010000, __VA_ARGS__) fn(DT_N_S_soc_S_ost_42170000, __VA_ARGS__) fn(DT_N_S_soc_S_wdt0_42090000, __VA_ARGS__) fn(DT_N_S_soc_S_wdt1_42090030, __VA_ARGS__) fn(DT_N_S_soc_S_cache_e0180000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_0, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_2000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_3000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1b000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1c000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_109000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1f6000, __VA_ARGS__) fn(DT_N_S_soc_S_airoha_hci, __VA_ARGS__) fn(DT_N_S_soc_S_dma_40040000, __VA_ARGS__) fn(DT_N_S_soc_S_esc_40090000, __VA_ARGS__) fn(DT_N_S_soc_S_irq_gen_422b0000, __VA_ARGS__) fn(DT_N_S_soc_S_gpt_42150000, __VA_ARGS__) fn(DT_N_S_soc_S_rtc_42100000, __VA_ARGS__) fn(DT_N_S_soc_S_trng_40030000, __VA_ARGS__) fn(DT_N_S_soc_S_hw_semaphore_422a0000, __VA_ARGS__) fn(DT_N_S_soc_S_i2c_42210000, __VA_ARGS__) fn(DT_N_S_soc_S_i2c_400e0000, __VA_ARGS__) fn(DT_N_S_soc_S_gpio_420b0000, __VA_ARGS__) fn(DT_N_S_soc_S_gpio_420b0004, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio1_default, __VA_ARGS__) fn(DT_N_S_soc_S_spim_421f0000, __VA_ARGS__) fn(DT_N_S_soc_S_spim_421f0000_S_paw3395_0, __VA_ARGS__) fn(DT_N_S_soc_S_spim_42200000, __VA_ARGS__) fn(DT_N_S_soc_S_spim_400a0000, __VA_ARGS__) fn(DT_N_S_soc_S_spis_400b0000, __VA_ARGS__) fn(DT_N_S_soc_S_spis_pad_420e0000, __VA_ARGS__) fn(DT_N_S_soc_S_irtx_40050000, __VA_ARGS__) fn(DT_N_S_soc_S_irrx_40060000, __VA_ARGS__) fn(DT_N_S_soc_S_argb_42180000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_dma_42190000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_dma_42190000_S_rgb_0, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_dma_421a0000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_421b0000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_421c0000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_421d0000, __VA_ARGS__) fn(DT_N_S_soc_S_led_42103000, __VA_ARGS__) fn(DT_N_S_soc_S_led_42103000_S_channel0, __VA_ARGS__) fn(DT_N_S_soc_S_led_42103000_S_channel1, __VA_ARGS__) fn(DT_N_S_soc_S_led_42103000_S_channel2, __VA_ARGS__) fn(DT_N_S_soc_S_uart_42240000, __VA_ARGS__) fn(DT_N_S_soc_S_uart_42250000, __VA_ARGS__) fn(DT_N_S_soc_S_uart_42260000, __VA_ARGS__) fn(DT_N_S_soc_S_usbd_41020000, __VA_ARGS__) fn(DT_N_S_soc_S_hw_keyscan_421e0000, __VA_ARGS__) fn(DT_N_S_soc_S_ieee802154_thread_a0060000, __VA_ARGS__) fn(DT_N_S_soc_S_ieee802154_custom_a0060000, __VA_ARGS__) fn(DT_N_S_soc_S_qdec_42101000, __VA_ARGS__) fn(DT_N_S_soc_S_ramboz_42102000, __VA_ARGS__) fn(DT_N_S_soc_S_saradc_400d0000, __VA_ARGS__) fn(DT_N_S_soc_S_sdadc_40070000, __VA_ARGS__) fn(DT_N_S_soc_S_spmcfg_42130000, __VA_ARGS__) fn(DT_N_S_soc_S_spmtop_42120000, __VA_ARGS__) fn(DT_N_S_soc_S_srampwrctrl_42104000, __VA_ARGS__) fn(DT_N_S_soc_S_clock_42030000, __VA_ARGS__) fn(DT_N_S_soc_S_pmu_42108000, __VA_ARGS__) fn(DT_N_S_cpus, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_0, __VA_ARGS__) fn(DT_N_S_power_states, __VA_ARGS__) fn(DT_N_S_power_states_S_state0, __VA_ARGS__) fn(DT_N_S_power_states_S_state1, __VA_ARGS__)
-#define DT_FOREACH_OKAY_VARGS_HELPER(fn, ...) fn(DT_N, __VA_ARGS__) fn(DT_N_S_chosen, __VA_ARGS__) fn(DT_N_S_aliases, __VA_ARGS__) fn(DT_N_S_soc, __VA_ARGS__) fn(DT_N_S_soc_S_interrupt_controller_e000e100, __VA_ARGS__) fn(DT_N_S_soc_S_memory_4000000, __VA_ARGS__) fn(DT_N_S_soc_S_memory_4060000, __VA_ARGS__) fn(DT_N_S_soc_S_memory_84064000, __VA_ARGS__) fn(DT_N_S_soc_S_misc_42010000, __VA_ARGS__) fn(DT_N_S_soc_S_ost_42170000, __VA_ARGS__) fn(DT_N_S_soc_S_wdt0_42090000, __VA_ARGS__) fn(DT_N_S_soc_S_wdt1_42090030, __VA_ARGS__) fn(DT_N_S_soc_S_cache_e0180000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_0, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_2000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_3000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1b000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1c000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_109000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1f6000, __VA_ARGS__) fn(DT_N_S_soc_S_airoha_hci, __VA_ARGS__) fn(DT_N_S_soc_S_dma_40040000, __VA_ARGS__) fn(DT_N_S_soc_S_esc_40090000, __VA_ARGS__) fn(DT_N_S_soc_S_irq_gen_422b0000, __VA_ARGS__) fn(DT_N_S_soc_S_gpt_42150000, __VA_ARGS__) fn(DT_N_S_soc_S_rtc_42100000, __VA_ARGS__) fn(DT_N_S_soc_S_trng_40030000, __VA_ARGS__) fn(DT_N_S_soc_S_hw_semaphore_422a0000, __VA_ARGS__) fn(DT_N_S_soc_S_i2c_42210000, __VA_ARGS__) fn(DT_N_S_soc_S_i2c_400e0000, __VA_ARGS__) fn(DT_N_S_soc_S_gpio_420b0000, __VA_ARGS__) fn(DT_N_S_soc_S_gpio_420b0004, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio29, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio1_default, __VA_ARGS__) fn(DT_N_S_soc_S_spim_421f0000, __VA_ARGS__) fn(DT_N_S_soc_S_spim_421f0000_S_paw3395_0, __VA_ARGS__) fn(DT_N_S_soc_S_spim_400a0000, __VA_ARGS__) fn(DT_N_S_soc_S_spis_400b0000, __VA_ARGS__) fn(DT_N_S_soc_S_spis_pad_420e0000, __VA_ARGS__) fn(DT_N_S_soc_S_irtx_40050000, __VA_ARGS__) fn(DT_N_S_soc_S_irrx_40060000, __VA_ARGS__) fn(DT_N_S_soc_S_argb_42180000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_dma_42190000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_dma_42190000_S_rgb_0, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_dma_421a0000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_421b0000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_421c0000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_421d0000, __VA_ARGS__) fn(DT_N_S_soc_S_led_42103000, __VA_ARGS__) fn(DT_N_S_soc_S_led_42103000_S_channel0, __VA_ARGS__) fn(DT_N_S_soc_S_led_42103000_S_channel1, __VA_ARGS__) fn(DT_N_S_soc_S_led_42103000_S_channel2, __VA_ARGS__) fn(DT_N_S_soc_S_uart_42240000, __VA_ARGS__) fn(DT_N_S_soc_S_uart_42250000, __VA_ARGS__) fn(DT_N_S_soc_S_uart_42260000, __VA_ARGS__) fn(DT_N_S_soc_S_usbd_41020000, __VA_ARGS__) fn(DT_N_S_soc_S_hw_keyscan_421e0000, __VA_ARGS__) fn(DT_N_S_soc_S_qdec_42101000, __VA_ARGS__) fn(DT_N_S_soc_S_ramboz_42102000, __VA_ARGS__) fn(DT_N_S_soc_S_saradc_400d0000, __VA_ARGS__) fn(DT_N_S_soc_S_sdadc_40070000, __VA_ARGS__) fn(DT_N_S_soc_S_spmcfg_42130000, __VA_ARGS__) fn(DT_N_S_soc_S_spmtop_42120000, __VA_ARGS__) fn(DT_N_S_soc_S_srampwrctrl_42104000, __VA_ARGS__) fn(DT_N_S_soc_S_clock_42030000, __VA_ARGS__) fn(DT_N_S_soc_S_pmu_42108000, __VA_ARGS__) fn(DT_N_S_cpus, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_0, __VA_ARGS__) fn(DT_N_S_power_states, __VA_ARGS__) fn(DT_N_S_power_states_S_state0, __VA_ARGS__) fn(DT_N_S_power_states_S_state1, __VA_ARGS__)
+#define DT_FOREACH_HELPER(fn) fn(DT_N) fn(DT_N_S_chosen) fn(DT_N_S_aliases) fn(DT_N_S_soc) fn(DT_N_S_soc_S_interrupt_controller_e000e100) fn(DT_N_S_soc_S_timer_e000e010) fn(DT_N_S_soc_S_memory_4000000) fn(DT_N_S_soc_S_memory_4060000) fn(DT_N_S_soc_S_memory_84064000) fn(DT_N_S_soc_S_misc_42010000) fn(DT_N_S_soc_S_ost_42170000) fn(DT_N_S_soc_S_wdt0_42090000) fn(DT_N_S_soc_S_wdt1_42090030) fn(DT_N_S_soc_S_cache_e0180000) fn(DT_N_S_soc_S_flash_controller_40080000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_0) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_2000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_3000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1b000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1c000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_109000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1f6000) fn(DT_N_S_soc_S_airoha_hci) fn(DT_N_S_soc_S_dma_40040000) fn(DT_N_S_soc_S_esc_40090000) fn(DT_N_S_soc_S_irq_gen_422b0000) fn(DT_N_S_soc_S_gpt_42150000) fn(DT_N_S_soc_S_rtc_42100000) fn(DT_N_S_soc_S_trng_40030000) fn(DT_N_S_soc_S_hw_semaphore_422a0000) fn(DT_N_S_soc_S_i2c_42210000) fn(DT_N_S_soc_S_i2c_400e0000) fn(DT_N_S_soc_S_gpio_420b0000) fn(DT_N_S_soc_S_gpio_420b0004) fn(DT_N_S_soc_S_pin_controller) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37) fn(DT_N_S_soc_S_pin_controller_S_gpio1_default) fn(DT_N_S_soc_S_spim_421f0000) fn(DT_N_S_soc_S_spim_421f0000_S_paw3395_0) fn(DT_N_S_soc_S_spim_42200000) fn(DT_N_S_soc_S_spim_400a0000) fn(DT_N_S_soc_S_spis_400b0000) fn(DT_N_S_soc_S_spis_pad_420e0000) fn(DT_N_S_soc_S_irtx_40050000) fn(DT_N_S_soc_S_irrx_40060000) fn(DT_N_S_soc_S_argb_42180000) fn(DT_N_S_soc_S_pwm_dma_42190000) fn(DT_N_S_soc_S_pwm_dma_42190000_S_rgb_0) fn(DT_N_S_soc_S_pwm_dma_421a0000) fn(DT_N_S_soc_S_pwm_421b0000) fn(DT_N_S_soc_S_pwm_421c0000) fn(DT_N_S_soc_S_pwm_421d0000) fn(DT_N_S_soc_S_led_42103000) fn(DT_N_S_soc_S_led_42103000_S_channel0) fn(DT_N_S_soc_S_led_42103000_S_channel1) fn(DT_N_S_soc_S_led_42103000_S_channel2) fn(DT_N_S_soc_S_uart_42240000) fn(DT_N_S_soc_S_uart_42250000) fn(DT_N_S_soc_S_uart_42260000) fn(DT_N_S_soc_S_usbd_41020000) fn(DT_N_S_soc_S_hw_keyscan_421e0000) fn(DT_N_S_soc_S_ieee802154_thread_a0060000) fn(DT_N_S_soc_S_ieee802154_custom_a0060000) fn(DT_N_S_soc_S_qdec_42101000) fn(DT_N_S_soc_S_ramboz_42102000) fn(DT_N_S_soc_S_saradc_400d0000) fn(DT_N_S_soc_S_sdadc_40070000) fn(DT_N_S_soc_S_spmcfg_42130000) fn(DT_N_S_soc_S_spmtop_42120000) fn(DT_N_S_soc_S_srampwrctrl_42104000) fn(DT_N_S_soc_S_clock_42030000) fn(DT_N_S_soc_S_pmu_42108000) fn(DT_N_S_cpus) fn(DT_N_S_cpus_S_cpu_0) fn(DT_N_S_power_states) fn(DT_N_S_power_states_S_state0) fn(DT_N_S_power_states_S_state1)
+#define DT_FOREACH_OKAY_HELPER(fn) fn(DT_N) fn(DT_N_S_chosen) fn(DT_N_S_aliases) fn(DT_N_S_soc) fn(DT_N_S_soc_S_interrupt_controller_e000e100) fn(DT_N_S_soc_S_memory_4000000) fn(DT_N_S_soc_S_memory_4060000) fn(DT_N_S_soc_S_memory_84064000) fn(DT_N_S_soc_S_misc_42010000) fn(DT_N_S_soc_S_ost_42170000) fn(DT_N_S_soc_S_wdt0_42090000) fn(DT_N_S_soc_S_wdt1_42090030) fn(DT_N_S_soc_S_cache_e0180000) fn(DT_N_S_soc_S_flash_controller_40080000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_0) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_2000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_3000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1b000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1c000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_109000) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1f6000) fn(DT_N_S_soc_S_airoha_hci) fn(DT_N_S_soc_S_dma_40040000) fn(DT_N_S_soc_S_esc_40090000) fn(DT_N_S_soc_S_irq_gen_422b0000) fn(DT_N_S_soc_S_gpt_42150000) fn(DT_N_S_soc_S_rtc_42100000) fn(DT_N_S_soc_S_trng_40030000) fn(DT_N_S_soc_S_hw_semaphore_422a0000) fn(DT_N_S_soc_S_i2c_42210000) fn(DT_N_S_soc_S_i2c_400e0000) fn(DT_N_S_soc_S_gpio_420b0000) fn(DT_N_S_soc_S_gpio_420b0004) fn(DT_N_S_soc_S_pin_controller) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37) fn(DT_N_S_soc_S_pin_controller_S_gpio1_default) fn(DT_N_S_soc_S_spim_421f0000) fn(DT_N_S_soc_S_spim_421f0000_S_paw3395_0) fn(DT_N_S_soc_S_spim_400a0000) fn(DT_N_S_soc_S_spis_400b0000) fn(DT_N_S_soc_S_spis_pad_420e0000) fn(DT_N_S_soc_S_irtx_40050000) fn(DT_N_S_soc_S_irrx_40060000) fn(DT_N_S_soc_S_argb_42180000) fn(DT_N_S_soc_S_pwm_dma_42190000) fn(DT_N_S_soc_S_pwm_dma_42190000_S_rgb_0) fn(DT_N_S_soc_S_pwm_dma_421a0000) fn(DT_N_S_soc_S_pwm_421b0000) fn(DT_N_S_soc_S_pwm_421c0000) fn(DT_N_S_soc_S_pwm_421d0000) fn(DT_N_S_soc_S_led_42103000) fn(DT_N_S_soc_S_led_42103000_S_channel0) fn(DT_N_S_soc_S_led_42103000_S_channel1) fn(DT_N_S_soc_S_led_42103000_S_channel2) fn(DT_N_S_soc_S_uart_42240000) fn(DT_N_S_soc_S_uart_42250000) fn(DT_N_S_soc_S_uart_42260000) fn(DT_N_S_soc_S_usbd_41020000) fn(DT_N_S_soc_S_hw_keyscan_421e0000) fn(DT_N_S_soc_S_qdec_42101000) fn(DT_N_S_soc_S_ramboz_42102000) fn(DT_N_S_soc_S_saradc_400d0000) fn(DT_N_S_soc_S_sdadc_40070000) fn(DT_N_S_soc_S_spmcfg_42130000) fn(DT_N_S_soc_S_spmtop_42120000) fn(DT_N_S_soc_S_srampwrctrl_42104000) fn(DT_N_S_soc_S_clock_42030000) fn(DT_N_S_soc_S_pmu_42108000) fn(DT_N_S_cpus) fn(DT_N_S_cpus_S_cpu_0) fn(DT_N_S_power_states) fn(DT_N_S_power_states_S_state0) fn(DT_N_S_power_states_S_state1)
+#define DT_FOREACH_VARGS_HELPER(fn, ...) fn(DT_N, __VA_ARGS__) fn(DT_N_S_chosen, __VA_ARGS__) fn(DT_N_S_aliases, __VA_ARGS__) fn(DT_N_S_soc, __VA_ARGS__) fn(DT_N_S_soc_S_interrupt_controller_e000e100, __VA_ARGS__) fn(DT_N_S_soc_S_timer_e000e010, __VA_ARGS__) fn(DT_N_S_soc_S_memory_4000000, __VA_ARGS__) fn(DT_N_S_soc_S_memory_4060000, __VA_ARGS__) fn(DT_N_S_soc_S_memory_84064000, __VA_ARGS__) fn(DT_N_S_soc_S_misc_42010000, __VA_ARGS__) fn(DT_N_S_soc_S_ost_42170000, __VA_ARGS__) fn(DT_N_S_soc_S_wdt0_42090000, __VA_ARGS__) fn(DT_N_S_soc_S_wdt1_42090030, __VA_ARGS__) fn(DT_N_S_soc_S_cache_e0180000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_0, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_2000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_3000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1b000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1c000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_109000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1f6000, __VA_ARGS__) fn(DT_N_S_soc_S_airoha_hci, __VA_ARGS__) fn(DT_N_S_soc_S_dma_40040000, __VA_ARGS__) fn(DT_N_S_soc_S_esc_40090000, __VA_ARGS__) fn(DT_N_S_soc_S_irq_gen_422b0000, __VA_ARGS__) fn(DT_N_S_soc_S_gpt_42150000, __VA_ARGS__) fn(DT_N_S_soc_S_rtc_42100000, __VA_ARGS__) fn(DT_N_S_soc_S_trng_40030000, __VA_ARGS__) fn(DT_N_S_soc_S_hw_semaphore_422a0000, __VA_ARGS__) fn(DT_N_S_soc_S_i2c_42210000, __VA_ARGS__) fn(DT_N_S_soc_S_i2c_400e0000, __VA_ARGS__) fn(DT_N_S_soc_S_gpio_420b0000, __VA_ARGS__) fn(DT_N_S_soc_S_gpio_420b0004, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio1_default, __VA_ARGS__) fn(DT_N_S_soc_S_spim_421f0000, __VA_ARGS__) fn(DT_N_S_soc_S_spim_421f0000_S_paw3395_0, __VA_ARGS__) fn(DT_N_S_soc_S_spim_42200000, __VA_ARGS__) fn(DT_N_S_soc_S_spim_400a0000, __VA_ARGS__) fn(DT_N_S_soc_S_spis_400b0000, __VA_ARGS__) fn(DT_N_S_soc_S_spis_pad_420e0000, __VA_ARGS__) fn(DT_N_S_soc_S_irtx_40050000, __VA_ARGS__) fn(DT_N_S_soc_S_irrx_40060000, __VA_ARGS__) fn(DT_N_S_soc_S_argb_42180000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_dma_42190000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_dma_42190000_S_rgb_0, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_dma_421a0000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_421b0000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_421c0000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_421d0000, __VA_ARGS__) fn(DT_N_S_soc_S_led_42103000, __VA_ARGS__) fn(DT_N_S_soc_S_led_42103000_S_channel0, __VA_ARGS__) fn(DT_N_S_soc_S_led_42103000_S_channel1, __VA_ARGS__) fn(DT_N_S_soc_S_led_42103000_S_channel2, __VA_ARGS__) fn(DT_N_S_soc_S_uart_42240000, __VA_ARGS__) fn(DT_N_S_soc_S_uart_42250000, __VA_ARGS__) fn(DT_N_S_soc_S_uart_42260000, __VA_ARGS__) fn(DT_N_S_soc_S_usbd_41020000, __VA_ARGS__) fn(DT_N_S_soc_S_hw_keyscan_421e0000, __VA_ARGS__) fn(DT_N_S_soc_S_ieee802154_thread_a0060000, __VA_ARGS__) fn(DT_N_S_soc_S_ieee802154_custom_a0060000, __VA_ARGS__) fn(DT_N_S_soc_S_qdec_42101000, __VA_ARGS__) fn(DT_N_S_soc_S_ramboz_42102000, __VA_ARGS__) fn(DT_N_S_soc_S_saradc_400d0000, __VA_ARGS__) fn(DT_N_S_soc_S_sdadc_40070000, __VA_ARGS__) fn(DT_N_S_soc_S_spmcfg_42130000, __VA_ARGS__) fn(DT_N_S_soc_S_spmtop_42120000, __VA_ARGS__) fn(DT_N_S_soc_S_srampwrctrl_42104000, __VA_ARGS__) fn(DT_N_S_soc_S_clock_42030000, __VA_ARGS__) fn(DT_N_S_soc_S_pmu_42108000, __VA_ARGS__) fn(DT_N_S_cpus, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_0, __VA_ARGS__) fn(DT_N_S_power_states, __VA_ARGS__) fn(DT_N_S_power_states_S_state0, __VA_ARGS__) fn(DT_N_S_power_states_S_state1, __VA_ARGS__)
+#define DT_FOREACH_OKAY_VARGS_HELPER(fn, ...) fn(DT_N, __VA_ARGS__) fn(DT_N_S_chosen, __VA_ARGS__) fn(DT_N_S_aliases, __VA_ARGS__) fn(DT_N_S_soc, __VA_ARGS__) fn(DT_N_S_soc_S_interrupt_controller_e000e100, __VA_ARGS__) fn(DT_N_S_soc_S_memory_4000000, __VA_ARGS__) fn(DT_N_S_soc_S_memory_4060000, __VA_ARGS__) fn(DT_N_S_soc_S_memory_84064000, __VA_ARGS__) fn(DT_N_S_soc_S_misc_42010000, __VA_ARGS__) fn(DT_N_S_soc_S_ost_42170000, __VA_ARGS__) fn(DT_N_S_soc_S_wdt0_42090000, __VA_ARGS__) fn(DT_N_S_soc_S_wdt1_42090030, __VA_ARGS__) fn(DT_N_S_soc_S_cache_e0180000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_0, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_2000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_3000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1b000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1c000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_109000, __VA_ARGS__) fn(DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1f6000, __VA_ARGS__) fn(DT_N_S_soc_S_airoha_hci, __VA_ARGS__) fn(DT_N_S_soc_S_dma_40040000, __VA_ARGS__) fn(DT_N_S_soc_S_esc_40090000, __VA_ARGS__) fn(DT_N_S_soc_S_irq_gen_422b0000, __VA_ARGS__) fn(DT_N_S_soc_S_gpt_42150000, __VA_ARGS__) fn(DT_N_S_soc_S_rtc_42100000, __VA_ARGS__) fn(DT_N_S_soc_S_trng_40030000, __VA_ARGS__) fn(DT_N_S_soc_S_hw_semaphore_422a0000, __VA_ARGS__) fn(DT_N_S_soc_S_i2c_42210000, __VA_ARGS__) fn(DT_N_S_soc_S_i2c_400e0000, __VA_ARGS__) fn(DT_N_S_soc_S_gpio_420b0000, __VA_ARGS__) fn(DT_N_S_soc_S_gpio_420b0004, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio2, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio3, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio17, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio18, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio46, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio47, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio19, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio20, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio21, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio22, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio5, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio6, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio23, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio24, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio45, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio0, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio1, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio35, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio36, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio0_default_S_gpio37, __VA_ARGS__) fn(DT_N_S_soc_S_pin_controller_S_gpio1_default, __VA_ARGS__) fn(DT_N_S_soc_S_spim_421f0000, __VA_ARGS__) fn(DT_N_S_soc_S_spim_421f0000_S_paw3395_0, __VA_ARGS__) fn(DT_N_S_soc_S_spim_400a0000, __VA_ARGS__) fn(DT_N_S_soc_S_spis_400b0000, __VA_ARGS__) fn(DT_N_S_soc_S_spis_pad_420e0000, __VA_ARGS__) fn(DT_N_S_soc_S_irtx_40050000, __VA_ARGS__) fn(DT_N_S_soc_S_irrx_40060000, __VA_ARGS__) fn(DT_N_S_soc_S_argb_42180000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_dma_42190000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_dma_42190000_S_rgb_0, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_dma_421a0000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_421b0000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_421c0000, __VA_ARGS__) fn(DT_N_S_soc_S_pwm_421d0000, __VA_ARGS__) fn(DT_N_S_soc_S_led_42103000, __VA_ARGS__) fn(DT_N_S_soc_S_led_42103000_S_channel0, __VA_ARGS__) fn(DT_N_S_soc_S_led_42103000_S_channel1, __VA_ARGS__) fn(DT_N_S_soc_S_led_42103000_S_channel2, __VA_ARGS__) fn(DT_N_S_soc_S_uart_42240000, __VA_ARGS__) fn(DT_N_S_soc_S_uart_42250000, __VA_ARGS__) fn(DT_N_S_soc_S_uart_42260000, __VA_ARGS__) fn(DT_N_S_soc_S_usbd_41020000, __VA_ARGS__) fn(DT_N_S_soc_S_hw_keyscan_421e0000, __VA_ARGS__) fn(DT_N_S_soc_S_qdec_42101000, __VA_ARGS__) fn(DT_N_S_soc_S_ramboz_42102000, __VA_ARGS__) fn(DT_N_S_soc_S_saradc_400d0000, __VA_ARGS__) fn(DT_N_S_soc_S_sdadc_40070000, __VA_ARGS__) fn(DT_N_S_soc_S_spmcfg_42130000, __VA_ARGS__) fn(DT_N_S_soc_S_spmtop_42120000, __VA_ARGS__) fn(DT_N_S_soc_S_srampwrctrl_42104000, __VA_ARGS__) fn(DT_N_S_soc_S_clock_42030000, __VA_ARGS__) fn(DT_N_S_soc_S_pmu_42108000, __VA_ARGS__) fn(DT_N_S_cpus, __VA_ARGS__) fn(DT_N_S_cpus_S_cpu_0, __VA_ARGS__) fn(DT_N_S_power_states, __VA_ARGS__) fn(DT_N_S_power_states_S_state0, __VA_ARGS__) fn(DT_N_S_power_states_S_state1, __VA_ARGS__)
 #define DT_COMPAT_fixed_partitions_LABEL_partition_table DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_0
 #define DT_COMPAT_fixed_partitions_LABEL_partition_table_EXISTS 1
 #define DT_COMPAT_fixed_partitions_LABEL_secure_hdr0 DT_N_S_soc_S_flash_controller_40080000_S_flash_8000000_S_partitions_S_partition_1000

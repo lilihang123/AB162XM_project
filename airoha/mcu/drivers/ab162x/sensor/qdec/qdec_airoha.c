@@ -63,6 +63,9 @@ struct qdec_airoha_cfg
 {
     hal_qdec_config_t qdec_conifg;
     struct qdec_airoha_pin qdec_pin;
+#if IS_ENABLED(CONFIG_AIR_PINCTRL)
+    const struct pinctrl_dev_config *pincfg;
+#endif
 };
 
 struct qdec_airoha_data
@@ -522,6 +525,16 @@ static int qdec_airoha_init(const struct device *dev)
 {
     // qdec_airoha_gpio_ctrl(0);
 
+#if IS_ENABLED(CONFIG_AIR_PINCTRL)
+    const struct qdec_airoha_cfg *cfg = dev->config;
+    if (cfg->pincfg) {
+        int ret = pinctrl_apply_state(cfg->pincfg, PINCTRL_STATE_DEFAULT);
+        if (ret < 0) {
+            return ret;
+        }
+    }
+#endif
+
     hal_qdec_config_t qdec_test_config = (((struct qdec_airoha_cfg *)(dev->config))->qdec_conifg);
     hal_qdec_deinit();
     hal_qdec_init(&qdec_test_config);
@@ -539,6 +552,7 @@ static const struct sensor_driver_api qdec_airoha_driver_api = {
 
 #define QDEC_AIROHA_DEVICE(id)         \
                                     \
+    PINCTRL_DT_INST_DEFINE(id);                             \
     static struct qdec_airoha_cfg qdec_airoha_p##id##_cfg = {                   \
         .qdec_conifg = {                                                        \
             .led_force_off = (uint8_t)DT_INST_PROP(id, led_force_off),          \
@@ -562,6 +576,7 @@ static const struct sensor_driver_api qdec_airoha_driver_api = {
             .pina = (uint8_t)DT_INST_PROP(id, pina),                            \
             .pinb = (uint8_t)DT_INST_PROP(id, pinb),                            \
         },                                                                      \
+        .pincfg = PINCTRL_DT_INST_DEV_CONFIG_GET(id),                           \
     };                                                                          \
                                                                                 \
     static struct qdec_airoha_data qdec_airoha_p##id##_data = {                 \

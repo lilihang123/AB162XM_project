@@ -1,0 +1,10 @@
+default: hid_device_ref_design_mouse
+build_dir: /workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro
+domains:
+  - name: hid_device_ref_design_mouse
+    build_dir: /workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/hid_device_ref_design_mouse
+  - name: mcuboot
+    build_dir: /workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/mcuboot
+flash_order:
+  - mcuboot
+  - hid_device_ref_design_mouse

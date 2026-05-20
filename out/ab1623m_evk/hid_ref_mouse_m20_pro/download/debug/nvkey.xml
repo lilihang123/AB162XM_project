@@ -1,0 +1,133 @@
+<NvKeyTable Version="2.0">
+    <NVKey KeyID="0x1001" Name="NVID_NVDM_VERSION">		
+		<Field name="nvdm_version" type="array" value="0x00000000" description=""/>
+	</NVKey>	
+	<NVKey KeyID="0x2045" Name="NVID_CAL_XO_CAPID" Domain="MP_DATA">
+		<Field name="trim_spec" type="uint8_t" value="0x02" description="trim spec"/>
+		<Field name="cap_value" type="uint16_t" value="0x0086" description="capid val"/>
+		<Field name="reserved" type="uint8_t" value="0x00" description="reserved"/>
+	</NVKey>
+
+<NVKey KeyID="0x0002" Name="board level">
+		<Value>0x1122334455667788</Value>
+	</NVKey>
+
+    <NVKey KeyID="0x0001" Name="board level">
+		<Field name="prop_a" type="uint8_t" value="0x11" description="property a"/>
+		<Field name="prop_b" type="uint8_t" value="0x22" description="property b"/>
+		<Field name="prop_c" type="uint16_t" value="0x4433" description="property c"/>
+		<Field name="prop_d" type="uint32_t" value="0x88776655" description="property d"/>
+		<Field name="prop_e" type="array" value="0x99AABBCCDD" description="property d"/>
+	</NVKey>
+
+<NVKey KeyID="0x3740" Name="NVID_RF_TX_GAIN_TABLE_K_0V96">
+        <Value>0x0E00100011001300150017001900130015001700180015001700180015001700140016001800160017001900180017001900160017001900190018001800180018001700190019001900170019001900190019001900190019001900190019001900190019001900190019001900190019001900190019001900190019001900</Value>
+     </NVKey>
+
+     <NVKey KeyID="0x3741" Name="NVID_RF_TX_GAIN_TABLE_K_1V2">
+        <Value>0x270029002B002D0028002A002C002E0028002A002C002E002A002C002E002A002C002E002C002E002B002D002C002E002C002E002E002D002C002E002E002D002D002D002D002E002E002E002E002D002D002C002E002E002E002E002E002E002E002E002E002E002E002E002E002E002E002E002E002E002E002E002E002E00</Value>
+     </NVKey>
+
+     <NVKey KeyID="0x3742" Name="NVID_RF_TX_GAIN_TABLE_K_1V45">
+        <Value>0x3000320034002E003000320034002E0030003200340030003200340030003200340032003400310033003200340032003400340030003200340034003400320034003200340033003300340033003400320034003400340034003400340034003400340034003400340034003400340034003400340034003400340034003800</Value>
+     </NVKey>
+
+     <NVKey KeyID="0x3743" Name="NVID_RF_AM_TABLE_K_0V96">
+        <Value>0x010001000100010001000100100014001400140014001800180018001C001C0020002000200024002400240028002C002C0034003400340038003C004000440048005000500054005800640064006800700078008000880090009800A000AC00B800C400D000DC00E800FC0008011C0130014401580170018C01B001D401FC01</Value>
+     </NVKey>
+
+     <NVKey KeyID="0x3744" Name="NVID_RF_AM_TABLE_K_1V2">
+        <Value>0x0C000C000C000C00100010001000100014001400140014001800180018001C001C001C002000200024002400280028002C002C0030003400380038003C004000440048004C00500054005800600068006C00780078008000880090009800A000AC00B800C000CC00DC00E800F80008011C013001480164018001A401D001FC01</Value>
+     </NVKey>
+
+     <NVKey KeyID="0x3745" Name="NVID_RF_AM_TABLE_K_1V45">
+        <Value>0x0C000C000C00100010001000100014001400140014001800180018001C001C001C002000200024002400280028002C002C0030003800380038003C004000480048005000500058005C00600068006C007C007C0084008C0094009C00A800B000BC00C400D000E000EC00FC001001200134014C0164018001A001C401FC01FC01</Value>
+     </NVKey>
+     <NVKey KeyID="0x3746" Name="NVID_VPA_VOLTAGE">
+        <Value>0x00</Value>
+     </NVKey>
+     <NVKey KeyID="0x3747" Name="NVID_RF_802154_CHANNEL_THRESHOLD">
+        <Value>0x0550</Value>
+     </NVKey>
+     <NVKey KeyID="0x3748" Name="NVID_RF_LE_CHANNEL_THRESHOLD">
+        <Value>0x004E004E004E</Value>
+     </NVKey>
+     <NVKey KeyID="0x3749" Name="NVID_802154_CCA_THRESHOLD">
+        <Value>0x2203</Value>
+     </NVKey>
+     <NVKey KeyID="0x374A" Name="NVID_802154_CCA_DURATION">
+        <Value>0x8000</Value>
+     </NVKey>
+     <NVKey KeyID="0x374B" Name="NVID_802154_CCA_TURNAROUND_TIME">
+        <Value>0xC000</Value>
+     </NVKey>
+     <NVKey KeyID="0x3755" Name="NVID_RF_0V96_TXGC">
+        <Value>0x3D003D003D003D003D003D003D003D003D00</Value>
+     </NVKey>
+     <NVKey KeyID="0x3756" Name="NVID_RF_1V2_TXGC">
+        <Value>0x3E003E003E003E003E003E003E003E003E00</Value>
+     </NVKey>
+     <NVKey KeyID="0x3757" Name="NVID_RF_1V45_TXGC">
+        <Value>0x3E003E003E003E003E003E003E003E003E00</Value>
+     </NVKey>
+     <NVKey KeyID="0x3758" Name="NVID_RF_PWR_CTL">
+        <Value>0x0100D3D3</Value>
+     </NVKey>
+     <NVKey KeyID="0x3759" Name="NVID_RF_802154_0V96_TXGC">
+        <Value>0x3E003E003E00</Value>
+     </NVKey>
+     <NVKey KeyID="0x375a" Name="NVID_RF_802154_1V2_TXGC">
+        <Value>0x3E003E003E00</Value>
+     </NVKey>
+     <NVKey KeyID="0x375b" Name="NVID_RF_802154_1V45_TXGC">
+        <Value>0x3E003E003E00</Value>
+     </NVKey>
+     <NVKey KeyID="0x375c" Name="NVID_RF_D4_TEST_MODE_EN">
+        <Value>0x00</Value>
+     </NVKey>
+<NVKey KeyID="0x204F" Name="NVID_FG_DATA" Domain="BASEBAND">
+        <Value>0x0000FF0040420F000000000000000000</Value>
+    </NVKey>
+    <NVKey KeyID="0x2050" Name="NVID_FG_CONFIG" Domain="BASEBAND">
+        <Value>0x00000000FF0A0302016440420F000000000000000000C80000002C0164000600505F14050100000002000000030000000400000005000000060000000700000008000000</Value>
+    </NVKey>
+<NVKey KeyID="0x0003" Name="app level">
+		<Value>0x1122334455667788</Value>
+	</NVKey>
+
+	<NVKey KeyID="demo/boot_count">
+		<Value>0x4E61BC</Value>
+	</NVKey>
+
+	<NVKey KeyID="0x1002" Name="NVIDPRODUCT_GATEGORY">
+		<Field name="product_category" type="array" value="4142313632334D4F555345" description="AB1623M_MOUSE"/>
+	</NVKey>
+
+	<NVKey KeyID="0x1839" Name="NVID_BT_HOST_RELAY_ENABLE" Domain="TEST_USE_DATA">
+		<Value>0x0000</Value>
+	</NVKey>
+
+    <NVKey KeyID="0x2020" Name="NVID_CAL_VBAT_ADC_CAL_TABLE" Domain="BASEBAND">
+        <Value>0x000222001900000070301027000000000000000000000000000000000000000000000000000000000000</Value>
+    </NVKey>
+    <NVKey KeyID="0x2021" Name="NVID_CAL_VBAT_VOLT_CFG" Domain="BASEBAND">
+        <Value>0x036810000000000000F00A0000480D00007A0D0000AC0D0000100E0000740E0000D80E00003C0F0000A00F000004100000361000000000000000000000000000000000000000000000000000000000000000000000</Value>
+    </NVKey>
+
+	<NVKey KeyID="0x6000" Name="NVID_POWER_SAVING_TIMEOUT">
+		<OTA StructureNAME="struct power_saving_timeout" Update="True"/>
+		<Field name="power_saving_active_timeout" type="uint16_t" value="0x000A" description="Power Saving Active Timeout"/>
+		<Field name="power_saving_idle1_timeout" type="uint16_t" value="0x000A" description="Power Saving Idle1 Timeout"/>
+		<Field name="power_saving_idle2_timeout" type="uint16_t" value="0x000A" description="Power Saving Idle2 Timeout"/>
+		<Field name="power_saving_standby_timeout" type="uint16_t" value="0x0000" description="Power Saving Standby Timeout"/>
+		<Field name="2_4G_pairing_timeout" type="uint16_t" value="0x003C" description="2.4G Pairing Timeout"/>
+		<Field name="2_4G_reconnect_timeout" type="uint16_t" value="0x000A" description="2.4G Reconnect Timeout"/>
+		<Field name="BT_pairing_timeout" type="uint16_t" value="0x003C" description="BT Pairing Timeout"/>
+		<Field name="BT_reconnect_timeout" type="uint16_t" value="0x001E" description="BT Reconnect Timeout"/>
+	</NVKey>
+
+	<NVKey KeyID="0x4010" Name="NVID_SYS_EXP_DUMP_MODE" Domain="MP_DATA">
+	<Value>0xB400B400</Value>
+	</NVKey>
+
+</NvKeyTable>

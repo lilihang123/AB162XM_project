@@ -1,0 +1,5 @@
+# 0 "/workdir/airoha/common/applications/hid/src/hid_common_acl_rsp_via_hid.c"
+# 1 "/workdir/airoha/risc-v//"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/workdir/airoha/common/applications/hid/src/hid_common_acl_rsp_via_hid.c"

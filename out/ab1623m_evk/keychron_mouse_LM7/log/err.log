@@ -1,0 +1,541 @@
+-- west build: generating a build system
+Loading Zephyr module(s) (Zephyr base (cached)): sysbuild_default
+-- Cache files will be written to: /home/user/.cache/zephyr
+-- Found west (found suitable version "1.2.0", minimum required is "0.14.0")
+-- Board: ab1623m_evk, qualifiers: ab1623m
+Parsing /workdir/zephyr/share/sysbuild/Kconfig
+Loaded configuration '/workdir/out/ab1623m_evk/keychron_mouse_LM7/zephyr/.config'
+No change to configuration in '/workdir/out/ab1623m_evk/keychron_mouse_LM7/zephyr/.config'
+No change to Kconfig header in '/workdir/out/ab1623m_evk/keychron_mouse_LM7/_sysbuild/autoconf.h'
+[Airoha] AIR_SYSBUILD_PATH: /workdir/airoha/mcu/boards/airoha/ab1623m_evk/../../../cmake/sysbuild
+[Airoha][Build] SYSBUILD_START_TIME_IN_SEC: 1779264403
+[Airoha] IMAGES: 
+[Airoha] DEFAULT_IMAGE: Keychron_LM7_design_mouse
+[Airoha] SYSBUILD_IMAGES: Keychron_LM7_design_mouse;mcuboot
+[Airoha][Footprint] script(/workdir/airoha/mcu/cmake/sysbuild/../../scripts/scripts_protected/memory_utility/footprint_v2/footprint.py) not exist
+-- 
+   *****************************
+   * Running CMake for mcuboot *
+   *****************************
+
+Loading Zephyr default modules (Zephyr base (cached)).
+-- Application: /workdir/airoha/mcu/applications/mcuboot/boot/zephyr
+-- CMake version: 3.22.1
+-- Cache files will be written to: /home/user/.cache/zephyr
+-- Zephyr version: 3.7.1 (/workdir/zephyr)
+-- Found west (found suitable version "1.2.0", minimum required is "0.14.0")
+-- Board: ab1623m_evk, qualifiers: ab1623m
+-- Found host-tools: zephyr 0.16.9 (/opt/toolchains/zephyr-sdk-0.16.9)
+-- Found toolchain: zephyr 0.16.9 (/opt/toolchains/zephyr-sdk-0.16.9)
+-- Found BOARD.dts: /workdir/airoha/mcu/boards/airoha/ab1623m_evk/ab1623m_evk.dts
+-- Found devicetree overlay: config/ab162x_evb/mcuboot.overlay
+unit address and first address in 'reg' (0x420b0000) don't match for /soc/gpio@420b0004
+-- Generated zephyr.dts: /workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot/zephyr/zephyr.dts
+-- Generated devicetree_generated.h: /workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot/zephyr/include/generated/zephyr/devicetree_generated.h
+-- Including generated dts.cmake file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot/zephyr/dts.cmake
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot/zephyr/zephyr.dts:161.26-164.5: Warning (simple_bus_reg): /soc/airoha_hci: missing or empty reg/ranges property
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot/zephyr/zephyr.dts:235.25-244.5: Warning (simple_bus_reg): /soc/gpio@420b0004: simple-bus unit address format error, expected "420b0000"
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot/zephyr/zephyr.dts:245.27-275.5: Warning (simple_bus_reg): /soc/pin-controller: missing or empty reg/ranges property
+Parsing /workdir/airoha/mcu/applications/mcuboot/boot/zephyr/Kconfig
+Loaded configuration '/workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot/zephyr/.config'
+Merged configuration '/workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot/zephyr/.config.sysbuild'
+No change to configuration in '/workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot/zephyr/.config'
+No change to Kconfig header in '/workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot/zephyr/include/generated/zephyr/autoconf.h'
+CMake Warning at /workdir/zephyr/CMakeLists.txt:541 (message):
+  ZEPHYR_BASE=/workdir/zephyr doesn't appear to be a git repository, please
+  specify '-DBUILD_VERSION=<version>'
+
+
+[Airoha] soc/airoha/ab162x/CMakeLists.txt was included!
+[Airoha] variable SOC_LINKER_SCRIPT is /workdir/airoha/mcu/soc/airoha/ab162x/linker.ld
+[Airoh] CMakeLists.txt in boards/airoha/ab1623m_evk was inclueded!
+-- Using ccache: /usr/local/bin/ccache
+-- ZEPHYR_VERSION_CODE: 198401
+-- KERNELVERSION: 0x3070100
+-- KERNEL_VERSION_NUMBER: 0x30701
+[Airoha] AIR_PREBUILT_LIB_ROOT: /workdir/airoha/mcu/prebuilt
+[Airoha] AIR_MODULE_OUT_PATH: /workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot/modules/airoha
+[Airoha] APPLICATION_BINARY_DIR: /workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot
+[Airoha] AIR_ROOT_DIR: /workdir/airoha/mcu
+[Airoha] AIR_COMMON_ROOT_DIR: /workdir/airoha/common
+[Airoha] AIR_COMMON_ROOT_DIR: /workdir/airoha/common
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: ..__airoha__mcu__subsys__airoha__argb
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: ..__airoha__mcu__subsys__airoha__led
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: ..__airoha__mcu__subsys__airoha__rgb
+
+  Excluding target from build.
+
+
+MCUBoot bootloader key file: /workdir/airoha/mcu/applications/mcuboot/private_secure_boot_3k.pem
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot
+-- 
+   ***********************************************
+   * Running CMake for Keychron_LM7_design_mouse *
+   ***********************************************
+
+Loading Zephyr default modules (Zephyr base (cached)).
+-- Application: /workdir/airoha/mcu/applications/Keychron_LM7_design_mouse
+-- CMake version: 3.22.1
+-- Cache files will be written to: /home/user/.cache/zephyr
+-- Zephyr version: 3.7.1 (/workdir/zephyr)
+-- Found west (found suitable version "1.2.0", minimum required is "0.14.0")
+-- Board: ab1623m_evk, qualifiers: ab1623m
+-- Found host-tools: zephyr 0.16.9 (/opt/toolchains/zephyr-sdk-0.16.9)
+-- Found toolchain: zephyr 0.16.9 (/opt/toolchains/zephyr-sdk-0.16.9)
+-- Found BOARD.dts: /workdir/airoha/mcu/boards/airoha/ab1623m_evk/ab1623m_evk.dts
+-- Found devicetree overlay: config/ab1623m_evk/hid_device_ref_design_mouse_m20_pro.overlay
+unit address and first address in 'reg' (0x420b0000) don't match for /soc/gpio@420b0004
+-- Generated zephyr.dts: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/zephyr.dts
+-- Generated devicetree_generated.h: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/include/generated/zephyr/devicetree_generated.h
+-- Including generated dts.cmake file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/dts.cmake
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/zephyr.dts:162.26-165.5: Warning (simple_bus_reg): /soc/airoha_hci: missing or empty reg/ranges property
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/zephyr.dts:236.25-245.5: Warning (simple_bus_reg): /soc/gpio@420b0004: simple-bus unit address format error, expected "420b0000"
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/zephyr.dts:246.27-333.5: Warning (simple_bus_reg): /soc/pin-controller: missing or empty reg/ranges property
+Parsing /workdir/airoha/mcu/applications/Keychron_LM7_design_mouse/Kconfig
+Loaded configuration '/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/.config'
+Merged configuration '/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/.config.sysbuild'
+No change to configuration in '/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/.config'
+No change to Kconfig header in '/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/include/generated/zephyr/autoconf.h'
+CMake Warning at /workdir/zephyr/CMakeLists.txt:541 (message):
+  ZEPHYR_BASE=/workdir/zephyr doesn't appear to be a git repository, please
+  specify '-DBUILD_VERSION=<version>'
+
+
+[Airoha] soc/airoha/ab162x/CMakeLists.txt was included!
+[Airoha] variable SOC_LINKER_SCRIPT is /workdir/airoha/mcu/soc/airoha/ab162x/linker.ld
+-- 
+-- [Airoha] AIR_ROOT_DIR at /workdir/airoha/mcu
+-- [Airoha] CONFIG_AIR_RISCV_ROOT_PATH is ../risc-v
+-- [Airoha] CONFIG_AIR_RISCV_FEATURE is config/hid_ref_mouse_m20_pro.mk
+-- [Airoha] CONFIG_AIR_RISCV_PROJ_PATH is projects/applications/mouse_ref_design
+-- [Airoha] RISCV_PROJ_PATH is projects/applications/mouse_ref_design
+-- [Airoha] RISCV_FEATURE is config/hid_ref_mouse_m20_pro.mk
+-- [Airoha] RISCV_PROJ_ABBR is mouse_ref_design
+-- [Airoha] RISCV_FEATURE_ABBR is hid_ref_mouse_m20_pro
+-- [Airoha] riscv output: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/riscv.bin
+-- [Airoha] riscv output: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/riscv.c
+CMake Warning at /workdir/airoha/mcu/cmake/common/air_chip.cmake:48 (message):
+  [Airoha][nvkey] /workdir/airoha/mcu/soc/common/exception_handler/nvkey.xml
+  not exist.
+Call Stack (most recent call first):
+  /workdir/airoha/mcu/soc/airoha/common/exception_handler/CMakeLists.txt:39 (airoha_nvkey_append_xml)
+
+
+[Airoh] CMakeLists.txt in boards/airoha/ab1623m_evk was inclueded!
+-- Using ccache: /usr/local/bin/ccache
+-- ZEPHYR_VERSION_CODE: 198401
+-- KERNELVERSION: 0x3070100
+-- KERNEL_VERSION_NUMBER: 0x30701
+[Airoha] AIR_PREBUILT_LIB_ROOT: /workdir/airoha/mcu/prebuilt
+[Airoha] AIR_MODULE_OUT_PATH: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/modules/airoha
+[Airoha] APPLICATION_BINARY_DIR: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse
+[Airoha] AIR_ROOT_DIR: /workdir/airoha/mcu
+[Airoha] AIR_COMMON_ROOT_DIR: /workdir/airoha/common
+[Airoha] CONFIG_SETTINGS_NVS_SECTOR_COUNT is 10
+[Airoha] CONFIG_STORAGE_PARTITION_SIZE is 40
+[Airoha] NVKEY_FILE_LIST is /workdir/airoha/mcu/soc/airoha/ab162x/nvkey.xml;/workdir/airoha/mcu/boards/airoha/ab1623m_evk/nvkey.xml
+[Airoha] GEN_DEFAULT_NVS_BIN is y
+/workdir/airoha/mcu/subsys/airoha/bluetooth/controller/pka_protected is empty. Prebuilt libpka_zephyrle_asic.a is used
+CMake Warning at /workdir/airoha/mcu/cmake/common/air_chip.cmake:48 (message):
+  [Airoha][nvkey] /workdir/airoha/mcu/subsys/airoha/logging/nvkey.xml not
+  exist.
+Call Stack (most recent call first):
+  /workdir/airoha/mcu/prebuilt/system/ab162x/logging/CMakeLists.txt:45 (airoha_nvkey_append_xml)
+
+
+[Airoha] AIR_COMMON_ROOT_DIR: /workdir/airoha/common
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: drivers__usb__device
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: drivers__entropy
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: drivers__gpio
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: drivers__serial
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: drivers__spi
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library:
+  ..__airoha__mcu__subsys__airoha__bluetooth__host
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library:
+  ..__airoha__mcu__prebuilt__system__ab162x__offline_dump
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: ..__airoha__mcu__subsys__airoha__argb
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library:
+  ..__airoha__mcu__prebuilt__system__ab162x__logging
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library:
+  ..__airoha__mcu__prebuilt__system__ab162x__exception_handler
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: ..__airoha__mcu__subsys__airoha__led
+
+  Excluding target from build.
+
+
+-- Including signing script: /workdir/zephyr/cmake/mcuboot.cmake
+CMake Warning at /workdir/zephyr/CMakeLists.txt:2094 (message):
+  __ASSERT() statements are globally ENABLED
+
+
+-- [Airoha][NVKey] NVKEY_FILE 1: airoha/mcu/soc/airoha/ab162x/nvkey.xml
+-- [Airoha][NVKey] NVKEY_FILE 2: airoha/mcu/boards/airoha/ab1623m_evk/nvkey.xml
+-- [Airoha][NVKey] NVKEY_FILE 3: airoha/mcu/subsys/airoha/pka/nvdm/nvkey.xml
+-- [Airoha][NVKey] NVKEY_FILE 4: airoha/mcu/prebuilt/system/ab162x/exception_handler/nvkey.xml
+-- [Airoha][NVKey] NVKEY_FILE 5: airoha/mcu/subsys/airoha/battery_management/nvkey.xml
+-- [Airoha][NVKey] NVKEY_FILE 6: airoha/mcu/applications/Keychron_LM7_design_mouse/config/ab1623m_evk/hid_device_ref_design_mouse_m20_pro_nvkey.xml
+-- [Airoha][NVKey][MP] NVKEY_FILE 1: airoha/mcu/soc/airoha/ab162x/nvkey.xml
+-- [Airoha][NVKey][MP] NVKEY_FILE 2: airoha/mcu/boards/airoha/ab1623m_evk/nvkey.xml
+-- [Airoha][NVKey][MP] NVKEY_FILE 3: airoha/mcu/subsys/airoha/pka/nvdm/nvkey.xml
+-- [Airoha][NVKey][MP] NVKEY_FILE 4: airoha/mcu/prebuilt/system/ab162x/exception_handler/nvkey.xml
+-- [Airoha][NVKey][MP] NVKEY_FILE 5: airoha/mcu/subsys/airoha/battery_management/nvkey.xml
+-- [Airoha][NVKey][MP] NVKEY_FILE 6: airoha/mcu/applications/Keychron_LM7_design_mouse/config/ab1623m_evk/hid_device_ref_design_mouse_m20_pro_nvkey.xml
+-- [Airoha][NVKey][MP] NVKEY_FILE 7: airoha/mcu/soc/airoha/common/exception_handler/nvkey_release.xml
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workdir/out/ab1623m_evk/keychron_mouse_LM7
+-- west build: building application
+[0/12] Performing build step for 'Keychron_LM7_design_mouse'
+[1/19] [Airoha] Generating partition table for airoha's boot flow
+[2/19] [Airoha] Generating flash_download.cfg for airoha's download tool...
+[3/19] [Airoha][NVKey] Merge the input xml into one full nvkey.xml, and if there are dumplicate items, prompt or overwrite them according to project's policy.
+[4/19] [Airoha][NVKey] Executing nvs_post_build target to generate storage binary data for downloading default NVS data
+NVS PostBuildTool v1.0.0
+======================initialized======================
+append XML file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/download/nvkey.xml
+33 NV added.
+parse 1 xml done.
+Generate NVS image.
+Successfully merge 34 NVKEYs and generate a NVS image of 40 KBytes
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/download/nvs.bin
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/download/nvkey_ota.c
+[5/19] [Airoha][NVKey] Merge the input xml into one full nvkey_release.xml, and if there are dumplicate items, prompt or overwrite them according to project's policy.
+[6/19] [Airoha][NVKey] Executing nvs_release_post_build target to generate storage_release.bin for downloading default NVS data with MP flag
+NVS PostBuildTool v1.0.0
+======================initialized======================
+append XML file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/download/nvkey_release.xml
+33 NV added.
+parse 1 xml done.
+Generate NVS image.
+Successfully merge 34 NVKEYs and generate a NVS image of 40 KBytes
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/download/nvs.bin
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/download/nvkey_ota.c
+[7/19] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[8/19] Building C object modules/airoha/upper_level/middleware/airoha/key_remap/CMakeFiles/..__airoha__common__middleware__airoha__key_remap.dir/src/key_remap_backend.c.obj
+[9/19] Generating linker_zephyr_pre0.cmd
+[10/19] Linking C static library modules/airoha/upper_level/middleware/airoha/key_remap/lib..__airoha__common__middleware__airoha__key_remap.a
+[11/19] Building C object modules/airoha/subsys/airoha/version/CMakeFiles/..__airoha__mcu__subsys__airoha__version.dir/misc/generated/air_version.c.obj
+[12/19] Linking C static library modules/airoha/subsys/airoha/version/lib..__airoha__mcu__subsys__airoha__version.a
+[13/19] Building C object CMakeFiles/app.dir/src/app/app_input/app_wheel.c.obj
+[14/19] Linking C static library app/libapp.a
+[15/19] Linking CXX executable zephyr/zephyr_pre0.elf
+[16/19] Generating linker.cmd
+[17/19] [Airoha] generating riscv firmware to /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro...
+[Airoha][Prepare Cross Core Params] found _cross_core_mem_zi_data_start equals 0x000000000400e590
+[Airoha][Prepare Cross Core Params] found _cross_core_mem_size equals 0x0000000000001f54
+[Airoha][Prepare Cross Core Params] need to match ('AIR_FPGA_ENV_ENABLE',)
+[Airoha][Prepare Cross Core Params] write LINKER_SCRIPT_OPTION += -D_cross_core_mem_zi_data_start=0x000000000400e590
+[Airoha][Prepare Cross Core Params] write LINKER_SCRIPT_OPTION += -D_cross_core_mem_size=0x0000000000001f54
+FEATURE IN GCC = /workdir/airoha/risc-v/projects/applications/mouse_ref_design/config/hid_ref_mouse_m20_pro.mk
+[Airoha][RISC-V] source file: projects/applications/mouse_ref_design/src/app/riscv_ccni.c
+[Airoha][RISC-V] source file: projects/applications/mouse_ref_design/src/app/riscv_main.c
+[Airoha][RISC-V] source file: projects/applications/mouse_ref_design/src/app/riscv_motion_sensor.c
+[Airoha][RISC-V] source file: projects/applications/mouse_ref_design/src/app/riscv_mouse_key.c
+[Airoha][RISC-V] source file: projects/applications/mouse_ref_design/src/app/riscv_mouse_key_ir_ctrl.c
+[Airoha][RISC-V] source file: projects/applications/mouse_ref_design/src/app/riscv_mouse_key_sw_debounce.c
+[Airoha][RISC-V] source file: projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.c
+[Airoha][RISC-V] source file: projects/applications/mouse_ref_design/src/app/riscv_wheel.c
+[Airoha][RISC-V] source file: projects/applications/mouse_ref_design/src/app/riscv_wheel_ir_comparator.c
+[Airoha][RISC-V] source file: projects/applications/mouse_ref_design/src/app/riscv_wheel_queue.c
+[Airoha][RISC-V] source file: projects/applications/mouse_ref_design/../general_used/src/sys_init.c
+[Airoha][RISC-V] source file: middleware/airoha/pka/src/pka.c
+[Airoha][RISC-V] source file: middleware/airoha/comp_wheel/src/comp_wheel.c
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_ccni.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_main.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_motion_sensor.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_mouse_key_ir_ctrl.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_mouse_key_sw_debounce.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_wheel.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_wheel_ir_comparator.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_wheel_queue.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/../general_used/src/sys_init.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/middleware/airoha/pka/src/pka.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/middleware/airoha/comp_wheel/src/comp_wheel.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/share_buffer/src/share_buffer.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/pka_share/src/pka_share.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_ccni.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_ccni_config.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_core_status.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_hw_semaphore.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/applications/hid/src/hid_common.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/applications/hid/src/hid_common_acl_rsp_via_hid.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/applications/hid/src/hid_common_button.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_usb_mode.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_xy_queue.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_key_queue_mouse.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_key_queue_keyboard.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_key_queue_game_controller.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/rv_fake_report.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/rv_hid_exp_delay_printf.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_report_id_selector.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/rv_burst_tx_buf_ctrl.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/rv_latency.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/pka.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/key_remap/src/key_remap_frontend.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/key_remap/src/key_remap_backend.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/key_remap/src/key_remap_queue.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_clock.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_comparator.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_eint.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_eint_internal.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_gpio.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_gpio_internal.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_gpt.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_gpt_internal.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_hw_keyscan.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_i2c_master.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_i2c_master_internal.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_memview.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_nvic.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_pdma_internal.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_qdec.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_ramboz.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_rtc.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_rtc_internal.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_saradc.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_spi_master.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_spi_master_internal.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_spi_slave.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_spi_slave_internal.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_uart.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_uart_internal.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/mouse_sensor.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src_core/hal_sleep_manager.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src_core/hal_sleep_manager_internal.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src_core/hal_spm.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/kernel/service/exception_handler/src/exception_portable.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/kernel/service/syslog/src/syslog_port.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/kernel/service/swla/src/swla_port.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/kernel/service/system_online_dump/src/system_online_dump.o
+[Airoha][RISC-V] object file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/config/chip/ab162x/startup.o
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_ccni.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_main.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_motion_sensor.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_mouse_key_ir_ctrl.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_mouse_key_sw_debounce.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_wheel.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_wheel_ir_comparator.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_wheel_queue.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/../general_used/src/sys_init.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/middleware/airoha/pka/src/pka.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/middleware/airoha/comp_wheel/src/comp_wheel.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/share_buffer/src/share_buffer.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/pka_share/src/pka_share.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_ccni.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_ccni_config.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_core_status.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_hw_semaphore.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/applications/hid/src/hid_common.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/applications/hid/src/hid_common_acl_rsp_via_hid.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/applications/hid/src/hid_common_button.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_usb_mode.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_xy_queue.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_key_queue_mouse.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_key_queue_keyboard.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_key_queue_game_controller.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/rv_fake_report.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/rv_hid_exp_delay_printf.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_report_id_selector.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/rv_burst_tx_buf_ctrl.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/rv_latency.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/pka.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/key_remap/src/key_remap_frontend.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/key_remap/src/key_remap_backend.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/key_remap/src/key_remap_queue.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_clock.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_comparator.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_eint.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_eint_internal.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_gpio.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_gpio_internal.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_gpt.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_gpt_internal.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_hw_keyscan.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_i2c_master.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_i2c_master_internal.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_memview.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_nvic.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_pdma_internal.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_qdec.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_ramboz.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_rtc.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_rtc_internal.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_saradc.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_spi_master.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_spi_master_internal.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_spi_slave.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_spi_slave_internal.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_uart.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_uart_internal.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/mouse_sensor.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src_core/hal_sleep_manager.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src_core/hal_sleep_manager_internal.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src_core/hal_spm.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/kernel/service/exception_handler/src/exception_portable.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/kernel/service/syslog/src/syslog_port.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/kernel/service/swla/src/swla_port.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/kernel/service/system_online_dump/src/system_online_dump.d
+[Airoha][RISC-V] dependency file: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/config/chip/ab162x/startup.d
+[Airoha][RISC-V] libray file: prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a
+[Airoha][RISC-V] libray file: prebuilt/system/chip/ab162x/syslog/libsyslog.a
+[Airoha][RISC-V] libray file: prebuilt/system/chip/ab162x/swla/libswla.a
+[Airoha][RISC-V] RISCV_FIRMWARE_OUT_DIR is /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro
+[Airoha][RISC-V] RISCV_ROOT_DIR is /workdir/airoha/risc-v
+[Airoha][RISC-V] COMMON_DIR is /workdir/airoha/common
+[Airoha][RISC-V] OUTFILES is /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/mouse_ref_design.elf /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/mouse_ref_design.dis /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/mouse_ref_design.bin
+[Airoha][RISC-V] CRT is /workdir/airoha/risc-v/config/chip/ab162x/startup.S
+[Airoha][RISC-V] compile common file middleware/airoha/key_remap/src/key_remap_backend.c...
+[Airoha][RISC-V] generate linker script /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/link.ld...
+/workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bin/riscv-none-elf-gcc -E -x assembler-with-cpp -D_cross_core_mem_zi_data_start=0x000000000400e590 -D_cross_core_mem_size=0x0000000000001f54 /workdir/airoha/risc-v/config/chip/ab162x/link.ld -P -o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/link.ld
+/workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bin/riscv-none-elf-gcc -E -x assembler-with-cpp -D_cross_core_mem_zi_data_start=0x000000000400e590 -D_cross_core_mem_size=0x0000000000001f54 /workdir/airoha/risc-v/config/chip/ab162x/link.ld -P -o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/link.ld
+[Airoha][RISC-V] linking to generate /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/mouse_ref_design.elf...
+/workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bin/riscv-none-elf-gcc -DAIR_SOC_CROSS_CORE_MEMORY_ENABLE -DAIR_PKA_SHARE_ENABLE -DAIR_HID_COMMON_SERVICE -DAIR_HID_COMMON_MEMORY -DAIR_HID_DEVICE_SCENARIO_SERVICE_KEY_REMAP -DCORE_RISCV -DHAL_SPI_MASTER_MODULE_ENABLED -DHAL_RTC_MODULE_ENABLED -DAIR_BTD_IC_PREMIUM_G1 -DAIR_SHARE_BUFFER_ENABLE -DHAL_SW_DMA_MODULE_ENABLED -DHAL_HW_SEMAPHORE_MODULE_ENABLED -DHAL_CCNI_MODULE_ENABLED -DHAL_GPIO_MODULE_ENABLED -DHAL_EINT_MODULE_ENABLED -DHAL_UART_MODULE_ENABLED -DHAL_QDEC_MODULE_ENABLED -DHAL_RAMBOZ_MODULE_ENABLED -DHAL_SLEEP_MANAGER_ENABLED -DHAL_CLOCK_MODULE_ENABLED -DHAL_GPT_MODULE_ENABLED -DHAL_COMPARATOR_MODULE_ENABLED -DHAL_SARADC_MODULE_ENABLED -DHAL_HW_KEYSCAN_MODULE_ENABLED -DAIR_EXCEPTION_HANDLER_ENABLE -DAIR_LOGGING_ENABLE -DAIR_MUX_ENABLE -DAIR_DISABLE_IRQ_LOG_ENABLE -DAIR_SLEEP_MANAGER_LIGHT_MODE_ENABLE -DAIR_BYPASS_SYSLOG_WITH_LOG_FLOW_ENABLE -march=rv32ec_zicsr_zifencei -mabi=ilp32e -static -mcmodel=medany -Wall -g -Os -fvisibility=hidden -nostartfiles -ffreestanding -ffunction-sections -fdata-sections -save-temps=obj -Wall -Werror -Wl,-Map=/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/mouse_ref_design.map -DAIR_BT_DATA_MERGE_XY -DAIR_HID_DEVICE_SCENARIO_SERVICE_KEY_REMAP -DAIR_WHEEL_REMAP -DAIR_KEY_REMAP_FRONTEND_RISCV -DAIR_KEY_REMAP_BACKEND_RISCV -DAIR_IRPT_PIN_CTRL -DAIR_HID_BT_MODE -DAIR_DEBUG_POLLING_LOG -DAIR_2_4G_RELIABLE_RETRASMISSION -DAIR_FAKE_REPORT -DAIR_USB_CCNI_WAKEUP_CM33 -DAIR_PRODUCT_TYPE_MOUSE -DAIR_BYPASS_SYSLOG_WITH_LOG_FLOW_ENABLE -DAIR_MOUSE_9B_DATA -Wl,--gc-sections -march=rv32ec_zicsr_zifencei -mabi=ilp32e -Wl,--print-memory-usage -T /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/link.ld /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_ccni.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_main.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_motion_sensor.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_mouse_key_ir_ctrl.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_mouse_key_sw_debounce.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_wheel.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_wheel_ir_comparator.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/src/app/riscv_wheel_queue.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/projects/applications/mouse_ref_design/../general_used/src/sys_init.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/middleware/airoha/pka/src/pka.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/middleware/airoha/comp_wheel/src/comp_wheel.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/share_buffer/src/share_buffer.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/pka_share/src/pka_share.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_ccni.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_ccni_config.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_core_status.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_hw_semaphore.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/applications/hid/src/hid_common.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/applications/hid/src/hid_common_acl_rsp_via_hid.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/applications/hid/src/hid_common_button.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_usb_mode.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_xy_queue.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_key_queue_mouse.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_key_queue_keyboard.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_express_key_queue_game_controller.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/rv_fake_report.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/rv_hid_exp_delay_printf.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/riscv_hid_report_id_selector.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/rv_burst_tx_buf_ctrl.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/rv_latency.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/hid_express/src/pka.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/key_remap/src/key_remap_frontend.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/key_remap/src/key_remap_backend.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/middleware/airoha/key_remap/src/key_remap_queue.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_clock.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_comparator.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_eint.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_eint_internal.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_gpio.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_gpio_internal.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_gpt.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_gpt_internal.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_hw_keyscan.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_i2c_master.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_i2c_master_internal.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_memview.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_nvic.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_pdma_internal.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_qdec.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_ramboz.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_rtc.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_rtc_internal.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_saradc.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_spi_master.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_spi_master_internal.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_spi_slave.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_spi_slave_internal.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_uart.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/hal_uart_internal.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src/mouse_sensor.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src_core/hal_sleep_manager.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src_core/hal_sleep_manager_internal.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/drivers/chip/ab162x/src_core/hal_spm.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/kernel/service/exception_handler/src/exception_portable.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/kernel/service/syslog/src/syslog_port.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/kernel/service/swla/src/swla_port.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/kernel/service/system_online_dump/src/system_online_dump.o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/config/chip/ab162x/startup.o -o /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/mouse_ref_design.elf /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/swla/libswla.a
+/workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bin/../lib/gcc/riscv-none-elf/13.2.0/../../../../riscv-none-elf/bin/ld: warning: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/mouse_ref_design.elf has a LOAD segment with RWX permissions
+Memory region         Used Size  Region Size  %age Used
+             ram:       31124 B      31232 B     99.65%
+           stack:          0 GB        512 B      0.00%
+    system_stack:          0 GB         1 KB      0.00%
+             ccm:        8020 B       8020 B    100.00%
+  ROM_LOG_STRING:        4506 B        32 MB      0.01%
+/workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bin/riscv-none-elf-objcopy -O binary --only-section=.log_str /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/mouse_ref_design.elf /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/risc_v_log_str.bin
+/workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bin/riscv-none-elf-nm /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/mouse_ref_design.elf > /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/mouse_ref_design.symbols
+[Airoha][RISC-V] generate disassembly file for debugging...
+[Airoha][RISC-V] generate binary firmware...
+[18/19] Building C object zephyr/CMakeFiles/zephyr_final.dir/__/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/mouse_ref_design.c.obj
+[19/19] Linking CXX executable zephyr/zephyr.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:      763800 B       948 KB     78.68%
+            SRAM:      300412 B       384 KB     76.40%
+         SRAM_BT:       15856 B        16 KB     96.78%
+  ROM_LOG_STRING:      373275 B        32 MB      1.11%
+        IDT_LIST:          0 GB         2 KB      0.00%
+Generating files from /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/zephyr.elf for board: ab1623m_evk
+[1/12] Performing build step for 'mcuboot'
+[1/6] [Airoha] Generating partition table for airoha's boot flow
+[2/6] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[3/6] Generating linker_zephyr_pre0.cmd
+[4/6] Building C object modules/airoha/subsys/airoha/version/CMakeFiles/..__airoha__mcu__subsys__airoha__version.dir/misc/generated/air_version.c.obj
+[5/6] Linking C static library modules/airoha/subsys/airoha/version/lib..__airoha__mcu__subsys__airoha__version.a
+[6/6] Linking CXX executable zephyr/zephyr.elf
+Memory region         Used Size  Region Size  %age Used
+            SRAM:       70992 B       384 KB     18.05%
+         SRAM_BT:          0 GB        16 KB      0.00%
+  ROM_LOG_STRING:          0 GB        32 MB      0.00%
+        IDT_LIST:          0 GB         2 KB      0.00%
+Generating files from /workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot/zephyr/zephyr.elf for board: ab1623m_evk
+[3/12] Completed 'Keychron_LM7_design_mouse'
+[5/12] No install step for 'mcuboot'
+[6/12] Completed 'mcuboot'
+[7/12] [Airoha] collect firmware and change firmware name in flash_download.cfg
+[Airoha][Collect Firmware] obtain zephyr version: 0x03070100
+[Airoha][Collect Firmware] create directory /workdir/out/ab1623m_evk/keychron_mouse_LM7/download
+[Airoha][Collect Firmware] create directory /workdir/out/ab1623m_evk/keychron_mouse_LM7/debug
+[Airoha][Collect Firmware] create directory /workdir/out/ab1623m_evk/keychron_mouse_LM7/debug/Keychron_LM7_design_mouse
+[Airoha][Collect Firmware] copy debug files which file extension match ('.dts', '.elf', '.map', '.bin', '.hex', '.yaml', '.config', '.cmd', '.lst', '.json', '.symbols', '.stat') from /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr to /workdir/out/ab1623m_evk/keychron_mouse_LM7/debug/Keychron_LM7_design_mouse
+[Airoha][Collect Firmware] copy firmware file from /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/zephyr.signed.bin to /workdir/out/ab1623m_evk/keychron_mouse_LM7/download/Keychron_LM7_design_mouse.signed.bin
+[Airoha][Collect Firmware] copy all other download binary files from /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/download to /workdir/out/ab1623m_evk/keychron_mouse_LM7/download
+[Airoha][Collect Firmware] copy debug files which file extension match ('.dis', '.bin', '.map', '.elf', '.c', '.ld', '.symbols') from /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro to /workdir/out/ab1623m_evk/keychron_mouse_LM7/debug/riscv/mouse_ref_design/hid_ref_mouse_m20_pro
+[Airoha][Collect Firmware] create directory /workdir/out/ab1623m_evk/keychron_mouse_LM7/debug/mcuboot
+[Airoha][Collect Firmware] copy debug files which file extension match ('.dts', '.elf', '.map', '.bin', '.hex', '.yaml', '.config', '.cmd', '.lst', '.json', '.symbols', '.stat') from /workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot/zephyr to /workdir/out/ab1623m_evk/keychron_mouse_LM7/debug/mcuboot
+[Airoha][Collect Firmware] copy firmware file from /workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot/zephyr/zephyr.bin to /workdir/out/ab1623m_evk/keychron_mouse_LM7/download/mcuboot.bin
+[Airoha][Collect Firmware] build dirs: ('/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse', '/workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot')
+[Airoha][Collect Firmware] default project: Keychron_LM7_design_mouse
+[Airoha][Collect Firmware] firmware of default project: Keychron_LM7_design_mouse.signed.bin
+[Airoha][Collect Firmware] bootloader project: mcuboot
+[Airoha][Collect Firmware] firmware of bootloader project: mcuboot.bin
+[Airoha][Collect Firmware] replace image-0.bin => Keychron_LM7_design_mouse.signed.bin in flash_download.cfg
+[Airoha][Collect Firmware] replace bootloader.bin => mcuboot.bin in flash_download.cfg
+[Airoha][Collect Firmware] remove download entry of secure_hdr0.bin due to CONFIG_AIR_SECURITY_SECURE_BOOT_ENABLE=y not matched
+[Airoha][Collect Firmware] remove download entry of secure_hdr1.bin due to CONFIG_AIR_SECURITY_SECURE_BOOT_ENABLE=y not matched
+[Airoha][Collect Firmware] represent as hex format
+[Airoha][Collect Firmware] generate /workdir/out/ab1623m_evk/keychron_mouse_LM7/download/flash_download.cfg
+[Airoha][Collect Firmware] generate /workdir/out/ab1623m_evk/keychron_mouse_LM7/download/flash_download.cfg done!
+[8/12] [Airoha][Release] Generating release related files...
+[9/12] [Airoha][Footprint] Generating statistics data for footprint analysising...
+[Airoha][Footprint][Statistics] processing /workdir/out/ab1623m_evk/keychron_mouse_LM7
+[10/12] [Airoha] check the differences in the flash partition across different projects in sysbuild
+[Airoha][FlashPartition Check] time: 0 min 0 seconds
+[11/12] [Airoha] check sysbuild result, especially the address defined by the cross core variable
+[Airoha][SysBuild Check] time: 0 min 1 seconds
+[12/12] [Airoha][Build] print sysbuild time
+[Airoha][Build] Real Build Time: 0 min 15 s
+[Airoha][Build] Total Build Time: 0 min 16 s

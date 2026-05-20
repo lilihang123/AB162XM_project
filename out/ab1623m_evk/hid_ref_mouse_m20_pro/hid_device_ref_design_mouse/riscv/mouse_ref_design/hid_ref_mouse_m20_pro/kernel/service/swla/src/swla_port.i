@@ -1,0 +1,5 @@
+# 0 "/workdir/airoha/risc-v/kernel/service/swla/src/swla_port.c"
+# 1 "/workdir/airoha/risc-v//"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/workdir/airoha/risc-v/kernel/service/swla/src/swla_port.c"

@@ -60,7 +60,9 @@
 
 #define thisMODULE wheel
 #define thisMOD    "wheel"
-
+#define ENC_POWER_EN_PIN 29
+#define WHEEL_ON   0
+#define WHEEL_OFF  1
 LOG_MODULE_REGISTER(thisMODULE);
 /******************************************************************************/
 /*  function prototype                                                        */
@@ -285,7 +287,7 @@ void app_wheel_enter_active()
     ret = sensor_attr_set(dev, SENSOR_CHAN_POS_DZ, QDEC_Z_SUM_IRQ_CFG, &attr_val_set);
     APP_LOGI(thisMOD, "qdec_attr_set, z sum 1:enable/0:disable = %d, value = %d, ret = %d", attr_val_set.val1, attr_val_set.val2, ret);
     #endif
-}
+} 
 
 void app_wheel_enter_idle()
 {
@@ -419,6 +421,14 @@ static void app_wheel_check()
 void app_wheel_init()
 {
     app_wheel_state = APP_WHEEL_STATE_NORMAL;
+
+    /* LM7: ENC_POWER_EN (GPIO29)  active LOW */
+    hal_gpio_init(ENC_POWER_EN_PIN);
+    hal_pinmux_set_function(ENC_POWER_EN_PIN, 0);
+    hal_gpio_set_direction(ENC_POWER_EN_PIN, HAL_GPIO_DIRECTION_OUTPUT);
+    hal_gpio_set_output(ENC_POWER_EN_PIN, WHEEL_ON);
+    APP_LOGI(thisMOD,"ENC_POWER_EN GPIO_%d set LOW (encoder power ON)", ENC_POWER_EN_PIN);
+
     #if defined (CONFIG_AIR_QDEC)
         dev = device_get_binding(DT_NODE_FULL_NAME(DT_NODELABEL(qdec)));
         if (!device_is_ready(dev)) {

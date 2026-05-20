@@ -918,12 +918,13 @@ void key_remap_backend_process()
     #endif
 
     // DPI Key
+    #ifdef M_KEY_DPI
     if (((last_all_key ^ new_key) & M_KEY_BIT_DPI) &&
         (macro_setting[M_KEY_DPI_IDX].status == NO_REMAP))
     {
         kr_ctrl.key_status_update = true;
     }
-
+    #endif
     // RR Key
     if (((last_all_key ^ new_key) & M_KEY_BIT_RR) &&
         (macro_setting[M_KEY_RR_IDX].status == NO_REMAP))

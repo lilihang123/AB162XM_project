@@ -1,0 +1,10 @@
+default: Keychron_LM7_design_mouse
+build_dir: /workdir/out/ab1623m_evk/keychron_mouse_LM7
+domains:
+  - name: Keychron_LM7_design_mouse
+    build_dir: /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse
+  - name: mcuboot
+    build_dir: /workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot
+flash_order:
+  - mcuboot
+  - Keychron_LM7_design_mouse

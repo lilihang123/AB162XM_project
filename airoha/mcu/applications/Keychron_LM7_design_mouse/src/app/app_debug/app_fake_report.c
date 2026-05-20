@@ -185,15 +185,17 @@ static bool app_fake__evt_key_event(const struct af_evt_header *evt_header)
                 app_fake_rep__handle_fake_report(1, 1, 0);
             }
             #endif
-
+            #ifdef M_KEY_DPI
             if(event->key_id == M_KEY_DPI){
                 app_fake_rep__handle_fake_report(1, 1, 0);
             }
+            #endif
             break;
         }
 
         case AK_4LONG:
         {
+            #ifdef M_KEY_DPI
             if(event->key_id == M_KEY_DPI){
                 #define AUTO_TEST_TIME_IN_SEC  30
                 #define POINTS_PER_CYCLE       100
@@ -202,14 +204,17 @@ static bool app_fake__evt_key_event(const struct af_evt_header *evt_header)
                 APP_LOGI(thisMOD," AK_4LONG , fake data test pattern for %d second at %dHz polling rate, %d k-samples", AUTO_TEST_TIME_IN_SEC, polling_rate,  test_rounds * POINTS_PER_CYCLE  );
                 app_fake_rep__handle_fake_report(1, 1, test_rounds);
             }
+            #endif
             break;
         }
 
         case AK_5LONG:
         {
+            #ifdef M_KEY_DPI
             if(event->key_id == M_KEY_DPI){
                 app_fake_rep__handle_fake_report(1, 1, 128);
             }
+            #endif
             break;
         }
 
@@ -221,10 +226,11 @@ static bool app_fake__evt_key_event(const struct af_evt_header *evt_header)
                 app_fake_rep__handle_fake_report(1, 0, 0);
             }
             #endif
-
+            #ifdef M_KEY_DPI
             if(event->key_id == M_KEY_DPI){
                 app_fake_rep__handle_fake_report(1, 0, 0);
             }
+            #endif
             break;
         }
 

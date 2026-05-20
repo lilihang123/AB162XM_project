@@ -1,0 +1,5 @@
+# 0 "/workdir/airoha/common/middleware/airoha/hid_express/src/riscv_hid_express_key_queue_keyboard.c"
+# 1 "/workdir/airoha/risc-v//"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/workdir/airoha/common/middleware/airoha/hid_express/src/riscv_hid_express_key_queue_keyboard.c"

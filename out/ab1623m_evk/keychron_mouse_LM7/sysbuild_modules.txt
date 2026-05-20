@@ -1,0 +1,1 @@
+"mcuboot":"/workdir/airoha/mcu/applications/mcuboot":"/workdir/airoha/mcu/applications/mcuboot/boot/zephyr/sysbuild"

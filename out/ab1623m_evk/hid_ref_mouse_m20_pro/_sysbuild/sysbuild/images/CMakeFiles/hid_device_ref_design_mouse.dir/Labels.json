@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/_sysbuild/sysbuild/images/CMakeFiles/hid_device_ref_design_mouse"
+		},
+		{
+			"file" : "/workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/_sysbuild/sysbuild/images/CMakeFiles/hid_device_ref_design_mouse.rule"
+		},
+		{
+			"file" : "/workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/_sysbuild/sysbuild/images/CMakeFiles/hid_device_ref_design_mouse-complete.rule"
+		},
+		{
+			"file" : "/workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/_sysbuild/sysbuild/images/hid_device_ref_design_mouse-prefix/src/hid_device_ref_design_mouse-stamp/hid_device_ref_design_mouse-build.rule"
+		},
+		{
+			"file" : "/workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/_sysbuild/sysbuild/images/hid_device_ref_design_mouse-prefix/src/hid_device_ref_design_mouse-stamp/hid_device_ref_design_mouse-configure.rule"
+		},
+		{
+			"file" : "/workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/_sysbuild/sysbuild/images/hid_device_ref_design_mouse-prefix/src/hid_device_ref_design_mouse-stamp/hid_device_ref_design_mouse-download.rule"
+		},
+		{
+			"file" : "/workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/_sysbuild/sysbuild/images/hid_device_ref_design_mouse-prefix/src/hid_device_ref_design_mouse-stamp/hid_device_ref_design_mouse-install.rule"
+		},
+		{
+			"file" : "/workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/_sysbuild/sysbuild/images/hid_device_ref_design_mouse-prefix/src/hid_device_ref_design_mouse-stamp/hid_device_ref_design_mouse-mkdir.rule"
+		},
+		{
+			"file" : "/workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/_sysbuild/sysbuild/images/hid_device_ref_design_mouse-prefix/src/hid_device_ref_design_mouse-stamp/hid_device_ref_design_mouse-patch.rule"
+		},
+		{
+			"file" : "/workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/_sysbuild/sysbuild/images/hid_device_ref_design_mouse-prefix/src/hid_device_ref_design_mouse-stamp/hid_device_ref_design_mouse-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"hid_device_ref_design_mouse"
+		],
+		"name" : "hid_device_ref_design_mouse"
+	}
+}

@@ -407,7 +407,7 @@
             reg = <0x42240000 0x80>;
             interrupts = <2 5>;
             status = "okay";
-            current-speed = < 0x5B8D80 >;
+            current-speed = < 0xE1000 >;
             data-bits = <3>;
             stop-bits = <1>;
             parity = <0>;
@@ -800,14 +800,7 @@ zephyr_udc0: &usbd {
    pinmux = <(24 << 5 | 12 << 0)>;
    bias-pull-up;
   };
-
-
-  gpio29{
-   pinmux = <(29 << 5 | 12 << 0)>;
-   bias-pull-up;
-  };
-
-
+# 182 "./config/ab1623m_evk/hid_device_ref_design_mouse_m20.overlay"
   gpio45{
    pinmux = <(45 << 5 | 12 << 0)>;
    bias-pull-up;

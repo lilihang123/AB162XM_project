@@ -1,0 +1,640 @@
+/dts-v1/;
+
+/ {
+	#address-cells = < 0x1 >;
+	#size-cells = < 0x1 >;
+	model = "Airoha AB1623M Evaluation Board ";
+	chosen {
+		zephyr,flash-controller = &flash_controller;
+		zephyr,bt-hci = &airoha_hci;
+		zephyr,entropy = &trng;
+		zephyr,console = &uart0;
+		zephyr,shell-uart = &uart1;
+		zephyr,sram = &tcm;
+		zephyr,flash = &flash0;
+		zephyr,code-partition = &slot0_partition;
+		zephyr,settings-partition = &storage_partition;
+		zephyr,logging_port = &uart0;
+	};
+	aliases {
+		flash-memory = &flash0;
+		main-flash-partitions = &main_flash_partitions;
+	};
+	soc {
+		#address-cells = < 0x1 >;
+		#size-cells = < 0x1 >;
+		compatible = "simple-bus";
+		interrupt-parent = < &nvic >;
+		ranges;
+		nvic: interrupt-controller@e000e100 {
+			#address-cells = < 0x1 >;
+			compatible = "arm,v8m-nvic";
+			reg = < 0xe000e100 0xc00 >;
+			interrupt-controller;
+			#interrupt-cells = < 0x2 >;
+			arm,num-irq-priority-bits = < 0x4 >;
+			phandle = < 0x1 >;
+		};
+		systick: cm33_systick: timer@e000e010 {
+			compatible = "arm,armv8m-systick";
+			reg = < 0xe000e010 0x10 >;
+			status = "disabled";
+		};
+		tcm: memory@4000000 {
+			compatible = "mmio-sram";
+			reg = < 0x4000000 0x60000 >;
+		};
+		ram_bt: memory@4060000 {
+			compatible = "mmio-sram";
+			reg = < 0x4060000 0x4000 >;
+		};
+		riscv_sram: memory@84064000 {
+			compatible = "mmio-sram";
+			reg = < 0x84064000 0x6000 >;
+		};
+		misc_peripheral: misc@42010000 {
+			compatible = "airoha,air-misc";
+			reg = < 0x42010000 0x804 0x42020000 0x604 0x42080000 0x90 0x422e0000 0x28 0x422f0000 0x1048 0x42300000 0x10000 0x42310000 0x10000 0x40000000 0x10000 0x43000000 0x10000 >;
+		};
+		os_timer: ost@42170000 {
+			compatible = "airoha,air-ost";
+			reg = < 0x42170000 0x20 >;
+			channel-num = < 0x1 >;
+			clock-source = < 0x0 >;
+			clock-divider = < 0xd >;
+			status = "okay";
+		};
+		wdt0: wdt0@42090000 {
+			compatible = "airoha,air-wdt";
+			reg = < 0x42090000 0x28 >;
+			status = "okay";
+			timeout-sec = < 0x5 >;
+		};
+		wdt1: wdt1@42090030 {
+			compatible = "airoha,air-wdt";
+			reg = < 0x42090030 0x28 >;
+			status = "okay";
+		};
+		cache_controller: cache@e0180000 {
+			compatible = "airoha,air-cache";
+			reg = < 0xe0180000 0x80 >;
+			remap-channel-num = < 0x4 >;
+			cacheable-channel-num = < 0x10 >;
+			cache-memory-size = < 0x4000 >;
+			icache-line-size = < 0x20 >;
+			dcache-line-size = < 0x20 >;
+			cacheable-region-alignment = < 0x1000 >;
+			status = "okay";
+		};
+		flash_controller: flash-controller@40080000 {
+			compatible = "airoha,air-flash-controller";
+			reg = < 0x40080000 0x48 0x40080800 0x100 >;
+			partial-erase;
+			#address-cells = < 0x1 >;
+			#size-cells = < 0x1 >;
+			status = "okay";
+			flash0: flash@8000000 {
+				reg = < 0x8000000 0x200000 >;
+				compatible = "soc-nv-flash";
+				erase-block-size = < 0x1000 >;
+				write-block-size = < 0x1 >;
+				main_flash_partitions: partitions {
+					compatible = "airoha,air-flash-partitions", "fixed-partitions";
+					#address-cells = < 0x1 >;
+					#size-cells = < 0x1 >;
+					partiton_table: partition@0 {
+						label = "partition_table";
+						reg = < 0x0 0x1000 >;
+						id = < 0x0 >;
+						read-only;
+						download;
+						display_name = "PartitionTable";
+					};
+					security_header0: partition@1000 {
+						label = "secure_hdr0";
+						reg = < 0x1000 0x1000 >;
+						id = < 0x1 >;
+						read-only;
+						download;
+						display_name = "SecureHdr0";
+					};
+					factory_data: partition@2000 {
+						label = "factory_data";
+						reg = < 0x2000 0x1000 >;
+						id = < 0xd >;
+						read-only;
+					};
+					boot_partition: partition@3000 {
+						label = "bootloader";
+						reg = < 0x3000 0x18000 >;
+						id = < 0x8 >;
+						read-only;
+						download;
+						display_name = "BootLoader";
+					};
+					upgrade_info: partition@1B000 {
+						label = "upgrade_info";
+						reg = < 0x1b000 0x1000 >;
+						id = < 0xe >;
+					};
+					slot0_partition: partition@1C000 {
+						label = "image-0";
+						reg = < 0x1c000 0xed000 >;
+						id = < 0xa >;
+						download;
+						display_name = "MCU_FW";
+					};
+					slot1_partition: partition@109000 {
+						label = "image-1";
+						reg = < 0x109000 0xed000 >;
+						id = < 0xb >;
+					};
+					storage_partition: partition@1f6000 {
+						label = "storage";
+						reg = < 0x1f6000 0xa000 >;
+						id = < 0x18 >;
+						download;
+						display_name = "NV_Data";
+					};
+				};
+			};
+		};
+		airoha_hci: airoha_hci {
+			compatible = "airoha,air-bt-hci";
+			status = "okay";
+		};
+		dma: dma@40040000 {
+			compatible = "airoha,air-dma";
+			reg = < 0x40040000 0x10000 >;
+			mcu-dma-ch-num = < 0x3 >;
+			slow-dma-ch-num = < 0x10 >;
+			dma-ch-base = < 0x40040000 0x42230000 0x42270000 0x42280000 0x42290000 0x42220000 0x400f0000 >;
+			dma-ch-length = < 0x12c 0x12c 0x270 0x270 0x270 0x22c 0x22c 0x22c >;
+			status = "okay";
+		};
+		esc: esc@40090000 {
+			compatible = "airoha,air-esc";
+			reg = < 0x40090000 0x10000 >;
+			status = "okay";
+		};
+		irq_gen: irq_gen@422b0000 {
+			compatible = "airoha,air-irq-gen";
+			reg = < 0x422b0000 0x10 0x422c0000 0x10 >;
+			status = "okay";
+		};
+		gpt: gpt@42150000 {
+			compatible = "airoha,air-gpt";
+			reg = < 0x42150000 0xc18 >;
+			status = "okay";
+		};
+		rtc: rtc@42100000 {
+			compatible = "airoha,air-rtc";
+			reg = < 0x42100000 0xf1c >;
+			status = "okay";
+		};
+		trng: trng@40030000 {
+			compatible = "airoha,air-trng";
+			reg = < 0x40030000 0x1000 >;
+			status = "okay";
+			von-neumann-extractor;
+		};
+		hw_semaphore: hw_semaphore@422a0000 {
+			compatible = "airoha,air-hw-semaphore";
+			reg = < 0x422a0000 0x308 >;
+			channels = < 0x20 >;
+			status = "okay";
+		};
+		i2c0: i2c@42210000 {
+			compatible = "airoha,air-i2c";
+			reg = < 0x42210000 0xbc >;
+			status = "okay";
+			frequency = < 0xf4240 >;
+			port = < 0x0 >;
+		};
+		i2c1: i2c@400e0000 {
+			#address-cells = < 0x1 >;
+			#size-cells = < 0x0 >;
+			compatible = "airoha,air-i2c";
+			reg = < 0x400e0000 0xbc >;
+			status = "okay";
+			frequency = < 0xf4240 >;
+			port = < 0x1 >;
+		};
+		gpio0: gpio@420b0000 {
+			compatible = "airoha,air-gpio";
+			gpio-controller;
+			reg = < 0x420b0000 0x44 0x420c0000 0x108 0x420d0000 0x118 >;
+			ngpios = < 0x20 >;
+			#gpio-cells = < 0x2 >;
+			status = "okay";
+			debounce = < 0x0 >;
+			port = < 0x0 >;
+			pinctrl-0 = < &gpio0_default >;
+			pinctrl-1 = < &gpio1_default >;
+			pinctrl-names = "default", "sleep";
+		};
+		gpio32: gpio@420b0004 {
+			compatible = "airoha,air-gpio";
+			gpio-controller;
+			reg = < 0x420b0000 0x44 0x420c0000 0x108 0x420d0000 0x118 >;
+			ngpios = < 0x1a >;
+			#gpio-cells = < 0x2 >;
+			status = "okay";
+			debounce = < 0x0 >;
+			port = < 0x1 >;
+		};
+		pinctrl: pin-controller {
+			compatible = "airoha,air-pinctrl";
+			status = "okay";
+			gpio0_default: gpio0_default {
+				phandle = < 0x2 >;
+				gpio2 {
+					pinmux = < 0x41 >;
+					bias-pull-up;
+				};
+				gpio3 {
+					pinmux = < 0x61 >;
+				};
+				gpio17 {
+					pinmux = < 0x226 >;
+				};
+				gpio18 {
+					pinmux = < 0x24c >;
+					bias-pull-up;
+				};
+				gpio46 {
+					pinmux = < 0x5cc >;
+					bias-pull-up;
+				};
+				gpio47 {
+					pinmux = < 0x5e0 >;
+					bias-pull-up;
+				};
+				gpio19 {
+					pinmux = < 0x262 >;
+				};
+				gpio20 {
+					pinmux = < 0x282 >;
+					bias-pull-up;
+				};
+				gpio21 {
+					pinmux = < 0x2a2 >;
+				};
+				gpio22 {
+					pinmux = < 0x2c2 >;
+					bias-pull-up;
+				};
+				gpio6 {
+					pinmux = < 0xcc >;
+					bias-pull-up;
+				};
+				gpio5 {
+					pinmux = < 0xac >;
+					bias-pull-up;
+					debounce = < 0x14 >;
+				};
+				gpio38 {
+					pinmux = < 0x4cc >;
+					bias-pull-up;
+				};
+				gpio23 {
+					pinmux = < 0x2ec >;
+					bias-pull-up;
+				};
+				gpio24 {
+					pinmux = < 0x30c >;
+					bias-pull-up;
+				};
+				gpio45 {
+					pinmux = < 0x5ac >;
+					bias-pull-up;
+				};
+				gpio0 {
+					pinmux = < 0xe >;
+					bias-pull-up;
+				};
+				gpio1 {
+					pinmux = < 0x2e >;
+					bias-pull-up;
+				};
+				gpio35 {
+					pinmux = < 0x468 >;
+				};
+				gpio36 {
+					pinmux = < 0x488 >;
+				};
+				gpio37 {
+					pinmux = < 0x4a8 >;
+				};
+			};
+			gpio1_default: gpio1_default {
+				phandle = < 0x3 >;
+			};
+		};
+		spim0: spim@421f0000 {
+			#address-cells = < 0x1 >;
+			#size-cells = < 0x0 >;
+			compatible = "airoha,air-spim";
+			reg = < 0x421f0000 0x3c >;
+			status = "okay";
+			frequency = < 0x7a1200 >;
+			port = < 0x0 >;
+			cs_pin = < 0x16 0x2 >;
+			paw3950: paw3950@0 {
+				compatible = "pixart,paw3950";
+				reg = < 0x0 >;
+				cpi = < 0x640 >;
+				lod = "lift_cut_off_1mm";
+				rest_mode = < 0x0 >;
+				motion_sync = < 0x0 >;
+				ripple_control = < 0x0 >;
+				angle_snap = < 0x0 >;
+				mode = "cord";
+				xy_direction = "no_direction_adjustment";
+				rest1_period_time = < 0x1 >;
+				rest2_period_time = < 0x14 >;
+				rest3_period_time = < 0xa0 >;
+				nreset_pin = < 0xff >;
+				status = "okay";
+			};
+		};
+		spim1: spim@42200000 {
+			compatible = "airoha,air-spim";
+			reg = < 0x42200000 0x3c >;
+			status = "disabled";
+			frequency = < 0xf4240 >;
+			port = < 0x1 >;
+		};
+		spim2: spim@400a0000 {
+			compatible = "airoha,air-spim";
+			reg = < 0x400a0000 0x3c >;
+			status = "okay";
+			frequency = < 0xf4240 >;
+			port = < 0x2 >;
+		};
+		spis: spis@400b0000 {
+			compatible = "airoha,air-spis";
+			reg = < 0x400b0000 0xa4 >;
+			status = "okay";
+			port = < 0x0 >;
+		};
+		spis_pad: spis_pad@420e0000 {
+			compatible = "airoha,air-spispad";
+			reg = < 0x420e0000 0x18 >;
+			status = "okay";
+		};
+		irtx: irtx@40050000 {
+			compatible = "airoha,air-irtx";
+			reg = < 0x40050000 0x1120 >;
+			status = "okay";
+		};
+		irrx: irrx@40060000 {
+			compatible = "airoha,air-irrx";
+			reg = < 0x40060000 0x200 >;
+			status = "okay";
+		};
+		argb: argb@42180000 {
+			compatible = "airoha,air-argb";
+			reg = < 0x42180000 0x264 >;
+			status = "okay";
+		};
+		pwm_dma0: pwm_dma@42190000 {
+			compatible = "airoha,air-pwmdma";
+			#address-cells = < 0x1 >;
+			#size-cells = < 0x0 >;
+			reg = < 0x42190000 0x74 >;
+			port = < 0x0 >;
+			status = "okay";
+			led_rgb_frequency = < 0x3c >;
+			channel_polarity = < 0x1 0x1 0x1 0x1 >;
+			rgb_gpio_channel = < 0x0 >;
+			rgb0: rgb@0 {
+				compatible = "airoha,air-rgb";
+				reg = < 0x0 >;
+				gpio_control = < 0x26 >;
+				gpio_polarity = < 0x1 >;
+				r_channel = < 0x2 >;
+				g_channel = < 0x1 >;
+				b_channel = < 0x3 >;
+				port = < 0x0 >;
+				status = "okay";
+			};
+		};
+		pwm_dma1: pwm_dma@421a0000 {
+			compatible = "airoha,air-pwmdma";
+			#address-cells = < 0x1 >;
+			#size-cells = < 0x0 >;
+			reg = < 0x421a0000 0x74 >;
+			port = < 0x1 >;
+			status = "okay";
+		};
+		pwm0: pwm@421b0000 {
+			compatible = "airoha,air-pwm";
+			#address-cells = < 0x1 >;
+			#size-cells = < 0x0 >;
+			reg = < 0x421b0000 0x10 >;
+			channel = < 0x8 >;
+			status = "okay";
+		};
+		pwm1: pwm@421c0000 {
+			compatible = "airoha,air-pwm";
+			reg = < 0x421c0000 0x10 >;
+			channel = < 0x9 >;
+			status = "okay";
+		};
+		pwm2: pwm@421d0000 {
+			compatible = "airoha,air-pwm";
+			reg = < 0x421d0000 0x10 >;
+			channel = < 0xa >;
+			status = "okay";
+		};
+		led: led@42103000 {
+			compatible = "airoha,air-led";
+			reg = < 0x42103000 0x50c >;
+			status = "okay";
+			channel0 {
+				brightness = < 0xff >;
+				polarity = < 0x0 >;
+			};
+			channel1 {
+				brightness = < 0xff >;
+				polarity = < 0x0 >;
+			};
+			channel2 {
+				brightness = < 0xff >;
+				polarity = < 0x0 >;
+			};
+		};
+		uart0: uart@42240000 {
+			compatible = "airoha,air-uart";
+			reg = < 0x42240000 0x80 >;
+			interrupts = < 0x2 0x5 >;
+			status = "okay";
+			current-speed = < 0xe1000 >;
+			data-bits = < 0x3 >;
+			stop-bits = < 0x1 >;
+			parity = < 0x0 >;
+			flow_ctrl = < 0x1 >;
+			tbuf-size = < 0x200 >;
+			rbuf-size = < 0x200 >;
+		};
+		uart1: uart@42250000 {
+			compatible = "airoha,air-uart";
+			reg = < 0x42250000 0x80 >;
+			interrupts = < 0x2 0x5 >;
+			status = "okay";
+			current-speed = < 0xe1000 >;
+			data-bits = < 0x3 >;
+			stop-bits = < 0x1 >;
+			parity = < 0x0 >;
+			flow_ctrl = < 0x0 >;
+			tbuf-size = < 0x0 >;
+			rbuf-size = < 0x0 >;
+		};
+		uart2: uart@42260000 {
+			compatible = "airoha,air-uart";
+			reg = < 0x42260000 0x80 >;
+			interrupts = < 0x2 0x5 >;
+			status = "okay";
+			current-speed = < 0xe1000 >;
+			data-bits = < 0x3 >;
+			stop-bits = < 0x1 >;
+			parity = < 0x0 >;
+			flow_ctrl = < 0x0 >;
+			tbuf-size = < 0x0 >;
+			rbuf-size = < 0x0 >;
+		};
+		usbd: zephyr_udc0: usbd@41020000 {
+			compatible = "airoha,air-usbd";
+			reg = < 0x41020000 0x20000 >;
+			interrupts = < 0x1e 0x5 >, < 0x2b 0x5 >;
+			interrupt-names = "USB", "USB_WAKEUP";
+			maximum-speed = "high-speed";
+			num-bidir-endpoints = < 0x1 >;
+			num-in-endpoints = < 0x7 >;
+			num-out-endpoints = < 0x7 >;
+			ram-size = < 0x500 >;
+			status = "okay";
+		};
+		hw_keyscan: hw_keyscan@421e0000 {
+			compatible = "airoha,air-hw_keyscan";
+			reg = < 0x421e0000 0x114 >;
+			status = "okay";
+		};
+		ieee802154_thread: ieee802154_thread@a0060000 {
+			compatible = "airoha,air-ieee802154-thread";
+			reg = < 0xa0060000 0x238 >;
+			status = "disabled";
+		};
+		ieee802154_custom: ieee802154_custom@a0060000 {
+			compatible = "airoha,air-ieee802154-custom";
+			reg = < 0xa0060000 0x238 >;
+			status = "disabled";
+		};
+		qdec: qdec@42101000 {
+			compatible = "airoha,air-qdec";
+			reg = < 0x42101000 0x64 >;
+			interrupts = < 0x2 0x5 >;
+			status = "okay";
+			led_force_off = < 0x1 >;
+			led_active_output = < 0x1 >;
+			z_sum_thr = < 0x0 >;
+			smp_period_a = < 0x3 >;
+			led_period_a = < 0x1 >;
+			dbc_count_a = < 0x0 >;
+			smp_period_b = < 0xa >;
+			led_period_b = < 0x1 >;
+			dbc_count_b = < 0x0 >;
+			pinctrl-0 = < &gpio0_default >;
+			pinctrl-names = "default";
+		};
+		ramboz: ramboz@42102000 {
+			compatible = "airoha,air-ramboz";
+			reg = < 0x42102000 0x58 >;
+			interrupts = < 0x2 0x5 >;
+			status = "okay";
+			direction = < 0x0 >;
+			mode = < 0x0 >;
+			filter_period = < 0x9 >;
+			fast_sample_period = < 0xa >;
+			slow_sample_period = < 0xff >;
+			fast_roll_period = < 0xa >;
+		};
+		saradc0: saradc@400d0000 {
+			compatible = "airoha,air-saradc";
+			reg = < 0x400d0000 0x1000 >;
+			status = "okay";
+			channel_id = < 0x0 >;
+			acquisition_time = < 0x200 >;
+			resolution = < 0x0 >;
+			oversampling = < 0x0 >;
+			gain = "ADC_GAIN_1";
+			reference = "ADC_REF_VDD_1";
+		};
+		sdadc0: sdadc@40070000 {
+			compatible = "airoha,air-sdadc";
+			reg = < 0x40070000 0x1000 >;
+			status = "okay";
+			channel_id = < 0x0 >;
+			acquisition_time = < 0x200 >;
+			resolution = < 0x0 >;
+			oversampling = < 0x0 >;
+			gain = "ADC_GAIN_1";
+			reference = "ADC_REF_VDD_1";
+		};
+		spmcfg: spmcfg@42130000 {
+			compatible = "airoha,air-spmcfg";
+			reg = < 0x42130000 0x224 >;
+			status = "okay";
+		};
+		spmtop: spmtop@42120000 {
+			compatible = "airoha,air-spmtop";
+			reg = < 0x42120000 0x1b8 >;
+			status = "okay";
+		};
+		srampwrctrl: srampwrctrl@42104000 {
+			compatible = "airoha,air-srampwrctrl";
+			reg = < 0x42104000 0x13c >;
+			status = "okay";
+		};
+		clock_node_label: clock@42030000 {
+			compatible = "airoha,air-clock-controller";
+			reg = < 0x42030000 0x1000 0x42040000 0x1000 0x422d0000 0x1000 0x42050000 0x1000 0x42060000 0x1000 0x400c0000 0x1000 0x42107000 0x1000 >;
+			module-str = "cksys", "cksys_xo_clk", "cksys_bus_clk", "mixedsys_d", "dcxo_pwr_ctrl", "dcxo_cfg", "rtc_dig_misc";
+			status = "okay";
+		};
+		pmu: pmu@42108000 {
+			compatible = "airoha,air-pmu";
+			reg = < 0x42108000 0xf0 >;
+			status = "okay";
+		};
+	};
+	cpus {
+		#address-cells = < 0x1 >;
+		#size-cells = < 0x0 >;
+		cpu0: cpu@0 {
+			device_type = "cpu";
+			compatible = "arm,cortex-m33f";
+			cpu-power-states = < &state0 &state1 >;
+			reg = < 0x0 >;
+		};
+	};
+	power-states {
+		state0: state0 {
+			compatible = "zephyr,power-state";
+			power-state-name = "runtime-idle";
+			substate-id = < 0x1 >;
+			min-residency-us = < 0x2dc6c0 >;
+			exit-latency-us = < 0x1388 >;
+			phandle = < 0x4 >;
+		};
+		state1: state1 {
+			compatible = "zephyr,power-state";
+			power-state-name = "suspend-to-ram";
+			substate-id = < 0x1 >;
+			min-residency-us = < 0x2dc6c0 >;
+			exit-latency-us = < 0x4e20 >;
+			phandle = < 0x5 >;
+		};
+	};
+};

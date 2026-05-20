@@ -73,7 +73,9 @@ static uint8_t app_button_get_debounce();
 static uint32_t app_button_change_profile(uint8_t idx);
 static uint32_t app_button_debounce_time_reload(uint8_t profile, bool restore);
 static void app_btn_announce_rr_req(uint8_t type, uint16_t rr);
+#ifdef M_KEY_DPI
 static void app_btn_announce_dpi_req(uint8_t type);
+#endif
 static void app_button_set_each_key_debounce(uint8_t debounce_time);
 static void app_button_set_each_key_extslp_debounce(uint8_t debounce_time);
 static void app_btn_key_event_announcement(uint8_t key_id, airoha_key_event_t key_event);
@@ -100,7 +102,7 @@ static uint8_t key_ids[] =
     M_KEY_NK,
     M_KEY_PK,
     #endif
-    M_KEY_DPI,
+    // M_KEY_DPI,
     M_KEY_PAIRING,
 };
 uint8_t mouse_LMR45_key_valid_num = sizeof(key_ids) - 2;  // remove M_KEY_DPI,  SCROLL_UP_PIN, and SCROLL_DOWN_PIN
@@ -115,7 +117,9 @@ static uint8_t key_ids[] =
     M_KEY_NK,
     M_KEY_PK,
     #endif
+    #ifdef M_KEY_DPI
     M_KEY_DPI,
+    #endif
     M_KEY_RR,
     M_KEY_PAIRING,
 };
@@ -236,7 +240,11 @@ static void app_button__click_check_reset(bool reset_all, bool multi_click_count
         {
             #if defined(CONFIG_AIR_HID_DEVICE_SCENARIO_SERVICE_KEY_REMAP)
             uint8_t remap_id = app_key_remap_check(key_idx);
+            #ifdef M_KEY_DPI
             if(((remap_id == M_KEY_PAIRING) || (remap_id == M_KEY_DPI)) && gesture_key_click_timer_running(key_idx))
+            #else
+            if(((remap_id == M_KEY_PAIRING) ) && gesture_key_click_timer_running(key_idx))
+            #endif
             {
                 /* If the key remap to pairing/DPI key timer is running, set the key status is pressed */
                 last_key_status |= 0x01 << key_idx;
@@ -418,7 +426,11 @@ void app_button_key_event_hdl(airoha_key_event_t event, uint8_t key_id)
             APP_LOGI(thisMOD,"Key[%d] %d clicks and Long press", key_id, event - AK_CLICK_AND_LONG_PRESS_TYPE_MASK);
 
             #if defined(CONFIG_AIR_TEST_GESTURE)
+            #ifdef M_KEY_DPI
             if(M_KEY_RR == key_id || M_KEY_DPI == key_id)
+            #else
+            if(M_KEY_RR == key_id)
+            #endif
             {
                 if(profile_debounce_list[profile_idx])
                 {
@@ -434,6 +446,7 @@ void app_button_key_event_hdl(airoha_key_event_t event, uint8_t key_id)
             #endif
 
             #if defined (CONFIG_AIR_HID_DEBUG_PIN)
+            #ifdef M_KEY_DPI
             else if (M_KEY_DPI == key_id){
                 struct evt_pairing_request* evt = create_evt_pairing_request();
                 if (evt){
@@ -443,6 +456,7 @@ void app_button_key_event_hdl(airoha_key_event_t event, uint8_t key_id)
                     AF_EVT_SUBMIT(evt);
                 }
             }
+            #endif
             #endif
         }
         break;
@@ -501,13 +515,13 @@ void app_button_key_event_hdl(airoha_key_event_t event, uint8_t key_id)
                     app_btn_announce_rr_req(RR_CHANGE_NEXT, 0);
                     break;
                 }
-
+                #ifdef M_KEY_DPI
                 case M_KEY_DPI: //DPI change to next loop stage
                 {
                     app_btn_announce_dpi_req(DPI_STAGE_LOOP);
                     break;
                 }
-
+                #endif
                 case M_KEY_PAIRING: //change link or mode
                 {
                     app_btn_announce_evt_link_change();
@@ -529,10 +543,11 @@ void app_button_key_event_hdl(airoha_key_event_t event, uint8_t key_id)
             if(key_id == M_KEY_RR){ //Report rate change to previous
                 app_btn_announce_rr_req(RR_CHANGE_PREV, 0);
             }
-
+            #ifdef M_KEY_DPI
             if(key_id == M_KEY_DPI){ //DPI change to previous
                 app_btn_announce_dpi_req(DPI_STAGE_MINUS);
             }
+            #endif
             #endif
         }
         break;
@@ -554,7 +569,7 @@ void app_button_key_event_hdl(airoha_key_event_t event, uint8_t key_id)
 
                 }
                 break;
-
+                #ifdef M_KEY_DPI
                 case M_KEY_DPI:
                 {
                     #if defined (CONFIG_AIR_HID_DEBUG_PIN)
@@ -563,7 +578,7 @@ void app_button_key_event_hdl(airoha_key_event_t event, uint8_t key_id)
                     #endif
                 }
                 break;
-
+                #endif
                 case M_KEY_RR:
                 {
                     #if defined(CONFIG_AIR_TEST_GESTURE)
@@ -619,12 +634,13 @@ void app_button_key_event_hdl(airoha_key_event_t event, uint8_t key_id)
             APP_LOGI(thisMOD,"Key[%d] Press and hold level 2 (2+1s)", key_id);
             switch(key_id)
             {
+                #ifdef M_KEY_DPI
                 case M_KEY_DPI:
                 {
                     app_btn_announce_evt_link_change();
                 }
                 break;
-
+                #endif
                 case M_KEY_PAIRING:
                 {
                     if(app_state_current_state() & APP_STATE_CONNECTED)
@@ -909,7 +925,7 @@ static void app_btn_announce_rr_req(uint8_t type, uint16_t rr)
         AF_EVT_SUBMIT(event);
     }
 }
-
+#ifdef M_KEY_DPI
 static void app_btn_announce_dpi_req(uint8_t type)
 {
     struct evt_dpi_change_req* event = create_evt_dpi_change_req();
@@ -924,6 +940,7 @@ static void app_btn_announce_dpi_req(uint8_t type)
         AF_EVT_SUBMIT(event);
     }
 }
+#endif
 
 static void app_btn_race_cmd_rsp_announcement(T_RACE_CMD_E cmd, uint8_t result)
 {
@@ -1127,7 +1144,9 @@ static void app_button_enter_low_power_set_wakeup()
         hal_gpio_wakeup_extend_sleep_config(M_KEY_M);
         hal_gpio_wakeup_extend_sleep_config(M_KEY_NK);
         hal_gpio_wakeup_extend_sleep_config(M_KEY_PK);
+        #ifdef M_KEY_DPI
         hal_gpio_wakeup_extend_sleep_config(M_KEY_DPI);
+        #endif
 
         app_button_state = APP_BUTTON_STATE_LOW_POWER;
     }
@@ -1148,8 +1167,9 @@ static void app_button_exit_low_power()
         hal_gpio_wakeup_extend_sleep_clear(M_KEY_M);
         hal_gpio_wakeup_extend_sleep_clear(M_KEY_NK);
         hal_gpio_wakeup_extend_sleep_clear(M_KEY_PK);
+        #ifdef M_KEY_DPI
         hal_gpio_wakeup_extend_sleep_clear(M_KEY_DPI);
-
+        #endif
         app_button_state = APP_BUTTON_STATE_NORMAL;
     }
 }

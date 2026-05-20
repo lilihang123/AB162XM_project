@@ -396,7 +396,7 @@
             reg = <0x42240000 0x80>;
             interrupts = <2 5>;
             status = "okay";
-            current-speed = < 0x5B8D80 >;
+            current-speed = < 0xE1000 >;
             data-bits = <3>;
             stop-bits = <1>;
             parity = <0>;

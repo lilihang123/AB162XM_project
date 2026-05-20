@@ -54,13 +54,14 @@
 #define SCROLL_DOWN_PIN   29
 #define M_KEY_PAIRING  (VIRTUAL_KEY_ID_BASE + 0)
 #else
-#define M_KEY_L     5
-#define M_KEY_R     6
-#define M_KEY_M    17
+/* LM7: left button=GPIO6, right button=GPIO5 */
+#define M_KEY_L     6
+#define M_KEY_R     5
+#define M_KEY_M    38 //中键
 #define M_KEY_NK   24
 #define M_KEY_PK   23
-#define M_KEY_DPI  29
-#define M_KEY_RR   45
+// #define M_KEY_DPI  29
+#define M_KEY_RR   45//Report rate
 #define M_KEY_PAIRING  (VIRTUAL_KEY_ID_BASE + 0)
 #define M_MOTION_PIN   18
 #endif

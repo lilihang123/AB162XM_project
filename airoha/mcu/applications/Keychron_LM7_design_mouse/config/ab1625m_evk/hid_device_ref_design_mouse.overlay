@@ -97,17 +97,17 @@
 			bias-pull-up;
 		};
 
-		/** Mouse L Key */
+		/** Mouse L Key (LM7: GPIO6) */
+		gpio6{
+			pinmux = <GPIO_6_EINT6>;
+			bias-pull-up;
+		};
+
+		/** Mouse R Key (LM7: GPIO5) */
 		gpio5{
 			pinmux = <GPIO_5_EINT5>;
 			bias-pull-up;
 			debounce = <20>;
-		};
-		
-		/** Mouse R Key */
-		gpio6{
-			pinmux = <GPIO_6_EINT6>;
-			bias-pull-up;
 		};
 
 		/** Mouse M Key */

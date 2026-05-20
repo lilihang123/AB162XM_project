@@ -1,0 +1,13 @@
+# Target labels
+ Keychron_LM7_design_mouse
+# Source files and their labels
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/_sysbuild/sysbuild/images/CMakeFiles/Keychron_LM7_design_mouse
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/_sysbuild/sysbuild/images/CMakeFiles/Keychron_LM7_design_mouse.rule
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/_sysbuild/sysbuild/images/CMakeFiles/Keychron_LM7_design_mouse-complete.rule
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/_sysbuild/sysbuild/images/Keychron_LM7_design_mouse-prefix/src/Keychron_LM7_design_mouse-stamp/Keychron_LM7_design_mouse-build.rule
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/_sysbuild/sysbuild/images/Keychron_LM7_design_mouse-prefix/src/Keychron_LM7_design_mouse-stamp/Keychron_LM7_design_mouse-configure.rule
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/_sysbuild/sysbuild/images/Keychron_LM7_design_mouse-prefix/src/Keychron_LM7_design_mouse-stamp/Keychron_LM7_design_mouse-download.rule
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/_sysbuild/sysbuild/images/Keychron_LM7_design_mouse-prefix/src/Keychron_LM7_design_mouse-stamp/Keychron_LM7_design_mouse-install.rule
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/_sysbuild/sysbuild/images/Keychron_LM7_design_mouse-prefix/src/Keychron_LM7_design_mouse-stamp/Keychron_LM7_design_mouse-mkdir.rule
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/_sysbuild/sysbuild/images/Keychron_LM7_design_mouse-prefix/src/Keychron_LM7_design_mouse-stamp/Keychron_LM7_design_mouse-patch.rule
+/workdir/out/ab1623m_evk/keychron_mouse_LM7/_sysbuild/sysbuild/images/Keychron_LM7_design_mouse-prefix/src/Keychron_LM7_design_mouse-stamp/Keychron_LM7_design_mouse-update.rule

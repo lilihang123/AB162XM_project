@@ -141,17 +141,17 @@
 		};
 		*/
 
-		/** Mouse L Key */
+/** Mouse L Key (LM7: GPIO6) */
+		gpio6{
+			pinmux = <GPIO_6_EINT6>;
+			bias-pull-up;
+		};
+
+		/** Mouse R Key (LM7: GPIO5) */
 		gpio5{
 			pinmux = <GPIO_5_EINT5>;
 			bias-pull-up;
 			debounce = <20>;
-		};
-
-		/** Mouse R Key */
-		gpio6{
-			pinmux = <GPIO_6_EINT6>;
-			bias-pull-up;
 		};
 
 		/** Mouse M Key */
@@ -172,11 +172,11 @@
 			bias-pull-up;
 		};
 
-		/** DPI Key */
-		gpio29{
+		/** DPI Key -- LM7: GPIO29 used as ENC_POWER_EN (encoder power enable) */
+		/* gpio29{
 			pinmux = <GPIO_29_EINT29>;
 			bias-pull-up;
-		};
+		}; */
 		
 		/** Report Rate Change Key */
 		gpio45{
