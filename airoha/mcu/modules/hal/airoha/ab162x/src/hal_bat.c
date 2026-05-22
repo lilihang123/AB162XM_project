@@ -228,6 +228,15 @@ void bat_nvkey_init(void)
 #ifdef AIR_NVKEY_ENABLE
     pmu_get_nvkey(NVID_CAL_VBAT_ADC_CAL_TABLE, (uint8_t *)&bat_adc, sizeof(bat_adc_t));
     pmu_get_nvkey(NVID_CAL_VBAT_VOLT_CFG, (uint8_t *)&bat_volt, sizeof(bat_volt_t));
+
+    /* Allow Kconfig to override NVKEY values for custom hardware */
+#ifdef CONFIG_AIR_BAT_ADC_CTRL_PIN
+    bat_adc.adc_ctrl = CONFIG_AIR_BAT_ADC_CTRL_PIN;
+#endif
+#ifdef CONFIG_AIR_BAT_ADC_PIN
+    bat_adc.adc_pin = CONFIG_AIR_BAT_ADC_PIN;
+#endif
+
     log_bat_info("bat_nvkey_init, 0x2020, kflag[%d], sel[%d](0:disable, 1:VBAT, 2:GPIO), adc_ctrl[GPIO%d], adc_pin[GPIO%d], settle_time[%dms], r6215[%d], r6217[%d]", 7,
                 bat_adc.kflag, bat_adc.sel, bat_adc.adc_ctrl, bat_adc.adc_pin, bat_adc.settle_time, bat_adc.r6215, bat_adc.r6217);
     log_bat_info("bat_nvkey_init, 0x2021, kflag[%d], full_bat[%d], sd_bat(0%)[%d], 10%[%d], 20%[%d], 30%[%d], 40%[%d]", 7,

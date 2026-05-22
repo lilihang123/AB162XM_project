@@ -72,6 +72,12 @@ config AIR_TRIPLE_MODE_SLIDE_SWITCH
     help
       Enable slide switch feature
 
+config AIR_DUAL_MODE_SLIDE_SWITCH
+    bool "Airoha dual mode slide switch (USB + 2.4G)"
+    default n
+    help
+      Enable dual mode slide switch (USB + 2.4G only, no BT)
+
 config AIR_DISABLE_MOUSE_KEY
     bool "Disable Mouse key for LA debug signal"
     default n
@@ -210,6 +216,20 @@ config AIR_SLIDE_SWITCH_GAMING_PIN_HIGH_ACTIVE
     help
       high active trigger slide switch gaming mode
 
+config AIR_SLIDE_SWITCH_DUAL_2_4G_MODE_PIN
+    int "pin of dual mode slide switch 2.4G mode"
+    default 35
+    depends on AIR_DUAL_MODE_SLIDE_SWITCH
+    help
+      pin of dual mode slide switch for 2.4G mode (GPIO35)
+
+config AIR_SLIDE_SWITCH_DUAL_2_4G_PIN_HIGH_ACTIVE
+    bool "high active trigger dual mode slide switch 2.4G mode"
+    default n
+    depends on AIR_DUAL_MODE_SLIDE_SWITCH
+    help
+      high active trigger dual mode slide switch for 2.4G mode
+
 config AIR_APP_STANDBY_WITH_ADAPTOR_RGB
     bool "Support standby state with RGB function"
     default n
@@ -229,4 +249,21 @@ config AIR_APP_STANDBY_WAKEUP_BY_WHEEL
     default n
     help
       Support Wheel wake up
-      
+
+menu "Battery ADC Configuration"
+
+config AIR_BAT_ADC_CTRL_PIN
+    int "Battery ADC enable pin (GPIO for voltage divider power control)"
+    default 44
+    help
+      GPIO pin that controls power to the battery voltage divider.
+      Set HIGH before ADC sampling, LOW after sampling to save power.
+      Example: GPIO44 high enables the divider, GPIO25 reads the voltage.
+
+config AIR_BAT_ADC_PIN
+    int "Battery ADC input pin"
+    default 25
+    help
+      GPIO pin connected to the battery voltage divider output for ADC sampling.
+
+endmenu

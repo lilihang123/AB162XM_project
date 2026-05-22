@@ -1,0 +1,66 @@
+<NvKeyTable Version="2.0">
+	 <NVKey KeyID="0x0003" Name="app level">
+		<Value>0x1122334455667788</Value>
+	</NVKey>
+
+	<NVKey KeyID="demo/boot_count">
+		<Value>0x4E61BC</Value>
+	</NVKey>
+
+	<NVKey KeyID="0x1002" Name="NVID_PRODUCT_CATEGORY">
+		<Field name="product_category" type="array" value="414231363230445F444F4E474C45" description="AB1620D_DONGLE" />
+	</NVKey>
+
+	<NVKey KeyID="0x1839" Name="NVID_BT_HOST_RELAY_ENABLE" Domain="TEST_USE_DATA">
+		<Value>0x0000</Value>
+	</NVKey>
+
+    <NVKey KeyID="0x3746" Name="NVID_VPA_VOLTAGE">
+       <Value>0x02</Value>
+    </NVKey>
+
+	<NVKey KeyID="0x3601" Name="NVID_BT_HOST_LOCAL_ADDR">
+       <Value>0x112233445566</Value>
+    </NVKey>
+
+	<NVKey KeyID="0x6600" Name="NVID_APP_DONGLE_ULL2_HID_SCENARIO" Domain="USER_DATA">
+		<Value>0x51</Value>
+	</NVKey>
+
+	<NVKey KeyID="0x4301" Name="NVID_BT_HOST_ULL_HID_MS_INFO">
+		<Field name="used" type="uint8_t" value="0x01" description="used" />
+        <Field name="device_type" type="uint8_t" value="0x03" description="device_type" />
+		<Field name="device_characterization" type="uint8_t" value="0x00" description="device_characterization" />
+
+		<Field name="addr" type="array" value="0x00010203040506" description="addr" />
+		<Field name="uni_aa" type="array" value="0xCE140265" description="uni_aa" />
+		<Field name="ltk" type="array" value="0xB627279F7E004A6EABEA756E6AB05B54" description="ltk" />
+		<Field name="skd" type="array" value="0x9BC856DF5996117B586587B329CC0079" description="skd" />
+		<Field name="iv" type="array" value="0x6F92E911BE397915" description="iv" />
+
+		<Field name="scenario" type="uint8_t" value="0x51" description="scenario" />
+		<Field name="report_rate" type="uint8_t" value="0x07" description="report_rate" />
+		<Field name="phy" type="uint8_t" value="0x80" description="phy" />
+    </NVKey>
+
+	<!-- <NVKey KeyID="0x4301" Name="NVID_BT_HOST_ULL_HID_MS_INFO">
+		<Field name="used" type="uint8_t" value="0x01" description="used" />
+        <Field name="device_type" type="uint8_t" value="0x03" description="device_type" />
+		<Field name="device_characterization" type="uint8_t" value="0x00" description="device_characterization" />
+
+		<Field name="addr" type="array" value="0x00010203040506" description="addr" />
+		<Field name="uni_aa" type="array" value="0x38ABBEAF" description="uni_aa" />
+		<Field name="ltk" type="array" value="0x037D2E328F297A9BAB162F4499CEC399" description="ltk" />
+		<Field name="skd" type="array" value="0xDFD6DE716377B2126DD8522593862648" description="skd" />
+		<Field name="iv" type="array" value="0xB3A071A4C81A19AB" description="iv" />
+
+		<Field name="scenario" type="uint8_t" value="0x51" description="scenario" />
+		<Field name="report_rate" type="uint8_t" value="0x07" description="report_rate" />
+		<Field name="phy" type="uint8_t" value="0x80" description="phy" />
+    </NVKey> -->
+
+	<NVKey KeyID="0x4010" Name="NVID_SYS_EXP_DUMP_MODE" Domain="MP_DATA">
+	<Value>0xB400B400</Value>
+	</NVKey>
+
+</NvKeyTable>

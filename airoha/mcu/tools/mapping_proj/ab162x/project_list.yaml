@@ -1051,3 +1051,15 @@ ab1623m_evk__keychron_mouse_LM7:
         # path relative to airoha/mcu/applications/Keychron_LM7_design_mouse
         DTC_OVERLAY_FILE: config/ab1623m_evk/hid_device_ref_design_mouse_m20_pro.overlay
         CONF_FILE: config/ab1623m_evk/hid_device_ref_design_mouse_m20_pro.conf
+
+ab1620dm_evk__Keychron_LM7_dongle:
+    sysbuild_conf: config/ab1620dm_evk/sysbuild_with_mcuboot.conf
+    proj: airoha/mcu/applications/Keychron_LM7_dongle_design
+    mcuboot:
+        # path relative to airoha/mcu/applications/mcuboot/boot/zephyr
+        DTC_OVERLAY_FILE: config/ab162x_evb/mcuboot.overlay
+        CONF_FILE: config/ab162x_evb/air_mcuboot.conf
+    Keychron_LM7_dongle_design:
+        # path relative to airoha/mcu/applications/Keychron_LM7_dongle_design
+        DTC_OVERLAY_FILE: config/ab1620dm_evk/app.overlay
+        CONF_FILE: config/ab1620dm_evk/hid_dongle_ref_design_flash_boot_m20.conf

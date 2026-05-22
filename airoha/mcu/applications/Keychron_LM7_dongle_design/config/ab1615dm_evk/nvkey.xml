@@ -1,0 +1,22 @@
+<NvKeyTable Version="2.0">
+	 <NVKey KeyID="0x0003" Name="app level">
+		<Value>0x1122334455667788</Value>
+	</NVKey>
+
+	<NVKey KeyID="demo/boot_count">
+		<Value>0x4E61BC</Value>
+	</NVKey>
+
+	<NVKey KeyID="0x1002" Name="NVID_PRODUCT_CATEGORY">
+		<Field name="product_category" type="array" value="414231363135445F444F4E474C45" description="AB1615D_DONGLE" />
+	</NVKey>
+
+    <NVKey KeyID="0x3746" Name="NVID_VPA_VOLTAGE">
+       <Value>0x00</Value>
+    </NVKey>
+
+	<NVKey KeyID="0x6600" Name="NVID_APP_DONGLE_ULL2_HID_SCENARIO" Domain="USER_DATA">
+		<Value>0x51</Value>
+	</NVKey>
+
+</NvKeyTable>

@@ -55,6 +55,8 @@ void app_slide_switch__get_ss_type(uint8_t *ss_type);
 
 #if defined (CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH)
     #define GET_SLIDE_SWITCH_MODE(x)     app_slide_switch__get_ss_type(x)
+#elif defined (CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH)
+    #define GET_SLIDE_SWITCH_MODE(x)     app_slide_switch_dual__get_ss_type(x)
 #else
     #define GET_SLIDE_SWITCH_MODE(x)
 #endif /* CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH */
