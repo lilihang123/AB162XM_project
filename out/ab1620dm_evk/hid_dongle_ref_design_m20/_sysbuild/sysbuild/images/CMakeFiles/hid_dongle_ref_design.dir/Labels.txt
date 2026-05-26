@@ -1,0 +1,13 @@
+# Target labels
+ hid_dongle_ref_design
+# Source files and their labels
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/_sysbuild/sysbuild/images/CMakeFiles/hid_dongle_ref_design
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/_sysbuild/sysbuild/images/CMakeFiles/hid_dongle_ref_design.rule
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/_sysbuild/sysbuild/images/CMakeFiles/hid_dongle_ref_design-complete.rule
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/_sysbuild/sysbuild/images/hid_dongle_ref_design-prefix/src/hid_dongle_ref_design-stamp/hid_dongle_ref_design-build.rule
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/_sysbuild/sysbuild/images/hid_dongle_ref_design-prefix/src/hid_dongle_ref_design-stamp/hid_dongle_ref_design-configure.rule
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/_sysbuild/sysbuild/images/hid_dongle_ref_design-prefix/src/hid_dongle_ref_design-stamp/hid_dongle_ref_design-download.rule
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/_sysbuild/sysbuild/images/hid_dongle_ref_design-prefix/src/hid_dongle_ref_design-stamp/hid_dongle_ref_design-install.rule
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/_sysbuild/sysbuild/images/hid_dongle_ref_design-prefix/src/hid_dongle_ref_design-stamp/hid_dongle_ref_design-mkdir.rule
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/_sysbuild/sysbuild/images/hid_dongle_ref_design-prefix/src/hid_dongle_ref_design-stamp/hid_dongle_ref_design-patch.rule
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/_sysbuild/sysbuild/images/hid_dongle_ref_design-prefix/src/hid_dongle_ref_design-stamp/hid_dongle_ref_design-update.rule

@@ -1955,8 +1955,8 @@ Discarded input sections
  .bss.bat_cb_func
                 0x0000000000000000       0x18 modules/airoha/modules/hal/airoha/ab162x/lib..__airoha__mcu__modules__hal__airoha__ab162x.a(hal_bat.c.obj)
  .data.pnzcv    0x0000000000000000        0x2 modules/airoha/modules/hal/airoha/ab162x/lib..__airoha__mcu__modules__hal__airoha__ab162x.a(hal_bat.c.obj)
- .debug_info    0x0000000000000000     0x110f modules/airoha/modules/hal/airoha/ab162x/lib..__airoha__mcu__modules__hal__airoha__ab162x.a(hal_bat.c.obj)
- .debug_abbrev  0x0000000000000000      0x315 modules/airoha/modules/hal/airoha/ab162x/lib..__airoha__mcu__modules__hal__airoha__ab162x.a(hal_bat.c.obj)
+ .debug_info    0x0000000000000000     0x1112 modules/airoha/modules/hal/airoha/ab162x/lib..__airoha__mcu__modules__hal__airoha__ab162x.a(hal_bat.c.obj)
+ .debug_abbrev  0x0000000000000000      0x328 modules/airoha/modules/hal/airoha/ab162x/lib..__airoha__mcu__modules__hal__airoha__ab162x.a(hal_bat.c.obj)
  .debug_loc     0x0000000000000000      0x4e1 modules/airoha/modules/hal/airoha/ab162x/lib..__airoha__mcu__modules__hal__airoha__ab162x.a(hal_bat.c.obj)
  .debug_aranges
                 0x0000000000000000       0x80 modules/airoha/modules/hal/airoha/ab162x/lib..__airoha__mcu__modules__hal__airoha__ab162x.a(hal_bat.c.obj)

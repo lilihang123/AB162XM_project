@@ -15,13 +15,13 @@
     #define AIROHA_FIRMWARE_VERSION ""
 #endif
 
-const char build_date_time_str[] = "BuildTime: 2026/05/19 06:49:48 UTC";
+const char build_date_time_str[] = "BuildTime: 2026/05/21 07:48:56 UTC";
 const char sw_verno_str[] = "Version: " AIROHA_FIRMWARE_VERSION;
 
 #ifdef CONFIG_AIR_LOGGING_ENABLE
 /* save the same information to logging binary */
 #include "memory_attribute.h"
-ATTR_LOG_TIMESTAMP log_bin_build_date_time_str[] = "BuildTime: 2026/05/19 06:49:48 UTC";
+ATTR_LOG_TIMESTAMP log_bin_build_date_time_str[] = "BuildTime: 2026/05/21 07:48:56 UTC";
 ATTR_LOG_VERSION log_bin_sw_verno_str[] = "Version: " AIROHA_FIRMWARE_VERSION;
 extern void airoha_printk(const char *fmt, uint32_t arg_cnt, ...);
 #endif

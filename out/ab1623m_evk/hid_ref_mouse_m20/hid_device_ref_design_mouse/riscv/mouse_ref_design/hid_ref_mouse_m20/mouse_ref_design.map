@@ -2069,7 +2069,7 @@ Name             Origin             Length             Attributes
 ram              0x84064000         0x00007a00         xrw
 stack            0x8406ba00         0x00000200         rw
 system_stack     0x8406bc00         0x00000400         rw
-ccm              0x0400e540         0x00001f54         rw
+ccm              0x0400e550         0x00001f54         rw
 ROM_LOG_STRING   0x06000000         0x02000000         xr
 *default*        0x00000000         0xffffffff
 
@@ -2180,7 +2180,7 @@ LOAD /workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bi
                 0x84064084                fix_data_init
                 0x84064098                        _vectors_end = .
 
-.text           0x840640a0     0x6844
+.text           0x840640a0     0x6836
                 0x840640a0                        . = ALIGN (0x4)
                 0x840640a0                        _text_start = .
  *(.text)
@@ -2903,832 +2903,832 @@ LOAD /workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bi
                 0x84068684      0x2a6 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
                 0x84068684                key_remapping
  .text.key_remap_backend_process
-                0x8406892a      0x1c4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x8406892a      0x1b6 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
                 0x8406892a                key_remap_backend_process
  .text.key_remap_backend_postprocess
-                0x84068aee       0x8e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
-                0x84068aee                key_remap_backend_postprocess
+                0x84068ae0       0x8e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x84068ae0                key_remap_backend_postprocess
  .text.key_remap_get_process_status
-                0x84068b7c        0xa /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
-                0x84068b7c                key_remap_get_process_status
+                0x84068b6e        0xa /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x84068b6e                key_remap_get_process_status
  .text.key_remap_state_reset
-                0x84068b86        0xa /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
-                0x84068b86                key_remap_state_reset
+                0x84068b78        0xa /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x84068b78                key_remap_state_reset
  .text.key_remap_update_key_status
-                0x84068b90        0xe /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
-                0x84068b90                key_remap_update_key_status
+                0x84068b82        0xe /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x84068b82                key_remap_update_key_status
  .text.key_remap_get_dpi_attr
-                0x84068b9e       0x10 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
-                0x84068b9e                key_remap_get_dpi_attr
+                0x84068b90       0x10 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x84068b90                key_remap_get_dpi_attr
  .text.key_remap_get_key_status
-                0x84068bae       0x2a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
-                0x84068bae                key_remap_get_key_status
+                0x84068ba0       0x2a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x84068ba0                key_remap_get_key_status
  .text.key_remap_set_queue
-                0x84068bd8        0xa /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
-                0x84068bd8                key_remap_set_queue
+                0x84068bca        0xa /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x84068bca                key_remap_set_queue
  .text.key_remap_backend_setting
-                0x84068be2       0x5c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
-                0x84068be2                key_remap_backend_setting
+                0x84068bd4       0x5c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x84068bd4                key_remap_backend_setting
  .text.key_remap_backend_init
-                0x84068c3e       0x32 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
-                0x84068c3e                key_remap_backend_init
+                0x84068c30       0x32 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x84068c30                key_remap_backend_init
  .text.key_remap_backend_deinit
-                0x84068c70       0x2a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
-                0x84068c70                key_remap_backend_deinit
+                0x84068c62       0x2a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x84068c62                key_remap_backend_deinit
  .text.key_remap_queue_init
-                0x84068c9a       0x22 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
-                0x84068c9a                key_remap_queue_init
+                0x84068c8c       0x22 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
+                0x84068c8c                key_remap_queue_init
  .text.key_remap_xy_push
-                0x84068cbc       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
-                0x84068cbc                key_remap_xy_push
+                0x84068cae       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
+                0x84068cae                key_remap_xy_push
  .text.key_remap_xy_pop
-                0x84068cd8       0x38 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
-                0x84068cd8                key_remap_xy_pop
+                0x84068cca       0x38 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
+                0x84068cca                key_remap_xy_pop
  .text.key_remap_queue_pop
-                0x84068d10       0x5e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
-                0x84068d10                key_remap_queue_pop
+                0x84068d02       0x5e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
+                0x84068d02                key_remap_queue_pop
  .text.key_remap_queue_push
-                0x84068d6e       0x32 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
-                0x84068d6e                key_remap_queue_push
+                0x84068d60       0x32 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
+                0x84068d60                key_remap_queue_push
  .text.hal_eint_counter_enable
-                0x84068da0       0x12 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_eint.o
-                0x84068da0                hal_eint_counter_enable
+                0x84068d92       0x12 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_eint.o
+                0x84068d92                hal_eint_counter_enable
  .text.hal_eint_set_counter_number
-                0x84068db2       0x3e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_eint.o
-                0x84068db2                hal_eint_set_counter_number
+                0x84068da4       0x3e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_eint.o
+                0x84068da4                hal_eint_set_counter_number
  .text.hal_eint_get_debounce_out_value_by_mask
-                0x84068df0       0x16 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_eint_internal.o
-                0x84068df0                hal_eint_get_debounce_out_value_by_mask
+                0x84068de2       0x16 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_eint_internal.o
+                0x84068de2                hal_eint_get_debounce_out_value_by_mask
  .text.hal_gpio_get_input
-                0x84068e06       0x3c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpio.o
-                0x84068e06                hal_gpio_get_input
+                0x84068df8       0x3c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpio.o
+                0x84068df8                hal_gpio_get_input
  .text.hal_gpt_get_free_run_count
-                0x84068e42       0x80 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
-                0x84068e42                hal_gpt_get_free_run_count
+                0x84068e34       0x80 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
+                0x84068e34                hal_gpt_get_free_run_count
  .text.hal_gpt_get_duration_count
-                0x84068ec2        0xe /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
-                0x84068ec2                hal_gpt_get_duration_count
+                0x84068eb4        0xe /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
+                0x84068eb4                hal_gpt_get_duration_count
  .text.hal_gpt_delay_us
-                0x84068ed0       0x42 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
-                0x84068ed0                hal_gpt_delay_us
+                0x84068ec2       0x42 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
+                0x84068ec2                hal_gpt_delay_us
  .text.hal_gpt_sw_get_timer
-                0x84068f12      0x11a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
-                0x84068f12                hal_gpt_sw_get_timer
+                0x84068f04      0x11a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
+                0x84068f04                hal_gpt_sw_get_timer
  .text.hal_gpt_sw_free_timer
-                0x8406902c       0x6a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
-                0x8406902c                hal_gpt_sw_free_timer
+                0x8406901e       0x6a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
+                0x8406901e                hal_gpt_sw_free_timer
  .text.hal_gpt_sw_start_timer_ms
-                0x84069096        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
-                0x84069096                hal_gpt_sw_start_timer_ms
+                0x84069088        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
+                0x84069088                hal_gpt_sw_start_timer_ms
  .text.hal_gpt_sw_stop_timer_ms
-                0x8406909a        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
-                0x8406909a                hal_gpt_sw_stop_timer_ms
+                0x8406908c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
+                0x8406908c                hal_gpt_sw_stop_timer_ms
  .text.gpt_get_context_index
-                0x8406909e       0x1a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
-                0x8406909e                gpt_get_context_index
+                0x84069090       0x1a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+                0x84069090                gpt_get_context_index
  .text.gpt_interrupt_handler
-                0x840690b8       0x5c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
-                0x840690b8                gpt_interrupt_handler
+                0x840690aa       0x5c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+                0x840690aa                gpt_interrupt_handler
  .text.gpt_current_count
-                0x84069114        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
-                0x84069114                gpt_current_count
+                0x84069106        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+                0x84069106                gpt_current_count
  .text.gpt_convert_ms_to_32k_count
-                0x84069118       0x4a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
-                0x84069118                gpt_convert_ms_to_32k_count
+                0x8406910a       0x4a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+                0x8406910a                gpt_convert_ms_to_32k_count
  .text.gpt_start_free_run_timer
-                0x84069162        0xc /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
-                0x84069162                gpt_start_free_run_timer
+                0x84069154        0xc /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+                0x84069154                gpt_start_free_run_timer
  .text.gpt_delay_time
-                0x8406916e        0xc /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
-                0x8406916e                gpt_delay_time
+                0x84069160        0xc /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+                0x84069160                gpt_delay_time
  .text.gpt_nvic_register
-                0x8406917a       0x36 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
-                0x8406917a                gpt_nvic_register
+                0x8406916c       0x36 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+                0x8406916c                gpt_nvic_register
  .text.sw_gpt_find_the_next_expire_time
-                0x840691b0       0x5a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
-                0x840691b0                sw_gpt_find_the_next_expire_time
+                0x840691a2       0x5a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+                0x840691a2                sw_gpt_find_the_next_expire_time
  .text.clear_gpt_and_restart_hw_gpt
-                0x8406920a       0xc6 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
-                0x8406920a                clear_gpt_and_restart_hw_gpt
+                0x840691fc       0xc6 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+                0x840691fc                clear_gpt_and_restart_hw_gpt
  .text.sw_gpt_callback
-                0x840692d0      0x136 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
-                0x840692d0                sw_gpt_callback
+                0x840692c2      0x136 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+                0x840692c2                sw_gpt_callback
  .text.sw_gpt_timer_start
-                0x84069406      0x130 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
-                0x84069406                sw_gpt_timer_start
+                0x840693f8      0x130 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+                0x840693f8                sw_gpt_timer_start
  .text.sw_gpt_timer_stop
-                0x84069536      0x102 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
-                0x84069536                sw_gpt_timer_stop
+                0x84069528      0x102 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+                0x84069528                sw_gpt_timer_stop
  .text.isrC_main
-                0x84069638       0x22 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
-                0x84069638                isrC_main
+                0x8406962a       0x22 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
+                0x8406962a                isrC_main
  .text.hal_nvic_register_isr_handler
-                0x8406965a       0x10 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
-                0x8406965a                hal_nvic_register_isr_handler
+                0x8406964c       0x10 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
+                0x8406964c                hal_nvic_register_isr_handler
  .text.hal_nvic_enable_irq
-                0x8406966a        0xc /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
-                0x8406966a                hal_nvic_enable_irq
+                0x8406965c        0xc /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
+                0x8406965c                hal_nvic_enable_irq
  .text.hal_nvic_disable_irq
-                0x84069676        0xc /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
-                0x84069676                hal_nvic_disable_irq
+                0x84069668        0xc /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
+                0x84069668                hal_nvic_disable_irq
  .text.hal_nvic_save_and_set_interrupt_mask
-                0x84069682        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
-                0x84069682                hal_nvic_save_and_set_interrupt_mask
+                0x84069674        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
+                0x84069674                hal_nvic_save_and_set_interrupt_mask
  .text.hal_nvic_restore_interrupt_mask
-                0x8406968a        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
-                0x8406968a                hal_nvic_restore_interrupt_mask
+                0x8406967c        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
+                0x8406967c                hal_nvic_restore_interrupt_mask
  .text.hal_nvic_query_exception_number
-                0x84069692        0xe /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
-                0x84069692                hal_nvic_query_exception_number
+                0x84069684        0xe /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
+                0x84069684                hal_nvic_query_exception_number
  .text.vdma_set_sw_move_byte
-                0x840696a0       0x38 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_pdma_internal.o
-                0x840696a0                vdma_set_sw_move_byte
+                0x84069692       0x38 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_pdma_internal.o
+                0x84069692                vdma_set_sw_move_byte
  .text.hal_qdec_set_latch_clear
-                0x840696d8       0x22 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_qdec.o
-                0x840696d8                hal_qdec_set_latch_clear
+                0x840696ca       0x22 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_qdec.o
+                0x840696ca                hal_qdec_set_latch_clear
  .text.hal_qdec_get_data
-                0x840696fa       0xd4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_qdec.o
-                0x840696fa                hal_qdec_get_data
+                0x840696ec       0xd4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_qdec.o
+                0x840696ec                hal_qdec_get_data
  .text.hal_qdec_latch_status_is_busy
-                0x840697ce       0x38 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_qdec.o
-                0x840697ce                hal_qdec_latch_status_is_busy
+                0x840697c0       0x38 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_qdec.o
+                0x840697c0                hal_qdec_latch_status_is_busy
  .text.spi_master_isr
-                0x84069806       0x24 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master.o
-                0x84069806                spi_master_isr
+                0x840697f8       0x24 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master.o
+                0x840697f8                spi_master_isr
  .text.hal_spi_master_register_callback
-                0x8406982a       0x5a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master.o
-                0x8406982a                hal_spi_master_register_callback
+                0x8406981c       0x5a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master.o
+                0x8406981c                hal_spi_master_register_callback
  .text.spi_master_isr_handler
-                0x84069884       0x2e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master_internal.o
-                0x84069884                spi_master_isr_handler
+                0x84069876       0x2e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master_internal.o
+                0x84069876                spi_master_isr_handler
  .text.uart_set_sw_move_byte
-                0x840698b2       0x2a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_uart.o
-                0x840698b2                uart_set_sw_move_byte
+                0x840698a4       0x2a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_uart.o
+                0x840698a4                uart_set_sw_move_byte
  .text.hal_ccni_event_callback20
-                0x840698dc       0x1e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/mouse_sensor.o
-                0x840698dc                hal_ccni_event_callback20
+                0x840698ce       0x1e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/mouse_sensor.o
+                0x840698ce                hal_ccni_event_callback20
  .text.mouse_sensor_send_report_to_CM33
-                0x840698fa        0xc /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/mouse_sensor.o
-                0x840698fa                mouse_sensor_send_report_to_CM33
+                0x840698ec        0xc /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/mouse_sensor.o
+                0x840698ec                mouse_sensor_send_report_to_CM33
  .text.mouse_sensor_get_data
-                0x84069906       0x8e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/mouse_sensor.o
-                0x84069906                mouse_sensor_get_data
+                0x840698f8       0x8e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/mouse_sensor.o
+                0x840698f8                mouse_sensor_get_data
  .text.hal_sleep_manager_set_sleep_handle
-                0x84069994        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager.o
-                0x84069994                hal_sleep_manager_set_sleep_handle
+                0x84069986        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager.o
+                0x84069986                hal_sleep_manager_set_sleep_handle
  .text.hal_sleep_manager_lock_sleep
-                0x84069998        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager.o
-                0x84069998                hal_sleep_manager_lock_sleep
+                0x8406998a        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager.o
+                0x8406998a                hal_sleep_manager_lock_sleep
  .text.hal_sleep_manager_unlock_sleep
-                0x8406999c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager.o
-                0x8406999c                hal_sleep_manager_unlock_sleep
+                0x8406998e        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager.o
+                0x8406998e                hal_sleep_manager_unlock_sleep
  .text.hal_sleep_manager_riscv_sleep_routine
-                0x840699a0        0x2 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager.o
-                0x840699a0                hal_sleep_manager_riscv_sleep_routine
+                0x84069992        0x2 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager.o
+                0x84069992                hal_sleep_manager_riscv_sleep_routine
  .text.hal_sleep_manager_init
-                0x840699a2       0x16 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager.o
-                0x840699a2                hal_sleep_manager_init
+                0x84069994       0x16 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager.o
+                0x84069994                hal_sleep_manager_init
  .text.sleep_management_enter_sleep
-                0x840699b8        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager_internal.o
-                0x840699b8                sleep_management_enter_sleep
+                0x840699aa        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager_internal.o
+                0x840699aa                sleep_management_enter_sleep
  .text.spm_mask_wakeup_source
-                0x840699c0       0x3c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_spm.o
-                0x840699c0                spm_mask_wakeup_source
+                0x840699b2       0x3c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_spm.o
+                0x840699b2                spm_mask_wakeup_source
  .text.spm_unmask_wakeup_source
-                0x840699fc       0x40 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_spm.o
-                0x840699fc                spm_unmask_wakeup_source
+                0x840699ee       0x40 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_spm.o
+                0x840699ee                spm_unmask_wakeup_source
  .text.spm_init
-                0x84069a3c       0x56 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_spm.o
-                0x84069a3c                spm_init
+                0x84069a2e       0x56 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_spm.o
+                0x84069a2e                spm_init
  .text.hal_ccni_event_callback16
-                0x84069a92       0x28 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
-                0x84069a92                hal_ccni_event_callback16
+                0x84069a84       0x28 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
+                0x84069a84                hal_ccni_event_callback16
  .text.exc_port_alert_other_cores
-                0x84069aba        0xc /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
-                0x84069aba                exc_port_alert_other_cores
+                0x84069aac        0xc /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
+                0x84069aac                exc_port_alert_other_cores
  .text.exc_port_gpt_get_free_run_1M_count
-                0x84069ac6        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
-                0x84069ac6                exc_port_gpt_get_free_run_1M_count
+                0x84069ab8        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
+                0x84069ab8                exc_port_gpt_get_free_run_1M_count
  .text.exc_port_gpt_get_free_run_32K_count
-                0x84069ace        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
-                0x84069ace                exc_port_gpt_get_free_run_32K_count
+                0x84069ac0        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
+                0x84069ac0                exc_port_gpt_get_free_run_32K_count
  .text.exc_port_core_status_update
-                0x84069ad6        0x2 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
-                0x84069ad6                exc_port_core_status_update
+                0x84069ac8        0x2 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
+                0x84069ac8                exc_port_core_status_update
  .text.exc_port_ccni_clear_event
-                0x84069ad8        0xa /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
-                0x84069ad8                exc_port_ccni_clear_event
+                0x84069aca        0xa /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
+                0x84069aca                exc_port_ccni_clear_event
  .text.exc_port_ccni_query_event_status
-                0x84069ae2       0x24 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
-                0x84069ae2                exc_port_ccni_query_event_status
+                0x84069ad4       0x24 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
+                0x84069ad4                exc_port_ccni_query_event_status
  .text.syslog_port_check_in_isr_handler
-                0x84069b06       0x12 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/syslog/src/syslog_port.o
-                0x84069b06                syslog_port_check_in_isr_handler
+                0x84069af8       0x12 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/syslog/src/syslog_port.o
+                0x84069af8                syslog_port_check_in_isr_handler
  .text.log_hw_semaphore_take
-                0x84069b18       0x18 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/syslog/src/syslog_port.o
-                0x84069b18                log_hw_semaphore_take
+                0x84069b0a       0x18 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/syslog/src/syslog_port.o
+                0x84069b0a                log_hw_semaphore_take
  .text.log_hw_semaphore_give
-                0x84069b30       0x2a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/syslog/src/syslog_port.o
-                0x84069b30                log_hw_semaphore_give
+                0x84069b22       0x2a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/syslog/src/syslog_port.o
+                0x84069b22                log_hw_semaphore_give
  .text.ccni_dump_sysinfo
-                0x84069b5a       0x18 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/system_online_dump/src/system_online_dump.o
-                0x84069b5a                ccni_dump_sysinfo
+                0x84069b4c       0x18 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/system_online_dump/src/system_online_dump.o
+                0x84069b4c                ccni_dump_sysinfo
  .text.hal_ccni_event_callback15
-                0x84069b72       0x4a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/system_online_dump/src/system_online_dump.o
-                0x84069b72                hal_ccni_event_callback15
+                0x84069b64       0x4a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/system_online_dump/src/system_online_dump.o
+                0x84069b64                hal_ccni_event_callback15
  .text.light_assert
-                0x84069bbc       0x4c /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
-                0x84069bbc                light_assert
+                0x84069bae       0x4c /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
+                0x84069bae                light_assert
  .text.exception_fault_handler
-                0x84069c08       0x64 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
-                0x84069c08                exception_fault_handler
+                0x84069bfa       0x64 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
+                0x84069bfa                exception_fault_handler
  .text.port_syslog_build_time_sdk_version_copy
-                0x84069c6c       0x44 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x84069c6c                port_syslog_build_time_sdk_version_copy
+                0x84069c5e       0x44 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x84069c5e                port_syslog_build_time_sdk_version_copy
  .text.find_start_of_cpu_log_filters
-                0x84069cb0       0x42 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x84069cb0                find_start_of_cpu_log_filters
+                0x84069ca2       0x42 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x84069ca2                find_start_of_cpu_log_filters
  .text.log_print_msgid
-                0x84069cf2      0x104 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x84069cf2                log_print_msgid
+                0x84069ce4      0x104 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x84069ce4                log_print_msgid
  .text.print_module_msgid_log
-                0x84069df6       0x34 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x84069df6                print_module_msgid_log
+                0x84069de8       0x34 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x84069de8                print_module_msgid_log
  .text.log_set_filter
-                0x84069e2a       0xfa /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x84069e2a                log_set_filter
+                0x84069e1c       0xfa /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x84069e1c                log_set_filter
  .text.log_init
-                0x84069f24       0x96 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x84069f24                log_init
+                0x84069f16       0x96 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x84069f16                log_init
  .text.__muldi3
-                0x84069fba       0x76 /workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bin/../lib/gcc/riscv-none-elf/13.2.0/rv32ec/ilp32e/libgcc.a(multi3.o)
-                0x84069fba                __muldi3
- .text.strncpy  0x8406a030       0xb8 /workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bin/../lib/gcc/riscv-none-elf/13.2.0/../../../../riscv-none-elf/lib/rv32ec/ilp32e/libc.a(libc_a-strncpy.o)
-                0x8406a030                strncpy
- .text.memcpy   0x8406a0e8      0x13c /workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bin/../lib/gcc/riscv-none-elf/13.2.0/../../../../riscv-none-elf/lib/rv32ec/ilp32e/libc.a(libc_a-memcpy.o)
-                0x8406a0e8                memcpy
+                0x84069fac       0x76 /workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bin/../lib/gcc/riscv-none-elf/13.2.0/rv32ec/ilp32e/libgcc.a(multi3.o)
+                0x84069fac                __muldi3
+ .text.strncpy  0x8406a022       0xb8 /workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bin/../lib/gcc/riscv-none-elf/13.2.0/../../../../riscv-none-elf/lib/rv32ec/ilp32e/libc.a(libc_a-strncpy.o)
+                0x8406a022                strncpy
+ .text.memcpy   0x8406a0da      0x13c /workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bin/../lib/gcc/riscv-none-elf/13.2.0/../../../../riscv-none-elf/lib/rv32ec/ilp32e/libc.a(libc_a-memcpy.o)
+                0x8406a0da                memcpy
  *(.tcm_code.*)
  .tcm_code."/workdir/airoha/risc-v/kernel/service/syslog/src/syslog_port.c".95
-                0x8406a224        0xa /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/syslog/src/syslog_port.o
-                0x8406a224                exception_get_disable_all_log_flag
+                0x8406a216        0xa /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/syslog/src/syslog_port.o
+                0x8406a216                exception_get_disable_all_log_flag
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".675
-                0x8406a22e       0x36 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a220       0x36 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".374
-                0x8406a264      0x12c /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406a264                mux_driver_debug_for_check
+                0x8406a256      0x12c /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a256                mux_driver_debug_for_check
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".441
-                0x8406a390       0x12 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406a390                mux_common_device_get_hw_rptr
+                0x8406a382       0x12 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a382                mux_common_device_get_hw_rptr
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".450
-                0x8406a3a2       0x12 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406a3a2                mux_common_device_get_hw_wptr
+                0x8406a394       0x12 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a394                mux_common_device_get_hw_wptr
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".458
-                0x8406a3b4       0x28 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406a3b4                mux_common_device_set_tx_hw_wptr
+                0x8406a3a6       0x28 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a3a6                mux_common_device_set_tx_hw_wptr
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".477
-                0x8406a3dc       0x5c /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406a3dc                mux_common_device_set_tx_hw_rptr_internal_use
+                0x8406a3ce       0x5c /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a3ce                mux_common_device_set_tx_hw_rptr_internal_use
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".501
-                0x8406a438       0x42 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406a438                port_mux_uart_get_hw_rptr
+                0x8406a42a       0x42 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a42a                port_mux_uart_get_hw_rptr
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".518
-                0x8406a47a       0x42 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406a47a                port_mux_uart_get_hw_wptr
+                0x8406a46c       0x42 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a46c                port_mux_uart_get_hw_wptr
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".536
-                0x8406a4bc       0x78 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406a4bc                port_mux_uart_set_tx_hw_wptr
+                0x8406a4ae       0x78 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a4ae                port_mux_uart_set_tx_hw_wptr
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".573
-                0x8406a534       0x36 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406a534                port_mux_get_sw_wptr
+                0x8406a526       0x36 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a526                port_mux_get_sw_wptr
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".581
-                0x8406a56a       0x36 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406a56a                port_mux_get_tx_buf_len
+                0x8406a55c       0x36 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a55c                port_mux_get_tx_buf_len
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".603
-                0x8406a5a0       0x5a /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406a5a0                buffer_check_free_space
+                0x8406a592       0x5a /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a592                buffer_check_free_space
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".655
-                0x8406a5fa       0x94 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406a5fa                buffer_copy_data_out
+                0x8406a5ec       0x94 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a5ec                buffer_copy_data_out
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".686
-                0x8406a68e       0x88 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406a68e                internal_buffer_wptr_update
+                0x8406a680       0x88 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a680                internal_buffer_wptr_update
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".729
-                0x8406a716       0x6a /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406a716                internal_buffer_pre_alloc
+                0x8406a708       0x6a /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a708                internal_buffer_pre_alloc
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".760
-                0x8406a780       0xa0 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406a780                mux_tx
+                0x8406a772       0xa0 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a772                mux_tx
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".828
-                0x8406a820       0x9a /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a812       0x9a /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
  .tcm_code."../../../../kernel/service_protected/syslog/src/syslog.c".862
-                0x8406a8ba       0x2a /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406a8e4                        _text_end = .
+                0x8406a8ac       0x2a /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406a8d6                        _text_end = .
 
-.rodata         0x8406a8e4      0x3ec
-                0x8406a8e4                        . = ALIGN (0x4)
-                0x8406a8e4                        _rodata_start = .
+.rodata         0x8406a8d8      0x3ec
+                0x8406a8d8                        . = ALIGN (0x4)
+                0x8406a8d8                        _rodata_start = .
  *(.srodata)
  *(.srodata.*)
  .srodata.CSWTCH.25
-                0x8406a8e4        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x8406a8d8        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
  .srodata.g_spi_master_irq_code
-                0x8406a8ec        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master.o
+                0x8406a8e0        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master.o
  .srodata.g_spi_master_register
-                0x8406a8f4        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master_internal.o
-                0x8406a8f4                g_spi_master_register
+                0x8406a8e8        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master_internal.o
+                0x8406a8e8                g_spi_master_register
  *(.rodata)
- .rodata        0x8406a8fc       0x40 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
+ .rodata        0x8406a8f0       0x40 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
  *(.rodata.*)
  .rodata.hal_ccni_event_callback3
-                0x8406a93c       0x7c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_ccni.o
+                0x8406a930       0x7c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_ccni.o
  .rodata.str1.4
-                0x8406a9b8       0x9e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
+                0x8406a9ac       0x9e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
                                   0x9 (size before relaxing)
  .rodata.str1.4
-                0x8406aa56        0xa /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
+                0x8406aa4a        0xa /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
  .rodata.str1.4
-                0x8406aa56        0xb /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/comp_wheel/src/comp_wheel.o
- *fill*         0x8406aa56        0x2 
+                0x8406aa4a        0xb /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/comp_wheel/src/comp_wheel.o
+ *fill*         0x8406aa4a        0x2 
  .rodata.ccni_callback
-                0x8406aa58       0x80 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_ccni_config.o
-                0x8406aa58                ccni_callback
+                0x8406aa4c       0x80 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_ccni_config.o
+                0x8406aa4c                ccni_callback
  .rodata.str1.4
-                0x8406aad8        0x7 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x8406aacc        0x7 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
  .rodata.str1.4
-                0x8406aad8        0x7 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406aacc        0x7 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
  .rodata.hid_express_gaming_data_send
-                0x8406aad8       0x28 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
+                0x8406aacc       0x28 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
  .rodata.hid_express_usb_data_send
-                0x8406ab00       0x28 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_usb_mode.o
+                0x8406aaf4       0x28 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_usb_mode.o
  .rodata.str1.4
-                0x8406ab28        0xc /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_frontend.o
+                0x8406ab1c        0xc /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_frontend.o
  .rodata.key_remap_macro_timeout
-                0x8406ab28       0x18 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x8406ab1c       0x18 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
  .rodata.key_remapping
-                0x8406ab40       0x28 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x8406ab34       0x28 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
  .rodata.mouse_key_bits
-                0x8406ab68       0x20 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x8406ab5c       0x20 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
  .rodata.str1.4
-                0x8406ab88        0xb /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x8406ab7c        0xb /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
  .rodata.str1.4
-                0x8406ab88        0x5 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
+                0x8406ab7c        0x5 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
  .rodata.str1.4
-                0x8406ab88       0x35 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
+                0x8406ab7c       0x35 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
  .rodata.uart_port_to_dma_map
-                0x8406ab88       0x18 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_uart.o
-                0x8406ab88                uart_port_to_dma_map
+                0x8406ab7c       0x18 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_uart.o
+                0x8406ab7c                uart_port_to_dma_map
  .rodata.str1.4
-                0x8406aba0       0x12 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/system_online_dump/src/system_online_dump.o
+                0x8406ab94       0x12 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/system_online_dump/src/system_online_dump.o
  .rodata.sw_verno_str
-                0x8406aba0       0x10 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406aba0                sw_verno_str
+                0x8406ab94       0x10 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406ab94                sw_verno_str
  .rodata.build_date_time_str
-                0x8406abb0       0x23 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406abb0                build_date_time_str
-                0x8406abd4                        . = ALIGN (0x4)
- *fill*         0x8406abd3        0x1 
-                0x8406abd4                        _log_filter_start = .
+                0x8406aba4       0x23 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406aba4                build_date_time_str
+                0x8406abc8                        . = ALIGN (0x4)
+ *fill*         0x8406abc7        0x1 
+                0x8406abc8                        _log_filter_start = .
  *(SORT_BY_NAME(.log_filter.*))
  .log_filter.common
-                0x8406abd4       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x8406abd4                log_control_block_common
+                0x8406abc8       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x8406abc8                log_control_block_common
  .log_filter.comp_wheel
-                0x8406abf0       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/comp_wheel/src/comp_wheel.o
-                0x8406abf0                log_control_block_comp_wheel
+                0x8406abe4       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/comp_wheel/src/comp_wheel.o
+                0x8406abe4                log_control_block_comp_wheel
  .log_filter.kr_backend
-                0x8406ac0c       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
-                0x8406ac0c                log_control_block_kr_backend
+                0x8406ac00       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x8406ac00                log_control_block_kr_backend
  .log_filter.kr_frontend
-                0x8406ac28       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_frontend.o
-                0x8406ac28                log_control_block_kr_frontend
+                0x8406ac1c       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_frontend.o
+                0x8406ac1c                log_control_block_kr_frontend
  .log_filter.kr_q
-                0x8406ac44       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
-                0x8406ac44                log_control_block_kr_q
+                0x8406ac38       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
+                0x8406ac38                log_control_block_kr_q
  .log_filter.riscv_pka
-                0x8406ac60       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
-                0x8406ac60                log_control_block_riscv_pka
+                0x8406ac54       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
+                0x8406ac54                log_control_block_riscv_pka
  .log_filter.riscv_ps
-                0x8406ac7c       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
-                0x8406ac7c                log_control_block_riscv_ps
+                0x8406ac70       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
+                0x8406ac70                log_control_block_riscv_ps
  .log_filter.rv_exp
-                0x8406ac98       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406ac98                log_control_block_rv_exp
+                0x8406ac8c       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406ac8c                log_control_block_rv_exp
  .log_filter.system_online_dsp
-                0x8406acb4       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/system_online_dump/src/system_online_dump.o
-                0x8406acb4                log_control_block_system_online_dsp
-                0x8406acd0                        _log_filter_end = .
-                0x8406acd0                        _rodata_end = .
+                0x8406aca8       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/system_online_dump/src/system_online_dump.o
+                0x8406aca8                log_control_block_system_online_dsp
+                0x8406acc4                        _log_filter_end = .
+                0x8406acc4                        _rodata_end = .
 
-.data           0x8406acd0       0x94
-                0x8406acd0                        . = ALIGN (0x4)
-                0x8406acd0                        _data_start = .
+.data           0x8406acc4       0x94
+                0x8406acc4                        . = ALIGN (0x4)
+                0x8406acc4                        _data_start = .
  *(.sdata)
  *(.sdata.*)
  .sdata.combo_key_result
-                0x8406acd0        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
+                0x8406acc4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
  .sdata.inActivity_time
-                0x8406acd4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
-                0x8406acd4                inActivity_time
+                0x8406acc8        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
+                0x8406acc8                inActivity_time
  .sdata.correction_idx
-                0x8406acd8        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
- *fill*         0x8406acd9        0x3 
+                0x8406accc        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
+ *fill*         0x8406accd        0x3 
  .sdata.hid_common
-                0x8406acdc        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/applications/hid/src/hid_common.o
-                0x8406acdc                hid_common
+                0x8406acd0        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/applications/hid/src/hid_common.o
+                0x8406acd0                hid_common
  .sdata.key_queue_push_result
-                0x8406ace0        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406ace0                key_queue_push_result
+                0x8406acd4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406acd4                key_queue_push_result
  .sdata.rr_idx_2_4g
-                0x8406ace4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406ace4                rr_idx_2_4g
+                0x8406acd8        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406acd8                rr_idx_2_4g
  .sdata.last_report_id
-                0x8406ace8        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
+                0x8406acdc        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
  .sdata.last_report_id
-                0x8406acec        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_usb_mode.o
+                0x8406ace0        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_usb_mode.o
  .sdata.fake_report_rounds_counter
-                0x8406acf0        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_fake_report.o
-                0x8406acf0                fake_report_rounds_counter
+                0x8406ace4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_fake_report.o
+                0x8406ace4                fake_report_rounds_counter
  .sdata.fake_report_rounds
-                0x8406acf4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_fake_report.o
-                0x8406acf4                fake_report_rounds
+                0x8406ace8        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_fake_report.o
+                0x8406ace8                fake_report_rounds
  .sdata.outgoing_buffer_avail
-                0x8406acf8        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_burst_tx_buf_ctrl.o
-                0x8406acf8                outgoing_buffer_avail
+                0x8406acec        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_burst_tx_buf_ctrl.o
+                0x8406acec                outgoing_buffer_avail
  .sdata.LC_burst_tx_number
-                0x8406acfc        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_burst_tx_buf_ctrl.o
-                0x8406acfc                LC_burst_tx_number
+                0x8406acf0        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_burst_tx_buf_ctrl.o
+                0x8406acf0                LC_burst_tx_number
  .sdata.gpio_base
-                0x8406ad00        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpio.o
-                0x8406ad00                gpio_base
+                0x8406acf4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpio.o
+                0x8406acf4                gpio_base
  .sdata.g_sw_gpt_running_note
-                0x8406ad04        0x2 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
-                0x8406ad04                g_sw_gpt_running_note
+                0x8406acf8        0x2 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
+                0x8406acf8                g_sw_gpt_running_note
  .sdata.exception_triggered_flag.0
-                0x8406ad06        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
- *fill*         0x8406ad07        0x1 
+                0x8406acfa        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
+ *fill*         0x8406acfb        0x1 
  .sdata.exception_info_ptr
-                0x8406ad08        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
-                0x8406ad08                exception_info_ptr
+                0x8406acfc        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
+                0x8406acfc                exception_info_ptr
  .sdata.exception_stack_ptr
-                0x8406ad0c        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
-                0x8406ad0c                exception_stack_ptr
+                0x8406ad00        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
+                0x8406ad00                exception_stack_ptr
  .sdata.exception_context_regs_ptr
-                0x8406ad10        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
-                0x8406ad10                exception_context_regs_ptr
+                0x8406ad04        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
+                0x8406ad04                exception_context_regs_ptr
  .sdata.g_uart_on_off_status
-                0x8406ad14        0x3 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
- *fill*         0x8406ad17        0x1 
+                0x8406ad08        0x3 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+ *fill*         0x8406ad0b        0x1 
  .sdata.g_mux_port_configs
-                0x8406ad18        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406ad18                g_mux_port_configs
+                0x8406ad0c        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406ad0c                g_mux_port_configs
  *(.data)
  *(.data.*)
  .data.riscv_pka_info
-                0x8406ad1c       0x14 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
-                0x8406ad1c                riscv_pka_info
+                0x8406ad10       0x14 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
+                0x8406ad10                riscv_pka_info
  .data.gpt_lock_sleep_name
-                0x8406ad30       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
-                0x8406ad30                gpt_lock_sleep_name
+                0x8406ad24       0x1c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
+                0x8406ad24                gpt_lock_sleep_name
  .data.g_vdma_regbase_table
-                0x8406ad4c       0x18 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_pdma_internal.o
-                0x8406ad4c                g_vdma_regbase_table
-                0x8406ad64                        _data_end = .
+                0x8406ad40       0x18 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_pdma_internal.o
+                0x8406ad40                g_vdma_regbase_table
+                0x8406ad58                        _data_end = .
 
 .tcm_rwdata."/workdir/airoha/risc-v/drivers/chip/ab162x/src/hal_eint_internal.c".73
-                0x8406ad64        0x4
+                0x8406ad58        0x4
  .tcm_rwdata."/workdir/airoha/risc-v/drivers/chip/ab162x/src/hal_eint_internal.c".73
-                0x8406ad64        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_eint_internal.o
-                0x8406ad64                EINT_REGISTER
+                0x8406ad58        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_eint_internal.o
+                0x8406ad58                EINT_REGISTER
 
-.bss            0x8406ad68      0x784
-                0x8406ad68                        . = ALIGN (0x4)
-                0x8406ad68                        _bss_start = .
+.bss            0x8406ad5c      0x784
+                0x8406ad5c                        . = ALIGN (0x4)
+                0x8406ad5c                        _bss_start = .
  *(.sbss)
  *(.sbss.*)
  .sbss.risv_app_sleep_lock_status
-                0x8406ad68        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_ccni.o
-                0x8406ad68                risv_app_sleep_lock_status
- *fill*         0x8406ad69        0x3 
+                0x8406ad5c        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_ccni.o
+                0x8406ad5c                risv_app_sleep_lock_status
+ *fill*         0x8406ad5d        0x3 
  .sbss.last_app_state
-                0x8406ad6c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_ccni.o
-                0x8406ad6c                last_app_state
+                0x8406ad60        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_ccni.o
+                0x8406ad60                last_app_state
  .sbss.new_keys_status_record
-                0x8406ad70        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
-                0x8406ad70                new_keys_status_record
+                0x8406ad64        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
+                0x8406ad64                new_keys_status_record
  .sbss.mouse_5key_printed
-                0x8406ad74        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
+                0x8406ad68        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
  .sbss.mouse_5key
-                0x8406ad78        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
+                0x8406ad6c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
  .sbss.rv_key_num
-                0x8406ad7c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
+                0x8406ad70        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
  .sbss.start_gpt_free_count
-                0x8406ad80        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
+                0x8406ad74        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
  .sbss.pairing_state
-                0x8406ad84        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
-                0x8406ad84                pairing_state
+                0x8406ad78        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
+                0x8406ad78                pairing_state
  .sbss.sampling_state
-                0x8406ad88        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
+                0x8406ad7c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
  .sbss.inactivity_counter
-                0x8406ad8c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
-                0x8406ad8c                inactivity_counter
+                0x8406ad80        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
+                0x8406ad80                inactivity_counter
  .sbss.inActivity_gpt_hdl
-                0x8406ad90        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
+                0x8406ad84        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
  .sbss.qdec_reverse_enable
-                0x8406ad94        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_wheel.o
-                0x8406ad94                qdec_reverse_enable
+                0x8406ad88        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_wheel.o
+                0x8406ad88                qdec_reverse_enable
  .sbss.scroll_active_level
-                0x8406ad98        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_wheel.o
-                0x8406ad98                scroll_active_level
+                0x8406ad8c        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_wheel.o
+                0x8406ad8c                scroll_active_level
  .sbss.scroll_ctrl_pin_id
-                0x8406ad99        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_wheel.o
-                0x8406ad99                scroll_ctrl_pin_id
+                0x8406ad8d        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_wheel.o
+                0x8406ad8d                scroll_ctrl_pin_id
  .sbss.rtt_counter
-                0x8406ad9a        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
-                0x8406ad9a                rtt_counter
+                0x8406ad8e        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
+                0x8406ad8e                rtt_counter
  .sbss.RiscVHidIdx
-                0x8406ad9b        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
+                0x8406ad8f        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
  .sbss.pka_share_ptr
-                0x8406ad9c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
-                0x8406ad9c                pka_share_ptr
+                0x8406ad90        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
+                0x8406ad90                pka_share_ptr
  .sbss.g_pLastGetHidTx
-                0x8406ada0        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/pka_share/src/pka_share.o
-                0x8406ada0                g_pLastGetHidTx
+                0x8406ad94        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/pka_share/src/pka_share.o
+                0x8406ad94                g_pLastGetHidTx
  .sbss.g_pEmptyPktPtr
-                0x8406ada4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/pka_share/src/pka_share.o
-                0x8406ada4                g_pEmptyPktPtr
+                0x8406ad98        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/pka_share/src/pka_share.o
+                0x8406ad98                g_pEmptyPktPtr
  .sbss.pka_cb_type
-                0x8406ada8        0x2 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/pka_share/src/pka_share.o
-                0x8406ada8                pka_cb_type
- *fill*         0x8406adaa        0x2 
+                0x8406ad9c        0x2 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/pka_share/src/pka_share.o
+                0x8406ad9c                pka_cb_type
+ *fill*         0x8406ad9e        0x2 
  .sbss.g_pPkaRtInfo
-                0x8406adac        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/pka_share/src/pka_share.o
-                0x8406adac                g_pPkaRtInfo
+                0x8406ada0        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/pka_share/src/pka_share.o
+                0x8406ada0                g_pPkaRtInfo
  .sbss.g_riscv_ccni_irq_occur
-                0x8406adb0        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406adb0                g_riscv_ccni_irq_occur
- *fill*         0x8406adb1        0x3 
+                0x8406ada4        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406ada4                g_riscv_ccni_irq_occur
+ *fill*         0x8406ada5        0x3 
  .sbss.pka_active_state_always
-                0x8406adb4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406adb4                pka_active_state_always
+                0x8406ada8        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406ada8                pka_active_state_always
  .sbss.timestamp_spi_cb_start_previous
-                0x8406adb8        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406adb8                timestamp_spi_cb_start_previous
+                0x8406adac        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406adac                timestamp_spi_cb_start_previous
  .sbss.timestamp_spi_cb_start
-                0x8406adbc        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406adbc                timestamp_spi_cb_start
+                0x8406adb0        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406adb0                timestamp_spi_cb_start
  .sbss.hid_ctrl
-                0x8406adc0        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406adc0                hid_ctrl
+                0x8406adb4        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406adb4                hid_ctrl
  .sbss.report_rate_pka
-                0x8406adc1        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406adc1                report_rate_pka
- *fill*         0x8406adc2        0x2 
+                0x8406adb5        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406adb5                report_rate_pka
+ *fill*         0x8406adb6        0x2 
  .sbss.report_send_result
-                0x8406adc4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406adc4                report_send_result
+                0x8406adb8        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406adb8                report_send_result
  .sbss.report_repeat_cnt
-                0x8406adc8        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406adc8                report_repeat_cnt
+                0x8406adbc        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406adbc                report_repeat_cnt
  .sbss.report_go_previous
-                0x8406adcc        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406adcc                report_go_previous
+                0x8406adc0        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406adc0                report_go_previous
  .sbss.report_go
-                0x8406add0        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406add0                report_go
+                0x8406adc4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406adc4                report_go
  .sbss.peripheral_sampling_cb_ptr
-                0x8406add4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406adc8        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
  .sbss.hid_exp_feature_option
-                0x8406add8        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406add8                hid_exp_feature_option
+                0x8406adcc        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406adcc                hid_exp_feature_option
  .sbss.previous_key_status
-                0x8406addc        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406addc                previous_key_status
+                0x8406add0        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406add0                previous_key_status
  .sbss.dongle_scenario
-                0x8406ade0        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406ade0                dongle_scenario
+                0x8406add4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406add4                dongle_scenario
  .sbss.this_tx_idx
-                0x8406ade4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406ade4                this_tx_idx
+                0x8406add8        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406add8                this_tx_idx
  .sbss.last_tx_buff_num
-                0x8406ade8        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406ade8                last_tx_buff_num
+                0x8406addc        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406addc                last_tx_buff_num
  .sbss.tx_buff_num
-                0x8406adec        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406adec                tx_buff_num
+                0x8406ade0        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406ade0                tx_buff_num
  .sbss.previous_tx_result
-                0x8406adf0        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406adf0                previous_tx_result
+                0x8406ade4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406ade4                previous_tx_result
  .sbss.last_tx_result
-                0x8406adf4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406adf4                last_tx_result
+                0x8406ade8        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406ade8                last_tx_result
  .sbss.hid_flags
-                0x8406adf8        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406adf8                hid_flags
+                0x8406adec        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406adec                hid_flags
  .sbss.last_kb_report
-                0x8406adfc        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
-                0x8406adfc                last_kb_report
+                0x8406adf0        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
+                0x8406adf0                last_kb_report
  .sbss.tx_result
-                0x8406ae00        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
-                0x8406ae00                tx_result
+                0x8406adf4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
+                0x8406adf4                tx_result
  .sbss.bt_buffer_size_mask
-                0x8406ae04        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
-                0x8406ae04                bt_buffer_size_mask
+                0x8406adf8        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
+                0x8406adf8                bt_buffer_size_mask
  .sbss.bt_buffer_size
-                0x8406ae08        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
-                0x8406ae08                bt_buffer_size
+                0x8406adfc        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
+                0x8406adfc                bt_buffer_size
  .sbss.bt_debug
-                0x8406ae0c        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
-                0x8406ae0c                bt_debug
+                0x8406ae00        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
+                0x8406ae00                bt_debug
  .sbss.reliable_tx_ptr_previous
-                0x8406ae14        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
-                0x8406ae14                reliable_tx_ptr_previous
+                0x8406ae08        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
+                0x8406ae08                reliable_tx_ptr_previous
  .sbss.reliable_tx_ptr
-                0x8406ae18        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
-                0x8406ae18                reliable_tx_ptr
+                0x8406ae0c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
+                0x8406ae0c                reliable_tx_ptr
  .sbss.last_xy_over_12bits
-                0x8406ae1c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
+                0x8406ae10        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
  .sbss.g_vCtrl_y
-                0x8406ae20        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
-                0x8406ae20                g_vCtrl_y
+                0x8406ae14        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
+                0x8406ae14                g_vCtrl_y
  .sbss.g_vCtrl_x
-                0x8406ae24        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
-                0x8406ae24                g_vCtrl_x
- .sbss.sn_num   0x8406ae28        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
-                0x8406ae28                sn_num
+                0x8406ae18        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
+                0x8406ae18                g_vCtrl_x
+ .sbss.sn_num   0x8406ae1c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
+                0x8406ae1c                sn_num
  .sbss.usb_vCtrl_y
-                0x8406ae2c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_usb_mode.o
-                0x8406ae2c                usb_vCtrl_y
+                0x8406ae20        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_usb_mode.o
+                0x8406ae20                usb_vCtrl_y
  .sbss.usb_vCtrl_x
-                0x8406ae30        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_usb_mode.o
-                0x8406ae30                usb_vCtrl_x
+                0x8406ae24        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_usb_mode.o
+                0x8406ae24                usb_vCtrl_x
  .sbss.curr_data
-                0x8406ae34        0x2 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_fake_report.o
-                0x8406ae34                curr_data
- *fill*         0x8406ae36        0x2 
+                0x8406ae28        0x2 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_fake_report.o
+                0x8406ae28                curr_data
+ *fill*         0x8406ae2a        0x2 
  .sbss.fake_report_data
-                0x8406ae38        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_fake_report.o
-                0x8406ae38                fake_report_data
+                0x8406ae2c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_fake_report.o
+                0x8406ae2c                fake_report_data
  .sbss.fake_report_size
-                0x8406ae3c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_fake_report.o
-                0x8406ae3c                fake_report_size
+                0x8406ae30        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_fake_report.o
+                0x8406ae30                fake_report_size
  .sbss.fake_report_pattern
-                0x8406ae40        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_fake_report.o
-                0x8406ae40                fake_report_pattern
+                0x8406ae34        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_fake_report.o
+                0x8406ae34                fake_report_pattern
  .sbss.fake_report_offset_cnt
-                0x8406ae44        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_fake_report.o
-                0x8406ae44                fake_report_offset_cnt
+                0x8406ae38        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_fake_report.o
+                0x8406ae38                fake_report_offset_cnt
  .sbss.fake_report_idx
-                0x8406ae48        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_fake_report.o
-                0x8406ae48                fake_report_idx
+                0x8406ae3c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_fake_report.o
+                0x8406ae3c                fake_report_idx
  .sbss.last_ms_key
-                0x8406ae4c        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_burst_tx_buf_ctrl.o
- *fill*         0x8406ae4d        0x3 
+                0x8406ae40        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_burst_tx_buf_ctrl.o
+ *fill*         0x8406ae41        0x3 
  .sbss.LC_traffic_statistic_counter
-                0x8406ae50        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_burst_tx_buf_ctrl.o
+                0x8406ae44        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_burst_tx_buf_ctrl.o
  .sbss.LC_ReTx_times
-                0x8406ae54        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_burst_tx_buf_ctrl.o
- .sbss.kr_ctrl  0x8406ae58        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_frontend.o
+                0x8406ae48        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_burst_tx_buf_ctrl.o
+ .sbss.kr_ctrl  0x8406ae4c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_frontend.o
  .sbss.Kr_q_Ctrl
-                0x8406ae5c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x8406ae50        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
  .sbss.macro_gpt_hdl
-                0x8406ae60        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x8406ae54        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
  .sbss.sw_type_port.0
-                0x8406ae64        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
+                0x8406ae58        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
  .sbss.sw_gpt_first_start
-                0x8406ae6c        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
-                0x8406ae6c                sw_gpt_first_start
- *fill*         0x8406ae6d        0x3 
+                0x8406ae60        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
+                0x8406ae60                sw_gpt_first_start
+ *fill*         0x8406ae61        0x3 
  .sbss.gpt_lock_sleep_handle
-                0x8406ae70        0x7 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
-                0x8406ae70                gpt_lock_sleep_handle
+                0x8406ae64        0x7 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
+                0x8406ae64                gpt_lock_sleep_handle
  .sbss.is_init.0
-                0x8406ae77        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+                0x8406ae6b        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
  .sbss.sw_gpt_us_locksleep_status
-                0x8406ae78        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
-                0x8406ae78                sw_gpt_us_locksleep_status
- *fill*         0x8406ae79        0x3 
+                0x8406ae6c        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+                0x8406ae6c                sw_gpt_us_locksleep_status
+ *fill*         0x8406ae6d        0x3 
  .sbss.gpt_running_state
-                0x8406ae7c        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
-                0x8406ae7c                gpt_running_state
- .sbss.dat_Sum  0x8406ae84        0x2 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_qdec.o
+                0x8406ae70        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+                0x8406ae70                gpt_running_state
+ .sbss.dat_Sum  0x8406ae78        0x2 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_qdec.o
  .sbss.qdec_available_data
-                0x8406ae86        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_qdec.o
+                0x8406ae7a        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_qdec.o
  .sbss.g_first_data_flag
-                0x8406ae87        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_qdec.o
+                0x8406ae7b        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_qdec.o
  .sbss.qdec_mode
-                0x8406ae88        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_qdec.o
+                0x8406ae7c        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_qdec.o
  .sbss.g_spi_master_direction
-                0x8406ae8c        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master.o
-                0x8406ae8c                g_spi_master_direction
+                0x8406ae80        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master.o
+                0x8406ae80                g_spi_master_direction
  .sbss.g_spi_master_user_data
-                0x8406ae94        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master.o
+                0x8406ae88        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master.o
  .sbss.g_spi_master_callback
-                0x8406ae9c        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master.o
+                0x8406ae90        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master.o
  .sbss.is_lifted
-                0x8406aea4        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/mouse_sensor.o
-                0x8406aea4                is_lifted
+                0x8406ae98        0x4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/mouse_sensor.o
+                0x8406ae98                is_lifted
  .sbss.workround_flag
-                0x8406aea8        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/mouse_sensor.o
-                0x8406aea8                workround_flag
+                0x8406ae9c        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/mouse_sensor.o
+                0x8406ae9c                workround_flag
  .sbss.sleep_manager_handle
-                0x8406aea9        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager.o
-                0x8406aea9                sleep_manager_handle
- *fill*         0x8406aeaa        0x2 
+                0x8406ae9d        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager.o
+                0x8406ae9d                sleep_manager_handle
+ *fill*         0x8406ae9e        0x2 
  .sbss.mstatus_assert.0
-                0x8406aeac        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
+                0x8406aea0        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
  .sbss.light_assert_count
-                0x8406aeb0        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
-                0x8406aeb0                light_assert_count
+                0x8406aea4        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
+                0x8406aea4                light_assert_count
  .sbss.exception_thread_sp
-                0x8406aeb4        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
-                0x8406aeb4                exception_thread_sp
+                0x8406aea8        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
+                0x8406aea8                exception_thread_sp
  .sbss.exception_interrupt_nesting_flag
-                0x8406aeb8        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
-                0x8406aeb8                exception_interrupt_nesting_flag
+                0x8406aeac        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
+                0x8406aeac                exception_interrupt_nesting_flag
  .sbss.mux_rw_pointer_debug_flags
-                0x8406aebc        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406aebc                mux_rw_pointer_debug_flags
+                0x8406aeb0        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406aeb0                mux_rw_pointer_debug_flags
  .sbss.mux_sw_wptr
-                0x8406aec0        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
-                0x8406aec0                mux_sw_wptr
+                0x8406aeb4        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406aeb4                mux_sw_wptr
  .sbss.g_syslog_share_variable
-                0x8406aec4        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406aeb8        0x4 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
  *(.bss)
  *(.bss.*)
  .bss.rv_key_ids
-                0x8406aec8       0x28 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
-                0x8406aec8                rv_key_ids
+                0x8406aebc       0x28 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
+                0x8406aebc                rv_key_ids
  .bss.combo_cfg
-                0x8406aef0       0x10 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
+                0x8406aee4       0x10 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_mouse_key.o
  .bss.riscv_app
-                0x8406af00       0x18 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
-                0x8406af00                riscv_app
+                0x8406aef4       0x18 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_peripheral_sampling.o
+                0x8406aef4                riscv_app
  .bss.wheel_q_Ctrl
-                0x8406af18       0x18 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_wheel_queue.o
-                0x8406af18                wheel_q_Ctrl
- .bss.RiscVHID  0x8406af30       0x78 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
-                0x8406af30                RiscVHID
+                0x8406af0c       0x18 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_wheel_queue.o
+                0x8406af0c                wheel_q_Ctrl
+ .bss.RiscVHID  0x8406af24       0x78 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/middleware/airoha/pka/src/pka.o
+                0x8406af24                RiscVHID
  .bss.pka_share_tx_hid_ctl
-                0x8406afa8       0x38 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/pka_share/src/pka_share.o
-                0x8406afa8                pka_share_tx_hid_ctl
+                0x8406af9c       0x38 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/pka_share/src/pka_share.o
+                0x8406af9c                pka_share_tx_hid_ctl
  .bss.outgoing_data
-                0x8406afe0       0x28 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406afe0                outgoing_data
- .bss.kCtrl_k   0x8406b008       0xa8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
-                0x8406b008                kCtrl_k
+                0x8406afd4       0x28 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406afd4                outgoing_data
+ .bss.kCtrl_k   0x8406affc       0xa8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express.o
+                0x8406affc                kCtrl_k
  .bss.attr_handle
-                0x8406b0b0       0x14 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
-                0x8406b0b0                attr_handle
- .bss.bt_ctrl   0x8406b0c4       0x20 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
-                0x8406b0c4                bt_ctrl
+                0x8406b0a4       0x14 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
+                0x8406b0a4                attr_handle
+ .bss.bt_ctrl   0x8406b0b8       0x20 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
+                0x8406b0b8                bt_ctrl
  .bss.default_BT_report
-                0x8406b0e4        0xf /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
-                0x8406b0e4                default_BT_report
- *fill*         0x8406b0f3        0x1 
+                0x8406b0d8        0xf /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_bt_mode.o
+                0x8406b0d8                default_BT_report
+ *fill*         0x8406b0e7        0x1 
  .bss.outgoing_report
-                0x8406b0f4        0x9 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
- *fill*         0x8406b0fd        0x3 
- .bss.vCtrl_y   0x8406b100       0x10 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_xy_queue.o
-                0x8406b100                vCtrl_y
- .bss.vCtrl_x   0x8406b110       0x10 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_xy_queue.o
-                0x8406b110                vCtrl_x
- .bss.dbg       0x8406b120       0x48 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_hid_exp_delay_printf.o
-                0x8406b120                dbg
+                0x8406b0e8        0x9 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_2_4G_mode.o
+ *fill*         0x8406b0f1        0x3 
+ .bss.vCtrl_y   0x8406b0f4       0x10 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_xy_queue.o
+                0x8406b0f4                vCtrl_y
+ .bss.vCtrl_x   0x8406b104       0x10 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_express_xy_queue.o
+                0x8406b104                vCtrl_x
+ .bss.dbg       0x8406b114       0x48 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_hid_exp_delay_printf.o
+                0x8406b114                dbg
  .bss.key_setting
-                0x8406b168       0x50 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_frontend.o
-                0x8406b168                key_setting
+                0x8406b15c       0x50 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_frontend.o
+                0x8406b15c                key_setting
  .bss.Kr_q_Ctrl
-                0x8406b1b8       0x68 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_frontend.o
-                0x8406b1b8                Kr_q_Ctrl
+                0x8406b1ac       0x68 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_frontend.o
+                0x8406b1ac                Kr_q_Ctrl
  .bss.macro_data
-                0x8406b220       0x14 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
-                0x8406b220                macro_data
+                0x8406b214       0x14 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x8406b214                macro_data
  .bss.macro_setting
-                0x8406b234       0xa0 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
-                0x8406b234                macro_setting
- .bss.kr_ctrl   0x8406b2d4       0x34 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x8406b228       0xa0 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+                0x8406b228                macro_setting
+ .bss.kr_ctrl   0x8406b2c8       0x34 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
  .bss.Kr_xy_buf
-                0x8406b308       0x14 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
-                0x8406b308                Kr_xy_buf
+                0x8406b2fc       0x14 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
+                0x8406b2fc                Kr_xy_buf
  .bss.eint_count_table
-                0x8406b31c        0xa /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_eint.o
-                0x8406b31c                eint_count_table
- *fill*         0x8406b326        0x2 
+                0x8406b310        0xa /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_eint.o
+                0x8406b310                eint_count_table
+ *fill*         0x8406b31a        0x2 
  .bss.g_sw_gpt_notes
-                0x8406b328       0xcc /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
-                0x8406b328                g_sw_gpt_notes
+                0x8406b31c       0xcc /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
+                0x8406b31c                g_sw_gpt_notes
  .bss.g_gpt_context
-                0x8406b3f4       0x20 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
-                0x8406b3f4                g_gpt_context
+                0x8406b3e8       0x20 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+                0x8406b3e8                g_gpt_context
  .bss.nvic_function_table
-                0x8406b414       0x80 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
-                0x8406b414                nvic_function_table
+                0x8406b408       0x80 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
+                0x8406b408                nvic_function_table
  .bss.mux_uart_log_vrwp
-                0x8406b494       0x4c /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406b488       0x4c /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
  .bss.g_uart_record_wptr_legnth
-                0x8406b4e0        0xc /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+                0x8406b4d4        0xc /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
  *(COMMON)
-                0x8406b4ec                        _bss_end = .
+                0x8406b4e0                        _bss_end = .
 
 .stack          0x8406ba00        0x0
                 0x8406ba00                        . = ALIGN (0x4)
@@ -3743,51 +3743,51 @@ LOAD /workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bi
                 0x8406bc00                        _system_stack = .
 
 .cross_core_zi_data
-                0x0400e540     0x1f54
-                0x0400e540                        _cross_core_mem_start = .
+                0x0400e550     0x1f54
+                0x0400e550                        _cross_core_mem_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.share_zidata*)))
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".102
-                0x0400e540        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e540                ccm_disable_all_log
- *fill*         0x0400e541        0x3 
+                0x0400e550        0x1 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e550                ccm_disable_all_log
+ *fill*         0x0400e551        0x3 
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".51
-                0x0400e544      0x100 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e544                ccm_ccni
+                0x0400e554      0x100 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e554                ccm_ccni
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".53
-                0x0400e644        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e644                ccm_core_status
- *fill*         0x0400e64c        0x4 
+                0x0400e654        0x8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e654                ccm_core_status
+ *fill*         0x0400e65c        0x4 
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".55
-                0x0400e650       0x10 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e650                ccm_spi_sensor
+                0x0400e660       0x10 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e660                ccm_spi_sensor
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".60
-                0x0400e660       0x78 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e660                ccm_syslog_uart_para
+                0x0400e670       0x78 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e670                ccm_syslog_uart_para
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".62
-                0x0400e6d8       0x28 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e6d8                ccm_eint_count
+                0x0400e6e8       0x28 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e6e8                ccm_eint_count
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".70
-                0x0400e700      0x168 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e700                ccm_syslog
+                0x0400e710      0x168 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e710                ccm_syslog
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".71
-                0x0400e868       0x90 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e868                ccm_sw_verno_str
+                0x0400e878       0x90 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e878                ccm_sw_verno_str
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".72
-                0x0400e8f8       0x90 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e8f8                ccm_build_date_time_str
+                0x0400e908       0x90 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e908                ccm_build_date_time_str
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".81
-                0x0400e988      0x18c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e988                ccm_exception_risc_v_0
+                0x0400e998      0x18c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e998                ccm_exception_risc_v_0
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".86
-                0x0400eb14       0x94 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400eb14                ccm_pka_share
+                0x0400eb24       0x94 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400eb24                ccm_pka_share
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".90
-                0x0400eba8     0x16ec /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400eba8                ccm_hid_common_para
+                0x0400ebb8     0x16ec /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400ebb8                ccm_hid_common_para
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".98
-                0x04010294      0x200 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x04010294                ccm_mux
-                0x04010494                        _cross_core_mem_end = .
+                0x040102a4      0x200 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x040102a4                ccm_mux
+                0x040104a4                        _cross_core_mem_end = .
 
 .log_str        0x06000000     0x10d2
                 0x06000000                        __log_strings_start = .
@@ -3882,9 +3882,9 @@ LOAD /workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bi
  *(.assert_string*)
                 0x060010d2                        __log_strings_end = .
                 0x00007a00                        __fp_pattern_ram_total = LENGTH (ram)
-                0x000074ec                        __fp_pattern_ram_used = (_bss_end - ram_start_addr)
-                0x00000514                        __fp_pattern_ram_free = (__fp_pattern_ram_total - __fp_pattern_ram_used)
-                0x8406b4ec                        __fp_pattern_ram_free_begin = (ram_start_addr + __fp_pattern_ram_used)
+                0x000074e0                        __fp_pattern_ram_used = (_bss_end - ram_start_addr)
+                0x00000520                        __fp_pattern_ram_free = (__fp_pattern_ram_total - __fp_pattern_ram_used)
+                0x8406b4e0                        __fp_pattern_ram_free_begin = (ram_start_addr + __fp_pattern_ram_used)
                 0x8406ba00                        __fp_pattern_ram_free_end = (ram_start_addr + ram_length)
 OUTPUT(/workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/mouse_ref_design.elf elf32-littleriscv)
 
@@ -4319,7 +4319,7 @@ OUTPUT(/workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/ri
  .debug_rnglists
                 0x00001ad4       0xe6 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
 
-.debug_line     0x00000000    0x254c7
+.debug_line     0x00000000    0x2548f
  .debug_line    0x00000000      0x6fd /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_ccni.o
  .debug_line    0x000006fd      0x19c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_main.o
  .debug_line    0x00000899      0x150 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_motion_sensor.o
@@ -4349,30 +4349,30 @@ OUTPUT(/workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/ri
  .debug_line    0x0000d912       0xdb /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/riscv_hid_report_id_selector.o
  .debug_line    0x0000d9ed      0x2b4 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/hid_express/src/rv_burst_tx_buf_ctrl.o
  .debug_line    0x0000dca1      0x274 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_frontend.o
- .debug_line    0x0000df15     0x1a9c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
- .debug_line    0x0000f9b1      0x453 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
- .debug_line    0x0000fe04      0xf4c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_eint.o
- .debug_line    0x00010d50      0x69e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_eint_internal.o
- .debug_line    0x000113ee     0x1cc3 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpio.o
- .debug_line    0x000130b1     0x1302 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
- .debug_line    0x000143b3     0x142b /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
- .debug_line    0x000157de      0x209 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
- .debug_line    0x000159e7     0x2ec6 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_pdma_internal.o
- .debug_line    0x000188ad     0x1665 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_qdec.o
- .debug_line    0x00019f12     0x212d /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master.o
- .debug_line    0x0001c03f     0x212a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master_internal.o
- .debug_line    0x0001e169     0x2c5d /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_uart.o
- .debug_line    0x00020dc6      0x322 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/mouse_sensor.o
- .debug_line    0x000210e8      0x1b0 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager.o
- .debug_line    0x00021298     0x100c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager_internal.o
- .debug_line    0x000222a4      0x224 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_spm.o
- .debug_line    0x000224c8      0x1f8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
- .debug_line    0x000226c0      0x19e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/syslog/src/syslog_port.o
- .debug_line    0x0002285e      0x180 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/system_online_dump/src/system_online_dump.o
- .debug_line    0x000229de      0x14b /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/config/chip/ab162x/startup.o
- .debug_line    0x00022b29      0x241 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
- .debug_line    0x00022d6a      0x2af /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception.o)
- .debug_line    0x00023019     0x24ae /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
+ .debug_line    0x0000df15     0x1a64 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_backend.o
+ .debug_line    0x0000f979      0x453 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/common/middleware/airoha/key_remap/src/key_remap_queue.o
+ .debug_line    0x0000fdcc      0xf4c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_eint.o
+ .debug_line    0x00010d18      0x69e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_eint_internal.o
+ .debug_line    0x000113b6     0x1cc3 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpio.o
+ .debug_line    0x00013079     0x1302 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt.o
+ .debug_line    0x0001437b     0x142b /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_gpt_internal.o
+ .debug_line    0x000157a6      0x209 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_nvic.o
+ .debug_line    0x000159af     0x2ec6 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_pdma_internal.o
+ .debug_line    0x00018875     0x1665 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_qdec.o
+ .debug_line    0x00019eda     0x212d /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master.o
+ .debug_line    0x0001c007     0x212a /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_spi_master_internal.o
+ .debug_line    0x0001e131     0x2c5d /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/hal_uart.o
+ .debug_line    0x00020d8e      0x322 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src/mouse_sensor.o
+ .debug_line    0x000210b0      0x1b0 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager.o
+ .debug_line    0x00021260     0x100c /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_sleep_manager_internal.o
+ .debug_line    0x0002226c      0x224 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/drivers/chip/ab162x/src_core/hal_spm.o
+ .debug_line    0x00022490      0x1f8 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/exception_handler/src/exception_portable.o
+ .debug_line    0x00022688      0x19e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/syslog/src/syslog_port.o
+ .debug_line    0x00022826      0x180 /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/kernel/service/system_online_dump/src/system_online_dump.o
+ .debug_line    0x000229a6      0x14b /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/config/chip/ab162x/startup.o
+ .debug_line    0x00022af1      0x241 /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception_handler.o)
+ .debug_line    0x00022d32      0x2af /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/exception_handler/libexception_handler.a(exception.o)
+ .debug_line    0x00022fe1     0x24ae /workdir/airoha/risc-v/prebuilt/system/chip/ab162x/syslog/libsyslog.a(syslog.o)
 
 .debug_str      0x00000000    0x10d7e
  .debug_str     0x00000000    0x10d7e /workdir/out/ab1623m_evk/hid_ref_mouse_m20/hid_device_ref_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20/projects/applications/mouse_ref_design/src/app/riscv_ccni.o

@@ -1723,7 +1723,7 @@ key_remap_backend_process:
 .LBE118:
 	.loc 1 888 5
 	.loc 1 888 47 is_stmt 0
-	bge	a5,zero,.L166
+	bge	a5,zero,.L162
 	.loc 1 888 47 discriminator 1
 	li	a0,9
 .LVL174:
@@ -1852,7 +1852,7 @@ key_remap_backend_process:
 .LVL181:
 	addi	t0,t0,16
 	j	.L126
-.L166:
+.L162:
 .LVL182:
 .LBE119:
 	.loc 1 889 5
@@ -1871,69 +1871,56 @@ key_remap_backend_process:
 	.loc 1 915 5 is_stmt 1
 	call	key_remap_queue_push
 .LVL186:
-	.loc 1 921 5
-	.loc 1 921 24 is_stmt 0
+	.loc 1 929 5
+	.loc 1 929 24 is_stmt 0
 	lw	a3,0(sp)
-	.loc 1 921 8
+	.loc 1 929 8
 	lla	a4,macro_setting
-	.loc 1 921 24
+	.loc 1 929 24
 	xor	a3,s1,a3
-	.loc 1 921 35
-	andi	a5,a3,32
-	.loc 1 921 8
+	.loc 1 929 35
+	andi	a5,a3,64
+	.loc 1 929 8
 	beq	a5,zero,.L139
-	.loc 1 921 43 discriminator 1
-	lw	a5,80(a4)
+	.loc 1 929 43 discriminator 1
+	lw	a5,96(a4)
 	bne	a5,zero,.L139
-	.loc 1 924 9 is_stmt 1
-	.loc 1 924 35 is_stmt 0
+	.loc 1 932 9 is_stmt 1
+	.loc 1 932 35 is_stmt 0
 	li	a5,1
 	sw	a5,20(s0)
 .L139:
-	.loc 1 928 5 is_stmt 1
-	.loc 1 928 35 is_stmt 0
-	andi	a5,a3,64
-	.loc 1 928 8
-	beq	a5,zero,.L140
-	.loc 1 928 43 discriminator 1
-	lw	a5,96(a4)
+	.loc 1 936 5 is_stmt 1
+	.loc 1 936 36 is_stmt 0
+	andi	a3,a3,128
+	.loc 1 936 8
+	beq	a3,zero,.L140
+	.loc 1 936 44 discriminator 1
+	lw	a5,112(a4)
 	bne	a5,zero,.L140
-	.loc 1 931 9 is_stmt 1
-	.loc 1 931 35 is_stmt 0
+	.loc 1 939 9 is_stmt 1
+	.loc 1 939 35 is_stmt 0
 	li	a5,1
 	sw	a5,20(s0)
 .L140:
-	.loc 1 935 5 is_stmt 1
-	.loc 1 935 36 is_stmt 0
-	andi	a3,a3,128
-	.loc 1 935 8
-	beq	a3,zero,.L141
-	.loc 1 935 44 discriminator 1
-	lw	a5,112(a4)
-	bne	a5,zero,.L141
-	.loc 1 938 9 is_stmt 1
-	.loc 1 938 35 is_stmt 0
-	li	a5,1
-	sw	a5,20(s0)
-.L141:
-	.loc 1 942 5 is_stmt 1
-	.loc 1 942 7 is_stmt 0
+	.loc 1 943 5 is_stmt 1
+	.loc 1 943 7 is_stmt 0
 	lw	a4,16(s0)
 	li	a5,5
-	bne	a4,a5,.L142
-	.loc 1 944 9 is_stmt 1
-	.loc 1 944 35 is_stmt 0
+	bne	a4,a5,.L141
+	.loc 1 945 9 is_stmt 1
+	.loc 1 945 35 is_stmt 0
 	li	a5,1
 	sw	a5,20(s0)
-	.loc 1 945 9 is_stmt 1
-	.loc 1 945 31 is_stmt 0
+	.loc 1 946 9 is_stmt 1
+	.loc 1 946 31 is_stmt 0
 	li	a5,6
 	sw	a5,16(s0)
-.L142:
-	.loc 1 949 5 is_stmt 1
-	.loc 1 949 26 is_stmt 0
+.L141:
+	.loc 1 950 5 is_stmt 1
+	.loc 1 950 26 is_stmt 0
 	sw	s1,44(s0)
-	.loc 1 954 1
+	.loc 1 955 1
 	lw	ra,48(sp)
 	.cfi_restore 1
 	lw	s0,44(sp)
@@ -1955,94 +1942,94 @@ key_remap_backend_process:
 	.type	key_remap_backend_postprocess, @function
 key_remap_backend_postprocess:
 .LFB17:
-	.loc 1 1051 1 is_stmt 1
+	.loc 1 1052 1 is_stmt 1
 	.cfi_startproc
-	.loc 1 1052 5
-	.loc 1 1051 1 is_stmt 0
+	.loc 1 1053 5
+	.loc 1 1052 1 is_stmt 0
 	addi	sp,sp,-12
 	.cfi_def_cfa_offset 12
 	sw	s0,4(sp)
 	.cfi_offset 8, -8
-	.loc 1 1052 20
+	.loc 1 1053 20
 	lla	s0,kr_ctrl
 	lw	a5,12(s0)
-	.loc 1 1051 1
+	.loc 1 1052 1
 	sw	s1,0(sp)
 	sw	ra,8(sp)
 	.cfi_offset 9, -12
 	.cfi_offset 1, -4
-	.loc 1 1052 5
+	.loc 1 1053 5
 	li	s1,2
-	beq	a5,s1,.L170
+	beq	a5,s1,.L166
 	li	a4,3
-	beq	a5,a4,.L171
+	beq	a5,a4,.L167
 	li	a4,1
-	bne	a5,a4,.L169
+	bne	a5,a4,.L165
 .LBB120:
-	.loc 1 1056 13 is_stmt 1
-	.loc 1 1058 13 is_stmt 0
-	li	a0,1
-	.loc 1 1056 35
-	sw	a5,0(s0)
 	.loc 1 1057 13 is_stmt 1
-	.loc 1 1057 32 is_stmt 0
-	sw	a5,8(s0)
+	.loc 1 1059 13 is_stmt 0
+	li	a0,1
+	.loc 1 1057 35
+	sw	a5,0(s0)
 	.loc 1 1058 13 is_stmt 1
+	.loc 1 1058 32 is_stmt 0
+	sw	a5,8(s0)
+	.loc 1 1059 13 is_stmt 1
 	call	key_remap_update_record
 .LVL189:
-	.loc 1 1060 13
-	.loc 1 1060 75 is_stmt 0
+	.loc 1 1061 13
+	.loc 1 1061 75 is_stmt 0
 	lw	a4,4(s0)
 	lla	a5,macro_setting
 	slli	a4,a4,4
 	add	a5,a5,a4
-	.loc 1 1060 22
+	.loc 1 1061 22
 	lw	a1,8(a5)
-	.loc 1 1062 25
+	.loc 1 1063 25
 	lbu	a5,hid_ctrl
-	.loc 1 1060 22
+	.loc 1 1061 22
 	slli	a1,a1,8
 	srli	a1,a1,8
 .LVL190:
-	.loc 1 1062 13 is_stmt 1
-	.loc 1 1062 15 is_stmt 0
-	bgtu	a5,s1,.L173
-	.loc 1 1062 39 discriminator 1
+	.loc 1 1063 13 is_stmt 1
+	.loc 1 1063 15 is_stmt 0
+	bgtu	a5,s1,.L169
+	.loc 1 1063 39 discriminator 1
 	li	a4,8
-	bgtu	a1,a4,.L173
-	.loc 1 1064 17 is_stmt 1
-	.loc 1 1064 30 is_stmt 0
+	bgtu	a1,a4,.L169
+	.loc 1 1065 17 is_stmt 1
+	.loc 1 1065 30 is_stmt 0
 	sra	a1,a4,a5
 .LVL191:
-.L173:
-	.loc 1 1072 13 is_stmt 1
-	.loc 1 1073 13
+.L169:
+	.loc 1 1073 13 is_stmt 1
+	.loc 1 1074 13
 	li	a3,0
 	lla	a2,key_remap_macro_timeout
 	lw	a0,macro_gpt_hdl
 	call	hal_gpt_sw_start_timer_ms
 .LVL192:
-	.loc 1 1074 13
 	.loc 1 1075 13
-.L175:
-.LBE120:
-	.loc 1 1089 13
-	.loc 1 1089 41 is_stmt 0
-	sw	zero,kr_ctrl+12,a5
-	.loc 1 1091 9 is_stmt 1
-	.loc 1 1096 1 is_stmt 0
-	j	.L169
+	.loc 1 1076 13
 .L171:
-	.loc 1 1081 13 is_stmt 1
+.LBE120:
+	.loc 1 1090 13
+	.loc 1 1090 41 is_stmt 0
+	sw	zero,kr_ctrl+12,a5
+	.loc 1 1092 9 is_stmt 1
+	.loc 1 1097 1 is_stmt 0
+	j	.L165
+.L167:
+	.loc 1 1082 13 is_stmt 1
 	call	key_remap_macro_stop
 .LVL193:
-	.loc 1 1082 13
-	.loc 1 1082 41 is_stmt 0
+	.loc 1 1083 13
+	.loc 1 1083 41 is_stmt 0
 	li	a5,4
 	sw	a5,12(s0)
-	.loc 1 1084 9 is_stmt 1
-.L169:
-	.loc 1 1096 1 is_stmt 0
+	.loc 1 1085 9 is_stmt 1
+.L165:
+	.loc 1 1097 1 is_stmt 0
 	lw	ra,8(sp)
 	.cfi_remember_state
 	.cfi_restore 1
@@ -2053,12 +2040,12 @@ key_remap_backend_postprocess:
 	addi	sp,sp,12
 	.cfi_def_cfa_offset 0
 	jr	ra
-.L170:
+.L166:
 	.cfi_restore_state
-	.loc 1 1088 13 is_stmt 1
+	.loc 1 1089 13 is_stmt 1
 	call	key_remap_macro_stop
 .LVL194:
-	j	.L175
+	j	.L171
 	.cfi_endproc
 .LFE17:
 	.size	key_remap_backend_postprocess, .-key_remap_backend_postprocess
@@ -2069,10 +2056,10 @@ key_remap_backend_postprocess:
 	.type	key_remap_get_process_status, @function
 key_remap_get_process_status:
 .LFB18:
-	.loc 1 1099 1
+	.loc 1 1100 1
 	.cfi_startproc
-	.loc 1 1100 5
-	.loc 1 1101 1 is_stmt 0
+	.loc 1 1101 5
+	.loc 1 1102 1 is_stmt 0
 	lw	a0,kr_ctrl+16
 	ret
 	.cfi_endproc
@@ -2085,12 +2072,12 @@ key_remap_get_process_status:
 	.type	key_remap_state_reset, @function
 key_remap_state_reset:
 .LFB19:
-	.loc 1 1105 1 is_stmt 1
+	.loc 1 1106 1 is_stmt 1
 	.cfi_startproc
-	.loc 1 1106 5
-	.loc 1 1106 27 is_stmt 0
+	.loc 1 1107 5
+	.loc 1 1107 27 is_stmt 0
 	sw	zero,kr_ctrl+16,a5
-	.loc 1 1107 1
+	.loc 1 1108 1
 	ret
 	.cfi_endproc
 .LFE19:
@@ -2102,17 +2089,17 @@ key_remap_state_reset:
 	.type	key_remap_update_key_status, @function
 key_remap_update_key_status:
 .LFB20:
-	.loc 1 1153 1 is_stmt 1
+	.loc 1 1154 1 is_stmt 1
 	.cfi_startproc
 .LVL195:
-	.loc 1 1189 5
-	.loc 1 1189 21 is_stmt 0
+	.loc 1 1190 5
+	.loc 1 1190 21 is_stmt 0
 	lla	a5,kr_ctrl
 	sw	a0,40(a5)
-	.loc 1 1192 5 is_stmt 1
-	.loc 1 1192 20 is_stmt 0
+	.loc 1 1193 5 is_stmt 1
+	.loc 1 1193 20 is_stmt 0
 	sw	a1,48(a5)
-	.loc 1 1194 1
+	.loc 1 1195 1
 	ret
 	.cfi_endproc
 .LFE20:
@@ -2124,17 +2111,17 @@ key_remap_update_key_status:
 	.type	key_remap_get_dpi_attr, @function
 key_remap_get_dpi_attr:
 .LFB21:
-	.loc 1 1198 1 is_stmt 1
+	.loc 1 1199 1 is_stmt 1
 	.cfi_startproc
-	.loc 1 1199 5
-	.loc 1 1199 27 is_stmt 0
+	.loc 1 1200 5
+	.loc 1 1200 27 is_stmt 0
 	lla	a5,kr_ctrl
-	.loc 1 1201 1
+	.loc 1 1202 1
 	lw	a0,24(a5)
-	.loc 1 1199 27
+	.loc 1 1200 27
 	sw	zero,16(a5)
-	.loc 1 1200 5 is_stmt 1
-	.loc 1 1201 1 is_stmt 0
+	.loc 1 1201 5 is_stmt 1
+	.loc 1 1202 1 is_stmt 0
 	ret
 	.cfi_endproc
 .LFE21:
@@ -2146,40 +2133,40 @@ key_remap_get_dpi_attr:
 	.type	key_remap_get_key_status, @function
 key_remap_get_key_status:
 .LFB22:
-	.loc 1 1204 1 is_stmt 1
+	.loc 1 1205 1 is_stmt 1
 	.cfi_startproc
 .LVL196:
-	.loc 1 1205 5
-	.loc 1 1205 15 is_stmt 0
+	.loc 1 1206 5
+	.loc 1 1206 15 is_stmt 0
 	lla	a4,kr_ctrl
-	.loc 1 1204 1
+	.loc 1 1205 1
 	mv	a3,a0
-	.loc 1 1205 15
+	.loc 1 1206 15
 	lw	a0,20(a4)
 .LVL197:
-	.loc 1 1205 7
-	beq	a0,zero,.L180
-	.loc 1 1207 9 is_stmt 1
-	.loc 1 1207 41 is_stmt 0
+	.loc 1 1206 7
+	beq	a0,zero,.L176
+	.loc 1 1208 9 is_stmt 1
+	.loc 1 1208 41 is_stmt 0
 	lw	a5,36(a4)
 	lw	a2,32(a4)
-	.loc 1 1207 39
+	.loc 1 1208 39
 	lw	a4,40(a4)
-	.loc 1 1207 41
+	.loc 1 1208 41
 	not	a5,a5
 	or	a5,a5,a2
-	.loc 1 1207 39
+	.loc 1 1208 39
 	and	a5,a5,a4
-	.loc 1 1207 21
+	.loc 1 1208 21
 	sw	a5,0(a3)
-	.loc 1 1208 9 is_stmt 1
-	.loc 1 1209 15 is_stmt 0
-	li	a0,1
-	.loc 1 1208 35
-	sw	zero,kr_ctrl+20,a5
 	.loc 1 1209 9 is_stmt 1
-.L180:
-	.loc 1 1212 1 is_stmt 0
+	.loc 1 1210 15 is_stmt 0
+	li	a0,1
+	.loc 1 1209 35
+	sw	zero,kr_ctrl+20,a5
+	.loc 1 1210 9 is_stmt 1
+.L176:
+	.loc 1 1213 1 is_stmt 0
 	ret
 	.cfi_endproc
 .LFE22:
@@ -2191,13 +2178,13 @@ key_remap_get_key_status:
 	.type	key_remap_set_queue, @function
 key_remap_set_queue:
 .LFB23:
-	.loc 1 1216 1 is_stmt 1
+	.loc 1 1217 1 is_stmt 1
 	.cfi_startproc
 .LVL198:
-	.loc 1 1217 5
-	.loc 1 1217 15 is_stmt 0
+	.loc 1 1218 5
+	.loc 1 1218 15 is_stmt 0
 	sw	a0,Kr_q_Ctrl,a5
-	.loc 1 1218 1
+	.loc 1 1219 1
 	ret
 	.cfi_endproc
 .LFE23:
@@ -2209,15 +2196,15 @@ key_remap_set_queue:
 	.type	key_remap_backend_setting, @function
 key_remap_backend_setting:
 .LFB24:
-	.loc 1 1222 1 is_stmt 1
+	.loc 1 1223 1 is_stmt 1
 	.cfi_startproc
-	.loc 1 1229 5
+	.loc 1 1230 5
 .LBB121:
-	.loc 1 1229 9
+	.loc 1 1230 9
 .LVL199:
-	.loc 1 1229 27 discriminator 1
+	.loc 1 1230 27 discriminator 1
 .LBE121:
-	.loc 1 1222 1 is_stmt 0
+	.loc 1 1223 1 is_stmt 0
 	addi	sp,sp,-12
 	.cfi_def_cfa_offset 12
 	sw	s0,4(sp)
@@ -2228,52 +2215,52 @@ key_remap_backend_setting:
 	.cfi_offset 1, -4
 	lla	s1,macro_setting
 .LBB122:
-	.loc 1 1229 18
+	.loc 1 1230 18
 	li	s0,0
 .LVL200:
-.L188:
-	.loc 1 1231 9 is_stmt 1
+.L184:
+	.loc 1 1232 9 is_stmt 1
 	andi	a1,s0,0xff
 	mv	a0,s1
 	call	hid_common_get_backend_key_remap_data
 .LVL201:
-	.loc 1 1255 9
-	.loc 1 1255 11 is_stmt 0
+	.loc 1 1256 9
+	.loc 1 1256 11 is_stmt 0
 	lw	a5,0(s1)
 	li	a3,10
-	bne	a5,a3,.L187
-	.loc 1 1257 13 is_stmt 1
-	.loc 1 1257 35 is_stmt 0
+	bne	a5,a3,.L183
+	.loc 1 1258 13 is_stmt 1
+	.loc 1 1258 35 is_stmt 0
 	lla	a2,kr_ctrl
 	lw	a5,32(a2)
-	.loc 1 1257 44
+	.loc 1 1258 44
 	li	a4,1
 	sll	a4,a4,s0
-	.loc 1 1257 35
+	.loc 1 1258 35
 	or	a5,a5,a4
 	sw	a5,32(a2)
-.L187:
-	.loc 1 1229 34 is_stmt 1 discriminator 2
+.L183:
+	.loc 1 1230 34 is_stmt 1 discriminator 2
 	addi	s0,s0,1
 .LVL202:
-	.loc 1 1229 27 discriminator 1
+	.loc 1 1230 27 discriminator 1
 	addi	s1,s1,16
-	bne	s0,a3,.L188
+	bne	s0,a3,.L184
 .LBE122:
-	.loc 1 1263 5
-	.loc 1 1263 47 is_stmt 0
+	.loc 1 1264 5
+	.loc 1 1264 47 is_stmt 0
 	lw	a5,hid_common
-	.loc 1 1263 30
+	.loc 1 1264 30
 	lw	a5,24(a5)
-	.loc 1 1271 1
+	.loc 1 1272 1
 	lw	ra,8(sp)
 	.cfi_restore 1
 	lw	s0,4(sp)
 	.cfi_restore 8
 .LVL203:
-	.loc 1 1263 30
+	.loc 1 1264 30
 	sw	a5,kr_ctrl+36,a4
-	.loc 1 1271 1
+	.loc 1 1272 1
 	lw	s1,0(sp)
 	.cfi_restore 9
 	addi	sp,sp,12
@@ -2289,39 +2276,39 @@ key_remap_backend_setting:
 	.type	key_remap_backend_init, @function
 key_remap_backend_init:
 .LFB25:
-	.loc 1 1274 1 is_stmt 1
+	.loc 1 1275 1 is_stmt 1
 	.cfi_startproc
-	.loc 1 1276 5
-	.loc 1 1274 1 is_stmt 0
+	.loc 1 1277 5
+	.loc 1 1275 1 is_stmt 0
 	addi	sp,sp,-12
 	.cfi_def_cfa_offset 12
-	.loc 1 1276 5
+	.loc 1 1277 5
 	lla	a0,macro_gpt_hdl
-	.loc 1 1274 1
+	.loc 1 1275 1
 	sw	ra,8(sp)
 	.cfi_offset 1, -4
-	.loc 1 1276 5
+	.loc 1 1277 5
 	call	hal_gpt_sw_get_timer
 .LVL204:
-	.loc 1 1277 5 is_stmt 1
+	.loc 1 1278 5 is_stmt 1
 	call	key_remap_backend_setting
 .LVL205:
-	.loc 1 1279 5
-	.loc 1 1279 38 is_stmt 0
+	.loc 1 1280 5
+	.loc 1 1280 38 is_stmt 0
 	lw	a4,hid_common
 	lbu	a4,56(a4)
-	.loc 1 1285 1
+	.loc 1 1286 1
 	lw	ra,8(sp)
 	.cfi_restore 1
-	.loc 1 1279 21
+	.loc 1 1280 21
 	lla	a5,kr_ctrl
-	.loc 1 1279 38
+	.loc 1 1280 38
 	sw	a4,28(a5)
-	.loc 1 1283 5 is_stmt 1
-	.loc 1 1283 30 is_stmt 0
+	.loc 1 1284 5 is_stmt 1
+	.loc 1 1284 30 is_stmt 0
 	li	a4,10
 	sw	a4,4(a5)
-	.loc 1 1285 1
+	.loc 1 1286 1
 	addi	sp,sp,12
 	.cfi_def_cfa_offset 0
 	jr	ra
@@ -2335,42 +2322,42 @@ key_remap_backend_init:
 	.type	key_remap_backend_deinit, @function
 key_remap_backend_deinit:
 .LFB26:
-	.loc 1 1288 1 is_stmt 1
+	.loc 1 1289 1 is_stmt 1
 	.cfi_startproc
-	.loc 1 1290 5
-	.loc 1 1288 1 is_stmt 0
+	.loc 1 1291 5
+	.loc 1 1289 1 is_stmt 0
 	addi	sp,sp,-12
 	.cfi_def_cfa_offset 12
 	sw	s0,4(sp)
 	sw	ra,8(sp)
 	.cfi_offset 8, -8
 	.cfi_offset 1, -4
-	.loc 1 1290 26
+	.loc 1 1291 26
 	lla	s0,kr_ctrl
 	sw	zero,44(s0)
-	.loc 1 1294 5 is_stmt 1
+	.loc 1 1295 5 is_stmt 1
 	call	key_remap_macro_stop
 .LVL206:
-	.loc 1 1295 5
+	.loc 1 1296 5
 .LBB123:
 .LBB124:
-	.loc 1 1106 5
-	.loc 1 1106 27 is_stmt 0
+	.loc 1 1107 5
+	.loc 1 1107 27 is_stmt 0
 	sw	zero,16(s0)
 .LBE124:
 .LBE123:
-	.loc 1 1296 5 is_stmt 1
-	.loc 1 1297 1 is_stmt 0
+	.loc 1 1297 5 is_stmt 1
+	.loc 1 1298 1 is_stmt 0
 	lw	s0,4(sp)
 	.cfi_restore 8
 	lw	ra,8(sp)
 	.cfi_restore 1
-	.loc 1 1296 5
+	.loc 1 1297 5
 	lw	a0,macro_gpt_hdl
-	.loc 1 1297 1
+	.loc 1 1298 1
 	addi	sp,sp,12
 	.cfi_def_cfa_offset 0
-	.loc 1 1296 5
+	.loc 1 1297 5
 	tail	hal_gpt_sw_free_timer
 .LVL207:
 	.cfi_endproc
@@ -4486,7 +4473,7 @@ log_control_block_kr_backend:
 	.byte	0
 	.uleb128 0x1b
 	.4byte	.LASF239
-	.2byte	0x507
+	.2byte	0x508
 	.4byte	.LFB26
 	.4byte	.LFE26-.LFB26
 	.uleb128 0x1
@@ -4497,7 +4484,7 @@ log_control_block_kr_backend:
 	.4byte	.LBB123
 	.4byte	.LBE123-.LBB123
 	.byte	0x1
-	.2byte	0x50f
+	.2byte	0x510
 	.byte	0x5
 	.uleb128 0x14
 	.4byte	.LVL206
@@ -4508,7 +4495,7 @@ log_control_block_kr_backend:
 	.byte	0
 	.uleb128 0x1b
 	.4byte	.LASF240
-	.2byte	0x4f9
+	.2byte	0x4fa
 	.4byte	.LFB25
 	.4byte	.LFE25-.LFB25
 	.uleb128 0x1
@@ -4531,7 +4518,7 @@ log_control_block_kr_backend:
 	.byte	0
 	.uleb128 0x1b
 	.4byte	.LASF241
-	.2byte	0x4c5
+	.2byte	0x4c6
 	.4byte	.LFB24
 	.4byte	.LFE24-.LFB24
 	.uleb128 0x1
@@ -4541,7 +4528,7 @@ log_control_block_kr_backend:
 	.4byte	.LLRL75
 	.uleb128 0x15
 	.string	"i"
-	.2byte	0x4cd
+	.2byte	0x4ce
 	.byte	0x12
 	.4byte	0xce
 	.4byte	.LLST76
@@ -4565,7 +4552,7 @@ log_control_block_kr_backend:
 	.byte	0
 	.uleb128 0x29
 	.4byte	.LASF244
-	.2byte	0x4bf
+	.2byte	0x4c0
 	.4byte	.LFB23
 	.4byte	.LFE23-.LFB23
 	.uleb128 0x1
@@ -4573,7 +4560,7 @@ log_control_block_kr_backend:
 	.4byte	0x1020
 	.uleb128 0x2a
 	.4byte	.LASF242
-	.2byte	0x4bf
+	.2byte	0x4c0
 	.byte	0x30
 	.4byte	0xbf1
 	.uleb128 0x1
@@ -4582,7 +4569,7 @@ log_control_block_kr_backend:
 	.uleb128 0x54
 	.4byte	.LASF287
 	.byte	0x1
-	.2byte	0x4b3
+	.2byte	0x4b4
 	.byte	0xa
 	.4byte	0xce
 	.4byte	.LFB22
@@ -4592,14 +4579,14 @@ log_control_block_kr_backend:
 	.4byte	0x104c
 	.uleb128 0x1d
 	.4byte	.LASF243
-	.2byte	0x4b3
+	.2byte	0x4b4
 	.byte	0x2d
 	.4byte	0xad3
 	.4byte	.LLST74
 	.byte	0
 	.uleb128 0x40
 	.4byte	.LASF246
-	.2byte	0x4ad
+	.2byte	0x4ae
 	.4byte	0xce
 	.4byte	.LFB21
 	.4byte	.LFE21-.LFB21
@@ -4607,7 +4594,7 @@ log_control_block_kr_backend:
 	.byte	0x9c
 	.uleb128 0x29
 	.4byte	.LASF245
-	.2byte	0x47b
+	.2byte	0x47c
 	.4byte	.LFB20
 	.4byte	.LFE20-.LFB20
 	.uleb128 0x1
@@ -4615,14 +4602,14 @@ log_control_block_kr_backend:
 	.4byte	0x1093
 	.uleb128 0x2a
 	.4byte	.LASF217
-	.2byte	0x47b
+	.2byte	0x47c
 	.byte	0x2b
 	.4byte	0xce
 	.uleb128 0x1
 	.byte	0x5a
 	.uleb128 0x2a
 	.4byte	.LASF219
-	.2byte	0x47b
+	.2byte	0x47c
 	.byte	0x38
 	.4byte	0x65
 	.uleb128 0x1
@@ -4631,12 +4618,12 @@ log_control_block_kr_backend:
 	.uleb128 0x55
 	.4byte	.LASF288
 	.byte	0x1
-	.2byte	0x450
+	.2byte	0x451
 	.byte	0x6
 	.byte	0x1
 	.uleb128 0x40
 	.4byte	.LASF247
-	.2byte	0x44a
+	.2byte	0x44b
 	.4byte	0xce
 	.4byte	.LFB18
 	.4byte	.LFE18-.LFB18
@@ -4644,7 +4631,7 @@ log_control_block_kr_backend:
 	.byte	0x9c
 	.uleb128 0x1b
 	.4byte	.LASF248
-	.2byte	0x41a
+	.2byte	0x41b
 	.4byte	.LFB17
 	.4byte	.LFE17-.LFB17
 	.uleb128 0x1
@@ -4656,7 +4643,7 @@ log_control_block_kr_backend:
 	.4byte	0x1110
 	.uleb128 0x7
 	.4byte	.LASF249
-	.2byte	0x424
+	.2byte	0x425
 	.byte	0x16
 	.4byte	0xce
 	.4byte	.LLST73

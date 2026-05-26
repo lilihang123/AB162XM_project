@@ -101,11 +101,13 @@ void bat_gpio_adc_enable(hal_gpio_pin_t gpio_pin)
     hal_pinmux_set_function(gpio_pin, GPIO_AUX_MODE0);
     hal_gpio_set_direction(gpio_pin, HAL_GPIO_DIRECTION_OUTPUT);
     hal_gpio_set_output(gpio_pin, HAL_GPIO_DATA_HIGH);
+    // log_bat_info("bat_gpio_adc_enable, GPIO%d set HIGH", 1, gpio_pin);
 }
 
 void bat_gpio_adc_disable(hal_gpio_pin_t gpio_pin)
 {
     hal_gpio_set_output(gpio_pin, HAL_GPIO_DATA_LOW);
+    // log_bat_info("bat_gpio_adc_disable, GPIO%d set LOW", 1, gpio_pin);
 }
 #endif
 
@@ -236,7 +238,16 @@ void bat_nvkey_init(void)
 #ifdef CONFIG_AIR_BAT_ADC_PIN
     bat_adc.adc_pin = CONFIG_AIR_BAT_ADC_PIN;
 #endif
-
+#ifdef CONFIG_AIR_BAT_ADC_SETTLE_TIME
+    bat_adc.settle_time = CONFIG_AIR_BAT_ADC_SETTLE_TIME;
+#endif
+#ifdef CONFIG_AIR_BAT_ADC_R6215
+    bat_adc.r6215 = CONFIG_AIR_BAT_ADC_R6215;
+#endif
+#ifdef CONFIG_AIR_BAT_ADC_R6217
+    bat_adc.r6217 = CONFIG_AIR_BAT_ADC_R6217;
+#endif
+    bat_adc.sel= BAT_DET_EXT_GPIO;
     log_bat_info("bat_nvkey_init, 0x2020, kflag[%d], sel[%d](0:disable, 1:VBAT, 2:GPIO), adc_ctrl[GPIO%d], adc_pin[GPIO%d], settle_time[%dms], r6215[%d], r6217[%d]", 7,
                 bat_adc.kflag, bat_adc.sel, bat_adc.adc_ctrl, bat_adc.adc_pin, bat_adc.settle_time, bat_adc.r6215, bat_adc.r6217);
     log_bat_info("bat_nvkey_init, 0x2021, kflag[%d], full_bat[%d], sd_bat(0%)[%d], 10%[%d], 20%[%d], 30%[%d], 40%[%d]", 7,

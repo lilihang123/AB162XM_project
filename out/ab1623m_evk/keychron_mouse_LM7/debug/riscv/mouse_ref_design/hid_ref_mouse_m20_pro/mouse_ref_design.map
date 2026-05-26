@@ -2046,7 +2046,7 @@ Name             Origin             Length             Attributes
 ram              0x84064000         0x00007a00         xrw
 stack            0x8406ba00         0x00000200         rw
 system_stack     0x8406bc00         0x00000400         rw
-ccm              0x0400e590         0x00001f54         rw
+ccm              0x0400e3f0         0x00001f54         rw
 ROM_LOG_STRING   0x06000000         0x02000000         xr
 *default*        0x00000000         0xffffffff
 
@@ -3783,51 +3783,51 @@ LOAD /workdir/airoha/risc-v/tools/toolchain/xpack-riscv-none-elf-gcc-13.2.0-2/bi
                 0x8406bc00                        _system_stack = .
 
 .cross_core_zi_data
-                0x0400e590     0x1f54
-                0x0400e590                        _cross_core_mem_start = .
+                0x0400e3f0     0x1f54
+                0x0400e3f0                        _cross_core_mem_start = .
  *(SORT_BY_NAME(SORT_BY_ALIGNMENT(.share_zidata*)))
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".102
-                0x0400e590        0x1 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e590                ccm_disable_all_log
- *fill*         0x0400e591        0x3 
+                0x0400e3f0        0x1 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e3f0                ccm_disable_all_log
+ *fill*         0x0400e3f1        0x3 
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".51
-                0x0400e594      0x100 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e594                ccm_ccni
+                0x0400e3f4      0x100 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e3f4                ccm_ccni
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".53
-                0x0400e694        0x8 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e694                ccm_core_status
- *fill*         0x0400e69c        0x4 
+                0x0400e4f4        0x8 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e4f4                ccm_core_status
+ *fill*         0x0400e4fc        0x4 
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".55
-                0x0400e6a0       0x10 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e6a0                ccm_spi_sensor
+                0x0400e500       0x10 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e500                ccm_spi_sensor
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".60
-                0x0400e6b0       0x78 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e6b0                ccm_syslog_uart_para
+                0x0400e510       0x78 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e510                ccm_syslog_uart_para
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".62
-                0x0400e728       0x28 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e728                ccm_eint_count
+                0x0400e588       0x28 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e588                ccm_eint_count
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".70
-                0x0400e750      0x168 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e750                ccm_syslog
+                0x0400e5b0      0x168 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e5b0                ccm_syslog
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".71
-                0x0400e8b8       0x90 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e8b8                ccm_sw_verno_str
+                0x0400e718       0x90 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e718                ccm_sw_verno_str
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".72
-                0x0400e948       0x90 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e948                ccm_build_date_time_str
+                0x0400e7a8       0x90 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e7a8                ccm_build_date_time_str
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".81
-                0x0400e9d8      0x18c /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400e9d8                ccm_exception_risc_v_0
+                0x0400e838      0x18c /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e838                ccm_exception_risc_v_0
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".86
-                0x0400eb64       0x94 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400eb64                ccm_pka_share
+                0x0400e9c4       0x94 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400e9c4                ccm_pka_share
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".90
-                0x0400ebf8     0x16ec /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x0400ebf8                ccm_hid_common_para
+                0x0400ea58     0x16ec /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x0400ea58                ccm_hid_common_para
  .share_zidata."/workdir/airoha/common/drivers/chip/ab162x/src/hal_cross_core_config.c".98
-                0x040102e4      0x200 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
-                0x040102e4                ccm_mux
-                0x040104e4                        _cross_core_mem_end = .
+                0x04010144      0x200 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/common/drivers/chip/ab162x/src/hal_cross_core_config.o
+                0x04010144                ccm_mux
+                0x04010344                        _cross_core_mem_end = .
 
 .log_str        0x06000000     0x119a
                 0x06000000                        __log_strings_start = .

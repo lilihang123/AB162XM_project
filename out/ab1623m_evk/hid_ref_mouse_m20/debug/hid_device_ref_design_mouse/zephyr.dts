@@ -302,6 +302,10 @@
 					pinmux = < 0x30c >;
 					bias-pull-up;
 				};
+				gpio29 {
+					pinmux = < 0x3ac >;
+					bias-pull-up;
+				};
 				gpio45 {
 					pinmux = < 0x5ac >;
 					bias-pull-up;

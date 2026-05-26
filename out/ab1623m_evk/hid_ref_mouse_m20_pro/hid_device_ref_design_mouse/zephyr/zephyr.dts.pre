@@ -802,7 +802,14 @@ zephyr_udc0: &usbd {
    pinmux = <(24 << 5 | 12 << 0)>;
    bias-pull-up;
   };
-# 158 "./config/ab1623m_evk/hid_device_ref_design_mouse_m20_pro.overlay"
+
+
+  gpio29{
+   pinmux = <(29 << 5 | 12 << 0)>;
+   bias-pull-up;
+  };
+
+
   gpio45{
    pinmux = <(45 << 5 | 12 << 0)>;
    bias-pull-up;

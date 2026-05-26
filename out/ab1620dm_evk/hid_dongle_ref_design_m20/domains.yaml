@@ -1,0 +1,10 @@
+default: hid_dongle_ref_design
+build_dir: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20
+domains:
+  - name: hid_dongle_ref_design
+    build_dir: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design
+  - name: mcuboot
+    build_dir: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot
+flash_order:
+  - mcuboot
+  - hid_dongle_ref_design

@@ -74,22 +74,20 @@
     rbuf-size = <0>;
 };
 
-&pwm_dma0 {
-	led_rgb_frequency = <60>;
+&argb {
 	status = "okay";
-	channel_polarity = <1 1 1 1>;
-	rgb_gpio_channel = <0>;
-	rgb0: rgb@0{
-		compatible = "airoha,air-rgb";
-		reg = <0>;
-		gpio_control = <38>;
-		gpio_polarity = <1>;
-		r_channel = <2>;
-		g_channel = <1>;
-		b_channel = <3>;
-		port = <0>;
-		status = "okay";
-	};
+	argb_channel = <34>;
+	pat_cnt = <3>;
+	/* SK6812 timing: T1H=900ns T1L=300ns T0H=300ns T0L=900ns RESET>=200us
+	 * NOTE: BSP层存在交叉映射: one_h→HAL one_l, one_l→HAL one_h */
+	one_h_value   = <300>;    /* → HAL one_l = 300ns (1码低电平) */
+	one_l_value   = <600>;    /* → HAL one_h = 900ns (1码高电平) */
+	zero_h_value  = <600>;    /* → HAL zero_l = 900ns (0码低电平) */
+	zero_l_value  = <300>;    /* → HAL zero_h = 300ns (0码高电平) */
+	reset_value   = <100000>; /* ≥100us */
+	bit_nonrev    = <1>;      /* MSB first */
+	ed_big        = <1>;      /* GRB big-endian */
+	nonalign      = <1>;      /* 3字节不对齐 */
 };
 
 &qdec {
@@ -202,15 +200,16 @@
 			bias-pull-up;
 		};
 
-		/** LED/RGB */		
-		gpio35{
-			pinmux = <GPIO_35_PWM1>;			
+		/** ARGB data pin */
+		gpio34{
+			pinmux = <GPIO_34_ARGB>;
 		};
-		gpio36{
-			pinmux = <GPIO_36_PWM2>;
-		};
-		gpio37{
-			pinmux = <GPIO_37_PWM3>;
+
+		/** LED_POWER_EN */
+		gpio39{
+			pinmux = <GPIO_39_GPIO39>;
+			output-enable;
+			output-high;
 		};
 
 		/** Mouse IR_ENABLE pin */

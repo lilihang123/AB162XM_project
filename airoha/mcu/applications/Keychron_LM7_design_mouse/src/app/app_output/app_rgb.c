@@ -44,8 +44,11 @@
 #include "app_state.h"
 #include "app_battery.h"
 #include "app_nvkey.h"
+
+#if defined(CONFIG_AIR_MIDDLE_RGB)
 #include "rgb_middle_control.h"
 #include "rgb_control_style_cfg.h"
+#endif
 #include "app_usb_port.h"
 
 #if defined (CONFIG_AIR_MIDDLE_LED) && defined (CONFIG_AIR_MIDDLE_RGB)

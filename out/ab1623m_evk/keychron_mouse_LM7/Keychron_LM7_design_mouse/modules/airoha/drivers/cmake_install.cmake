@@ -79,16 +79,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/modules/airoha/drivers/ab162x/pwm/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/modules/airoha/drivers/ab162x/pwm_dma/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
   include("/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/modules/airoha/drivers/ab162x/uart/cmake_install.cmake")
 endif()
 

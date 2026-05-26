@@ -22,7 +22,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS
   7 .system_stack 00000000  8406bc00  8406bc00  0000a1f8  2**0
                   CONTENTS
-  8 .cross_core_zi_data 00001f54  0400e590  0400e590  00000590  2**4
+  8 .cross_core_zi_data 00001f54  0400e3f0  0400e3f0  000003f0  2**4
                   ALLOC
   9 .log_str      0000119a  06000000  06000000  00001000  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
@@ -2844,7 +2844,7 @@ Disassembly of section .text:
 
 84065cb2 <pka_share_init>:
 84065cb2:	7ffa9797          	auipc	a5,0x7ffa9
-84065cb6:	eb278793          	add	a5,a5,-334 # 400eb64 <ccm_pka_share>
+84065cb6:	d1278793          	add	a5,a5,-750 # 400e9c4 <ccm_pka_share>
 84065cba:	00005717          	auipc	a4,0x5
 84065cbe:	56f72b23          	sw	a5,1398(a4) # 8406b230 <pka_share_ptr>
 84065cc2:	00005797          	auipc	a5,0x5
@@ -3518,12 +3518,12 @@ Disassembly of section .text:
 840663e6:	4194                	lw	a3,0(a1)
 840663e8:	048e                	sll	s1,s1,0x3
 840663ea:	7ffa8717          	auipc	a4,0x7ffa8
-840663ee:	1aa70713          	add	a4,a4,426 # 400e594 <ccm_ccni>
+840663ee:	00a70713          	add	a4,a4,10 # 400e3f4 <ccm_ccni>
 840663f2:	9726                	add	a4,a4,s1
 840663f4:	c314                	sw	a3,0(a4)
 840663f6:	41d8                	lw	a4,4(a1)
 840663f8:	7ffa8697          	auipc	a3,0x7ffa8
-840663fc:	1a068693          	add	a3,a3,416 # 400e598 <ccm_ccni+0x4>
+840663fc:	00068693          	mv	a3,a3
 84066400:	94b6                	add	s1,s1,a3
 84066402:	c098                	sw	a4,0(s1)
 84066404:	422c0737          	lui	a4,0x422c0
@@ -3562,7 +3562,7 @@ Disassembly of section .text:
 84066438:	c426                	sw	s1,8(sp)
 8406643a:	c23e                	sw	a5,4(sp)
 8406643c:	7ffa8797          	auipc	a5,0x7ffa8
-84066440:	1d878793          	add	a5,a5,472 # 400e614 <ccm_ccni+0x80>
+84066440:	03878793          	add	a5,a5,56 # 400e474 <ccm_ccni+0x80>
 84066444:	c806                	sw	ra,16(sp)
 84066446:	c622                	sw	s0,12(sp)
 84066448:	c03e                	sw	a5,0(sp)
@@ -3717,7 +3717,7 @@ Disassembly of section .text:
 8406651e:	561030ef          	jal	8406a27e <print_module_msgid_log>
 84066522:	040a                	sll	s0,s0,0x2
 84066524:	7ffa8797          	auipc	a5,0x7ffa8
-84066528:	17078793          	add	a5,a5,368 # 400e694 <ccm_core_status>
+84066528:	fd078793          	add	a5,a5,-48 # 400e4f4 <ccm_core_status>
 8406652c:	943e                	add	s0,s0,a5
 8406652e:	c004                	sw	s1,0(s0)
 84066530:	40a2                	lw	ra,8(sp)
@@ -9073,11 +9073,11 @@ Disassembly of section .text:
 84069d80:	e9afc06f          	j	8406641a <hal_ccni_set_event>
 
 84069d84 <mouse_sensor_get_data>:
-84069d84:	7ffa5717          	auipc	a4,0x7ffa5
-84069d88:	92474703          	lbu	a4,-1756(a4) # 400e6a8 <ccm_spi_sensor+0x8>
+84069d84:	7ffa4717          	auipc	a4,0x7ffa4
+84069d88:	78474703          	lbu	a4,1924(a4) # 400e508 <ccm_spi_sensor+0x8>
 84069d8c:	c349                	beqz	a4,84069e0e <mouse_sensor_get_data+0x8a>
-84069d8e:	7ffa5797          	auipc	a5,0x7ffa5
-84069d92:	91278793          	add	a5,a5,-1774 # 400e6a0 <ccm_spi_sensor>
+84069d8e:	7ffa4797          	auipc	a5,0x7ffa4
+84069d92:	77278793          	add	a5,a5,1906 # 400e500 <ccm_spi_sensor>
 84069d96:	0017c703          	lbu	a4,1(a5)
 84069d9a:	8b21                	and	a4,a4,8
 84069d9c:	00001697          	auipc	a3,0x1
@@ -9447,15 +9447,15 @@ Disassembly of section .text:
 8406a0fc:	942a                	add	s0,s0,a0
 8406a0fe:	0412                	sll	s0,s0,0x4
 8406a100:	7ffa4517          	auipc	a0,0x7ffa4
-8406a104:	7b850513          	add	a0,a0,1976 # 400e8b8 <ccm_sw_verno_str>
+8406a104:	61850513          	add	a0,a0,1560 # 400e718 <ccm_sw_verno_str>
 8406a108:	03000613          	li	a2,48
 8406a10c:	00001597          	auipc	a1,0x1
 8406a110:	f2458593          	add	a1,a1,-220 # 8406b030 <sw_verno_str>
 8406a114:	9522                	add	a0,a0,s0
 8406a116:	c406                	sw	ra,8(sp)
 8406a118:	2645                	jal	8406a4b8 <strncpy>
-8406a11a:	7ffa5517          	auipc	a0,0x7ffa5
-8406a11e:	82e50513          	add	a0,a0,-2002 # 400e948 <ccm_build_date_time_str>
+8406a11a:	7ffa4517          	auipc	a0,0x7ffa4
+8406a11e:	68e50513          	add	a0,a0,1678 # 400e7a8 <ccm_build_date_time_str>
 8406a122:	9522                	add	a0,a0,s0
 8406a124:	4412                	lw	s0,4(sp)
 8406a126:	40a2                	lw	ra,8(sp)
@@ -9690,7 +9690,7 @@ Disassembly of section .text:
 
 8406a3ac <log_init>:
 8406a3ac:	7ffa4797          	auipc	a5,0x7ffa4
-8406a3b0:	3a478793          	add	a5,a5,932 # 400e750 <ccm_syslog>
+8406a3b0:	20478793          	add	a5,a5,516 # 400e5b0 <ccm_syslog>
 8406a3b4:	00001717          	auipc	a4,0x1
 8406a3b8:	faf72223          	sw	a5,-92(a4) # 8406b358 <g_syslog_share_variable>
 8406a3bc:	0047c703          	lbu	a4,4(a5)
@@ -9978,7 +9978,7 @@ Disassembly of section .text:
 
 8406a6ac <exception_get_disable_all_log_flag>:
 8406a6ac:	7ffa4517          	auipc	a0,0x7ffa4
-8406a6b0:	ee454503          	lbu	a0,-284(a0) # 400e590 <ccm_disable_all_log>
+8406a6b0:	d4454503          	lbu	a0,-700(a0) # 400e3f0 <ccm_disable_all_log>
 8406a6b4:	8082                	ret
 
 8406a6b6 <parse_port_type.constprop.0>:

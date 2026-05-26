@@ -9988,29 +9988,14 @@ void key_remap_backend_process()
 
 
     key_remap_queue_push(Kr_q_Ctrl, &remap_data, new_key | new_z1);
-
-
-
-
-
-    if (((last_all_key ^ new_key) & 0x20) &&
-        (macro_setting[M_KEY_DPI_IDX].status == NO_REMAP))
-    {
-        kr_ctrl.key_status_update = 
-# 924 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c" 3 4
-                                   1
-# 924 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
-                                       ;
-    }
-
-
+# 929 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
     if (((last_all_key ^ new_key) & 0x40) &&
         (macro_setting[M_KEY_RR_IDX].status == NO_REMAP))
     {
         kr_ctrl.key_status_update = 
-# 931 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c" 3 4
+# 932 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c" 3 4
                                    1
-# 931 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
+# 932 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
                                        ;
     }
 
@@ -10019,9 +10004,9 @@ void key_remap_backend_process()
         (macro_setting[M_KEY_PAIRING_IDX].status == NO_REMAP)))
     {
         kr_ctrl.key_status_update = 
-# 938 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c" 3 4
+# 939 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c" 3 4
                                    1
-# 938 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
+# 939 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
                                        ;
     }
 
@@ -10029,9 +10014,9 @@ void key_remap_backend_process()
     if(kr_ctrl.process_state == PRESS_PAIRING_KEY)
     {
         kr_ctrl.key_status_update = 
-# 944 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c" 3 4
+# 945 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c" 3 4
                                    1
-# 944 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
+# 945 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
                                        ;
         kr_ctrl.process_state = UPDATE_PAIRING_KEY;
     }
@@ -10043,7 +10028,7 @@ void key_remap_backend_process()
 
 
 }
-# 1050 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
+# 1051 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
 void key_remap_backend_postprocess()
 {
     switch (kr_ctrl.macro_process_state)
@@ -10068,9 +10053,9 @@ void key_remap_backend_postprocess()
 
             ;
             hal_gpt_sw_start_timer_ms(macro_gpt_hdl, rel_time, key_remap_macro_timeout, 
-# 1073 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c" 3 4
+# 1074 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c" 3 4
                                                                                        ((void *)0)
-# 1073 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
+# 1074 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
                                                                                            );
             ;
             kr_ctrl.macro_process_state = NONE;
@@ -10106,7 +10091,7 @@ void key_remap_state_reset()
 {
     kr_ctrl.process_state = STATUS_NONE;
 }
-# 1147 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
+# 1148 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
 void key_remap_update_key_status(uint32_t new_key, int new_z1)
 
 
@@ -10114,7 +10099,7 @@ void key_remap_update_key_status(uint32_t new_key, int new_z1)
 
 
 {
-# 1189 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
+# 1190 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
     kr_ctrl.new_key = new_key;
 
 
@@ -10135,20 +10120,20 @@ uint32_t key_remap_get_key_status(uint32_t *key_status)
     {
         *key_status = kr_ctrl.new_key & ~(kr_ctrl.key_remap_enable & ~kr_ctrl.remap_pairing);
         kr_ctrl.key_status_update = 
-# 1208 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c" 3 4
+# 1209 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c" 3 4
                                    0
-# 1208 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
+# 1209 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
                                         ;
         return 
-# 1209 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c" 3 4
+# 1210 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c" 3 4
               1
-# 1209 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
+# 1210 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
                   ;
     }
     return 
-# 1211 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c" 3 4
+# 1212 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c" 3 4
           0
-# 1211 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
+# 1212 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
                ;
 }
 
@@ -10170,7 +10155,7 @@ void key_remap_backend_setting()
     for(uint32_t i = 0; i < 10; i++)
     {
         hid_common_get_backend_key_remap_data(&macro_setting[i], i);
-# 1255 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
+# 1256 "/workdir/airoha/common/middleware/airoha/key_remap/src/key_remap_backend.c"
         if(macro_setting[i].status == REMAP_TO_PAIRING)
         {
             kr_ctrl.remap_pairing |= (0x01 << i);

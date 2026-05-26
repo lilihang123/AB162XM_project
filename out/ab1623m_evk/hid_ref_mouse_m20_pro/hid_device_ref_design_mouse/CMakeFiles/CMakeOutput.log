@@ -32,3 +32,21 @@ Copyright (C) 2022 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
+Performing C SOURCE FILE Test check_fmacro_prefix_map__workdir_airoha_mcu_applications_hid_device_ref_design_mouse_CMAKE_SOURCE_DIR_C__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_16_9_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_toolchains_zephyr_sdk_0_16_9_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/hid_device_ref_design_mouse/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/ninja cmTC_ae9ce && [1/2] Building C object CMakeFiles/cmTC_ae9ce.dir/src.c.obj
+[2/2] Linking C executable cmTC_ae9ce
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C++ SOURCE FILE Test check_fmacro_prefix_map__workdir_airoha_mcu_applications_hid_device_ref_design_mouse_CMAKE_SOURCE_DIR_CXX__nostartfiles__nostdlib__isystem___opt_toolchains_zephyr_sdk_0_16_9_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include___isystem___opt_toolchains_zephyr_sdk_0_16_9_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_12_2_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: /workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/hid_device_ref_design_mouse/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/local/bin/ninja cmTC_0b504 && [1/2] Building CXX object CMakeFiles/cmTC_0b504.dir/src.cxx.obj
+[2/2] Linking CXX executable cmTC_0b504
+
+
+Source file was:
+int main() { return 0; }

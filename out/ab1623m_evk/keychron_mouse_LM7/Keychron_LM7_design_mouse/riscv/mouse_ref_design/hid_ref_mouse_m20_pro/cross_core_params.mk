@@ -1,2 +1,2 @@
-LINKER_SCRIPT_OPTION += -D_cross_core_mem_zi_data_start=0x000000000400e590
+LINKER_SCRIPT_OPTION += -D_cross_core_mem_zi_data_start=0x000000000400e3f0
 LINKER_SCRIPT_OPTION += -D_cross_core_mem_size=0x0000000000001f54

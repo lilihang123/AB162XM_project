@@ -1,0 +1,1338 @@
+-- west build: generating a build system
+Loading Zephyr module(s) (Zephyr base): sysbuild_default
+-- Found Python3: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.10") found components: Interpreter 
+-- Cache files will be written to: /home/user/.cache/zephyr
+-- Found west (found suitable version "1.2.0", minimum required is "0.14.0")
+-- Board: ab1620dm_evk, qualifiers: ab1620dm
+Parsing /workdir/zephyr/share/sysbuild/Kconfig
+Loaded configuration '/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/_sysbuild/empty.conf'
+Merged configuration '/workdir/airoha/mcu/applications/hid_dongle_ref_design/config/ab1620dm_evk/sysbuild_with_mcuboot.conf'
+Configuration saved to '/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/zephyr/.config'
+Kconfig header saved to '/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/_sysbuild/autoconf.h'
+[Airoha] AIR_SYSBUILD_PATH: /workdir/airoha/mcu/boards/airoha/ab1620dm_evk/../../../cmake/sysbuild
+[Airoha][Build] SYSBUILD_START_TIME_IN_SEC: 1779356425
+[Airoha] IMAGES: 
+[Airoha] DEFAULT_IMAGE: hid_dongle_ref_design
+[Airoha] SYSBUILD_IMAGES: hid_dongle_ref_design;mcuboot
+[Airoha][Footprint] script(/workdir/airoha/mcu/cmake/sysbuild/../../scripts/scripts_protected/memory_utility/footprint_v2/footprint.py) not exist
+-- 
+   *****************************
+   * Running CMake for mcuboot *
+   *****************************
+
+Loading Zephyr default modules (Zephyr base).
+-- Application: /workdir/airoha/mcu/applications/mcuboot/boot/zephyr
+-- CMake version: 3.22.1
+-- Found Python3: /usr/bin/python (found suitable version "3.10.12", minimum required is "3.10") found components: Interpreter 
+-- Cache files will be written to: /home/user/.cache/zephyr
+-- Zephyr version: 3.7.1 (/workdir/zephyr)
+-- Found west (found suitable version "1.2.0", minimum required is "0.14.0")
+-- Board: ab1620dm_evk, qualifiers: ab1620dm
+-- Found host-tools: zephyr 0.16.9 (/opt/toolchains/zephyr-sdk-0.16.9)
+-- Found toolchain: zephyr 0.16.9 (/opt/toolchains/zephyr-sdk-0.16.9)
+-- Found Dtc: /opt/toolchains/zephyr-sdk-0.16.9/sysroots/x86_64-pokysdk-linux/usr/bin/dtc (found suitable version "1.6.0", minimum required is "1.4.6") 
+-- Found BOARD.dts: /workdir/airoha/mcu/boards/airoha/ab1620dm_evk/ab1620dm_evk.dts
+-- Found devicetree overlay: config/ab162x_evb/mcuboot.overlay
+unit address and first address in 'reg' (0x420b0000) don't match for /soc/gpio@420b0004
+-- Generated zephyr.dts: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot/zephyr/zephyr.dts
+-- Generated devicetree_generated.h: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot/zephyr/include/generated/zephyr/devicetree_generated.h
+-- Including generated dts.cmake file: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot/zephyr/dts.cmake
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot/zephyr/zephyr.dts:161.26-164.5: Warning (simple_bus_reg): /soc/airoha_hci: missing or empty reg/ranges property
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot/zephyr/zephyr.dts:235.25-244.5: Warning (simple_bus_reg): /soc/gpio@420b0004: simple-bus unit address format error, expected "420b0000"
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot/zephyr/zephyr.dts:245.27-275.5: Warning (simple_bus_reg): /soc/pin-controller: missing or empty reg/ranges property
+
+warning: BOOT_SIGNATURE_TYPE_RSA_LEN (defined at
+/workdir/airoha/mcu/applications/mcuboot/boot/zephyr/Kconfig:98) was assigned the value '3072' but
+got the value ''. Check these unsatisfied dependencies: BOOT_SIGNATURE_TYPE_RSA (=n). See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_BOOT_SIGNATURE_TYPE_RSA_LEN and/or look up
+BOOT_SIGNATURE_TYPE_RSA_LEN in the menuconfig/guiconfig interface. The Application Development
+Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual
+might be helpful too.
+
+
+warning: COMMON_LIBC_MALLOC_ARENA_SIZE (defined at soc/mediatek/mtk_adsp/Kconfig.defconfig:41,
+modules/hostap/Kconfig:26, modules/hostap/Kconfig:26, modules/hostap/Kconfig:26,
+lib/libc/common/Kconfig:26) was assigned the value '0' but got the value ''. Check these unsatisfied
+dependencies: (SOC_FAMILY_MTK_ADSP || WIFI_NM_WPA_SUPPLICANT || WIFI_NM_WPA_SUPPLICANT ||
+(WIFI_NM_WPA_SUPPLICANT && 0) || COMMON_LIBC_MALLOC) (=n). See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_COMMON_LIBC_MALLOC_ARENA_SIZE and/or look
+up COMMON_LIBC_MALLOC_ARENA_SIZE in the menuconfig/guiconfig interface. The Application Development
+Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual
+might be helpful too.
+
+
+warning: AIR_EXCEPTION_HANDLER_ENABLE (defined at
+/workdir/airoha/mcu/prebuilt/system/ab162x/exception_handler/kconfig_series/Kconfig.ab162x:33) was
+assigned the value 'y' but got the value 'n'. Check these unsatisfied dependencies: AIR_CCNI (=n),
+AIR_HW_SEMAPHORE (=n), AIR_LOGGING_ENABLE (=n). See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_AIR_EXCEPTION_HANDLER_ENABLE and/or look up
+AIR_EXCEPTION_HANDLER_ENABLE in the menuconfig/guiconfig interface. The Application Development
+Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual
+might be helpful too.
+
+
+warning: AIR_ONLINE_SWLA_ENABLE (defined at
+/workdir/airoha/mcu/prebuilt/system/ab162x/swla/Kconfig:45) was assigned the value 'y' but got the
+value 'n'. Check these unsatisfied dependencies: AIR_SWLA_ENABLE (=n), AIR_ONLINE_DUMP_ENABLE (=n).
+See http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_AIR_ONLINE_SWLA_ENABLE and/or look up
+AIR_ONLINE_SWLA_ENABLE in the menuconfig/guiconfig interface. The Application Development Primer,
+Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual might be
+helpful too.
+
+
+warning: AIR_ONLINE_DUMP_ENABLE (defined at
+/workdir/airoha/mcu/prebuilt/system/ab162x/system_online_dump/Kconfig:36) was assigned the value 'y'
+but got the value 'n'. Check these unsatisfied dependencies: AIR_MUX_ENABLE (=n), AIR_SWLA_ENABLE
+(=n). See http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_AIR_ONLINE_DUMP_ENABLE and/or
+look up AIR_ONLINE_DUMP_ENABLE in the menuconfig/guiconfig interface. The Application Development
+Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual
+might be helpful too.
+
+
+warning: The choice symbol MCUBOOT_LOG_LEVEL_WRN (defined at
+subsys/logging/Kconfig.template.log_config:14) was selected (set =y), but no symbol ended up as the
+choice selection. See http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_MCUBOOT_LOG_LEVEL_WRN
+and/or look up MCUBOOT_LOG_LEVEL_WRN in the menuconfig/guiconfig interface. The Application
+Development Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of
+the manual might be helpful too.
+
+
+warning: The choice symbol EXTERNAL_CACHE (defined at arch/Kconfig:1057) was selected (set =y), but
+no symbol ended up as the choice selection. See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_EXTERNAL_CACHE and/or look up
+EXTERNAL_CACHE in the menuconfig/guiconfig interface. The Application Development Primer, Setting
+Configuration Values, and Kconfig - Tips and Best Practices sections of the manual might be helpful
+too.
+
+Parsing /workdir/airoha/mcu/applications/mcuboot/boot/zephyr/Kconfig
+Loaded configuration '/workdir/airoha/mcu/boards/airoha/ab1620dm_evk/ab1620dm_evk_defconfig'
+Merged configuration '/workdir/airoha/mcu/applications/mcuboot/boot/zephyr/config/ab162x_evb/air_mcuboot.conf'
+Merged configuration '/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot/zephyr/.config.sysbuild'
+Configuration saved to '/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot/zephyr/.config'
+Kconfig header saved to '/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: /opt/toolchains/zephyr-sdk-0.16.9/arm-zephyr-eabi/arm-zephyr-eabi/bin/ld.bfd (found version "2.38") 
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /opt/toolchains/zephyr-sdk-0.16.9/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc
+CMake Warning at /workdir/zephyr/CMakeLists.txt:541 (message):
+  ZEPHYR_BASE=/workdir/zephyr doesn't appear to be a git repository, please
+  specify '-DBUILD_VERSION=<version>'
+
+
+[Airoha] soc/airoha/ab162x/CMakeLists.txt was included!
+[Airoha] variable SOC_LINKER_SCRIPT is /workdir/airoha/mcu/soc/airoha/ab162x/linker.ld
+[Airoh] CMakeLists.txt in boards/airoha/ab1620dm_evk was inclueded!
+-- Using ccache: /usr/local/bin/ccache
+-- ZEPHYR_VERSION_CODE: 198401
+-- KERNELVERSION: 0x3070100
+-- KERNEL_VERSION_NUMBER: 0x30701
+[Airoha] AIR_PREBUILT_LIB_ROOT: /workdir/airoha/mcu/prebuilt
+[Airoha] AIR_MODULE_OUT_PATH: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot/modules/airoha
+[Airoha] APPLICATION_BINARY_DIR: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot
+[Airoha] AIR_ROOT_DIR: /workdir/airoha/mcu
+[Airoha] AIR_COMMON_ROOT_DIR: 
+[Airoha] Create directory /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot/download
+[Airoha] AIR_COMMON_ROOT_DIR: /workdir/airoha/common
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: ..__airoha__mcu__subsys__airoha__argb
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: ..__airoha__mcu__subsys__airoha__led
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: ..__airoha__mcu__subsys__airoha__rgb
+
+  Excluding target from build.
+
+
+MCUBoot bootloader key file: /workdir/airoha/mcu/applications/mcuboot/private_secure_boot_3k.pem
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot
+-- 
+   *******************************************
+   * Running CMake for hid_dongle_ref_design *
+   *******************************************
+
+Loading Zephyr default modules (Zephyr base).
+-- Application: /workdir/airoha/mcu/applications/hid_dongle_ref_design
+-- CMake version: 3.22.1
+-- Found Python3: /usr/bin/python (found suitable version "3.10.12", minimum required is "3.10") found components: Interpreter 
+-- Cache files will be written to: /home/user/.cache/zephyr
+-- Zephyr version: 3.7.1 (/workdir/zephyr)
+-- Found west (found suitable version "1.2.0", minimum required is "0.14.0")
+-- Board: ab1620dm_evk, qualifiers: ab1620dm
+-- Found host-tools: zephyr 0.16.9 (/opt/toolchains/zephyr-sdk-0.16.9)
+-- Found toolchain: zephyr 0.16.9 (/opt/toolchains/zephyr-sdk-0.16.9)
+-- Found Dtc: /opt/toolchains/zephyr-sdk-0.16.9/sysroots/x86_64-pokysdk-linux/usr/bin/dtc (found suitable version "1.6.0", minimum required is "1.4.6") 
+-- Found BOARD.dts: /workdir/airoha/mcu/boards/airoha/ab1620dm_evk/ab1620dm_evk.dts
+-- Found devicetree overlay: config/ab1620dm_evk/app.overlay
+unit address and first address in 'reg' (0x420b0000) don't match for /soc/gpio@420b0004
+-- Generated zephyr.dts: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/zephyr/zephyr.dts
+-- Generated devicetree_generated.h: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/zephyr/include/generated/zephyr/devicetree_generated.h
+-- Including generated dts.cmake file: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/zephyr/dts.cmake
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/zephyr/zephyr.dts:162.26-165.5: Warning (simple_bus_reg): /soc/airoha_hci: missing or empty reg/ranges property
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/zephyr/zephyr.dts:236.25-245.5: Warning (simple_bus_reg): /soc/gpio@420b0004: simple-bus unit address format error, expected "420b0000"
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/zephyr/zephyr.dts:246.27-276.5: Warning (simple_bus_reg): /soc/pin-controller: missing or empty reg/ranges property
+
+warning: COMMON_LIBC_MALLOC_ARENA_SIZE (defined at soc/mediatek/mtk_adsp/Kconfig.defconfig:41,
+modules/hostap/Kconfig:26, modules/hostap/Kconfig:26, modules/hostap/Kconfig:26,
+lib/libc/common/Kconfig:26) was assigned the value '0' but got the value ''. Check these unsatisfied
+dependencies: (SOC_FAMILY_MTK_ADSP || WIFI_NM_WPA_SUPPLICANT || WIFI_NM_WPA_SUPPLICANT ||
+(WIFI_NM_WPA_SUPPLICANT && 0) || COMMON_LIBC_MALLOC) (=n). See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_COMMON_LIBC_MALLOC_ARENA_SIZE and/or look
+up COMMON_LIBC_MALLOC_ARENA_SIZE in the menuconfig/guiconfig interface. The Application Development
+Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual
+might be helpful too.
+
+
+warning: AIR_ONLINE_SWLA_ENABLE (defined at
+/workdir/airoha/mcu/prebuilt/system/ab162x/swla/Kconfig:45) was assigned the value 'y' but got the
+value 'n'. Check these unsatisfied dependencies: AIR_SWLA_ENABLE (=n), AIR_ONLINE_DUMP_ENABLE (=n).
+See http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_AIR_ONLINE_SWLA_ENABLE and/or look up
+AIR_ONLINE_SWLA_ENABLE in the menuconfig/guiconfig interface. The Application Development Primer,
+Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual might be
+helpful too.
+
+
+warning: AIR_ONLINE_DUMP_ENABLE (defined at
+/workdir/airoha/mcu/prebuilt/system/ab162x/system_online_dump/Kconfig:36) was assigned the value 'y'
+but got the value 'n'. Check these unsatisfied dependencies: AIR_SWLA_ENABLE (=n). See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_AIR_ONLINE_DUMP_ENABLE and/or look up
+AIR_ONLINE_DUMP_ENABLE in the menuconfig/guiconfig interface. The Application Development Primer,
+Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual might be
+helpful too.
+
+
+warning: MCUBOOT_SIGNATURE_KEY_FILE (defined at modules/Kconfig.mcuboot:50) was assigned the value
+'/workdir/airoha/mcu/applications/mcuboot/private_secure_boot_3k.pem' but got the value ''. Check
+these unsatisfied dependencies: (!MCUBOOT_GENERATE_UNSIGNED_IMAGE) (=n). See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_MCUBOOT_SIGNATURE_KEY_FILE and/or look up
+MCUBOOT_SIGNATURE_KEY_FILE in the menuconfig/guiconfig interface. The Application Development
+Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual
+might be helpful too.
+
+
+warning: POLL (defined at kernel/Kconfig:671) was assigned the value 'n' but got the value 'y'. See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_POLL and/or look up POLL in the
+menuconfig/guiconfig interface. The Application Development Primer, Setting Configuration Values,
+and Kconfig - Tips and Best Practices sections of the manual might be helpful too.
+
+
+warning: FLASH_PAGE_LAYOUT (defined at drivers/flash/Kconfig:146) was assigned the value 'n' but got
+the value 'y'. See http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_FLASH_PAGE_LAYOUT and/or
+look up FLASH_PAGE_LAYOUT in the menuconfig/guiconfig interface. The Application Development Primer,
+Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual might be
+helpful too.
+
+
+warning: BT_PERIPHERAL_PREF_MIN_INT (defined at subsys/bluetooth/host/Kconfig.gatt:231) was assigned
+the value '6' but got the value ''. Check these unsatisfied dependencies:
+BT_GAP_PERIPHERAL_PREF_PARAMS (=n). See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_BT_PERIPHERAL_PREF_MIN_INT and/or look up
+BT_PERIPHERAL_PREF_MIN_INT in the menuconfig/guiconfig interface. The Application Development
+Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual
+might be helpful too.
+
+
+warning: BT_PERIPHERAL_PREF_MAX_INT (defined at subsys/bluetooth/host/Kconfig.gatt:238) was assigned
+the value '6' but got the value ''. Check these unsatisfied dependencies:
+BT_GAP_PERIPHERAL_PREF_PARAMS (=n). See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_BT_PERIPHERAL_PREF_MAX_INT and/or look up
+BT_PERIPHERAL_PREF_MAX_INT in the menuconfig/guiconfig interface. The Application Development
+Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual
+might be helpful too.
+
+
+warning: BT_PERIPHERAL_PREF_LATENCY (defined at subsys/bluetooth/host/Kconfig.gatt:245) was assigned
+the value '0' but got the value ''. Check these unsatisfied dependencies:
+BT_GAP_PERIPHERAL_PREF_PARAMS (=n). See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_BT_PERIPHERAL_PREF_LATENCY and/or look up
+BT_PERIPHERAL_PREF_LATENCY in the menuconfig/guiconfig interface. The Application Development
+Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual
+might be helpful too.
+
+
+warning: BT_PERIPHERAL_PREF_TIMEOUT (defined at subsys/bluetooth/host/Kconfig.gatt:250) was assigned
+the value '300' but got the value ''. Check these unsatisfied dependencies:
+BT_GAP_PERIPHERAL_PREF_PARAMS (=n). See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_BT_PERIPHERAL_PREF_TIMEOUT and/or look up
+BT_PERIPHERAL_PREF_TIMEOUT in the menuconfig/guiconfig interface. The Application Development
+Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual
+might be helpful too.
+
+
+warning: MCUBOOT_UPDATE_FOOTER_SIZE (defined at subsys/dfu/Kconfig:54) was assigned the value
+'0x1000' but got the value ''. Check these unsatisfied dependencies: MCUBOOT_IMG_MANAGER (=n),
+IMG_MANAGER (=n). See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_MCUBOOT_UPDATE_FOOTER_SIZE and/or look up
+MCUBOOT_UPDATE_FOOTER_SIZE in the menuconfig/guiconfig interface. The Application Development
+Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual
+might be helpful too.
+
+
+warning: FLASH_MAP (defined at subsys/storage/flash_map/Kconfig:10) was assigned the value 'n' but
+got the value 'y'. See http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_FLASH_MAP and/or
+look up FLASH_MAP in the menuconfig/guiconfig interface. The Application Development Primer, Setting
+Configuration Values, and Kconfig - Tips and Best Practices sections of the manual might be helpful
+too.
+
+Parsing /workdir/airoha/mcu/applications/hid_dongle_ref_design/Kconfig
+Loaded configuration '/workdir/airoha/mcu/boards/airoha/ab1620dm_evk/ab1620dm_evk_defconfig'
+Merged configuration '/workdir/airoha/mcu/applications/hid_dongle_ref_design/config/ab1620dm_evk/hid_dongle_ref_design_flash_boot_m20.conf'
+Merged configuration '/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/zephyr/.config.sysbuild'
+Configuration saved to '/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/zephyr/.config'
+Kconfig header saved to '/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: /opt/toolchains/zephyr-sdk-0.16.9/arm-zephyr-eabi/arm-zephyr-eabi/bin/ld.bfd (found version "2.38") 
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /opt/toolchains/zephyr-sdk-0.16.9/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc
+CMake Warning at /workdir/zephyr/CMakeLists.txt:541 (message):
+  ZEPHYR_BASE=/workdir/zephyr doesn't appear to be a git repository, please
+  specify '-DBUILD_VERSION=<version>'
+
+
+[Airoha] soc/airoha/ab162x/CMakeLists.txt was included!
+[Airoha] variable SOC_LINKER_SCRIPT is /workdir/airoha/mcu/soc/airoha/ab162x/linker.ld
+CMake Warning at /workdir/airoha/mcu/cmake/common/air_chip.cmake:48 (message):
+  [Airoha][nvkey] /soc/common/exception_handler/nvkey.xml not exist.
+Call Stack (most recent call first):
+  /workdir/airoha/mcu/soc/airoha/common/exception_handler/CMakeLists.txt:39 (airoha_nvkey_append_xml)
+
+
+[Airoh] CMakeLists.txt in boards/airoha/ab1620dm_evk was inclueded!
+-- Using ccache: /usr/local/bin/ccache
+-- ZEPHYR_VERSION_CODE: 198401
+-- KERNELVERSION: 0x3070100
+-- KERNEL_VERSION_NUMBER: 0x30701
+[Airoha] AIR_PREBUILT_LIB_ROOT: /workdir/airoha/mcu/prebuilt
+[Airoha] AIR_MODULE_OUT_PATH: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/modules/airoha
+[Airoha] APPLICATION_BINARY_DIR: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design
+[Airoha] AIR_ROOT_DIR: /workdir/airoha/mcu
+[Airoha] AIR_COMMON_ROOT_DIR: 
+[Airoha] CONFIG_SETTINGS_NVS_SECTOR_COUNT is 10
+[Airoha] CONFIG_STORAGE_PARTITION_SIZE is 40
+[Airoha] NVKEY_FILE_LIST is /workdir/airoha/mcu/soc/airoha/ab162x/nvkey.xml;/workdir/airoha/mcu/boards/airoha/ab1620dm_evk/nvkey.xml
+[Airoha] GEN_DEFAULT_NVS_BIN is y
+/workdir/airoha/mcu/subsys/airoha/bluetooth/controller/pka_protected is empty. Prebuilt libpka_zephyrle_asic.a is used
+[Airoha] Create directory /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/download
+CMake Warning at /workdir/airoha/mcu/cmake/common/air_chip.cmake:48 (message):
+  [Airoha][nvkey] /workdir/airoha/mcu/subsys/airoha/logging/nvkey.xml not
+  exist.
+Call Stack (most recent call first):
+  /workdir/airoha/mcu/prebuilt/system/ab162x/logging/CMakeLists.txt:45 (airoha_nvkey_append_xml)
+
+
+[Airoha] AIR_COMMON_ROOT_DIR: /workdir/airoha/common
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: drivers__usb__device
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: drivers__entropy
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: drivers__gpio
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: drivers__serial
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library:
+  ..__airoha__mcu__subsys__airoha__bluetooth__host
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library:
+  ..__airoha__mcu__prebuilt__system__ab162x__offline_dump
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: ..__airoha__mcu__subsys__airoha__argb
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library:
+  ..__airoha__mcu__prebuilt__system__ab162x__logging
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library:
+  ..__airoha__mcu__prebuilt__system__ab162x__exception_handler
+
+  Excluding target from build.
+
+
+CMake Warning at /workdir/zephyr/CMakeLists.txt:915 (message):
+  No SOURCES given to Zephyr library: ..__airoha__mcu__subsys__airoha__led
+
+  Excluding target from build.
+
+
+-- Including signing script: /workdir/zephyr/cmake/mcuboot.cmake
+CMake Warning at /workdir/zephyr/CMakeLists.txt:2094 (message):
+  __ASSERT() statements are globally ENABLED
+
+
+-- [Airoha][NVKey] NVKEY_FILE 1: airoha/mcu/soc/airoha/ab162x/nvkey.xml
+-- [Airoha][NVKey] NVKEY_FILE 2: airoha/mcu/boards/airoha/ab1620dm_evk/nvkey.xml
+-- [Airoha][NVKey] NVKEY_FILE 3: airoha/mcu/subsys/airoha/pka/nvdm/nvkey.xml
+-- [Airoha][NVKey] NVKEY_FILE 4: airoha/mcu/prebuilt/system/ab162x/exception_handler/nvkey.xml
+-- [Airoha][NVKey] NVKEY_FILE 5: airoha/mcu/subsys/airoha/hid/auto_switch_service/nvkey.xml
+-- [Airoha][NVKey] NVKEY_FILE 6: airoha/mcu/applications/hid_dongle_ref_design/config/ab1620dm_evk/nvkey_m20.xml
+-- [Airoha][NVKey][MP] NVKEY_FILE 1: airoha/mcu/soc/airoha/ab162x/nvkey.xml
+-- [Airoha][NVKey][MP] NVKEY_FILE 2: airoha/mcu/boards/airoha/ab1620dm_evk/nvkey.xml
+-- [Airoha][NVKey][MP] NVKEY_FILE 3: airoha/mcu/subsys/airoha/pka/nvdm/nvkey.xml
+-- [Airoha][NVKey][MP] NVKEY_FILE 4: airoha/mcu/prebuilt/system/ab162x/exception_handler/nvkey.xml
+-- [Airoha][NVKey][MP] NVKEY_FILE 5: airoha/mcu/subsys/airoha/hid/auto_switch_service/nvkey.xml
+-- [Airoha][NVKey][MP] NVKEY_FILE 6: airoha/mcu/applications/hid_dongle_ref_design/config/ab1620dm_evk/nvkey_m20.xml
+-- [Airoha][NVKey][MP] NVKEY_FILE 7: airoha/mcu/soc/airoha/common/exception_handler/nvkey_release.xml
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20
+-- west build: building application
+[1/22] Creating directories for 'hid_dongle_ref_design'
+[2/22] Creating directories for 'mcuboot'
+[3/22] No download step for 'hid_dongle_ref_design'
+[4/22] No download step for 'mcuboot'
+[5/22] No update step for 'hid_dongle_ref_design'
+[6/22] No update step for 'mcuboot'
+[7/22] No patch step for 'hid_dongle_ref_design'
+[8/22] No patch step for 'mcuboot'
+[9/22] No configure step for 'mcuboot'
+[9/22] Performing build step for 'mcuboot'
+[1/271] Preparing syscall dependency handling
+
+[2/271] Generating misc/generated/syscalls_subdirs.trigger
+[3/271] [Airoha] Generating partition table for airoha's boot flow
+[4/271] Generating include/generated/zephyr/version.h
+-- Zephyr version: 3.7.1 (/workdir/zephyr), build: 538f53952985
+[5/271] Generating include/generated/zephyr/app_version.h
+[6/271] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[7/271] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_list.h
+[8/271] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[9/271] Generating include/generated/zephyr/driver-validation.h
+[10/271] Building C object zephyr/CMakeFiles/offsets.dir/arch/arm/core/offsets/offsets.c.obj
+[11/271] Generating include/generated/zephyr/offsets.h
+[12/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/cpp/minimal/cpp_virtual.c.obj
+[13/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/cpp/abi/cpp_dtors.c.obj
+[14/271] Building CXX object zephyr/CMakeFiles/zephyr.dir/lib/cpp/minimal/cpp_vtable.cpp.obj
+[15/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/dec.c.obj
+[16/271] Building CXX object zephyr/CMakeFiles/zephyr.dir/lib/cpp/minimal/cpp_new.cpp.obj
+[17/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/assert.c.obj
+[18/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf.c.obj
+[19/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/hex.c.obj
+[20/271] Building C object zephyr/CMakeFiles/zephyr.dir/misc/generated/configs.c.obj
+[21/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/thread_entry.c.obj
+[22/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/sem.c.obj
+[23/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/timeutil.c.obj
+[24/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/printk.c.obj
+[25/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/heap/heap_stats.c.obj
+[26/271] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/storage/flash_map/flash_map_layout.c.obj
+[27/271] Building ASM object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/nmi_on_reset.S.obj
+[28/271] Building C object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/__aeabi_atexit.c.obj
+[29/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/ring_buffer.c.obj
+[30/271] Generating linker_zephyr_pre0.cmd
+[31/271] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/storage/flash_map/flash_map.c.obj
+[32/271] Building C object zephyr/CMakeFiles/zephyr.dir/workdir/airoha/mcu/applications/mcuboot/boot/zephyr/kernel/banner.c.obj
+[33/271] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/fault_s.S.obj
+[34/271] Building C object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/nmi.c.obj
+[35/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/heap/heap.c.obj
+[36/271] Building C object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/fatal.c.obj
+[37/271] Building C object zephyr/CMakeFiles/zephyr.dir/drivers/flash/flash_util.c.obj
+[38/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/rb.c.obj
+[39/271] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/tracing/user/tracing_user.c.obj
+[40/271] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/reset.S.obj
+[41/271] Building C object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/tls.c.obj
+[42/271] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/vector_table.S.obj
+[43/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_packaged.c.obj
+[44/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitarray.c.obj
+[45/271] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/exc_exit.c.obj
+[46/271] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/__aeabi_read_tp.S.obj
+[47/271] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/swap_helper.S.obj
+[48/271] Building ASM object zephyr/soc/soc/ab162x/ab162x/CMakeFiles/..__airoha__mcu__soc__airoha__ab162x.dir/startup.S.obj
+[49/271] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/fpu.c.obj
+[50/271] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/thread_abort.c.obj
+[51/271] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/swap.c.obj
+[52/271] Linking C static library zephyr/arch/arch/arm/core/libarch__arm__core.a
+[53/271] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/prep_c.c.obj
+[54/271] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/scb.c.obj
+[55/271] Building ASM object zephyr/soc/soc/ab162x/common/CMakeFiles/..__airoha__mcu__soc__airoha__common.dir/air_string_opt.s.obj
+[56/271] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/cpu_idle.c.obj
+[57/271] Building C object zephyr/soc/soc/ab162x/common/CMakeFiles/..__airoha__mcu__soc__airoha__common.dir/air_printk.c.obj
+[58/271] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/thread.c.obj
+[59/271] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/irq_init.c.obj
+[60/271] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/irq_manage.c.obj
+[61/271] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_complete.c.obj
+[62/271] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/fault.c.obj
+[63/271] Building C object zephyr/lib/libc/common/CMakeFiles/lib__libc__common.dir/source/stdlib/abort.c.obj
+[64/271] Building C object zephyr/arch/arch/arm/core/cortex_m/cmse/CMakeFiles/arch__arm__core__cortex_m__cmse.dir/arm_core_cmse.c.obj
+[65/271] Generating zephyr/autogen-pubkey.c
+[66/271] Linking C static library zephyr/arch/arch/arm/core/cortex_m/libarch__arm__core__cortex_m.a
+[67/271] Linking CXX static library zephyr/libzephyr.a
+[68/271] Linking C static library zephyr/lib/libc/common/liblib__libc__common.a
+[69/271] Building C object zephyr/soc/soc/ab162x/common/CMakeFiles/..__airoha__mcu__soc__airoha__common.dir/air_allocation_c_lib.c.obj
+[70/271] Linking C static library zephyr/arch/arch/arm/core/cortex_m/cmse/libarch__arm__core__cortex_m__cmse.a
+[71/271] Building C object zephyr/lib/libc/newlib/CMakeFiles/lib__libc__newlib.dir/libc-hooks.c.obj
+[72/271] Building C object zephyr/soc/soc/ab162x/common/bsp_flash/CMakeFiles/..__airoha__mcu__soc__airoha__common__bsp_flash.dir/src/bsp_external_flash_async.c.obj
+[73/271] Building C object zephyr/drivers/flash/CMakeFiles/drivers__flash.dir/flash_page_layout.c.obj
+[74/271] Building C object zephyr/soc/soc/ab162x/common/bsp_flash/CMakeFiles/..__airoha__mcu__soc__airoha__common__bsp_flash.dir/src/bsp_external_flash.c.obj
+[75/271] Building C object zephyr/soc/soc/ab162x/common/bsp_flash/CMakeFiles/..__airoha__mcu__soc__airoha__common__bsp_flash.dir/src/bsp_external_flash_utils.c.obj
+[76/271] Building C object zephyr/drivers/timer/CMakeFiles/drivers__timer.dir/sys_clock_init.c.obj
+[77/271] Building C object zephyr/drivers/rtc/CMakeFiles/drivers__rtc.dir/rtc_utils.c.obj
+[78/271] Building C object zephyr/soc/soc/ab162x/common/CMakeFiles/..__airoha__mcu__soc__airoha__common.dir/air_tracing.c.obj
+[79/271] Building C object zephyr/soc/soc/ab162x/common/CMakeFiles/..__airoha__mcu__soc__airoha__common.dir/air_uart_pre_init.c.obj
+[80/271] Building C object CMakeFiles/app.dir/keys.c.obj
+[81/271] Building C object CMakeFiles/app.dir/os.c.obj
+[82/271] Building C object zephyr/drivers/flash/CMakeFiles/drivers__flash.dir/jesd216.c.obj
+[83/271] Building C object zephyr/soc/soc/ab162x/common/bsp_flash/CMakeFiles/..__airoha__mcu__soc__airoha__common__bsp_flash.dir/src/bsp_flash.c.obj
+[84/271] Building C object CMakeFiles/app.dir/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/encrypted.c.obj
+[85/271] Building C object CMakeFiles/app.dir/io.c.obj
+[86/271] Building C object CMakeFiles/app.dir/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/image_ecdsa.c.obj
+[87/271] Building C object CMakeFiles/app.dir/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/image_ed25519.c.obj
+[88/271] Building C object CMakeFiles/app.dir/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/image_rsa.c.obj
+[89/271] Building C object zephyr/soc/soc/ab162x/ab162x/CMakeFiles/..__airoha__mcu__soc__airoha__ab162x.dir/soc.c.obj
+[90/271] Building C object CMakeFiles/app.dir/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/fault_injection_hardening.c.obj
+[91/271] Building C object CMakeFiles/app.dir/zephyr/autogen-pubkey.c.obj
+[92/271] Building C object CMakeFiles/app.dir/flash_map_extended.c.obj
+[93/271] Building C object zephyr/CMakeFiles/zephyr_pre0.dir/misc/empty_file.c.obj
+[94/271] Building C object CMakeFiles/app.dir/workdir/airoha/mcu/applications/mcuboot/ext/tinycrypt/lib/source/utils.c.obj
+[95/271] Linking C static library zephyr/lib/libc/newlib/liblib__libc__newlib.a
+[96/271] Building C object CMakeFiles/app.dir/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/tlv.c.obj
+[97/271] Building C object CMakeFiles/app.dir/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/swap_misc.c.obj
+[98/271] Linking C static library zephyr/soc/soc/ab162x/ab162x/lib..__airoha__mcu__soc__airoha__ab162x.a
+[99/271] Linking C static library zephyr/soc/soc/ab162x/common/lib..__airoha__mcu__soc__airoha__common.a
+[100/271] Linking C static library zephyr/drivers/flash/libdrivers__flash.a
+[101/271] Building C object CMakeFiles/app.dir/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/caps.c.obj
+[102/271] Linking C static library zephyr/soc/soc/ab162x/common/bsp_flash/lib..__airoha__mcu__soc__airoha__common__bsp_flash.a
+[103/271] Building C object CMakeFiles/app.dir/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/swap_move.c.obj
+[104/271] Linking C static library zephyr/drivers/rtc/libdrivers__rtc.a
+[105/271] Linking C static library zephyr/drivers/timer/libdrivers__timer.a
+[106/271] Building C object CMakeFiles/app.dir/main.c.obj
+[107/271] Building C object CMakeFiles/app.dir/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/image_validate.c.obj
+/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/image_validate.c: In function 'bootutil_img_validate':
+/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/image_validate.c:471:13: warning: unused variable 'aes_buf' [-Wunused-variable]
+  471 |     uint8_t aes_buf[16];
+      |             ^~~~~~~
+/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/image_validate.c: At top level:
+/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/image_validate.c:395:12: warning: 'sboot_cmac_verify_image' defined but not used [-Wunused-function]
+  395 | static int sboot_cmac_verify_image(uint8_t *p_image, uint32_t img_len, uint8_t *cmac_hdr)
+      |            ^~~~~~~~~~~~~~~~~~~~~~~
+[108/271] Building C object CMakeFiles/app.dir/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/bootutil_misc.c.obj
+[109/271] Building C object CMakeFiles/app.dir/workdir/airoha/mcu/applications/mcuboot/ext/tinycrypt/lib/source/sha256.c.obj
+[110/271] Building C object CMakeFiles/app.dir/arm_cleanup.c.obj
+[111/271] Building C object CMakeFiles/app.dir/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/swap_scratch.c.obj
+[112/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_cache_internal.c.obj
+[113/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_aesotf_esc.c.obj
+[114/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_cache.c.obj
+[115/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_aesotf.c.obj
+[116/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_adc.c.obj
+[117/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_argb.c.obj
+[118/271] Building C object CMakeFiles/app.dir/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/loader.c.obj
+[119/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_dwt.c.obj
+[120/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_esc_internal.c.obj
+[121/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_bat.c.obj
+[122/271] Building C object modules/mcuboot/CMakeFiles/mcuboot_util.dir/workdir/airoha/mcu/applications/mcuboot/boot/bootutil/src/bootutil_public.c.obj
+[123/271] Linking C static library app/libapp.a
+[124/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_dcxo.c.obj
+[125/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_eint_s.c.obj
+[126/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_dvfs.c.obj
+[127/271] Linking C static library modules/mcuboot/libmcuboot_util.a
+[128/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_eint_internal.c.obj
+[129/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_comparator.c.obj
+[130/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_aes.c.obj
+[131/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_aioadc.c.obj
+[132/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_esc.c.obj
+[133/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_gpio_s.c.obj
+[134/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_flash_custom.c.obj
+[135/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_eint.c.obj
+[136/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_hw_keyscan.c.obj
+[137/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_flash_combo_init.c.obj
+[138/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_flash_custom_sfi.c.obj
+[139/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_flash_mtd.c.obj
+[140/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_gpio_internal.c.obj
+[141/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_flash_combo_nor.c.obj
+[142/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_i2c_master.c.obj
+[143/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_flash_mtd_common.c.obj
+[144/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_i2c_master_internal.c.obj
+[145/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_flash_disk.c.obj
+[146/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_irtx_internal.c.obj
+[147/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_irtx.c.obj
+[148/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_memview.c.obj
+[149/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_gpt.c.obj
+[150/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_led.c.obj
+[151/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_gpio.c.obj
+[152/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_mpu_internal.c.obj
+[153/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_mpu.c.obj
+[154/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_qdec.c.obj
+[155/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_irrx.c.obj
+[156/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_i3c_master.c.obj
+[157/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_gpt_internal.c.obj
+[158/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_irrx_internal.c.obj
+[159/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_i3c_master_internal.c.obj
+[160/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_nvic_internal.c.obj
+[161/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_clock.c.obj
+[162/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_flash_mtd_dal.c.obj
+[163/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_os_timer.c.obj
+[164/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_pwm.c.obj
+[165/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_nvic.c.obj
+[166/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_pwm_internal_v2.c.obj
+[167/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_riscv_ctl.c.obj
+[168/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_pwm_internal_v1.c.obj
+[169/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_sau.c.obj
+[170/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_ramboz.c.obj
+[171/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_queue.c.obj
+[172/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_sau_internal.c.obj
+[173/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_spi_slave.c.obj
+[174/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_spi_master.c.obj
+[175/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_spi_master_internal.c.obj
+[176/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_spi_slave_internal.c.obj
+[177/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_pmu_cal.c.obj
+[178/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_usb_phy.c.obj
+[179/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_sha.c.obj
+[180/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_rtc.c.obj
+[181/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_sw_dma.c.obj
+[182/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_sw_dma_internal.c.obj
+[183/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_trng.c.obj
+[184/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_pdma_internal.c.obj
+[185/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_sw_irq.c.obj
+[186/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_trng_internal.c.obj
+[187/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_usb.c.obj
+[188/271] Building C object modules/airoha/modules/hal/airoha/ab162x/src_core/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x__src_core.dir/hal_sleep_manager.c.obj
+[189/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_wdt.c.obj
+[190/271] Building C object modules/airoha/modules/hal/airoha/ab162x/src_core/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x__src_core.dir/hal_sleep_manager_internal.c.obj
+[191/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_pmu.c.obj
+[192/271] Building C object modules/airoha/modules/hal/airoha/ab162x/src_core/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x__src_core.dir/hal_deep_sleep.c.obj
+[193/271] Building C object modules/airoha/modules/hal/airoha/ab162x/src_core/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x__src_core.dir/hal_spm.c.obj
+[194/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_wdt_internal.c.obj
+[195/271] Linking C static library modules/airoha/modules/hal/airoha/ab162x/src_core/lib..__airoha__mcu__modules__hal__airoha__ab162x__src_core.a
+[196/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_uart_internal.c.obj
+[197/271] Building C object modules/airoha/drivers/ab162x/flash/CMakeFiles/..__airoha__mcu__drivers__ab162x__flash.dir/flash_airoha.c.obj
+[198/271] Building C object modules/airoha/drivers/ab162x/clock_control/CMakeFiles/..__airoha__mcu__drivers__ab162x__clock_control.dir/dcxo_airoha.c.obj
+[199/271] Building C object modules/airoha/drivers/ab162x/os_timer/CMakeFiles/..__airoha__mcu__drivers__ab162x__os_timer.dir/ost_airoha.c.obj
+[200/271] Building C object modules/airoha/drivers/ab162x/interrupt_controller/CMakeFiles/..__airoha__mcu__drivers__ab162x__interrupt_controller.dir/intc_airoha.c.obj
+[201/271] Building C object modules/airoha/drivers/ab162x/rtc/CMakeFiles/..__airoha__mcu__drivers__ab162x__rtc.dir/rtc_airoha.c.obj
+[202/271] Building C object modules/airoha/drivers/ab162x/clock_control/CMakeFiles/..__airoha__mcu__drivers__ab162x__clock_control.dir/dvfs_airoha.c.obj
+[203/271] Linking C static library modules/airoha/drivers/ab162x/interrupt_controller/lib..__airoha__mcu__drivers__ab162x__interrupt_controller.a
+[204/271] Building C object modules/airoha/drivers/ab162x/clock_control/CMakeFiles/..__airoha__mcu__drivers__ab162x__clock_control.dir/clock_control_airoha.c.obj
+[205/271] Linking C static library modules/airoha/drivers/ab162x/os_timer/lib..__airoha__mcu__drivers__ab162x__os_timer.a
+[206/271] Building C object modules/airoha/drivers/ab162x/pmu/CMakeFiles/..__airoha__mcu__drivers__ab162x__pmu.dir/pmu_airoha.c.obj
+[207/271] Linking C static library modules/airoha/drivers/ab162x/flash/lib..__airoha__mcu__drivers__ab162x__flash.a
+[208/271] Building C object modules/airoha/drivers/ab162x/watchdog/CMakeFiles/..__airoha__mcu__drivers__ab162x__watchdog.dir/wdt_airoha.c.obj
+[209/271] Linking C static library modules/airoha/drivers/ab162x/rtc/lib..__airoha__mcu__drivers__ab162x__rtc.a
+[210/271] Linking C static library modules/airoha/drivers/ab162x/clock_control/lib..__airoha__mcu__drivers__ab162x__clock_control.a
+[211/271] Linking C static library modules/airoha/drivers/ab162x/pmu/lib..__airoha__mcu__drivers__ab162x__pmu.a
+[212/271] Linking C static library modules/airoha/drivers/ab162x/watchdog/lib..__airoha__mcu__drivers__ab162x__watchdog.a
+[213/271] Building C object modules/airoha/subsys/airoha/version/CMakeFiles/..__airoha__mcu__subsys__airoha__version.dir/misc/generated/air_version.c.obj
+[214/271] Building C object modules/airoha/subsys/airoha/partition/CMakeFiles/..__airoha__mcu__subsys__airoha__partition.dir/src/air_flash_map.c.obj
+[215/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_rtc_internal.c.obj
+[216/271] Linking C static library modules/airoha/subsys/airoha/version/lib..__airoha__mcu__subsys__airoha__version.a
+[217/271] Building C object modules/airoha/subsys/airoha/partition/CMakeFiles/..__airoha__mcu__subsys__airoha__partition.dir/src/partition.c.obj
+[218/271] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_uart.c.obj
+[219/271] Building C object modules/airoha/subsys/third_party/lzma_decoder/CMakeFiles/..__airoha__mcu__subsys__third_party__lzma_decoder.dir/src/lzma_decode_interface.c.obj
+[220/271] Building C object modules/airoha/subsys/airoha/fota/CMakeFiles/fota.dir/src/fota_flash_config.c.obj
+[221/271] Building C object modules/airoha/upper_level/drivers/chip/ab162x/CMakeFiles/..__airoha__common__drivers__chip__ab162x.dir/src/hal_ccni_config.c.obj
+[222/271] Linking C static library modules/airoha/subsys/airoha/partition/lib..__airoha__mcu__subsys__airoha__partition.a
+[223/271] Building C object modules/airoha/subsys/airoha/fota/CMakeFiles/fota.dir/src/fota_flash.c.obj
+[224/271] Building C object modules/airoha/upper_level/drivers/chip/ab162x/CMakeFiles/..__airoha__common__drivers__chip__ab162x.dir/src/hal_cross_core_config.c.obj
+[225/271] Building C object modules/airoha/upper_level/drivers/chip/ab162x/CMakeFiles/..__airoha__common__drivers__chip__ab162x.dir/src/hal_ccni.c.obj
+[226/271] Building C object modules/airoha/upper_level/drivers/chip/ab162x/CMakeFiles/..__airoha__common__drivers__chip__ab162x.dir/src/hal_core_status.c.obj
+[227/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/main_weak.c.obj
+[228/271] Building C object modules/airoha/upper_level/drivers/chip/ab162x/CMakeFiles/..__airoha__common__drivers__chip__ab162x.dir/src/hal_hw_semaphore.c.obj
+[229/271] Building C object modules/airoha/subsys/airoha/fota/CMakeFiles/fota.dir/src/fota_multi_info.c.obj
+[230/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/init_static.c.obj
+[231/271] Linking C static library modules/airoha/modules/hal/airoha/ab162x/lib..__airoha__mcu__modules__hal__airoha__ab162x.a
+[232/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/banner.c.obj
+[233/271] Linking C static library modules/airoha/upper_level/drivers/chip/ab162x/lib..__airoha__common__drivers__chip__ab162x.a
+[234/271] Building C object modules/airoha/subsys/airoha/bootreason_check/CMakeFiles/..__airoha__mcu__subsys__airoha__bootreason_check.dir/src/bootreason_check.c.obj
+[235/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/device.c.obj
+[236/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/busy_wait.c.obj
+[237/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/errno.c.obj
+[238/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/version.c.obj
+[239/271] Linking C static library modules/airoha/subsys/airoha/bootreason_check/lib..__airoha__mcu__subsys__airoha__bootreason_check.a
+[240/271] Building C object modules/airoha/subsys/airoha/fota/CMakeFiles/fota.dir/src/fota_util.c.obj
+[241/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/fatal.c.obj
+[242/271] Building C object modules/airoha/subsys/airoha/fota/CMakeFiles/fota.dir/src/fota_signature.c.obj
+[243/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/float.c.obj
+[244/271] Building C object modules/airoha/subsys/airoha/fota/CMakeFiles/fota.dir/src/fota_multi_info_util.c.obj
+[245/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/init.c.obj
+[246/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/mem_slab.c.obj
+[247/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/kheap.c.obj
+[248/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/system_work_q.c.obj
+[249/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/sem.c.obj
+[250/271] Linking C static library modules/airoha/subsys/airoha/fota/libfota.a
+[251/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/idle.c.obj
+[252/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/mutex.c.obj
+[253/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/msg_q.c.obj
+[254/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/condvar.c.obj
+[255/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/mailbox.c.obj
+[256/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/stack.c.obj
+[257/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/priority_queues.c.obj
+[258/271] Building C object modules/airoha/subsys/third_party/lzma_decoder/CMakeFiles/..__airoha__mcu__subsys__third_party__lzma_decoder.dir/src/lzma_decoder.c.obj
+[259/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/queue.c.obj
+[260/271] Linking C static library modules/airoha/subsys/third_party/lzma_decoder/lib..__airoha__mcu__subsys__third_party__lzma_decoder.a
+[261/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/thread_monitor.c.obj
+[262/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/timeslicing.c.obj
+[263/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/dynamic_disabled.c.obj
+[264/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/mempool.c.obj
+[265/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/thread.c.obj
+[266/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/timer.c.obj
+[267/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/timeout.c.obj
+[268/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/work.c.obj
+[269/271] Building C object zephyr/kernel/CMakeFiles/kernel.dir/sched.c.obj
+[270/271] Linking C static library zephyr/kernel/libkernel.a
+[271/271] Linking CXX executable zephyr/zephyr.elf
+Memory region         Used Size  Region Size  %age Used
+            SRAM:       70992 B       384 KB     18.05%
+         SRAM_BT:          0 GB        16 KB      0.00%
+  ROM_LOG_STRING:          0 GB        32 MB      0.00%
+        IDT_LIST:          0 GB         2 KB      0.00%
+Generating files from /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot/zephyr/zephyr.elf for board: ab1620dm_evk
+[10/22] No configure step for 'hid_dongle_ref_design'
+[11/22] Performing build step for 'hid_dongle_ref_design'
+[1/489] Preparing syscall dependency handling
+
+[2/489] Generating include/generated/zephyr/version.h
+-- Zephyr version: 3.7.1 (/workdir/zephyr), build: 538f53952985
+[3/489] Generating misc/generated/syscalls_subdirs.trigger
+[4/489] [Airoha] Generating partition table for airoha's boot flow
+[5/489] [Airoha] Generating flash_download.cfg for airoha's download tool...
+[6/489] [Airoha][NVKey] Merge the input xml into one full nvkey.xml, and if there are dumplicate items, prompt or overwrite them according to project's policy.
+[7/489] [Airoha][NVKey] Executing nvs_post_build target to generate storage binary data for downloading default NVS data
+NVS PostBuildTool v1.0.0
+======================initialized======================
+append XML file: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/download/nvkey.xml
+31 NV added.
+parse 1 xml done.
+Generate NVS image.
+Successfully merge 32 NVKEYs and generate a NVS image of 40 KBytes
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/download/nvs.bin
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/download/nvkey_ota.c
+[8/489] [Airoha][NVKey] Merge the input xml into one full nvkey_release.xml, and if there are dumplicate items, prompt or overwrite them according to project's policy.
+[9/489] [Airoha][NVKey] Executing nvs_release_post_build target to generate storage_release.bin for downloading default NVS data with MP flag
+NVS PostBuildTool v1.0.0
+======================initialized======================
+append XML file: /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/download/nvkey_release.xml
+31 NV added.
+parse 1 xml done.
+Generate NVS image.
+Successfully merge 32 NVKEYs and generate a NVS image of 40 KBytes
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/download/nvs.bin
+/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/download/nvkey_ota.c
+[10/489] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
+[11/489] Generating include/generated/zephyr/syscall_dispatch.c, include/generated/zephyr/syscall_list.h
+[12/489] Generating include/generated/zephyr/driver-validation.h
+[13/489] Generating include/generated/zephyr/kobj-types-enum.h, include/generated/zephyr/otype-to-str.h, include/generated/zephyr/otype-to-size.h
+[14/489] Building C object zephyr/CMakeFiles/offsets.dir/arch/arm/core/offsets/offsets.c.obj
+[15/489] Generating include/generated/zephyr/offsets.h
+[16/489] Building C object CMakeFiles/app.dir/src/app/app_events/af_events_declaration.c.obj
+[17/489] Building C object CMakeFiles/app.dir/src/main.c.obj
+[18/489] Building C object CMakeFiles/app.dir/src/app/app_race/app_race_cmd.c.obj
+[19/489] Building C object CMakeFiles/app.dir/src/app/app_events/app_events_suspend_stage.c.obj
+[20/489] Building C object CMakeFiles/app.dir/src/app/app_events/app_events_deinit_stage.c.obj
+[21/489] Building C object CMakeFiles/app.dir/src/app/app_events/app_events_disconnected_stage.c.obj
+[22/489] Building C object CMakeFiles/app.dir/src/app/app_events/app_events_init_stage.c.obj
+[23/489] Building C object CMakeFiles/app.dir/src/app/app_bt_conn/app_bt_conn_manager.c.obj
+[24/489] Building C object CMakeFiles/app.dir/src/app/app_events/app_events_running_stage.c.obj
+[25/489] Building C object CMakeFiles/app.dir/src/app/app_fast_pair/app_fast_pair.c.obj
+[26/489] Building C object CMakeFiles/app.dir/src/app/app_events/app_events_connected_stage.c.obj
+[27/489] Building C object CMakeFiles/app.dir/src/app/app_led/app_led.c.obj
+[28/489] Building C object CMakeFiles/app.dir/src/app/app_init.c.obj
+[29/489] Building C object CMakeFiles/app.dir/src/app/app_bt_conn/app_acl_conn.c.obj
+[30/489] Building C object CMakeFiles/app.dir/src/app/app_race/app_race_cmd_common.c.obj
+[31/489] Building C object CMakeFiles/app.dir/src/app/app_events/app_events_pairing_stage.c.obj
+[32/489] Building C object CMakeFiles/app.dir/src/app/app_events/app_events.c.obj
+[33/489] Building C object CMakeFiles/app.dir/src/app/app_events/app_events_scan_stage.c.obj
+[34/489] Building C object CMakeFiles/app.dir/src/app/app_bt_conn/app_bt_ull_conn.c.obj
+[35/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/crc/crc32c_sw.c.obj
+[36/489] Building C object CMakeFiles/app.dir/src/app/app_events/app_events_reconnect_stage.c.obj
+[37/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/crc/crc24_sw.c.obj
+[38/489] Building C object CMakeFiles/app.dir/src/app/app_state/app_state.c.obj
+[39/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/crc/crc7_sw.c.obj
+[40/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/cpp/minimal/cpp_virtual.c.obj
+[41/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/crc/crc16_sw.c.obj
+[42/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/crc/crc8_sw.c.obj
+[43/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/cpp/abi/cpp_dtors.c.obj
+[44/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/crc/crc4_sw.c.obj
+[45/489] Building CXX object zephyr/CMakeFiles/zephyr.dir/lib/cpp/minimal/cpp_vtable.cpp.obj
+[46/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/crc/crc32_sw.c.obj
+[47/489] Building CXX object zephyr/CMakeFiles/zephyr.dir/lib/cpp/minimal/cpp_new.cpp.obj
+[48/489] Building C object CMakeFiles/app.dir/src/app/app_led/app_rgb.c.obj
+[49/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/dec.c.obj
+[50/489] Building C object CMakeFiles/app.dir/src/app/app_custom_protocol/app_custom_protocol.c.obj
+[51/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf.c.obj
+[52/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/hex.c.obj
+[53/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/sem.c.obj
+[54/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/heap/heap_stats.c.obj
+[55/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/assert.c.obj
+[56/489] Building C object CMakeFiles/app.dir/src/app/app_usb/app_usb.c.obj
+[57/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/printk.c.obj
+[58/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/thread_entry.c.obj
+[59/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/timeutil.c.obj
+[60/489] Building C object CMakeFiles/app.dir/src/app/app_race/app_race_cmd_pure_gaming_dongle.c.obj
+[61/489] Building C object zephyr/CMakeFiles/zephyr.dir/misc/generated/configs.c.obj
+[62/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_cache.c.obj
+[63/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/heap/heap.c.obj
+[64/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/pm/state.c.obj
+[65/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/mem_mgmt/mem_attr.c.obj
+[66/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_packaged.c.obj
+[67/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_msg.c.obj
+[68/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/ring_buffer.c.obj
+[69/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/rb.c.obj
+[70/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/net/lib/utils/addr_utils.c.obj
+[71/489] Building C object CMakeFiles/app.dir/src/app/app_scenario/app_pure_gaming_dongle_scenario.c.obj
+[72/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/storage/flash_map/flash_map.c.obj
+[73/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/random/random_entropy_device.c.obj
+[74/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_mgmt.c.obj
+[75/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/logging/log_core.c.obj
+[76/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/storage/flash_map/flash_map_layout.c.obj
+[77/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/pm/pm.c.obj
+[78/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/tracing/user/tracing_user.c.obj
+[79/489] Linking C static library app/libapp.a
+[80/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/pm/policy.c.obj
+[81/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/os/cbprintf_complete.c.obj
+[82/489] Building C object zephyr/CMakeFiles/zephyr.dir/lib/utils/bitarray.c.obj
+[83/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/bluetooth/services/dis.c.obj
+[84/489] Building C object zephyr/CMakeFiles/zephyr.dir/workdir/modules/crypto/tinycrypt/lib/source/utils.c.obj
+[85/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/bluetooth/services/bas.c.obj
+[86/489] Building C object zephyr/CMakeFiles/zephyr.dir/drivers/flash/flash_util.c.obj
+[87/489] Building C object zephyr/CMakeFiles/zephyr.dir/workdir/modules/crypto/tinycrypt/lib/source/aes_decrypt.c.obj
+[88/489] Building C object zephyr/CMakeFiles/zephyr.dir/workdir/modules/crypto/tinycrypt/lib/source/ecc_dh.c.obj
+[89/489] Building C object zephyr/CMakeFiles/zephyr.dir/workdir/modules/crypto/tinycrypt/lib/source/ctr_mode.c.obj
+[90/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/settings/src/settings_init.c.obj
+[91/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/settings/src/settings_store.c.obj
+[92/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/usb/device/usb_transfer.c.obj
+[93/489] Building C object zephyr/CMakeFiles/zephyr.dir/workdir/modules/crypto/tinycrypt/lib/source/aes_encrypt.c.obj
+[94/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/fs/nvs/nvs.c.obj
+[95/489] Building ASM object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/nmi_on_reset.S.obj
+[96/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/settings/src/settings_line.c.obj
+[97/489] Building C object zephyr/CMakeFiles/zephyr.dir/workdir/modules/crypto/tinycrypt/lib/source/hmac.c.obj
+[98/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/settings/src/settings.c.obj
+[99/489] Generating linker_zephyr_pre0.cmd
+[100/489] Building C object zephyr/CMakeFiles/zephyr.dir/workdir/modules/crypto/tinycrypt/lib/source/hmac_prng.c.obj
+[101/489] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/fault_s.S.obj
+[102/489] Building C object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/__aeabi_atexit.c.obj
+[103/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/settings/src/settings_nvs.c.obj
+[104/489] Building C object zephyr/CMakeFiles/zephyr.dir/workdir/modules/crypto/tinycrypt/lib/source/cmac_mode.c.obj
+[105/489] Building C object zephyr/CMakeFiles/zephyr.dir/workdir/modules/crypto/tinycrypt/lib/source/sha256.c.obj
+[106/489] Building C object zephyr/CMakeFiles/zephyr_pre0.dir/misc/empty_file.c.obj
+[107/489] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/reset.S.obj
+[108/489] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/vector_table.S.obj
+[109/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/usb/device/usb_descriptor.c.obj
+/workdir/zephyr/subsys/usb/device/usb_descriptor.c: In function 'usb_get_cfg_data':
+/workdir/zephyr/subsys/usb/device/usb_descriptor.c:381:40: warning: returning 'struct usb_sec_cfg_data *' from a function with incompatible return type 'struct usb_cfg_data *' [-Wincompatible-pointer-types]
+  381 |                                 return cfg_data;
+      |                                        ^~~~~~~~
+[110/489] Building C object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/nmi.c.obj
+[111/489] Building C object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/fatal.c.obj
+[112/489] Building C object zephyr/arch/arch/arm/core/CMakeFiles/arch__arm__core.dir/tls.c.obj
+[113/489] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/swap_helper.S.obj
+[114/489] Building ASM object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/__aeabi_read_tp.S.obj
+[115/489] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/fpu.c.obj
+[116/489] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/exc_exit.c.obj
+[117/489] Linking C static library zephyr/arch/arch/arm/core/libarch__arm__core.a
+[118/489] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/scb.c.obj
+[119/489] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/swap.c.obj
+[120/489] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/prep_c.c.obj
+[121/489] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/irq_init.c.obj
+[122/489] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/thread_abort.c.obj
+[123/489] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/cpu_idle.c.obj
+[124/489] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/thread.c.obj
+[125/489] Building C object zephyr/CMakeFiles/zephyr.dir/workdir/modules/crypto/tinycrypt/lib/source/ecc.c.obj
+[126/489] Building ASM object zephyr/soc/soc/ab162x/common/CMakeFiles/..__airoha__mcu__soc__airoha__common.dir/air_string_opt.s.obj
+[127/489] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/irq_manage.c.obj
+[128/489] Building ASM object zephyr/soc/soc/ab162x/ab162x/CMakeFiles/..__airoha__mcu__soc__airoha__ab162x.dir/startup.S.obj
+[129/489] Building C object zephyr/arch/arch/arm/core/mpu/CMakeFiles/arch__arm__core__mpu.dir/arm_mpu_regions.c.obj
+[130/489] Building C object zephyr/arch/arch/arm/core/mpu/CMakeFiles/arch__arm__core__mpu.dir/arm_core_mpu.c.obj
+[131/489] Building C object zephyr/arch/arch/arm/core/cortex_m/CMakeFiles/arch__arm__core__cortex_m.dir/fault.c.obj
+[132/489] Building C object zephyr/arch/arch/arm/core/cortex_m/cmse/CMakeFiles/arch__arm__core__cortex_m__cmse.dir/arm_core_cmse.c.obj
+[133/489] Building C object zephyr/lib/libc/common/CMakeFiles/lib__libc__common.dir/source/stdlib/abort.c.obj
+[134/489] Linking C static library zephyr/arch/arch/arm/core/cortex_m/libarch__arm__core__cortex_m.a
+[135/489] Building C object zephyr/soc/soc/ab162x/common/CMakeFiles/..__airoha__mcu__soc__airoha__common.dir/air_allocation_c_lib.c.obj
+[136/489] Building C object zephyr/CMakeFiles/zephyr.dir/subsys/usb/device/usb_device.c.obj
+/workdir/zephyr/subsys/usb/device/usb_device.c: In function 'forward_status_cb':
+/workdir/zephyr/subsys/usb/device/usb_device.c:1314:57: warning: passing argument 1 of 'cfg_data->cb_usb_status' from incompatible pointer type [-Wincompatible-pointer-types]
+ 1314 |                                 cfg_data->cb_usb_status(cfg_data, status, param);
+      |                                                         ^~~~~~~~
+      |                                                         |
+      |                                                         struct usb_sec_cfg_data *
+/workdir/zephyr/subsys/usb/device/usb_device.c:1314:57: note: expected 'struct usb_cfg_data *' but argument is of type 'struct usb_sec_cfg_data *'
+[137/489] Linking C static library zephyr/arch/arch/arm/core/cortex_m/cmse/libarch__arm__core__cortex_m__cmse.a
+[138/489] Building C object zephyr/lib/libc/newlib/CMakeFiles/lib__libc__newlib.dir/libc-hooks.c.obj
+[139/489] Building C object zephyr/soc/soc/ab162x/ab162x/CMakeFiles/..__airoha__mcu__soc__airoha__ab162x.dir/soc.c.obj
+[140/489] Building C object zephyr/soc/soc/ab162x/common/CMakeFiles/..__airoha__mcu__soc__airoha__common.dir/air_mpu_init.c.obj
+[141/489] Building C object zephyr/soc/soc/ab162x/common/CMakeFiles/..__airoha__mcu__soc__airoha__common.dir/air_cache_init.c.obj
+[142/489] Linking C static library zephyr/lib/libc/common/liblib__libc__common.a
+[143/489] Linking C static library zephyr/soc/soc/ab162x/ab162x/lib..__airoha__mcu__soc__airoha__ab162x.a
+[144/489] Linking C static library zephyr/lib/libc/newlib/liblib__libc__newlib.a
+[145/489] Linking CXX static library zephyr/libzephyr.a
+[146/489] Building C object zephyr/soc/soc/ab162x/common/CMakeFiles/..__airoha__mcu__soc__airoha__common.dir/air_uart_pre_init.c.obj
+[147/489] Building C object zephyr/subsys/bluetooth/common/CMakeFiles/subsys__bluetooth__common.dir/addr.c.obj
+[148/489] Building C object zephyr/soc/soc/ab162x/common/CMakeFiles/..__airoha__mcu__soc__airoha__common.dir/air_tracing.c.obj
+[149/489] Building C object zephyr/soc/soc/ab162x/common/daemon_work_q/CMakeFiles/..__airoha__mcu__soc__airoha__common__daemon_work_q.dir/air_daemon_work_q.c.obj
+[150/489] Building C object zephyr/arch/arch/arm/core/mpu/CMakeFiles/arch__arm__core__mpu.dir/arm_mpu.c.obj
+[151/489] Building C object zephyr/soc/soc/ab162x/common/CMakeFiles/..__airoha__mcu__soc__airoha__common.dir/air_allocation_zephyr.c.obj
+[152/489] Linking C static library zephyr/soc/soc/ab162x/common/daemon_work_q/lib..__airoha__mcu__soc__airoha__common__daemon_work_q.a
+[153/489] Building C object zephyr/soc/soc/ab162x/common/syslog_portable/CMakeFiles/..__airoha__mcu__soc__airoha__common__syslog_portable.dir/syslog_port.c.obj
+[154/489] Building C object zephyr/soc/soc/ab162x/common/offline_dump/CMakeFiles/..__airoha__mcu__soc__airoha__common__offline_dump.dir/air_offline_dump_port.c.obj
+[155/489] Building C object zephyr/soc/soc/ab162x/common/syslog_portable/CMakeFiles/..__airoha__mcu__soc__airoha__common__syslog_portable.dir/syslog_dump_flash.c.obj
+[156/489] Linking C static library zephyr/arch/arch/arm/core/mpu/libarch__arm__core__mpu.a
+[157/489] Linking C static library zephyr/soc/soc/ab162x/common/offline_dump/lib..__airoha__mcu__soc__airoha__common__offline_dump.a
+[158/489] Building C object zephyr/soc/soc/ab162x/common/bsp_flash/CMakeFiles/..__airoha__mcu__soc__airoha__common__bsp_flash.dir/src/bsp_external_flash_async.c.obj
+[159/489] Linking C static library zephyr/soc/soc/ab162x/common/lib..__airoha__mcu__soc__airoha__common.a
+[160/489] Building C object zephyr/soc/soc/ab162x/common/bsp_flash/CMakeFiles/..__airoha__mcu__soc__airoha__common__bsp_flash.dir/src/bsp_external_flash.c.obj
+[161/489] Linking C static library zephyr/soc/soc/ab162x/common/syslog_portable/lib..__airoha__mcu__soc__airoha__common__syslog_portable.a
+[162/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/uuid.c.obj
+[163/489] Building C object zephyr/subsys/bluetooth/common/CMakeFiles/subsys__bluetooth__common.dir/dummy.c.obj
+[164/489] Building C object zephyr/soc/soc/ab162x/common/bsp_flash/CMakeFiles/..__airoha__mcu__soc__airoha__common__bsp_flash.dir/src/bsp_external_flash_utils.c.obj
+[165/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/addr.c.obj
+[166/489] Building C object zephyr/subsys/bluetooth/common/CMakeFiles/subsys__bluetooth__common.dir/rpa.c.obj
+[167/489] Building C object zephyr/soc/soc/ab162x/common/bsp_flash/CMakeFiles/..__airoha__mcu__soc__airoha__common__bsp_flash.dir/src/bsp_flash.c.obj
+[168/489] Building C object zephyr/subsys/bluetooth/common/CMakeFiles/subsys__bluetooth__common.dir/bt_str.c.obj
+[169/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/long_wq.c.obj
+[170/489] Linking C static library zephyr/soc/soc/ab162x/common/bsp_flash/lib..__airoha__mcu__soc__airoha__common__bsp_flash.a
+[171/489] Linking C static library zephyr/subsys/bluetooth/common/libsubsys__bluetooth__common.a
+[172/489] Building C object zephyr/soc/soc/ab162x/common/exception_handler/CMakeFiles/..__airoha__mcu__soc__airoha__common__exception_handler.dir/air_btd_ic_premium_g1/exception_port.c.obj
+[173/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/hci_common.c.obj
+[174/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/data.c.obj
+[175/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/buf.c.obj
+[176/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/crypto_tc.c.obj
+[177/489] Linking C static library zephyr/soc/soc/ab162x/common/exception_handler/lib..__airoha__mcu__soc__airoha__common__exception_handler.a
+[178/489] Building C object zephyr/subsys/usb/device/class/hid/CMakeFiles/subsys__usb__device__class__hid.dir/core.c.obj
+[179/489] Linking C static library zephyr/subsys/usb/device/class/hid/libsubsys__usb__device__class__hid.a
+[180/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/ecc.c.obj
+[181/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/scan.c.obj
+[182/489] Building C object zephyr/drivers/flash/CMakeFiles/drivers__flash.dir/flash_page_layout.c.obj
+[183/489] Building C object zephyr/subsys/bluetooth/crypto/CMakeFiles/subsys__bluetooth__crypto.dir/bt_crypto_tc.c.obj
+[184/489] Building C object zephyr/drivers/hwinfo/CMakeFiles/drivers__hwinfo.dir/hwinfo_weak_impl.c.obj
+[185/489] Building C object zephyr/drivers/pinctrl/CMakeFiles/drivers__pinctrl.dir/common.c.obj
+[186/489] Linking C static library zephyr/drivers/hwinfo/libdrivers__hwinfo.a
+[187/489] Building C object zephyr/subsys/bluetooth/crypto/CMakeFiles/subsys__bluetooth__crypto.dir/bt_crypto.c.obj
+[188/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/keys.c.obj
+[189/489] Linking C static library zephyr/drivers/pinctrl/libdrivers__pinctrl.a
+[190/489] Linking C static library zephyr/subsys/bluetooth/crypto/libsubsys__bluetooth__crypto.a
+[191/489] Building C object zephyr/drivers/rtc/CMakeFiles/drivers__rtc.dir/rtc_utils.c.obj
+[192/489] Building C object zephyr/drivers/timer/CMakeFiles/drivers__timer.dir/sys_clock_init.c.obj
+[193/489] Building C object zephyr/drivers/flash/CMakeFiles/drivers__flash.dir/jesd216.c.obj
+[194/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/l2cap.c.obj
+[195/489] Linking C static library zephyr/drivers/timer/libdrivers__timer.a
+[196/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/id.c.obj
+[197/489] Linking C static library zephyr/drivers/rtc/libdrivers__rtc.a
+[198/489] Linking C static library zephyr/drivers/flash/libdrivers__flash.a
+[199/489] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/buf.c.obj
+[200/489] Building C object modules/airoha/subsys/airoha/nvkey/CMakeFiles/..__airoha__mcu__subsys__airoha__nvkey.dir/src/nvkey_async.c.obj
+[201/489] Building C object zephyr/subsys/net/CMakeFiles/subsys__net.dir/buf_simple.c.obj
+[202/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_adc.c.obj
+[203/489] Building C object modules/airoha/subsys/airoha/nvkey/CMakeFiles/..__airoha__mcu__subsys__airoha__nvkey.dir/src/nvkey.c.obj
+[204/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_aesotf_esc.c.obj
+[205/489] Building C object modules/airoha/subsys/airoha/nvkey/CMakeFiles/..__airoha__mcu__subsys__airoha__nvkey.dir/src/nvkey_update.c.obj
+[206/489] Linking C static library zephyr/subsys/net/libsubsys__net.a
+[207/489] Linking C static library modules/airoha/subsys/airoha/nvkey/lib..__airoha__mcu__subsys__airoha__nvkey.a
+[208/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_aesotf.c.obj
+[209/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_argb.c.obj
+[210/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_cache_internal.c.obj
+[211/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_cache.c.obj
+[212/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_bat.c.obj
+[213/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_comparator.c.obj
+[214/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_esc_internal.c.obj
+[215/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_aioadc.c.obj
+[216/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_aes.c.obj
+[217/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_esc.c.obj
+[218/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_eint_s.c.obj
+[219/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_dwt.c.obj
+[220/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_dcxo.c.obj
+[221/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_eint.c.obj
+[222/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_eint_internal.c.obj
+[223/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_flash_combo_init.c.obj
+[224/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_gpio_s.c.obj
+[225/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_dvfs.c.obj
+[226/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_flash_custom.c.obj
+[227/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/att.c.obj
+[228/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_hw_keyscan.c.obj
+[229/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/gatt.c.obj
+[230/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/hci_core.c.obj
+[231/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_flash_custom_sfi.c.obj
+[232/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/conn.c.obj
+[233/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_flash_mtd.c.obj
+[234/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_flash_combo_nor.c.obj
+[235/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_gpio_internal.c.obj
+[236/489] Building C object zephyr/subsys/bluetooth/host/CMakeFiles/subsys__bluetooth__host.dir/smp.c.obj
+[237/489] Linking C static library zephyr/subsys/bluetooth/host/libsubsys__bluetooth__host.a
+[238/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_flash_disk.c.obj
+[239/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_i2c_master.c.obj
+[240/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_irtx.c.obj
+[241/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_flash_mtd_common.c.obj
+[242/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_i2c_master_internal.c.obj
+[243/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_gpt.c.obj
+[244/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_gpio.c.obj
+[245/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_irtx_internal.c.obj
+[246/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_gpt_internal.c.obj
+[247/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_memview.c.obj
+[248/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_led.c.obj
+[249/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_irrx_internal.c.obj
+[250/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_i3c_master.c.obj
+[251/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_qdec.c.obj
+[252/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_nvic_internal.c.obj
+[253/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_irrx.c.obj
+[254/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_mpu_internal.c.obj
+[255/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_mpu.c.obj
+[256/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_os_timer.c.obj
+[257/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_i3c_master_internal.c.obj
+[258/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_nvic.c.obj
+[259/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_clock.c.obj
+[260/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_flash_mtd_dal.c.obj
+[261/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_sau.c.obj
+[262/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_riscv_ctl.c.obj
+[263/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_sau_internal.c.obj
+[264/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_spi_master_internal.c.obj
+[265/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_pwm_internal_v1.c.obj
+[266/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_queue.c.obj
+[267/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_spi_slave.c.obj
+[268/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_pdma_internal.c.obj
+[269/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_spi_slave_internal.c.obj
+[270/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_ramboz.c.obj
+[271/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_pwm_internal_v2.c.obj
+[272/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_rtc.c.obj
+[273/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_pmu_cal.c.obj
+[274/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_sha.c.obj
+[275/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_spi_master.c.obj
+[276/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_sw_dma_internal.c.obj
+[277/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_trng.c.obj
+[278/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_sw_irq.c.obj
+[279/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_sw_dma.c.obj
+[280/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_trng_internal.c.obj
+[281/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_wdt.c.obj
+[282/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_wdt_internal.c.obj
+[283/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_usb_phy.c.obj
+[284/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_pmu.c.obj
+[285/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_uart_internal.c.obj
+[286/489] Building C object modules/airoha/modules/hal/airoha/ab162x/src_core/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x__src_core.dir/hal_deep_sleep.c.obj
+[287/489] Building C object modules/airoha/modules/hal/airoha/ab162x/src_core/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x__src_core.dir/hal_sleep_manager.c.obj
+[288/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_rtc_internal.c.obj
+[289/489] Building C object modules/airoha/drivers/ab162x/flash/CMakeFiles/..__airoha__mcu__drivers__ab162x__flash.dir/flash_airoha.c.obj
+[290/489] Building C object modules/airoha/drivers/ab162x/cache/CMakeFiles/..__airoha__mcu__drivers__ab162x__cache.dir/cache_airoha.c.obj
+[291/489] Building C object modules/airoha/drivers/ab162x/os_timer/CMakeFiles/..__airoha__mcu__drivers__ab162x__os_timer.dir/ost_airoha.c.obj
+[292/489] Building C object modules/airoha/drivers/ab162x/interrupt_controller/CMakeFiles/..__airoha__mcu__drivers__ab162x__interrupt_controller.dir/intc_airoha.c.obj
+[293/489] Linking C static library modules/airoha/drivers/ab162x/cache/lib..__airoha__mcu__drivers__ab162x__cache.a
+[294/489] Building C object modules/airoha/drivers/ab162x/rtc/CMakeFiles/..__airoha__mcu__drivers__ab162x__rtc.dir/rtc_airoha.c.obj
+[295/489] Linking C static library modules/airoha/drivers/ab162x/flash/lib..__airoha__mcu__drivers__ab162x__flash.a
+[296/489] Linking C static library modules/airoha/drivers/ab162x/interrupt_controller/lib..__airoha__mcu__drivers__ab162x__interrupt_controller.a
+[297/489] Linking C static library modules/airoha/drivers/ab162x/os_timer/lib..__airoha__mcu__drivers__ab162x__os_timer.a
+[298/489] Linking C static library modules/airoha/drivers/ab162x/rtc/lib..__airoha__mcu__drivers__ab162x__rtc.a
+[299/489] Building C object modules/airoha/drivers/ab162x/watchdog/CMakeFiles/..__airoha__mcu__drivers__ab162x__watchdog.dir/wdt_airoha.c.obj
+[300/489] Building C object modules/airoha/drivers/ab162x/gpio/CMakeFiles/..__airoha__mcu__drivers__ab162x__gpio.dir/gpio_airoha.c.obj
+[301/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_pwm.c.obj
+[302/489] Building C object modules/airoha/drivers/ab162x/pwm/CMakeFiles/..__airoha__mcu__drivers__ab162x__pwm.dir/pwm_airoha.c.obj
+[303/489] Linking C static library modules/airoha/drivers/ab162x/watchdog/lib..__airoha__mcu__drivers__ab162x__watchdog.a
+[304/489] Linking C static library modules/airoha/drivers/ab162x/gpio/lib..__airoha__mcu__drivers__ab162x__gpio.a
+[305/489] Building C object modules/airoha/drivers/ab162x/pwm_dma/CMakeFiles/..__airoha__mcu__drivers__ab162x__pwm_dma.dir/pwmdma_airoha.c.obj
+[306/489] Linking C static library modules/airoha/drivers/ab162x/pwm_dma/lib..__airoha__mcu__drivers__ab162x__pwm_dma.a
+[307/489] Linking C static library modules/airoha/drivers/ab162x/pwm/lib..__airoha__mcu__drivers__ab162x__pwm.a
+[308/489] Building C object modules/airoha/drivers/ab162x/clock_control/CMakeFiles/..__airoha__mcu__drivers__ab162x__clock_control.dir/dcxo_airoha.c.obj
+[309/489] Building C object modules/airoha/drivers/ab162x/pinctrl/CMakeFiles/..__airoha__mcu__drivers__ab162x__pinctrl.dir/pinctrl_airoha.c.obj
+[310/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_uart.c.obj
+[311/489] Building C object modules/airoha/drivers/ab162x/pmu/CMakeFiles/..__airoha__mcu__drivers__ab162x__pmu.dir/pmu_airoha.c.obj
+[312/489] Building C object modules/airoha/drivers/ab162x/clock_control/CMakeFiles/..__airoha__mcu__drivers__ab162x__clock_control.dir/dvfs_airoha.c.obj
+[313/489] Linking C static library modules/airoha/drivers/ab162x/pinctrl/lib..__airoha__mcu__drivers__ab162x__pinctrl.a
+[314/489] Linking C static library modules/airoha/drivers/ab162x/pmu/lib..__airoha__mcu__drivers__ab162x__pmu.a
+[315/489] Building C object modules/airoha/drivers/ab162x/clock_control/CMakeFiles/..__airoha__mcu__drivers__ab162x__clock_control.dir/clock_control_airoha.c.obj
+[316/489] Building C object modules/airoha/modules/hal/airoha/ab162x/src_core/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x__src_core.dir/hal_sleep_manager_internal.c.obj
+[317/489] Building C object modules/airoha/drivers/ab162x/random/CMakeFiles/..__airoha__mcu__drivers__ab162x__random.dir/trng_airoha.c.obj
+[318/489] Building C object modules/airoha/drivers/ab162x/uart/CMakeFiles/..__airoha__mcu__drivers__ab162x__uart.dir/uart_airoha.c.obj
+[319/489] Building C object modules/airoha/subsys/airoha/bluetooth/controller/CMakeFiles/..__airoha__mcu__subsys__airoha__bluetooth__controller.dir/avm/src/bt_driver.c.obj
+[320/489] Linking C static library modules/airoha/drivers/ab162x/clock_control/lib..__airoha__mcu__drivers__ab162x__clock_control.a
+[321/489] Building C object modules/airoha/subsys/airoha/bluetooth/controller/CMakeFiles/..__airoha__mcu__subsys__airoha__bluetooth__controller.dir/avm/src/bt_common.c.obj
+[322/489] Building C object modules/airoha/subsys/airoha/bluetooth/controller/CMakeFiles/..__airoha__mcu__subsys__airoha__bluetooth__controller.dir/avm/src/bt_linknode.c.obj
+[323/489] Linking C static library modules/airoha/drivers/ab162x/random/lib..__airoha__mcu__drivers__ab162x__random.a
+[324/489] Linking C static library modules/airoha/drivers/ab162x/uart/lib..__airoha__mcu__drivers__ab162x__uart.a
+[325/489] Building C object modules/airoha/subsys/airoha/bluetooth/controller/CMakeFiles/..__airoha__mcu__subsys__airoha__bluetooth__controller.dir/hci_log/bt_hci_log.c.obj
+[326/489] Building C object modules/airoha/subsys/airoha/bluetooth/controller/CMakeFiles/..__airoha__mcu__subsys__airoha__bluetooth__controller.dir/avm/src/bt_driver_misc.c.obj
+[327/489] Building C object modules/airoha/subsys/airoha/bluetooth/controller/CMakeFiles/..__airoha__mcu__subsys__airoha__bluetooth__controller.dir/relay_mode/ab162x/src/bt_driver_relay_mode.c.obj
+[328/489] Building C object modules/airoha/subsys/airoha/bluetooth/controller/CMakeFiles/..__airoha__mcu__subsys__airoha__bluetooth__controller.dir/src/avm_external.c.obj
+[329/489] Building C object modules/airoha/subsys/airoha/bluetooth/controller/CMakeFiles/..__airoha__mcu__subsys__airoha__bluetooth__controller.dir/hci_log/hci_log.c.obj
+[330/489] Building C object modules/airoha/drivers/ab162x/usb/device/CMakeFiles/..__airoha__mcu__drivers__ab162x__usb__device.dir/usb_dc_airoha.c.obj
+[331/489] Building C object modules/airoha/subsys/airoha/bluetooth/controller/CMakeFiles/..__airoha__mcu__subsys__airoha__bluetooth__controller.dir/relay_mode/ab162x/src/relay_client.c.obj
+[332/489] Building C object modules/airoha/subsys/airoha/bluetooth/controller/CMakeFiles/..__airoha__mcu__subsys__airoha__bluetooth__controller.dir/avm/src/bt_memory.c.obj
+[333/489] Building C object modules/airoha/subsys/airoha/bluetooth/services/hci_vendor_event_dispatch/CMakeFiles/..__airoha__mcu__subsys__airoha__bluetooth__services__hci_vendor_event_dispatch.dir/src/bt_hci_vendor_event_dispatch.c.obj
+[334/489] Linking C static library modules/airoha/drivers/ab162x/usb/device/lib..__airoha__mcu__drivers__ab162x__usb__device.a
+[335/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/crc8.c.obj
+[336/489] Building C object modules/airoha/subsys/airoha/bluetooth/controller/CMakeFiles/..__airoha__mcu__subsys__airoha__bluetooth__controller.dir/src/hci/hci_driver_airoha.c.obj
+[337/489] Building C object modules/airoha/subsys/airoha/ull_hid_le/CMakeFiles/..__airoha__mcu__subsys__airoha__ull_hid_le.dir/src/bt_ull_le_utility.c.obj
+[338/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/crc_dfu.c.obj
+[339/489] Linking C static library modules/airoha/subsys/airoha/bluetooth/services/hci_vendor_event_dispatch/lib..__airoha__mcu__subsys__airoha__bluetooth__services__hci_vendor_event_dispatch.a
+[340/489] Building C object modules/airoha/modules/hal/airoha/ab162x/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x.dir/src/hal_usb.c.obj
+[341/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_auxadc.c.obj
+[342/489] Linking C static library modules/airoha/subsys/airoha/bluetooth/controller/lib..__airoha__mcu__subsys__airoha__bluetooth__controller.a
+[343/489] Building C object modules/airoha/subsys/airoha/partition/CMakeFiles/..__airoha__mcu__subsys__airoha__partition.dir/src/partition.c.obj
+[344/489] Building C object modules/airoha/modules/hal/airoha/ab162x/src_core/CMakeFiles/..__airoha__mcu__modules__hal__airoha__ab162x__src_core.dir/hal_spm.c.obj
+[345/489] Building C object modules/airoha/subsys/airoha/partition/CMakeFiles/..__airoha__mcu__subsys__airoha__partition.dir/src/air_flash_map.c.obj
+[346/489] Linking C static library modules/airoha/modules/hal/airoha/ab162x/lib..__airoha__mcu__modules__hal__airoha__ab162x.a
+[347/489] Linking C static library modules/airoha/modules/hal/airoha/ab162x/src_core/lib..__airoha__mcu__modules__hal__airoha__ab162x__src_core.a
+[348/489] Linking C static library modules/airoha/subsys/airoha/partition/lib..__airoha__mcu__subsys__airoha__partition.a
+[349/489] Building C object modules/airoha/subsys/airoha/ull_hid_le/CMakeFiles/..__airoha__mcu__subsys__airoha__ull_hid_le.dir/src/bt_ull_le.c.obj
+[350/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_audio.c.obj
+[351/489] Building C object modules/airoha/subsys/airoha/pka/CMakeFiles/..__airoha__mcu__subsys__airoha__pka.dir/src/pka_porting_layer.c.obj
+[352/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_clock.c.obj
+[353/489] Building C object modules/airoha/subsys/airoha/ull_hid_le/CMakeFiles/..__airoha__mcu__subsys__airoha__ull_hid_le.dir/src/bt_ull_le_hid_device_manager.c.obj
+[354/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_bt.c.obj
+[355/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_aioadc.c.obj
+[356/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_factory_mode.c.obj
+[357/489] Linking C static library modules/airoha/subsys/airoha/pka/lib..__airoha__mcu__subsys__airoha__pka.a
+[358/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd.c.obj
+[359/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_gpio.c.obj
+[360/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_spi_master.c.obj
+[361/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_crystal_trim.c.obj
+[362/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_i2c_master.c.obj
+[363/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_key_event.c.obj
+[364/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_i3c_master.c.obj
+[365/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_mainbin_dfu.c.obj
+[366/489] Building C object modules/airoha/subsys/airoha/bt_air/CMakeFiles/..__airoha__mcu__subsys__airoha__bt_air.dir/src/ble_air_service.c.obj
+[367/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_relay_cmd_bt.c.obj
+[368/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_offline_dump.c.obj
+[369/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_register.c.obj
+[370/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_fota.c.obj
+[371/489] Linking C static library modules/airoha/subsys/airoha/bt_air/lib..__airoha__mcu__subsys__airoha__bt_air.a
+[372/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_pwm.c.obj
+[373/489] Building C object modules/airoha/subsys/airoha/ull_hid_le/CMakeFiles/..__airoha__mcu__subsys__airoha__ull_hid_le.dir/src/bt_ull_le_hid_conn_service.c.obj
+[374/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_system.c.obj
+[375/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_nvkey.c.obj
+[376/489] Building C object modules/airoha/subsys/airoha/ull_hid_le/CMakeFiles/..__airoha__mcu__subsys__airoha__ull_hid_le.dir/src/bt_ull_le_hid_service.c.obj
+[377/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_sleep_control.c.obj
+[378/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_uart.c.obj
+[379/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_cmd_storage.c.obj
+[380/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_noti.c.obj
+[381/489] Linking C static library modules/airoha/subsys/airoha/ull_hid_le/lib..__airoha__mcu__subsys__airoha__ull_hid_le.a
+[382/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_event.c.obj
+[383/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_port_uart.c.obj
+[384/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_storage_access.c.obj
+[385/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_port_bt.c.obj
+[386/489] Building C object modules/airoha/subsys/airoha/usb/CMakeFiles/..__airoha__mcu__subsys__airoha__usb.dir/src/air_usb_xinput.c.obj
+[387/489] Building C object modules/airoha/subsys/airoha/version/CMakeFiles/..__airoha__mcu__subsys__airoha__version.dir/misc/generated/air_version.c.obj
+[388/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_port_usb.c.obj
+[389/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_usb_relay.c.obj
+[390/489] Building C object modules/airoha/subsys/airoha/usb/CMakeFiles/..__airoha__mcu__subsys__airoha__usb.dir/src/air_usb_hid_desc.c.obj
+[391/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_usb_relay_dongle.c.obj
+[392/489] Linking C static library modules/airoha/subsys/airoha/version/lib..__airoha__mcu__subsys__airoha__version.a
+[393/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_timer.c.obj
+[394/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_storage_util.c.obj
+[395/489] Building C object modules/airoha/subsys/third_party/lzma_decoder/CMakeFiles/..__airoha__mcu__subsys__third_party__lzma_decoder.dir/src/lzma_decode_interface.c.obj
+[396/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_util.c.obj
+[397/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_xport.c.obj
+[398/489] Building C object modules/airoha/subsys/airoha/rgb/CMakeFiles/..__airoha__mcu__subsys__airoha__rgb.dir/src/rgb_control_style_cfg.c.obj
+[399/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_fota_util.c.obj
+[400/489] Building C object modules/airoha/subsys/airoha/race/CMakeFiles/..__airoha__mcu__subsys__airoha__race.dir/src/race_core.c.obj
+[401/489] Building C object modules/airoha/subsys/airoha/fota/CMakeFiles/fota.dir/src/fota_flash_config.c.obj
+[402/489] Linking C static library modules/airoha/subsys/airoha/race/lib..__airoha__mcu__subsys__airoha__race.a
+[403/489] Building C object modules/airoha/subsys/airoha/fota/CMakeFiles/fota.dir/src/fota_flash.c.obj
+[404/489] Building C object modules/airoha/subsys/airoha/rgb/CMakeFiles/..__airoha__mcu__subsys__airoha__rgb.dir/src/bsp_rgb.c.obj
+[405/489] Building C object modules/airoha/subsys/airoha/pd_domain_control/CMakeFiles/..__airoha__mcu__subsys__airoha__pd_domain_control.dir/src/pd_domain_control.c.obj
+[406/489] Building C object modules/airoha/subsys/airoha/usb/CMakeFiles/..__airoha__mcu__subsys__airoha__usb.dir/src/air_usb.c.obj
+[407/489] Linking C static library modules/airoha/subsys/airoha/pd_domain_control/lib..__airoha__mcu__subsys__airoha__pd_domain_control.a
+[408/489] Building C object modules/airoha/subsys/airoha/fota/CMakeFiles/fota.dir/src/fota_multi_info_util.c.obj
+[409/489] Building C object modules/airoha/subsys/airoha/fota/CMakeFiles/fota.dir/src/fota_multi_info.c.obj
+[410/489] Building C object modules/airoha/subsys/airoha/fota/CMakeFiles/fota.dir/src/fota_util.c.obj
+[411/489] Building C object modules/airoha/subsys/airoha/usb/CMakeFiles/..__airoha__mcu__subsys__airoha__usb.dir/src/air_usb_hid.c.obj
+[412/489] Building C object modules/airoha/subsys/airoha/rgb/CMakeFiles/..__airoha__mcu__subsys__airoha__rgb.dir/src/rgb_middle_control.c.obj
+[413/489] Building C object modules/airoha/subsys/airoha/fota/CMakeFiles/fota.dir/src/fota_signature.c.obj
+[414/489] Building C object modules/airoha/subsys/airoha/hid/CMakeFiles/..__airoha__mcu__subsys__airoha__hid.dir/hid_dongle_scenario_service/src/hid_scenario_dongle.c.obj
+[415/489] Building C object modules/airoha/subsys/airoha/hid/CMakeFiles/..__airoha__mcu__subsys__airoha__hid.dir/hid_critical_path/gaming_dongle/src/hid_critical_path.c.obj
+[416/489] Building C object modules/airoha/subsys/airoha/hid/CMakeFiles/..__airoha__mcu__subsys__airoha__hid.dir/hid_critical_path/gaming_dongle/src/hid_critical_path_common.c.obj
+[417/489] Linking C static library modules/airoha/subsys/airoha/usb/lib..__airoha__mcu__subsys__airoha__usb.a
+[418/489] Building C object modules/airoha/subsys/third_party/lzma_decoder/CMakeFiles/..__airoha__mcu__subsys__third_party__lzma_decoder.dir/src/lzma_decoder.c.obj
+[419/489] Linking C static library modules/airoha/subsys/airoha/rgb/lib..__airoha__mcu__subsys__airoha__rgb.a
+[420/489] Linking C static library modules/airoha/subsys/airoha/fota/libfota.a
+[421/489] Building C object modules/airoha/subsys/airoha/hid/CMakeFiles/..__airoha__mcu__subsys__airoha__hid.dir/hid_critical_path/gaming_dongle/src/hid_critical_path_gamepad.c.obj
+[422/489] Building C object modules/airoha/subsys/airoha/hid/CMakeFiles/..__airoha__mcu__subsys__airoha__hid.dir/hid_critical_path/gaming_dongle/src/hid_critical_path_kb.c.obj
+[423/489] Linking C static library modules/airoha/subsys/third_party/lzma_decoder/lib..__airoha__mcu__subsys__third_party__lzma_decoder.a
+[424/489] Building C object modules/airoha/subsys/airoha/hid/CMakeFiles/..__airoha__mcu__subsys__airoha__hid.dir/hid_plc_common/src/hid_plc_common.c.obj
+[425/489] Building C object modules/airoha/subsys/airoha/hid/CMakeFiles/..__airoha__mcu__subsys__airoha__hid.dir/la_debug/src/la_debug.c.obj
+[426/489] Building C object modules/airoha/subsys/airoha/hid/CMakeFiles/..__airoha__mcu__subsys__airoha__hid.dir/hid_vendor_cmd/src/hid_vendor_cmd.c.obj
+[427/489] Building C object modules/airoha/subsys/airoha/app_framework/CMakeFiles/..__airoha__mcu__subsys__airoha__app_framework.dir/src/app_evt_dispatcher.c.obj
+[428/489] Building C object modules/airoha/subsys/airoha/hid/CMakeFiles/..__airoha__mcu__subsys__airoha__hid.dir/hid_critical_path/gaming_dongle/src/hid_critical_path_ms.c.obj
+[429/489] Building C object modules/airoha/subsys/airoha/app_framework/CMakeFiles/..__airoha__mcu__subsys__airoha__app_framework.dir/src/factory_reset.c.obj
+[430/489] Building C object modules/airoha/subsys/airoha/hid/CMakeFiles/..__airoha__mcu__subsys__airoha__hid.dir/custom_protocol/src/custom_protocol.c.obj
+[431/489] Linking C static library modules/airoha/subsys/airoha/app_framework/lib..__airoha__mcu__subsys__airoha__app_framework.a
+[432/489] Building C object modules/airoha/subsys/airoha/mux/CMakeFiles/..__airoha__mcu__subsys__airoha__mux.dir/ab162x/src/mux_port.c.obj
+[433/489] Building C object modules/airoha/subsys/airoha/hid/CMakeFiles/..__airoha__mcu__subsys__airoha__hid.dir/hid_power_manager/src/hid_power_mgr.c.obj
+[434/489] Building C object modules/airoha/upper_level/drivers/chip/ab162x/CMakeFiles/..__airoha__common__drivers__chip__ab162x.dir/src/hal_core_status.c.obj
+[435/489] Building C object modules/airoha/subsys/airoha/mux/CMakeFiles/..__airoha__mcu__subsys__airoha__mux.dir/ab162x/src/mux_port_device.c.obj
+[436/489] Building C object modules/airoha/upper_level/drivers/chip/ab162x/CMakeFiles/..__airoha__common__drivers__chip__ab162x.dir/src/hal_ccni.c.obj
+[437/489] Building C object modules/airoha/upper_level/drivers/chip/ab162x/CMakeFiles/..__airoha__common__drivers__chip__ab162x.dir/src/hal_ccni_config.c.obj
+[438/489] Building C object modules/airoha/subsys/airoha/bootreason_check/CMakeFiles/..__airoha__mcu__subsys__airoha__bootreason_check.dir/src/bootreason_check.c.obj
+[439/489] Building C object modules/airoha/upper_level/drivers/chip/ab162x/CMakeFiles/..__airoha__common__drivers__chip__ab162x.dir/src/hal_cross_core_config.c.obj
+[440/489] Building C object modules/airoha/subsys/airoha/hid/CMakeFiles/..__airoha__mcu__subsys__airoha__hid.dir/auto_switch_service/src/auto_switch_service.c.obj
+[441/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/init_static.c.obj
+[442/489] Building C object modules/airoha/subsys/airoha/mux/CMakeFiles/..__airoha__mcu__subsys__airoha__mux.dir/ab162x/src/mux_uart.c.obj
+[443/489] Linking C static library modules/airoha/subsys/airoha/bootreason_check/lib..__airoha__mcu__subsys__airoha__bootreason_check.a
+[444/489] Building C object modules/airoha/upper_level/drivers/chip/ab162x/CMakeFiles/..__airoha__common__drivers__chip__ab162x.dir/src/hal_hw_semaphore.c.obj
+[445/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/busy_wait.c.obj
+[446/489] Building C object modules/airoha/upper_level/middleware/airoha/share_buffer/CMakeFiles/..__airoha__common__middleware__airoha__share_buffer.dir/src/share_buffer.c.obj
+[447/489] Linking C static library modules/airoha/subsys/airoha/hid/lib..__airoha__mcu__subsys__airoha__hid.a
+[448/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/main_weak.c.obj
+[449/489] Building C object modules/airoha/subsys/airoha/mux/CMakeFiles/..__airoha__mcu__subsys__airoha__mux.dir/ab162x/src/mux_usb.c.obj
+[450/489] Building C object modules/airoha/upper_level/middleware/airoha/pka_share/CMakeFiles/..__airoha__common__middleware__airoha__pka_share.dir/src/pka_share.c.obj
+[451/489] Linking C static library modules/airoha/upper_level/middleware/airoha/share_buffer/lib..__airoha__common__middleware__airoha__share_buffer.a
+[452/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/device.c.obj
+[453/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/banner.c.obj
+[454/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/errno.c.obj
+[455/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/version.c.obj
+[456/489] Linking C static library modules/airoha/upper_level/drivers/chip/ab162x/lib..__airoha__common__drivers__chip__ab162x.a
+[457/489] Linking C static library modules/airoha/upper_level/middleware/airoha/pka_share/lib..__airoha__common__middleware__airoha__pka_share.a
+[458/489] Building C object modules/airoha/subsys/airoha/mux/CMakeFiles/..__airoha__mcu__subsys__airoha__mux.dir/ab162x/src/mux_bt.c.obj
+[459/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/fatal.c.obj
+In file included from /workdir/zephyr/include/zephyr/sys/util.h:27,
+                 from /workdir/zephyr/include/zephyr/sys/atomic.h:18,
+                 from /workdir/zephyr/include/zephyr/kernel_includes.h:25,
+                 from /workdir/zephyr/include/zephyr/kernel.h:17,
+                 from /workdir/zephyr/kernel/fatal.c:7:
+/workdir/zephyr/include/zephyr/logging/log_backend.h: In function 'log_backend_msg_process':
+/workdir/zephyr/include/zephyr/sys/__assert.h:125:21: warning: declaration of 'msg' shadows a parameter [-Wshadow]
+  125 |     ATTR_LOG_STRING msg[] =  #x" ," "file: " __FILE__ ", line: " _STRIZE(__LINE__); \
+      |                     ^~~
+/workdir/zephyr/include/zephyr/logging/log_backend.h:178:9: note: in expansion of macro '__ASSERT_NO_MSG'
+  178 |         __ASSERT_NO_MSG(backend != NULL);
+      |         ^~~~~~~~~~~~~~~
+In file included from /workdir/zephyr/include/zephyr/logging/log_ctrl.h:10,
+                 from /workdir/zephyr/kernel/fatal.c:13:
+/workdir/zephyr/include/zephyr/logging/log_backend.h:176:67: note: shadowed declaration is here
+  176 |                                            union log_msg_generic *msg)
+      |                                            ~~~~~~~~~~~~~~~~~~~~~~~^~~
+/workdir/zephyr/include/zephyr/sys/__assert.h:125:21: warning: declaration of 'msg' shadows a parameter [-Wshadow]
+  125 |     ATTR_LOG_STRING msg[] =  #x" ," "file: " __FILE__ ", line: " _STRIZE(__LINE__); \
+      |                     ^~~
+/workdir/zephyr/include/zephyr/logging/log_backend.h:179:9: note: in expansion of macro '__ASSERT_NO_MSG'
+  179 |         __ASSERT_NO_MSG(msg != NULL);
+      |         ^~~~~~~~~~~~~~~
+/workdir/zephyr/include/zephyr/logging/log_backend.h:176:67: note: shadowed declaration is here
+  176 |                                            union log_msg_generic *msg)
+      |                                            ~~~~~~~~~~~~~~~~~~~~~~~^~~
+[460/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/float.c.obj
+[461/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/priority_queues.c.obj
+[462/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/kheap.c.obj
+[463/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/mem_slab.c.obj
+[464/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/idle.c.obj
+[465/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/mailbox.c.obj
+[466/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/msg_q.c.obj
+[467/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/sem.c.obj
+[468/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/stack.c.obj
+[469/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/mutex.c.obj
+[470/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/system_work_q.c.obj
+[471/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/queue.c.obj
+[472/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/condvar.c.obj
+[473/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/init.c.obj
+In file included from /workdir/zephyr/include/zephyr/sys/util.h:27,
+                 from /workdir/zephyr/include/zephyr/sys/atomic.h:18,
+                 from /workdir/zephyr/include/zephyr/kernel_includes.h:25,
+                 from /workdir/zephyr/include/zephyr/kernel.h:17,
+                 from /workdir/zephyr/kernel/init.c:20:
+/workdir/zephyr/include/zephyr/logging/log_backend.h: In function 'log_backend_msg_process':
+/workdir/zephyr/include/zephyr/sys/__assert.h:125:21: warning: declaration of 'msg' shadows a parameter [-Wshadow]
+  125 |     ATTR_LOG_STRING msg[] =  #x" ," "file: " __FILE__ ", line: " _STRIZE(__LINE__); \
+      |                     ^~~
+/workdir/zephyr/include/zephyr/logging/log_backend.h:178:9: note: in expansion of macro '__ASSERT_NO_MSG'
+  178 |         __ASSERT_NO_MSG(backend != NULL);
+      |         ^~~~~~~~~~~~~~~
+In file included from /workdir/zephyr/include/zephyr/logging/log_ctrl.h:10,
+                 from /workdir/zephyr/kernel/init.c:36:
+/workdir/zephyr/include/zephyr/logging/log_backend.h:176:67: note: shadowed declaration is here
+  176 |                                            union log_msg_generic *msg)
+      |                                            ~~~~~~~~~~~~~~~~~~~~~~~^~~
+/workdir/zephyr/include/zephyr/sys/__assert.h:125:21: warning: declaration of 'msg' shadows a parameter [-Wshadow]
+  125 |     ATTR_LOG_STRING msg[] =  #x" ," "file: " __FILE__ ", line: " _STRIZE(__LINE__); \
+      |                     ^~~
+/workdir/zephyr/include/zephyr/logging/log_backend.h:179:9: note: in expansion of macro '__ASSERT_NO_MSG'
+  179 |         __ASSERT_NO_MSG(msg != NULL);
+      |         ^~~~~~~~~~~~~~~
+/workdir/zephyr/include/zephyr/logging/log_backend.h:176:67: note: shadowed declaration is here
+  176 |                                            union log_msg_generic *msg)
+      |                                            ~~~~~~~~~~~~~~~~~~~~~~~^~~
+[474/489] Building C object modules/airoha/subsys/airoha/mux/CMakeFiles/..__airoha__mcu__subsys__airoha__mux.dir/ab162x/src/mux.c.obj
+[475/489] Linking C static library modules/airoha/subsys/airoha/mux/lib..__airoha__mcu__subsys__airoha__mux.a
+[476/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/thread.c.obj
+[477/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/spinlock_validate.c.obj
+[478/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/timeslicing.c.obj
+[479/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/xip.c.obj
+[480/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/dynamic_disabled.c.obj
+[481/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/thread_monitor.c.obj
+[482/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/mempool.c.obj
+[483/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/timer.c.obj
+[484/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/timeout.c.obj
+[485/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/work.c.obj
+[486/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/poll.c.obj
+[487/489] Building C object zephyr/kernel/CMakeFiles/kernel.dir/sched.c.obj
+[488/489] Linking C static library zephyr/kernel/libkernel.a
+[489/489] Linking CXX executable zephyr/zephyr.elf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:      662004 B       948 KB     68.19%
+            SRAM:      266172 B       384 KB     67.69%
+         SRAM_BT:       15856 B        16 KB     96.78%
+  ROM_LOG_STRING:      346643 B        32 MB      1.03%
+        IDT_LIST:          0 GB         2 KB      0.00%
+Generating files from /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/zephyr/zephyr.elf for board: ab1620dm_evk
+[13/22] Completed 'mcuboot'
+[15/22] No install step for 'hid_dongle_ref_design'
+[16/22] Completed 'hid_dongle_ref_design'
+[17/22] [Airoha] collect firmware and change firmware name in flash_download.cfg
+[Airoha][Collect Firmware] obtain zephyr version: 0x03070100
+[Airoha][Collect Firmware] create directory /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/download
+[Airoha][Collect Firmware] create directory /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/debug
+[Airoha][Collect Firmware] create directory /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/debug/hid_dongle_ref_design
+[Airoha][Collect Firmware] copy debug files which file extension match ('.dts', '.elf', '.map', '.bin', '.hex', '.yaml', '.config', '.cmd', '.lst', '.json', '.symbols', '.stat') from /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/zephyr to /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/debug/hid_dongle_ref_design
+[Airoha][Collect Firmware] copy firmware file from /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/zephyr/zephyr.signed.bin to /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/download/hid_dongle_ref_design.signed.bin
+[Airoha][Collect Firmware] copy all other download binary files from /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design/download to /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/download
+[Airoha][Collect Firmware] create directory /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/debug/mcuboot
+[Airoha][Collect Firmware] copy debug files which file extension match ('.dts', '.elf', '.map', '.bin', '.hex', '.yaml', '.config', '.cmd', '.lst', '.json', '.symbols', '.stat') from /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot/zephyr to /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/debug/mcuboot
+[Airoha][Collect Firmware] copy firmware file from /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot/zephyr/zephyr.bin to /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/download/mcuboot.bin
+[Airoha][Collect Firmware] build dirs: ('/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/hid_dongle_ref_design', '/workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/mcuboot')
+[Airoha][Collect Firmware] default project: hid_dongle_ref_design
+[Airoha][Collect Firmware] firmware of default project: hid_dongle_ref_design.signed.bin
+[Airoha][Collect Firmware] bootloader project: mcuboot
+[Airoha][Collect Firmware] firmware of bootloader project: mcuboot.bin
+[Airoha][Collect Firmware] replace image-0.bin => hid_dongle_ref_design.signed.bin in flash_download.cfg
+[Airoha][Collect Firmware] replace bootloader.bin => mcuboot.bin in flash_download.cfg
+[Airoha][Collect Firmware] remove download entry of secure_hdr0.bin due to CONFIG_AIR_SECURITY_SECURE_BOOT_ENABLE=y not matched
+[Airoha][Collect Firmware] remove download entry of secure_hdr1.bin due to CONFIG_AIR_SECURITY_SECURE_BOOT_ENABLE=y not matched
+[Airoha][Collect Firmware] represent as hex format
+[Airoha][Collect Firmware] generate /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/download/flash_download.cfg
+[Airoha][Collect Firmware] generate /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/download/flash_download.cfg done!
+[18/22] [Airoha][Release] Generating release related files...
+[19/22] [Airoha][Footprint] Generating statistics data for footprint analysising...
+[Airoha][Footprint][Statistics] processing /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20
+[Airoha][Footprint][Statistics] create directory /workdir/out/ab1620dm_evk/hid_dongle_ref_design_m20/debug/footprint
+[20/22] [Airoha] check the differences in the flash partition across different projects in sysbuild
+[Airoha][FlashPartition Check] time: 0 min 0 seconds
+[21/22] [Airoha] check sysbuild result, especially the address defined by the cross core variable
+[Airoha][SysBuild Check] time: 0 min 0 seconds
+[22/22] [Airoha][Build] print sysbuild time
+[Airoha][Build] Real Build Time: 0 min 22 s
+[Airoha][Build] Total Build Time: 0 min 24 s

@@ -729,22 +729,20 @@ zephyr_udc0: &usbd {
     rbuf-size = <0>;
 };
 
-&pwm_dma0 {
- led_rgb_frequency = <60>;
+&argb {
  status = "okay";
- channel_polarity = <1 1 1 1>;
- rgb_gpio_channel = <0>;
- rgb0: rgb@0{
-  compatible = "airoha,air-rgb";
-  reg = <0>;
-  gpio_control = <38>;
-  gpio_polarity = <1>;
-  r_channel = <2>;
-  g_channel = <1>;
-  b_channel = <3>;
-  port = <0>;
-  status = "okay";
- };
+ argb_channel = <34>;
+ pat_cnt = <3>;
+
+
+ one_h_value = <300>;
+ one_l_value = <600>;
+ zero_h_value = <600>;
+ zero_l_value = <300>;
+ reset_value = <100000>;
+ bit_nonrev = <1>;
+ ed_big = <1>;
+ nonalign = <1>;
 };
 
 &qdec {
@@ -820,7 +818,7 @@ zephyr_udc0: &usbd {
    pinmux = <(24 << 5 | 12 << 0)>;
    bias-pull-up;
   };
-# 176 "./config/ab1623m_evk/hid_device_ref_design_mouse_m20_pro.overlay"
+# 174 "./config/ab1623m_evk/hid_device_ref_design_mouse_m20_pro.overlay"
   gpio45{
    pinmux = <(45 << 5 | 12 << 0)>;
    bias-pull-up;
@@ -851,14 +849,15 @@ zephyr_udc0: &usbd {
   };
 
 
-  gpio35{
-   pinmux = <(35 << 5 | 8 << 0)>;
+  gpio34{
+   pinmux = <(34 << 5 | 4 << 0)>;
   };
-  gpio36{
-   pinmux = <(36 << 5 | 8 << 0)>;
-  };
-  gpio37{
-   pinmux = <(37 << 5 | 8 << 0)>;
+
+
+  gpio39{
+   pinmux = <(39 << 5 | 0 << 0)>;
+   output-enable;
+   output-high;
   };
 
 

@@ -266,4 +266,28 @@ config AIR_BAT_ADC_PIN
     help
       GPIO pin connected to the battery voltage divider output for ADC sampling.
 
+config AIR_BAT_ADC_SETTLE_TIME
+    int "Battery ADC settle time (ms)"
+    default 160
+    help
+      Delay in milliseconds after enabling the voltage divider power
+      before reading the ADC. Allows the divider output to stabilize.
+      Set to 0 to use the NVKEY value.
+
+config AIR_BAT_ADC_R6215
+    int "Battery voltage divider top resistor R6215 (ohms)"
+    default 36000
+    help
+      Top resistor value of the battery voltage divider (connected to VBAT).
+      Used to calculate actual battery voltage from ADC reading.
+      Formula: Vbat = Vadc * (R6215 + R6217) / R6217
+
+config AIR_BAT_ADC_R6217
+    int "Battery voltage divider bottom resistor R6217 (ohms)"
+    default 10000
+    help
+      Bottom resistor value of the battery voltage divider (connected to GND).
+      Used to calculate actual battery voltage from ADC reading.
+      Formula: Vbat = Vadc * (R6215 + R6217) / R6217
+
 endmenu

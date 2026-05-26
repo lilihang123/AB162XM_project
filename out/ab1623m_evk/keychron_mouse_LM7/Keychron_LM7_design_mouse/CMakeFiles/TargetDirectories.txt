@@ -437,12 +437,6 @@
 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/modules/airoha/drivers/ab162x/rtc/CMakeFiles/..__airoha__mcu__drivers__ab162x__rtc.dir
 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/modules/airoha/drivers/ab162x/rtc/CMakeFiles/edit_cache.dir
 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/modules/airoha/drivers/ab162x/rtc/CMakeFiles/rebuild_cache.dir
-/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/modules/airoha/drivers/ab162x/pwm/CMakeFiles/..__airoha__mcu__drivers__ab162x__pwm.dir
-/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/modules/airoha/drivers/ab162x/pwm/CMakeFiles/edit_cache.dir
-/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/modules/airoha/drivers/ab162x/pwm/CMakeFiles/rebuild_cache.dir
-/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/modules/airoha/drivers/ab162x/pwm_dma/CMakeFiles/..__airoha__mcu__drivers__ab162x__pwm_dma.dir
-/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/modules/airoha/drivers/ab162x/pwm_dma/CMakeFiles/edit_cache.dir
-/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/modules/airoha/drivers/ab162x/pwm_dma/CMakeFiles/rebuild_cache.dir
 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/modules/airoha/drivers/ab162x/uart/CMakeFiles/..__airoha__mcu__drivers__ab162x__uart.dir
 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/modules/airoha/drivers/ab162x/uart/CMakeFiles/edit_cache.dir
 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/modules/airoha/drivers/ab162x/uart/CMakeFiles/rebuild_cache.dir

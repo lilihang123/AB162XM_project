@@ -317,14 +317,13 @@
 					pinmux = < 0x2e >;
 					bias-pull-up;
 				};
-				gpio35 {
-					pinmux = < 0x468 >;
+				gpio34 {
+					pinmux = < 0x444 >;
 				};
-				gpio36 {
-					pinmux = < 0x488 >;
-				};
-				gpio37 {
-					pinmux = < 0x4a8 >;
+				gpio39 {
+					pinmux = < 0x4e0 >;
+					output-enable;
+					output-high;
 				};
 			};
 			gpio1_default: gpio1_default {
@@ -397,6 +396,16 @@
 			compatible = "airoha,air-argb";
 			reg = < 0x42180000 0x264 >;
 			status = "okay";
+			argb_channel = < 0x22 >;
+			pat_cnt = < 0x3 >;
+			one_h_value = < 0x12c >;
+			one_l_value = < 0x258 >;
+			zero_h_value = < 0x258 >;
+			zero_l_value = < 0x12c >;
+			reset_value = < 0x186a0 >;
+			bit_nonrev = < 0x1 >;
+			ed_big = < 0x1 >;
+			nonalign = < 0x1 >;
 		};
 		pwm_dma0: pwm_dma@42190000 {
 			compatible = "airoha,air-pwmdma";
@@ -405,20 +414,6 @@
 			reg = < 0x42190000 0x74 >;
 			port = < 0x0 >;
 			status = "okay";
-			led_rgb_frequency = < 0x3c >;
-			channel_polarity = < 0x1 0x1 0x1 0x1 >;
-			rgb_gpio_channel = < 0x0 >;
-			rgb0: rgb@0 {
-				compatible = "airoha,air-rgb";
-				reg = < 0x0 >;
-				gpio_control = < 0x26 >;
-				gpio_polarity = < 0x1 >;
-				r_channel = < 0x2 >;
-				g_channel = < 0x1 >;
-				b_channel = < 0x3 >;
-				port = < 0x0 >;
-				status = "okay";
-			};
 		};
 		pwm_dma1: pwm_dma@421a0000 {
 			compatible = "airoha,air-pwmdma";
