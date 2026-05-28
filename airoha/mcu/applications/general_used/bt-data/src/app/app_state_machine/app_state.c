@@ -67,9 +67,6 @@
 #include "app_rgb.h"
 #include "app_race_cmd.h"
 #include "app_slide_switch.h"
-#if defined(CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH)
-#include "app_slide_switch_dual.h"
-#endif
 #include "app_user_profile.h"
 #include "app_gpio.h"
 #if defined(CONFIG_AIR_HID_DEVICE_SCENARIO_SERVICE_KEY_REMAP)
@@ -720,13 +717,13 @@ static bool app_state__evt_module_init(const struct af_evt_header *evt_header)
         app_state_change(APP_STATE_STANDBY, REASON_WAIT_FOR_TRIGGER);
     }
     #endif /* CONFIG_AIR_SUPPORT_BTN_POWER_ON_OFF */
-    #if defined (CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH) || defined (CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH)
+    #if defined (CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH)
     else if(ss_type == SS_MODE_OFF && usb_plugged_status == APP_USB_PLUG_IN)
     {
         app_state__activate_bt(CONN_REQ_NONE);  //controller init
         app_state_change(APP_STATE_STANDBY, REASON_SLIDE_SWITCH_IN_OFF);
     }
-    #endif /* CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH || CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH */
+    #endif /* CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH */
     else
     {
         app_power_mgr_exit_low_power_mode();
@@ -789,7 +786,7 @@ static bool app_state_evt_active_status(const struct af_evt_header *evt_header)
                             break;
                         }
                         #endif /*END _CONFIG_AIR_HID_DEVICE_SCENARIO_SERVICE_USB_MODE_*/
-                        #if defined (CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH) || defined (CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH)
+                        #if defined (CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH)
                         case SLIDE_SWITCH_WAKEUP:
                         {
                             APP_LOGI(thisMOD,"Activated by slide switch");
@@ -1339,7 +1336,7 @@ static bool app_state_evt_link_change(const struct af_evt_header *evt_header)
     return AF_TRAVERSE_NEXT;
 }
 
-#if defined (CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH) || defined (CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH)
+#if defined (CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH)
 static bool app_state__evt_slide_switch_status(const struct af_evt_header *evt_header)
 {
     struct evt_slide_switch_status* event = (struct evt_slide_switch_status*)evt_header;
@@ -1473,7 +1470,7 @@ static bool app_state__evt_slide_switch_status(const struct af_evt_header *evt_h
 
     return AF_TRAVERSE_NEXT;
 }
-#endif /* CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH || CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH */
+#endif /* CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH */
 
 #if defined (CONFIG_AIR_KEYBOARD_M607)
 
@@ -2279,9 +2276,9 @@ AF_EVT_SUBSCRIBE_FUN(thisMODULE, evt_usb_status, app_state__evt_usb_status);
 #endif /* defined (CONFIG_AIR_HID_DEVICE_SCENARIO_SERVICE_USB_MODE) */
 AF_EVT_SUBSCRIBE_FUN(thisMODULE, evt_link_change, app_state_evt_link_change);
 AF_EVT_SUBSCRIBE_FUN(thisMODULE, evt_scenario_status, app_state_evt_scenario_status);
-#if defined (CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH) || defined (CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH)
+#if defined (CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH)
 AF_EVT_SUBSCRIBE_FUN(thisMODULE, evt_slide_switch_status, app_state__evt_slide_switch_status);
-#endif /* CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH || CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH */
+#endif /* CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH */
 AF_EVT_SUBSCRIBE_FUN(thisMODULE, evt_rr_status, app_state__evt_rr_status);
 AF_EVT_SUBSCRIBE_FUN(thisMODULE, evt_force_key_release_success, app_state_evt_force_key_release_success);
 

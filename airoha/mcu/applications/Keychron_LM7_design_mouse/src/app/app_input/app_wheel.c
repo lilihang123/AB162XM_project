@@ -252,7 +252,7 @@ static bool app_wheel_evt_active_status(const struct af_evt_header *evt_header)
             case MOTION_SENSOR_WAKEUP:
             case WHEEL_WAKEUP:
             case KEY_WAKEUP:
-            #if defined (CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH) || defined (CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH)
+            #if defined (CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH)
             case SLIDE_SWITCH_WAKEUP:
             #endif
             #if defined (CONFIG_AIR_HID_DEVICE_SCENARIO_SERVICE_USB_MODE)

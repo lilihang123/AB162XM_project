@@ -56,11 +56,10 @@
 #include "app_links.h"
 #include "app_led.h"
 #include "app_rgb.h"
+#include "app_argb.h"
+#include "app_argb_test.h"
 #include "app_race_cmd.h"
 #include "app_slide_switch.h"
-#if defined(CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH)
-#include "app_slide_switch_dual.h"
-#endif
 #include "app_user_profile.h"
 #include "app_irpt.h"
 #include "app_gpio.h"
@@ -137,9 +136,7 @@ static void app_state_mouse_init_modules()
     #if defined (CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH)
     app_slide_switch_init(pin_usage_list.ctrl.slide_switch_ptr);
     #endif /* _CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH_ */
-    #if defined (CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH)
-    app_slide_switch_dual_init(CONFIG_AIR_SLIDE_SWITCH_DUAL_2_4G_MODE_PIN);
-    #endif /* _CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH_ */
+
     app_links_init();
 
     bool power_ok = app_battery_init();
@@ -188,6 +185,7 @@ static void app_state_mouse_init_modules()
     #endif
 
     app_rgb_init();
+    app_argb_init();
     app_fota_status_init();
     #if defined(CONFIG_AIR_HID_DEVICE_SCENARIO_SERVICE_KEY_REMAP)
     app_key_remap_init(profile_idx);

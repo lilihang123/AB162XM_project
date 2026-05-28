@@ -49,9 +49,6 @@
 #include "app_state.h"
 #include "app_button.h"
 #include "app_slide_switch.h"
-#if defined(CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH)
-#include "app_slide_switch_dual.h"
-#endif
 #include "app_feature_defines.h"
 #include "app_power_manager.h"
 #include "hid_scenario_USB_mode.h"
@@ -288,7 +285,7 @@ static bool app_usb_port__evt_usb_status(const struct af_evt_header *evt_header)
     return AF_TRAVERSE_NEXT;
 }
 
-#if defined(CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH) || defined(CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH)
+#if defined(CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH)
 static bool app_usb_port__evt_slide_switch_status(const struct af_evt_header *evt_header)
 {
     struct evt_slide_switch_status* event = (struct evt_slide_switch_status*)evt_header;
@@ -541,7 +538,7 @@ bool app_usb_port__get_vbus_ready(void)
 #if defined (CONFIG_AIR_HID_DEVICE_SCENARIO_SERVICE_USB_MODE)
 AF_EVT_SUBSCRIBE_FUN_HIGH(thisMODULE, evt_usb_status, app_usb_port__evt_usb_status);
 
-#if defined(CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH) || defined(CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH)
+#if defined(CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH)
 AF_EVT_SUBSCRIBE_FUN_HIGH(thisMODULE, evt_slide_switch_status, app_usb_port__evt_slide_switch_status);
-#endif /* CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH || CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH */
+#endif /* CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH */
 #endif /* CONFIG_AIR_HID_DEVICE_SCENARIO_SERVICE_USB_MODE */

@@ -79,13 +79,12 @@ typedef struct {
 T_RR_CTROL_S rr_ctrl;
 
 
-#define SUPPORTED_MASK_RR_TABLE_USB     0x7F   /** 125 ON, 250 ON, 500 ON, 1K ON, 2K ON, 4K ON, 8K ON, */ 
-#define SUPPORTED_MASK_RR_TABLE_2_4G    0x7F   /** 125 OFF, 250 OFF, 500 OFF, 1K ON, 2K OFF, 4K OFF, 8K ON, */ 
+#define SUPPORTED_MASK_RR_TABLE_USB     0x3F   /** 125 ON, 500 ON, 1K ON, 2K ON, 4K ON, 8K ON */ 
+#define SUPPORTED_MASK_RR_TABLE_2_4G    0x3F   /** 125 ON, 500 ON, 1K ON, 2K ON, 4K ON, 8K ON */ 
 
 const uint16_t RR_TABLE_USB[]=
 {
     125,
-    250,
     500,
     1000,
     2000,
@@ -96,7 +95,6 @@ const uint16_t RR_TABLE_USB[]=
 const uint16_t RR_TABLE_2_4G[]=
 {
     125,
-    250,
     500,
     1000,
     2000,

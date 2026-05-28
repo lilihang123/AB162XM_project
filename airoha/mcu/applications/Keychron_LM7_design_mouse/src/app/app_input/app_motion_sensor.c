@@ -66,14 +66,14 @@ const static T_DPI_CONFIG_S app_dpi_cfg = {
     .dpi_curr_idx = 2,       /* 0, 1, 2, 3, 4 */
     #if defined(CONFIG_AIR_XY_DPI_OUT_OF_SYNC)
     .x_dpi_settings = {
-        400, 800, 1600, 3200, 6400
+        400, 800, 1600, 3200, 5000
     },
     .y_dpi_settings = {
-        400, 800, 1600, 3200, 6400
+        400, 800, 1600, 3200, 5000
     }
     #else
     .dpi_settings = {
-        400, 800, 1600, 3200, 6400
+        400, 800, 1600, 3200, 5000
     }
     #endif
 };
@@ -452,7 +452,7 @@ static bool app_motion_sensor_evt_active_status(const struct af_evt_header *evt_
             case MOTION_SENSOR_WAKEUP:
             case WHEEL_WAKEUP:
             case KEY_WAKEUP:
-            #if defined (CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH) || defined (CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH)
+            #if defined (CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH)
             case SLIDE_SWITCH_WAKEUP:
             #endif
             #if defined (CONFIG_AIR_HID_DEVICE_SCENARIO_SERVICE_USB_MODE)

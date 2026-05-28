@@ -91,9 +91,6 @@ int main(void)
     /* TODO: This is dummy log, logging tool check TEXT LOG auto send query command */
     print_module_log(NULL, NULL, 0, PRINT_LEVEL_INFO, "This is main thread log.");
 
-#if defined(CONFIG_AIR_MIDDLE_ARGB)
-    app_argb_demo_start();
-#endif
 
     struct evt_module_init* event = create_evt_module_init();
     

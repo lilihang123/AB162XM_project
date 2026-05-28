@@ -46,9 +46,6 @@
 #include "nvkey.h"
 
 #include "app_slide_switch.h"
-#if defined(CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH)
-#include "app_slide_switch_dual.h"
-#endif
 
 
 

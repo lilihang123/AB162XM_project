@@ -73,9 +73,7 @@ static uint8_t app_button_get_debounce();
 static uint32_t app_button_change_profile(uint8_t idx);
 static uint32_t app_button_debounce_time_reload(uint8_t profile, bool restore);
 static void app_btn_announce_rr_req(uint8_t type, uint16_t rr);
-#ifdef M_KEY_DPI
 static void app_btn_announce_dpi_req(uint8_t type);
-#endif
 static void app_button_set_each_key_debounce(uint8_t debounce_time);
 static void app_button_set_each_key_extslp_debounce(uint8_t debounce_time);
 static void app_btn_key_event_announcement(uint8_t key_id, airoha_key_event_t key_event);
@@ -131,6 +129,8 @@ uint8_t mouse_key_num = sizeof(key_ids);
 
 typedef enum{
     COMBO_KEY_PAIRING,
+    COMBO_KEY_DPI,
+    COMBO_KEY_RR,
 }T_COMBO_KEY_USAGE_E;
 
 typedef enum{
@@ -148,6 +148,8 @@ T_AIR_COMBO_KEY_S  combo_key_list[] =  // re-Pairing
 T_AIR_COMBO_KEY_S combo_key_list[] = // re-Pairing
 {
     {COMBO_KEYS(3, M_KEY_L, M_KEY_M, M_KEY_R )},
+    {COMBO_KEYS(2, M_KEY_M, M_KEY_NK)},     // DPI switch: middle key + forward key
+    {COMBO_KEYS(2, M_KEY_M, M_KEY_PK)},     // RR switch: middle key + back key
 
     // test pattern
     #if 0
@@ -720,7 +722,7 @@ static bool app_button_evt_active_status(const struct af_evt_header *evt_header)
             case MOTION_SENSOR_WAKEUP:
             case WHEEL_WAKEUP:
             case KEY_WAKEUP:
-            #if defined (CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH) || defined (CONFIG_AIR_DUAL_MODE_SLIDE_SWITCH)
+            #if defined (CONFIG_AIR_TRIPLE_MODE_SLIDE_SWITCH)
             case SLIDE_SWITCH_WAKEUP:
             #endif
             #if defined (CONFIG_AIR_HID_DEVICE_SCENARIO_SERVICE_USB_MODE)
@@ -925,7 +927,7 @@ static void app_btn_announce_rr_req(uint8_t type, uint16_t rr)
         AF_EVT_SUBMIT(event);
     }
 }
-#ifdef M_KEY_DPI
+
 static void app_btn_announce_dpi_req(uint8_t type)
 {
     struct evt_dpi_change_req* event = create_evt_dpi_change_req();
@@ -940,7 +942,6 @@ static void app_btn_announce_dpi_req(uint8_t type)
         AF_EVT_SUBMIT(event);
     }
 }
-#endif
 
 static void app_btn_race_cmd_rsp_announcement(T_RACE_CMD_E cmd, uint8_t result)
 {
@@ -1107,6 +1108,32 @@ static bool app_button__evt_riscv_key(const struct af_evt_header *evt_header)
     if(IS_APP_STATE_IN_ACTIVE(app_state_current_state()))
     #endif
     {
+        // Check DPI combo key: middle key (idx=2) + forward key (idx=3)
+        #define DPI_COMBO_KEY_MASK  ((1 << 2) | (1 << 3))
+        static bool dpi_combo_triggered = false;
+        bool dpi_combo_now = ((event->key_status & DPI_COMBO_KEY_MASK) == DPI_COMBO_KEY_MASK);
+
+        if (dpi_combo_now && !dpi_combo_triggered) {
+            dpi_combo_triggered = true;
+            APP_LOGI(thisMOD,"DPI combo key triggered (M_KEY_M + M_KEY_NK)");
+            app_btn_announce_dpi_req(DPI_STAGE_LOOP);
+        } else if (!dpi_combo_now) {
+            dpi_combo_triggered = false;
+        }
+
+        // Check RR combo key: middle key (idx=2) + back key (idx=4)
+        #define RR_COMBO_KEY_MASK  ((1 << 2) | (1 << 4))
+        static bool rr_combo_triggered = false;
+        bool rr_combo_now = ((event->key_status & RR_COMBO_KEY_MASK) == RR_COMBO_KEY_MASK);
+
+        if (rr_combo_now && !rr_combo_triggered) {
+            rr_combo_triggered = true;
+            APP_LOGI(thisMOD,"RR combo key triggered (M_KEY_M + M_KEY_PK)");
+            app_btn_announce_rr_req(RR_CHANGE_NEXT, 0);
+        } else if (!rr_combo_now) {
+            rr_combo_triggered = false;
+        }
+
         for (uint8_t idx = 0; idx < mouse_key_num; idx++) {
             uint8_t current_key_state = (event->key_status >> idx) & 0x01;
             uint8_t previous_key_state = (last_key_status >> idx) & 0x01;
@@ -1117,6 +1144,13 @@ static bool app_button__evt_riscv_key(const struct af_evt_header *evt_header)
             // Check if the key status has changed at this specific index
             if (current_key_state != previous_key_state) {
                 uint8_t gpio_pin = airo_key_get_gpio_id_by_index(idx);
+
+                // Skip individual key events when DPI or RR combo is active
+                bool is_combo_key = (dpi_combo_now && (idx == 2 || idx == 3))
+                                 || (rr_combo_now && (idx == 2 || idx == 4));
+                if (is_combo_key) {
+                    continue;
+                }
 
                 // DPI/RR key call the handler with the updated status
                 gesture_key_changed_handler(gpio_pin,  current_key_state ^ 0x01, idx);
