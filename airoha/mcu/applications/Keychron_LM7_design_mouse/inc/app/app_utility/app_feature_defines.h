@@ -60,8 +60,8 @@
  
 #define POWER_SAVING_ACTIVE_TIMEOUT     10   // unit second
 #define POWER_SAVING_IDLE_1_TIMEOUT     10000   // unit ms
-#define POWER_SAVING_IDLE_2_TIMEOUT     10000   // unit ms 
-#define POWER_SAVING_PAIRING_TIMEOUT    30000   // unit ms 
+#define POWER_SAVING_IDLE_2_TIMEOUT     600000   // unit ms  (10min, 2.4G 休眠)
+#define POWER_SAVING_PAIRING_TIMEOUT    180000   // unit ms  (3min, 对码超时)
 #define POWER_SAVING_RECONNECT_TIMEOUT  10000   // unit ms
 
 #define BT_MODE_HID_REPORT_START_TIMEOUT 500

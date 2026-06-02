@@ -85,7 +85,7 @@
 #define PRESS_AND_HOLE_LV_0_TO_1     2000  // 2 sec
 #define PRESS_AND_HOLE_LV_1_TO_2     1000  // 1 sec
 #define PRESS_AND_HOLE_LV_2_TO_3     2000  // 2 sec
-#define MULTI_CLICK_GUARD_TIME        400  // 400 ms
+#define MULTI_CLICK_GUARD_TIME        400  // 400 ms  这个是检测单个按键，单击 双击，不是给组合键用的
 
 #define PAIRING_KEY_PRESS_AND_HOLD_TIME      (PRESS_AND_HOLE_LV_0_TO_1 + PRESS_AND_HOLE_LV_1_TO_2 )  // 3 sec
 

@@ -131,6 +131,7 @@ typedef enum{
     COMBO_KEY_PAIRING,
     COMBO_KEY_DPI,
     COMBO_KEY_RR,
+    COMBO_KEY_FACTORY_RESET,
 }T_COMBO_KEY_USAGE_E;
 
 typedef enum{
@@ -147,9 +148,10 @@ T_AIR_COMBO_KEY_S  combo_key_list[] =  // re-Pairing
 #else
 T_AIR_COMBO_KEY_S combo_key_list[] = // re-Pairing
 {
-    {COMBO_KEYS(3, M_KEY_L, M_KEY_M, M_KEY_R )},
-    {COMBO_KEYS(2, M_KEY_M, M_KEY_NK)},     // DPI switch: middle key + forward key
-    {COMBO_KEYS(2, M_KEY_M, M_KEY_PK)},     // RR switch: middle key + back key
+    {COMBO_KEYS(3, M_KEY_L, M_KEY_M, M_KEY_R )},        // 强制对码
+    {COMBO_KEYS(2, M_KEY_M, M_KEY_NK)},                  // DPI switch: middle key + forward key
+    {COMBO_KEYS(2, M_KEY_M, M_KEY_PK)},                  // RR switch: middle key + back key
+    {COMBO_KEYS(4, M_KEY_L, M_KEY_R, M_KEY_NK, M_KEY_PK)}, // 恢复出厂: 左+右+前进+后退
 
     // test pattern
     #if 0
@@ -200,6 +202,9 @@ bool app_btn_low_battery_check = false;
 static uint32_t last_key_status = 0;
 static uint32_t last_app_state = APP_STATE_NONE;
 uint8_t  app_button_state = APP_BUTTON_STATE_NORMAL;
+/* 短按 combo 已触发标记, 防止 AK_COMBO_HOLD 长按重复触发 */
+static bool quick_dpi_fired = false;
+static bool quick_rr_fired  = false;
 /******************************************************************************/
 /* callback function                                                          */
 /******************************************************************************/
@@ -295,7 +300,7 @@ static bool app_button__evt_app_state(const struct af_evt_header *evt_header)
         case APP_STATE_2_4G_CONNECTED_ACTIVE:
         {
             #if !defined(FAKE_REPORT_TRIGGER_BY_MIDDLE_KEY)
-            app_button__button_irq_ctrl(false);
+            // app_button__button_irq_ctrl(false);//关掉这里才有组合键
             #endif
             app_button__click_check_reset(false, false);
         }
@@ -408,18 +413,33 @@ void app_button_key_event_hdl(airoha_key_event_t event, uint8_t key_id)
 
         case AK_COMBO_HOLD_LV1_1:
         {
-
+            /* DPI switch: 中键 + 前侧键 (长按2s, 短按已在 app_button_key_event_cb 处理) */
+            if (!quick_dpi_fired) {
+                APP_LOGI(thisMOD,"Combo key: DPI switch (long press)");
+                app_btn_announce_dpi_req(DPI_STAGE_LOOP);
+            }
         }
         break;
 
         case AK_COMBO_HOLD_LV1_2:
         {
+            /* RR switch: 中键 + 后侧键 (长按2s, 短按已在 app_button_key_event_cb 处理) */
+            if (!quick_rr_fired) {
+                APP_LOGI(thisMOD,"Combo key: RR switch (long press)");
+                app_btn_announce_rr_req(RR_CHANGE_NEXT, 0);
+            }
         }
         break;
 
         case AK_COMBO_HOLD_LV1_3:
         {
-
+            /* 恢复出厂设置: 长按左+右+前进+后退 3s */
+            struct evt_factory_reset* evt = create_evt_factory_reset();
+            if (evt){
+                APP_LOGI(thisMOD,"Combo key: FACTORY_RESET");
+                evt->status = true;
+                AF_EVT_SUBMIT(evt);
+            }
         }
         break;
 
@@ -689,6 +709,31 @@ void app_button_key_event_cb(airoha_key_event_t event, uint8_t key_id)
     {
         last_key_status &= ~(0x01 << key_idx);
     }
+    /* ── 短按 combo 检测: 中键+前侧键=DPI, 中键+后侧键=RR ──────────── */
+    #define QUICK_DPI_MASK  ((1 << 2) | (1 << 4))   /* M_KEY_M(idx2) + M_KEY_PK(idx4) */
+    #define QUICK_RR_MASK   ((1 << 2) | (1 << 3))   /* M_KEY_M(idx2) + M_KEY_NK(idx3)*/
+    bool dpi_now = ((last_key_status & QUICK_DPI_MASK) == QUICK_DPI_MASK);
+    bool rr_now  = ((last_key_status & QUICK_RR_MASK)  == QUICK_RR_MASK);
+
+    if (dpi_now && !quick_dpi_fired) {
+        quick_dpi_fired = true;
+        APP_LOGI(thisMOD,"Quick DPI combo TRIGGERED");
+        app_btn_announce_dpi_req(DPI_STAGE_LOOP);
+    } else if (!dpi_now) {
+        quick_dpi_fired = false;
+    }
+
+    if (rr_now && !quick_rr_fired) {
+        quick_rr_fired = true;
+        APP_LOGI(thisMOD,"Quick RR combo TRIGGERED");
+        app_btn_announce_rr_req(RR_CHANGE_NEXT, 0);
+    } else if (!rr_now) {
+        quick_rr_fired = false;
+    }
+    #undef QUICK_DPI_MASK
+    #undef QUICK_RR_MASK
+
+    /* ──────────────────────────────────────────────────────────────────── */
 
     app_btn_key_event_announcement(key_id, event);
 
@@ -1084,7 +1129,9 @@ static void app_button_IR_pairing_key_check_timeout(struct k_timer *timer_id)
 static bool app_button__evt_riscv_key(const struct af_evt_header *evt_header)
 {
     struct evt_riscv_key* event = (struct evt_riscv_key*)evt_header;
-    APP_LOGI(thisMOD,"app_button__evt_riscv_key , key_status = %x", event->key_status);
+    uint32_t cur_state = app_state_current_state();
+    APP_LOGE(thisMOD,"evt_riscv_key: key_status=0x%X, app_state=0x%X, is_active=%d"
+        , event->key_status, cur_state, IS_APP_STATE_IN_ACTIVE(cur_state));
 
     #if defined (CONFIG_AIR_SUPPORT_IRPT_LR_KEY)
     if(!IS_APP_STATE_IN_ACTIVE(app_state_current_state()))
@@ -1115,7 +1162,7 @@ static bool app_button__evt_riscv_key(const struct af_evt_header *evt_header)
 
         if (dpi_combo_now && !dpi_combo_triggered) {
             dpi_combo_triggered = true;
-            APP_LOGI(thisMOD,"DPI combo key triggered (M_KEY_M + M_KEY_NK)");
+            APP_LOGE(thisMOD,"DPI combo key TRIGGERED (M_KEY_M + M_KEY_NK)");
             app_btn_announce_dpi_req(DPI_STAGE_LOOP);
         } else if (!dpi_combo_now) {
             dpi_combo_triggered = false;
@@ -1128,7 +1175,7 @@ static bool app_button__evt_riscv_key(const struct af_evt_header *evt_header)
 
         if (rr_combo_now && !rr_combo_triggered) {
             rr_combo_triggered = true;
-            APP_LOGI(thisMOD,"RR combo key triggered (M_KEY_M + M_KEY_PK)");
+            APP_LOGE(thisMOD,"RR combo key TRIGGERED (M_KEY_M + M_KEY_PK)");
             app_btn_announce_rr_req(RR_CHANGE_NEXT, 0);
         } else if (!rr_combo_now) {
             rr_combo_triggered = false;

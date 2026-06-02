@@ -60,7 +60,8 @@ LOG_MODULE_REGISTER(main);
 #endif /* AIR_PURE_GAMING_CUSTOM_PROTOCOL_ENABLE */
 
 #if defined(CONFIG_AIR_MIDDLE_ARGB)
-#include "app_argb_test.h"
+#include "app_argb.h"
+// #include "app_argb_effect.h"
 #endif
 
 int main(void)

@@ -83,9 +83,9 @@
 	zero_h_value  = <600>;    /* → HAL zero_l = 900ns (0码低电平) */
 	zero_l_value  = <300>;    /* → HAL zero_h = 300ns (0码高电平) */
 	reset_value   = <100000>; /* ≥100us */
-	bit_nonrev    = <0>;      /* MSB first */
-	ed_big        = <0>;      /* GRB big-endian */
-	nonalign      = <1>;      /* 3字节不对齐 */
+	bit_nonrev    = <1>;      /* 不反转bit位 */
+	ed_big        = <0>;      /* 小端提取(软件补偿字节顺序) */
+	nonalign      = <1>;      /* 1=启用nonalign模式(必须为1) */
 };
 
 &qdec {

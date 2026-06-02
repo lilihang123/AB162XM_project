@@ -15,15 +15,15 @@
  * please cease any access or use of Airoha Software immediately.
  */
 
-#ifndef __APP_ARGB_TEST_H__
-#define __APP_ARGB_TEST_H__
+#ifndef __APP_ARGB_H__
+#define __APP_ARGB_H__
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-#if 1
 
 #include <stdint.h>
+#if 1
 
 /* ── LED Index definitions ──────────────────────────────────────────────── */
 #define ARGB_LED_IDX_STATUS     0   /**< 充电/对码/回连 状态灯 */
@@ -34,24 +34,28 @@ extern "C" {
 typedef enum {
     ARGB_EVT_CHARGING,              /**< 充电中 → 红灯常亮 */
     ARGB_EVT_CHARGED,               /**< 充满电 → 绿灯常亮 */
-    ARGB_EVT_PAIRING_START,         /**< 2.4G 对码开始 → 绿灯慢闪 */
+    ARGB_EVT_PAIRING_START,         /**< 2.4G 对码开始 → 绿灯慢闪 (1s/次) */
     ARGB_EVT_PAIRING_OK,            /**< 2.4G 对码成功 → 绿灯常亮3s */
     ARGB_EVT_PAIRING_TIMEOUT,       /**< 2.4G 对码超时 → 全灭(休眠) */
-    ARGB_EVT_RECONNECT_START,       /**< 2.4G 回连开始 → 绿灯快闪 */
+    ARGB_EVT_RECONNECT_START,       /**< 2.4G 回连开始 → 绿灯快闪 (0.5s/次) */
     ARGB_EVT_RECONNECT_OK,          /**< 2.4G 回连成功 → 绿灯常亮3s */
+    ARGB_EVT_FORCE_PAIRING,         /**< 2.4G 强制对码 → 绿灯慢闪 */
+    ARGB_EVT_FACTORY_RESET,         /**< 工厂重置 → 全灯白闪3次 */
     ARGB_EVT_OFF,                   /**< 关闭所有灯 */
 } argb_evt_status_t;
 
 /* ── LED Effect commands for DPI LED ────────────────────────────────────── */
 typedef enum {
     ARGB_DPI_EVT_NONE = 0,          /**< DPI 不变 */
-    ARGB_DPI_EVT_CHANGE,            /**< DPI 切换 → 蓝灯闪烁指示档位 */
+    ARGB_DPI_EVT_CHANGE,            /**< DPI 切换 → 对应颜色常亮3s */
+    ARGB_DPI_EVT_FIRST_CONNECT,     /**< DPI 首次连接 → 对应颜色常亮3s */
 } argb_evt_dpi_t;
 
 /* ── LED Effect commands for Report Rate LED ────────────────────────────── */
 typedef enum {
     ARGB_RR_EVT_NONE = 0,           /**< RR 不变 */
-    ARGB_RR_EVT_CHANGE,             /**< RR 切换 → 蓝灯闪烁指示档位 */
+    ARGB_RR_EVT_CHANGE,             /**< RR 切换 → 对应颜色常亮3s */
+    ARGB_RR_EVT_FIRST_CONNECT,      /**< RR 首次连接 → 对应颜色常亮3s */
 } argb_evt_rr_t;
 
 /* ── Public API ──────────────────────────────────────────────────────────── */
@@ -92,8 +96,16 @@ void app_argb_rr_evt(argb_evt_rr_t evt, uint16_t rr_hz);
  * @brief Wake up from sleep (used after pairing timeout).
  */
 void app_argb_wakeup(void);
+#else
+/**
+ * @brief Initialize ARGB LED effect system.
+ * @return 0 on success, negative error code on failure.
+ */
+int app_argb_init(void);
+
 
 #endif
+
 
 #ifdef __cplusplus
 }

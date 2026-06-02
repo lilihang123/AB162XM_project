@@ -123,12 +123,17 @@ bsp_argb_status_t bsp_argb_realtime_config(argb_style_config_t *p_config)
 {
     uint32_t data_size;
     if (argb_para.nonalign) {
-        data_size = argb_para.pat_cnt * 3;
+        data_size = argb_para.pat_cnt * 3;  /* 每灯3字节紧凑排列 */
     } else {
         // data_size = argb_para.pat_cnt * 4;
         return BSP_ARGB_STATUS_ERROR;
     }
-    // printk("[bsp][argb] repeat: %d, data_size:%d, addr:0x%x, type:%d\r\n", p_config->repeat, data_size, p_config->argb_data, p_config->type);
+    // uint32_t dma_bytes = ((data_size + 3) / 4) * 4; /* DMA实际按4B word对齐传输 */
+    // printk("[bsp][argb] repeat=%d data_size=%d dma_bytes=%d addr=0x%x type=%d\r\n", p_config->repeat, data_size, dma_bytes, (unsigned int)p_config->argb_data, p_config->type);
+    // printk("[bsp][argb] DMA buf: ");
+    // for (uint32_t i = 0; i < dma_bytes; i++)
+    //     printk("%02X ", ((uint8_t*)p_config->argb_data)[i]);
+    // printk("\r\n");
     int ret = hal_argb_config_data_mdoe_for_middle(p_config->repeat, data_size, p_config->argb_data, p_config->type);
     ret |= hal_middle_argb_start();
     if (ret < 0) {
@@ -175,3 +180,35 @@ bsp_argb_status_t bsp_argb_register_isr(bsp_argb_callback_t callback, void *user
     hal_nvic_restore_interrupt_mask(save_mask);
     return BSP_ARGB_STATUS_OK;
 }
+
+// bsp_argb_status_t bsp_argb_realtime_enable(argb_style_config_t *cfg, uint8_t interval)
+// {
+//     int status;
+//     (void)interval;
+
+//     printk("[bsp][argb] realtime_enable: argb_init=%d\r\n", argb_init);
+
+//     /* Init hardware if not already done */
+//     if (argb_init == false) {
+//         status = argb_para_set(true);
+//         printk("[bsp][argb] argb_para_set ret=%d\r\n", status);
+//         if (status != BSP_ARGB_STATUS_OK) {
+//             return BSP_ARGB_STATUS_ERROR;
+//         }
+//         hal_middle_argb_register_callback(argb_para.callback, argb_para.user_data);
+//     }
+
+//     printk("[bsp][argb] calling realtime_config, argb_data=%p\r\n", cfg->argb_data);
+//     status = bsp_argb_realtime_config(cfg);
+//     printk("[bsp][argb] realtime_config ret=%d\r\n", status);
+//     if (status != BSP_ARGB_STATUS_OK) {
+//         return BSP_ARGB_STATUS_ERROR;
+//     }
+
+//     uint32_t irq_status;
+//     hal_nvic_save_and_set_interrupt_mask(&irq_status);
+//     argb_init = true;
+//     hal_nvic_restore_interrupt_mask(irq_status);
+
+//     return BSP_ARGB_STATUS_OK;
+// }

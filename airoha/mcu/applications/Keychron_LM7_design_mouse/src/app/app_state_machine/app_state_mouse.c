@@ -57,7 +57,7 @@
 #include "app_led.h"
 #include "app_rgb.h"
 #include "app_argb.h"
-#include "app_argb_test.h"
+// #include "app_argb_effect.h"
 #include "app_race_cmd.h"
 #include "app_slide_switch.h"
 #include "app_user_profile.h"
