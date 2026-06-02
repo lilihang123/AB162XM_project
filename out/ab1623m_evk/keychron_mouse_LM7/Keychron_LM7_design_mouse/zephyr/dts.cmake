@@ -836,7 +836,7 @@ set_target_properties(devicetree_target PROPERTIES "DT_PROP|/soc/argb@42180000|z
 set_target_properties(devicetree_target PROPERTIES "DT_PROP|/soc/argb@42180000|reset_value" "100000")
 set_target_properties(devicetree_target PROPERTIES "DT_PROP|/soc/argb@42180000|pat_cnt" "3")
 set_target_properties(devicetree_target PROPERTIES "DT_PROP|/soc/argb@42180000|bit_nonrev" "1")
-set_target_properties(devicetree_target PROPERTIES "DT_PROP|/soc/argb@42180000|ed_big" "1")
+set_target_properties(devicetree_target PROPERTIES "DT_PROP|/soc/argb@42180000|ed_big" "0")
 set_target_properties(devicetree_target PROPERTIES "DT_PROP|/soc/argb@42180000|nonalign" "1")
 set_target_properties(devicetree_target PROPERTIES "DT_PROP|/soc/argb@42180000|auto_timer_val" "16000000")
 set_target_properties(devicetree_target PROPERTIES "DT_PROP|/soc/argb@42180000|dma_start_val" "12000000")

@@ -8,7 +8,7 @@ Loaded configuration '/workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/zephyr/.con
 No change to configuration in '/workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/zephyr/.config'
 No change to Kconfig header in '/workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/_sysbuild/autoconf.h'
 [Airoha] AIR_SYSBUILD_PATH: /workdir/airoha/mcu/boards/airoha/ab1623m_evk/../../../cmake/sysbuild
-[Airoha][Build] SYSBUILD_START_TIME_IN_SEC: 1779349732
+[Airoha][Build] SYSBUILD_START_TIME_IN_SEC: 1779856061
 [Airoha] IMAGES: 
 [Airoha] DEFAULT_IMAGE: hid_device_ref_design_mouse
 [Airoha] SYSBUILD_IMAGES: hid_device_ref_design_mouse;mcuboot
@@ -253,9 +253,10 @@ CMake Warning at /workdir/zephyr/CMakeLists.txt:2094 (message):
 -- Build files have been written to: /workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro
 -- west build: building application
 [0/12] Performing build step for 'hid_device_ref_design_mouse'
-[1/15] [Airoha][NVKey] Merge the input xml into one full nvkey.xml, and if there are dumplicate items, prompt or overwrite them according to project's policy.
-[2/15] [Airoha] Generating flash_download.cfg for airoha's download tool...
-[3/15] [Airoha][NVKey] Executing nvs_post_build target to generate storage binary data for downloading default NVS data
+[1/15] [Airoha] Generating flash_download.cfg for airoha's download tool...
+[2/15] [Airoha] Generating partition table for airoha's boot flow
+[3/15] [Airoha][NVKey] Merge the input xml into one full nvkey.xml, and if there are dumplicate items, prompt or overwrite them according to project's policy.
+[4/15] [Airoha][NVKey] Executing nvs_post_build target to generate storage binary data for downloading default NVS data
 NVS PostBuildTool v1.0.0
 ======================initialized======================
 append XML file: /workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/hid_device_ref_design_mouse/download/nvkey.xml
@@ -265,7 +266,6 @@ Generate NVS image.
 Successfully merge 34 NVKEYs and generate a NVS image of 40 KBytes
 /workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/hid_device_ref_design_mouse/download/nvs.bin
 /workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/hid_device_ref_design_mouse/download/nvkey_ota.c
-[4/15] [Airoha] Generating partition table for airoha's boot flow
 [5/15] [Airoha][NVKey] Merge the input xml into one full nvkey_release.xml, and if there are dumplicate items, prompt or overwrite them according to project's policy.
 [6/15] [Airoha][NVKey] Executing nvs_release_post_build target to generate storage_release.bin for downloading default NVS data with MP flag
 NVS PostBuildTool v1.0.0
@@ -478,7 +478,7 @@ Memory region         Used Size  Region Size  %age Used
 [14/15] Building C object zephyr/CMakeFiles/zephyr_final.dir/__/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/mouse_ref_design.c.obj
 [15/15] Linking CXX executable zephyr/zephyr.elf
 Memory region         Used Size  Region Size  %age Used
-           FLASH:      764004 B       948 KB     78.70%
+           FLASH:      764012 B       948 KB     78.70%
             SRAM:      300412 B       384 KB     76.40%
          SRAM_BT:       15856 B        16 KB     96.78%
   ROM_LOG_STRING:      373391 B        32 MB      1.11%
@@ -532,5 +532,5 @@ Generating files from /workdir/out/ab1623m_evk/hid_ref_mouse_m20_pro/mcuboot/zep
 [11/12] [Airoha] check sysbuild result, especially the address defined by the cross core variable
 [Airoha][SysBuild Check] time: 0 min 1 seconds
 [12/12] [Airoha][Build] print sysbuild time
-[Airoha][Build] Real Build Time: 0 min 10 s
-[Airoha][Build] Total Build Time: 0 min 12 s
+[Airoha][Build] Real Build Time: 0 min 14 s
+[Airoha][Build] Total Build Time: 0 min 15 s

@@ -1,0 +1,698 @@
+# 0 "/workdir/zephyr/misc/empty_file.c"
+# 0 "<built-in>"
+# 0 "<command-line>"
+# 1 "/workdir/airoha/mcu/boards/airoha/ab1620dm_evk/ab1620dm_evk.dts" 1
+# 38 "/workdir/airoha/mcu/boards/airoha/ab1620dm_evk/ab1620dm_evk.dts"
+/dts-v1/;
+
+
+# 1 "/workdir/airoha/mcu/dts/arm/airoha/ab162x/ab162x_common.dtsi" 1 3 4
+# 36 "/workdir/airoha/mcu/dts/arm/airoha/ab162x/ab162x_common.dtsi" 3 4
+# 1 "/workdir/zephyr/dts/common/mem.h" 1 3 4
+# 37 "/workdir/airoha/mcu/dts/arm/airoha/ab162x/ab162x_common.dtsi" 2 3 4
+# 1 "/workdir/zephyr/dts/arm/armv8-m.dtsi" 1 3 4
+
+
+# 1 "/workdir/zephyr/dts/common/skeleton.dtsi" 1 3 4
+# 9 "/workdir/zephyr/dts/common/skeleton.dtsi" 3 4
+/ {
+ #address-cells = <1>;
+ #size-cells = <1>;
+ chosen { };
+ aliases { };
+};
+# 4 "/workdir/zephyr/dts/arm/armv8-m.dtsi" 2 3 4
+
+/ {
+ soc {
+  #address-cells = <1>;
+  #size-cells = <1>;
+  compatible = "simple-bus";
+  interrupt-parent = <&nvic>;
+  ranges;
+
+  nvic: interrupt-controller@e000e100 {
+   #address-cells = <1>;
+   compatible = "arm,v8m-nvic";
+   reg = <0xe000e100 0xc00>;
+   interrupt-controller;
+   #interrupt-cells = <2>;
+  };
+
+  systick: timer@e000e010 {
+   compatible = "arm,armv8m-systick";
+   reg = <0xe000e010 0x10>;
+  };
+ };
+};
+# 38 "/workdir/airoha/mcu/dts/arm/airoha/ab162x/ab162x_common.dtsi" 2 3 4
+
+
+/ {
+
+    chosen {
+        zephyr,flash-controller = &flash_controller;
+        zephyr,bt-hci = &airoha_hci;
+    };
+
+    aliases {
+        flash-memory = &flash0;
+        main-flash-partitions = &main_flash_partitions;
+
+
+
+
+    };
+
+    cpus {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        cpu0: cpu@0 {
+            device_type = "cpu";
+            compatible = "arm,cortex-m33f";
+            cpu-power-states = <&state0 &state1>;
+            reg = <0>;
+        };
+    };
+
+    power-states {
+        state0: state0 {
+            compatible = "zephyr,power-state";
+            power-state-name = "runtime-idle";
+            substate-id = <1>;
+            min-residency-us = <3000000>;
+            exit-latency-us = <5000>;
+        };
+        state1: state1 {
+            compatible = "zephyr,power-state";
+            power-state-name = "suspend-to-ram";
+            substate-id = <1>;
+            min-residency-us = <3000000>;
+            exit-latency-us = <20000>;
+        };
+
+    };
+
+    soc {
+        compatible = "simple-bus";
+
+
+        tcm: memory@4000000 {
+            compatible = "mmio-sram";
+            reg = < 0x04000000 ((384) * 1024) >;
+        };
+
+        ram_bt: memory@4060000 {
+            compatible = "mmio-sram";
+            reg = < 0x04060000 ((16) * 1024) >;
+        };
+
+        riscv_sram: memory@84064000 {
+            compatible = "mmio-sram";
+            reg = < 0x84064000 ((24) * 1024) >;
+        };
+
+        misc_peripheral: misc@42010000 {
+            compatible = "airoha,air-misc";
+            reg = <
+                0x42010000 0x804
+                0x42020000 0x604
+                0x42080000 0x90
+                0x422E0000 0x28
+                0x422F0000 0x1048
+                0x42300000 0x10000
+                0x42310000 0x10000
+                0x40000000 0x10000
+                0x43000000 0x10000
+            >;
+        };
+
+        cm33_systick: timer@e000e010 {
+            compatible = "arm,armv8m-systick";
+            reg = < 0xe000e010 0x10 >;
+            status = "disabled";
+        };
+
+        os_timer: ost@42170000 {
+            compatible = "airoha,air-ost";
+            reg = < 0x42170000 0x20 >;
+            channel-num = < 1 >;
+            clock-source = < 0 >;
+            clock-divider = < 13 >;
+            status = "okay";
+        };
+
+        wdt0: wdt0@42090000 {
+            compatible = "airoha,air-wdt";
+            reg = <0x42090000 0x28>;
+            status = "okay";
+        };
+
+        wdt1: wdt1@42090030 {
+            compatible = "airoha,air-wdt";
+            reg = <0x42090030 0x28>;
+            status = "okay";
+        };
+
+        cache_controller: cache@e0180000 {
+            compatible = "airoha,air-cache";
+            reg = <0xe0180000 0x80>;
+            remap-channel-num = < 4 >;
+            cacheable-channel-num = < 16 >;
+
+            cache-memory-size = < 0x4000 >;
+            icache-line-size = < 32 >;
+            dcache-line-size = < 32 >;
+            cacheable-region-alignment = < 0x1000 >;
+            status = "okay";
+        };
+
+        flash_controller: flash-controller@40080000 {
+            compatible = "airoha,air-flash-controller";
+
+
+
+            reg = <0x40080000 0x48 0x40080800 0x100>;
+            partial-erase;
+
+            #address-cells = <1>;
+            #size-cells = <1>;
+            status = "okay";
+
+            flash0: flash@8000000 {
+
+
+
+
+                reg = <0x08000000 ((1024) * 1024)>;
+
+                compatible = "soc-nv-flash";
+                erase-block-size = <4096>;
+
+                write-block-size = <1>;
+
+                main_flash_partitions: partitions {
+                    compatible = "airoha,air-flash-partitions", "fixed-partitions";
+                    #address-cells = < 0x1 >;
+                    #size-cells = < 0x1 >;
+                };
+            };
+        };
+
+        airoha_hci: airoha_hci{
+            compatible = "airoha,air-bt-hci";
+            status = "okay";
+        };
+
+        dma: dma@40040000 {
+            compatible = "airoha,air-dma";
+            reg = < 0x40040000 0x10000 >;
+            mcu-dma-ch-num = <3>;
+            slow-dma-ch-num = <16>;
+            dma-ch-base = <
+                0x40040000 0x42230000
+                0x42270000 0x42280000 0x42290000
+                0x42220000 0x400F0000
+            >;
+            dma-ch-length = <
+                0x12C 0x12C
+                0x270 0x270 0x270
+                0x22C 0x22C 0x22C
+            >;
+            status = "okay";
+        };
+
+        esc: esc@40090000 {
+            compatible = "airoha,air-esc";
+            reg = < 0x40090000 0x10000 >;
+            status = "okay";
+        };
+
+        irq_gen: irq_gen@422b0000 {
+            compatible = "airoha,air-irq-gen";
+            reg = < 0x422B0000 0x10 0x422C0000 0x10 >;
+            status = "okay";
+        };
+        gpt: gpt@42150000{
+            compatible = "airoha,air-gpt";
+            reg = < 0x42150000 0xc18 >;
+            status = "okay";
+          };
+        rtc: rtc@42100000{
+            compatible = "airoha,air-rtc";
+            reg = < 0x42100000 0xf1c >;
+            status = "okay";
+          };
+        trng: trng@40030000 {
+            compatible = "airoha,air-trng";
+            reg = <0x40030000 0x1000>;
+            status = "okay";
+            von-neumann-extractor;
+        };
+
+        hw_semaphore: hw_semaphore@422a0000 {
+            compatible = "airoha,air-hw-semaphore";
+            reg = <0x422A0000 0x308>;
+            channels = <32>;
+            status = "okay";
+        };
+
+
+        i2c0: i2c@42210000 {
+            compatible = "airoha,air-i2c";
+            reg = <0x42210000 0xbc>;
+            status = "okay";
+            frequency = <1000000>;
+            port = <0>;
+        };
+        i2c1: i2c@400e0000 {
+            #address-cells = <1>;
+            #size-cells = <0>;
+            compatible = "airoha,air-i2c";
+            reg = <0x400e0000 0xbc>;
+            status = "okay";
+            frequency = <1000000>;
+            port = <1>;
+        };
+        gpio0: gpio@420b0000 {
+            compatible = "airoha,air-gpio";
+            gpio-controller;
+            reg = <0x420b0000 0x44 0x420c0000 0x108 0x420d0000 0x118>;
+            ngpios = <32>;
+            #gpio-cells = <2>;
+            status = "okay";
+            debounce = <0>;
+            port = <0>;
+        };
+        gpio32: gpio@420b0004 {
+            compatible = "airoha,air-gpio";
+            gpio-controller;
+            reg = <0x420b0000 0x44 0x420c0000 0x108 0x420d0000 0x118>;
+            ngpios = <26>;
+            #gpio-cells = <2>;
+            status = "okay";
+            debounce = <0>;
+            port = <1>;
+        };
+        pinctrl: pin-controller{
+            compatible = "airoha,air-pinctrl";
+            status = "okay";
+        };
+        spim0: spim@421f0000 {
+            #address-cells = <1>;
+            #size-cells = <0>;
+            compatible = "airoha,air-spim";
+            reg = <0x421f0000 0x3c>;
+            status = "okay";
+            frequency = <1000000>;
+            port = <0>;
+            cs_pin = <22 2>;
+        };
+        spim1: spim@42200000 {
+            compatible = "airoha,air-spim";
+            reg = <0x42200000 0x3c>;
+            status = "disabled";
+            frequency = <1000000>;
+            port = <1>;
+        };
+        spim2: spim@400a0000 {
+            compatible = "airoha,air-spim";
+            reg = <0x400a0000 0x3c>;
+            status = "okay";
+            frequency = <1000000>;
+            port = <2>;
+        };
+        spis: spis@400b0000 {
+            compatible = "airoha,air-spis";
+            reg = <0x400b0000 0xa4>;
+            status = "okay";
+            port = <0>;
+        };
+        spis_pad: spis_pad@420e0000 {
+            compatible = "airoha,air-spispad";
+            reg = <0x420e0000 0x18>;
+            status = "okay";
+        };
+        irtx: irtx@40050000 {
+            compatible = "airoha,air-irtx";
+            reg = <0x40050000 0x1120>;
+            status = "okay";
+        };
+        irrx: irrx@40060000 {
+            compatible = "airoha,air-irrx";
+            reg = <0x40060000 0x200>;
+            status = "okay";
+        };
+        argb: argb@42180000 {
+            compatible = "airoha,air-argb";
+            reg = <0x42180000 0x264>;
+            status = "okay";
+        };
+        pwm_dma0: pwm_dma@42190000 {
+            compatible = "airoha,air-pwmdma";
+            #address-cells = <1>;
+            #size-cells = <0>;
+            reg = <0x42190000 0x74>;
+            port = <0>;
+            status = "okay";
+        };
+        pwm_dma1: pwm_dma@421a0000 {
+            compatible = "airoha,air-pwmdma";
+            #address-cells = <1>;
+            #size-cells = <0>;
+            reg = <0x421A0000 0x74>;
+            port = <1>;
+            status = "okay";
+        };
+        pwm0: pwm@421b0000 {
+            compatible = "airoha,air-pwm";
+            #address-cells = <1>;
+            #size-cells = <0>;
+            reg = <0x421B0000 0x10>;
+            channel=<8>;
+            status = "okay";
+        };
+        pwm1: pwm@421c0000 {
+            compatible = "airoha,air-pwm";
+            reg = <0x421C0000 0x10>;
+            channel=<9>;
+            status = "okay";
+        };
+        pwm2: pwm@421d0000 {
+            compatible = "airoha,air-pwm";
+            reg = <0x421D0000 0x10>;
+            channel= <10>;
+            status = "okay";
+        };
+        led: led@42103000 {
+            compatible = "airoha,air-led";
+            reg = <0x42103000 0x50c>;
+            channel0{
+                brightness = <255>;
+                polarity = <0>;
+            };
+            channel1{
+                brightness =<255>;
+                polarity = <0>;
+            };
+            channel2{
+                brightness =<255>;
+                polarity = <0>;
+            };
+            status = "okay";
+        };
+        uart0: uart@42240000 {
+            compatible = "airoha,air-uart";
+            reg = <0x42240000 0x80>;
+            interrupts = <2 5>;
+            status = "okay";
+            current-speed = < 0xE1000 >;
+            data-bits = <3>;
+            stop-bits = <1>;
+            parity = <0>;
+            flow_ctrl = <1>;
+            tbuf-size = <512>;
+            rbuf-size = <512>;
+        };
+        uart1: uart@42250000 {
+            compatible = "airoha,air-uart";
+            reg = <0x42250000 0x80>;
+            interrupts = <2 5>;
+            status = "okay";
+            current-speed = < 0xE1000 >;
+            data-bits = <3>;
+            stop-bits = <1>;
+            parity = <0>;
+            flow_ctrl = <0>;
+            tbuf-size = <512>;
+            rbuf-size = <512>;
+        };
+        uart2: uart@42260000 {
+            compatible = "airoha,air-uart";
+            reg = <0x42260000 0x80>;
+            interrupts = <2 5>;
+            status = "okay";
+            current-speed = < 0xE1000 >;
+            data-bits = <3>;
+            stop-bits = <1>;
+            parity = <0>;
+            flow_ctrl = <0>;
+            tbuf-size = <512>;
+            rbuf-size = <512>;
+        };
+        usbd: usbd@41020000 {
+            compatible = "airoha,air-usbd";
+            reg = <0x41020000 0x20000>;
+            interrupts = <30 5>, <43 5>;
+            interrupt-names = "USB", "USB_WAKEUP";
+            maximum-speed = "high-speed";
+            num-bidir-endpoints = <1>;
+            num-in-endpoints = <7>;
+            num-out-endpoints = <7>;
+            ram-size = <1280>;
+            status = "disabled";
+        };
+        hw_keyscan: hw_keyscan@421e0000 {
+            compatible = "airoha,air-hw_keyscan";
+            reg = <0x421e0000 0x0114>;
+            status = "okay";
+        };
+        ieee802154_thread: ieee802154_thread@a0060000 {
+            compatible = "airoha,air-ieee802154-thread";
+            reg = <0xa0060000 0x0238>;
+            status = "disabled";
+        };
+        ieee802154_custom: ieee802154_custom@a0060000 {
+            compatible = "airoha,air-ieee802154-custom";
+            reg = <0xa0060000 0x0238>;
+            status = "disabled";
+        };
+        qdec: qdec@42101000 {
+            compatible = "airoha,air-qdec";
+            reg = <0x42101000 0x64>;
+            interrupts = <2 5>;
+            status = "okay";
+            led_force_off = < 0 >;
+            led_active_output = <0>;
+            z_sum_thr = <0>;
+            smp_period_a = <3>;
+            led_period_a = <3>;
+            dbc_count_a = <0>;
+            smp_period_b = <10>;
+            led_period_b = <10>;
+            dbc_count_b = <10>;
+        };
+        ramboz: ramboz@42102000 {
+            compatible = "airoha,air-ramboz";
+            reg = <0x42102000 0x58>;
+            interrupts = <2 5>;
+            status = "okay";
+            direction = <0>;
+            mode = <0>;
+            filter_period = <9>;
+            fast_sample_period = <10>;
+            slow_sample_period = <255>;
+            fast_roll_period = <10>;
+        };
+        saradc0: saradc@400d0000 {
+            compatible = "airoha,air-saradc";
+            reg = <0x400d0000 0x1000>;
+            status = "okay";
+            channel_id = <0>;
+            acquisition_time = <512>;
+            resolution = <0>;
+            oversampling = <0>;
+            gain = "ADC_GAIN_1";
+            reference = "ADC_REF_VDD_1";
+        };
+        sdadc0: sdadc@40070000 {
+            compatible = "airoha,air-sdadc";
+            reg = <0x40070000 0x1000>;
+            status = "okay";
+            channel_id = <0>;
+            acquisition_time = <512>;
+            resolution = <0>;
+            oversampling = <0>;
+            gain = "ADC_GAIN_1";
+            reference = "ADC_REF_VDD_1";
+        };
+        spmcfg: spmcfg@42130000 {
+            compatible = "airoha,air-spmcfg";
+            reg = <0x42130000 0x0224>;
+            status = "okay";
+        };
+        spmtop: spmtop@42120000 {
+            compatible = "airoha,air-spmtop";
+            reg = <0x42120000 0x01B8>;
+            status = "okay";
+        };
+        srampwrctrl: srampwrctrl@42104000 {
+            compatible = "airoha,air-srampwrctrl";
+            reg = <0x42104000 0x013C>;
+            status = "okay";
+        };
+        clock_node_label: clock@42030000 {
+            compatible = "airoha,air-clock-controller";
+            reg = <0x42030000 0x1000 0x42040000 0x1000 0x422d0000 0x1000 0x42050000 0x1000 0x42060000 0x1000 0x400c0000 0x1000 0x42107000 0x1000>;
+            module-str = "cksys", "cksys_xo_clk", "cksys_bus_clk", "mixedsys_d", "dcxo_pwr_ctrl", "dcxo_cfg", "rtc_dig_misc";
+            status = "okay";
+        };
+        pmu: pmu@42108000 {
+            compatible = "airoha,air-pmu";
+            reg = <0x42108000 0xF0>;
+            status = "okay";
+        };
+    };
+};
+
+&nvic {
+    arm,num-irq-priority-bits = <4>;
+};
+# 42 "/workdir/airoha/mcu/boards/airoha/ab1620dm_evk/ab1620dm_evk.dts" 2
+# 1 "/workdir/airoha/mcu/dts/arm/airoha/ab162x/flash_partitions/dual_slot_with_DFU_2MB.dtsi" 1 3 4
+# 37 "/workdir/airoha/mcu/dts/arm/airoha/ab162x/flash_partitions/dual_slot_with_DFU_2MB.dtsi" 3 4
+/delete-node/ &main_flash_partitions;
+
+&flash0 {
+    reg = <0x08000000 ((2048) * 1024)>;
+    main_flash_partitions: partitions {
+        compatible = "airoha,air-flash-partitions", "fixed-partitions";
+        #address-cells = < 0x1 >;
+        #size-cells = < 0x1 >;
+        partiton_table: partition@0 {
+            label = "partition_table";
+            reg = < 0x0 0x1000 >;
+            id = < 0x0 >;
+            read-only;
+            download;
+            display_name = "PartitionTable";
+        };
+        security_header0: partition@1000 {
+            label = "secure_hdr0";
+            reg = < 0x1000 0x1000 >;
+            id = < 0x1 >;
+            read-only;
+            download;
+            display_name = "SecureHdr0";
+        };
+        factory_data: partition@2000 {
+            label = "factory_data";
+
+            reg = <0x2000 0x1000>;
+            id = <0x0000000D>;
+            read-only;
+        };
+        boot_partition: partition@3000 {
+            label = "bootloader";
+            reg = < 0x3000 0x18000 >;
+            id = < 0x8 >;
+            read-only;
+            download;
+            display_name = "BootLoader";
+        };
+        upgrade_info: partition@1B000 {
+            label = "upgrade_info";
+
+            reg = <0x1b000 0x1000>;
+            id = <0x0000000E>;
+        };
+        slot0_partition: partition@1C000 {
+
+
+
+
+            label = "image-0";
+            reg = <0x1C000 0xED000>;
+            id = <0x0000000A>;
+            download;
+            display_name = "MCU_FW";
+        };
+        slot1_partition: partition@109000 {
+            label = "image-1";
+            reg = <0x109000 0xED000>;
+            id = <0x0000000B>;
+        };
+        storage_partition: partition@1f6000 {
+            label = "storage";
+            reg = < 0x1f6000 0xA000 >;
+            id = < 0x18 >;
+            download;
+            display_name = "NV_Data";
+        };
+    };
+};
+# 43 "/workdir/airoha/mcu/boards/airoha/ab1620dm_evk/ab1620dm_evk.dts" 2
+
+# 1 "/workdir/airoha/mcu/boards/airoha/ab1620dm_evk/ab1620dm_evk-pinctrl.dtsi" 1
+# 37 "/workdir/airoha/mcu/boards/airoha/ab1620dm_evk/ab1620dm_evk-pinctrl.dtsi"
+# 1 "/workdir/airoha/mcu/boards/airoha/ab1620dm_evk/../../../soc/airoha/ab162x/pinctrl_airoha.h" 1
+# 38 "/workdir/airoha/mcu/boards/airoha/ab1620dm_evk/ab1620dm_evk-pinctrl.dtsi" 2
+&pinctrl {
+ gpio0_default: gpio0_default {
+  gpio2{
+   pinmux = <(2 << 5 | 1 << 0)>;
+   bias-pull-up;
+  };
+  gpio3{
+   pinmux = <(3 << 5 | 1 << 0)>;
+  };
+  gpio17{
+   pinmux = <(17 << 5 | 6 << 0)>;
+  };
+  gpio18{
+   pinmux = <(18 << 5 | 6 << 0)>;
+   bias-pull-up;
+  };
+  gpio46{
+   pinmux = <(46 << 5 | 6 << 0)>;
+  };
+  gpio47{
+   pinmux = <(47 << 5 | 6 << 0)>;
+   bias-pull-up;
+  };
+ };
+
+ gpio1_default: gpio1_default {
+
+ };
+};
+# 45 "/workdir/airoha/mcu/boards/airoha/ab1620dm_evk/ab1620dm_evk.dts" 2
+
+/ {
+    model = "Airoha AB1620DM Evaluation Kit ";
+
+    chosen {
+        zephyr,entropy = &trng;
+        zephyr,console = &uart0;
+        zephyr,shell-uart = &uart1;
+        zephyr,sram = &tcm;
+        zephyr,flash = &flash0;
+        zephyr,code-partition = &slot0_partition;
+        zephyr,settings-partition = &storage_partition;
+        zephyr,logging_port = &uart0;
+    };
+};
+
+
+&gpio0 {
+    pinctrl-0 = <&gpio0_default>;
+    pinctrl-1 = <&gpio1_default>;
+    pinctrl-names = "default","sleep";
+};
+
+zephyr_udc0: &usbd {
+    status = "okay";
+    compatible = "airoha,air-usbd";
+};
+# 0 "<command-line>" 2
+# 1 "./config/ab162x_evb/mcuboot.overlay" 1
+
+
+/ {
+    chosen {
+        zephyr,code-partition = &boot_partition;
+    };
+};
+# 0 "<command-line>" 2
+# 1 "/workdir/zephyr/misc/empty_file.c"

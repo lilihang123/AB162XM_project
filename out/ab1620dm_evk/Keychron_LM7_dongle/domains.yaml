@@ -1,0 +1,10 @@
+default: Keychron_LM7_dongle_design
+build_dir: /workdir/out/ab1620dm_evk/Keychron_LM7_dongle
+domains:
+  - name: Keychron_LM7_dongle_design
+    build_dir: /workdir/out/ab1620dm_evk/Keychron_LM7_dongle/Keychron_LM7_dongle_design
+  - name: mcuboot
+    build_dir: /workdir/out/ab1620dm_evk/Keychron_LM7_dongle/mcuboot
+flash_order:
+  - mcuboot
+  - Keychron_LM7_dongle_design

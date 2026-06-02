@@ -8,7 +8,7 @@ Loaded configuration '/workdir/out/ab1623m_evk/keychron_mouse_LM7/zephyr/.config
 No change to configuration in '/workdir/out/ab1623m_evk/keychron_mouse_LM7/zephyr/.config'
 No change to Kconfig header in '/workdir/out/ab1623m_evk/keychron_mouse_LM7/_sysbuild/autoconf.h'
 [Airoha] AIR_SYSBUILD_PATH: /workdir/airoha/mcu/boards/airoha/ab1623m_evk/../../../cmake/sysbuild
-[Airoha][Build] SYSBUILD_START_TIME_IN_SEC: 1779764982
+[Airoha][Build] SYSBUILD_START_TIME_IN_SEC: 1780366276
 [Airoha] IMAGES: 
 [Airoha] DEFAULT_IMAGE: Keychron_LM7_design_mouse
 [Airoha] SYSBUILD_IMAGES: Keychron_LM7_design_mouse;mcuboot
@@ -104,78 +104,8 @@ unit address and first address in 'reg' (0x420b0000) don't match for /soc/gpio@4
 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/zephyr.dts:162.26-165.5: Warning (simple_bus_reg): /soc/airoha_hci: missing or empty reg/ranges property
 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/zephyr.dts:236.25-245.5: Warning (simple_bus_reg): /soc/gpio@420b0004: simple-bus unit address format error, expected "420b0000"
 /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/zephyr.dts:246.27-332.5: Warning (simple_bus_reg): /soc/pin-controller: missing or empty reg/ranges property
-
-warning: COMMON_LIBC_MALLOC_ARENA_SIZE (defined at soc/mediatek/mtk_adsp/Kconfig.defconfig:41,
-modules/hostap/Kconfig:26, modules/hostap/Kconfig:26, modules/hostap/Kconfig:26,
-lib/libc/common/Kconfig:26) was assigned the value '0' but got the value ''. Check these unsatisfied
-dependencies: (SOC_FAMILY_MTK_ADSP || WIFI_NM_WPA_SUPPLICANT || WIFI_NM_WPA_SUPPLICANT ||
-(WIFI_NM_WPA_SUPPLICANT && 0) || COMMON_LIBC_MALLOC) (=n). See
-http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_COMMON_LIBC_MALLOC_ARENA_SIZE and/or look
-up COMMON_LIBC_MALLOC_ARENA_SIZE in the menuconfig/guiconfig interface. The Application Development
-Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual
-might be helpful too.
-
-
-warning: AIR_ONLINE_SWLA_ENABLE (defined at
-/workdir/airoha/mcu/prebuilt/system/ab162x/swla/Kconfig:45) was assigned the value 'y' but got the
-value 'n'. Check these unsatisfied dependencies: AIR_SWLA_ENABLE (=n), AIR_ONLINE_DUMP_ENABLE (=n).
-See http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_AIR_ONLINE_SWLA_ENABLE and/or look up
-AIR_ONLINE_SWLA_ENABLE in the menuconfig/guiconfig interface. The Application Development Primer,
-Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual might be
-helpful too.
-
-
-warning: AIR_ONLINE_DUMP_ENABLE (defined at
-/workdir/airoha/mcu/prebuilt/system/ab162x/system_online_dump/Kconfig:36) was assigned the value 'y'
-but got the value 'n'. Check these unsatisfied dependencies: AIR_SWLA_ENABLE (=n). See
-http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_AIR_ONLINE_DUMP_ENABLE and/or look up
-AIR_ONLINE_DUMP_ENABLE in the menuconfig/guiconfig interface. The Application Development Primer,
-Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual might be
-helpful too.
-
-
-warning: TINYCRYPT_SHA256 (defined at modules/Kconfig.tinycrypt:22) was assigned the value 'n' but
-got the value 'y'. See http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_TINYCRYPT_SHA256
-and/or look up TINYCRYPT_SHA256 in the menuconfig/guiconfig interface. The Application Development
-Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual
-might be helpful too.
-
-
-warning: MCUBOOT_SIGNATURE_KEY_FILE (defined at modules/Kconfig.mcuboot:50) was assigned the value
-'/workdir/airoha/mcu/applications/mcuboot/private_secure_boot_3k.pem' but got the value ''. Check
-these unsatisfied dependencies: (!MCUBOOT_GENERATE_UNSIGNED_IMAGE) (=n). See
-http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_MCUBOOT_SIGNATURE_KEY_FILE and/or look up
-MCUBOOT_SIGNATURE_KEY_FILE in the menuconfig/guiconfig interface. The Application Development
-Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual
-might be helpful too.
-
-
-warning: POLL (defined at kernel/Kconfig:671) was assigned the value 'n' but got the value 'y'. See
-http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_POLL and/or look up POLL in the
-menuconfig/guiconfig interface. The Application Development Primer, Setting Configuration Values,
-and Kconfig - Tips and Best Practices sections of the manual might be helpful too.
-
-
-warning: MCUBOOT_UPDATE_FOOTER_SIZE (defined at subsys/dfu/Kconfig:54) was assigned the value
-'0x1000' but got the value ''. Check these unsatisfied dependencies: MCUBOOT_IMG_MANAGER (=n),
-IMG_MANAGER (=n). See
-http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_MCUBOOT_UPDATE_FOOTER_SIZE and/or look up
-MCUBOOT_UPDATE_FOOTER_SIZE in the menuconfig/guiconfig interface. The Application Development
-Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of the manual
-might be helpful too.
-
-
-warning: AIR_SLIDE_SWITCH_DUAL_2_4G_MODE_PIN (defined at
-/workdir/airoha/mcu/applications/Keychron_LM7_design_mouse/Kconfig:219) was assigned the value '35'
-but got the value ''. Check these unsatisfied dependencies: AIR_DUAL_MODE_SLIDE_SWITCH (=n). See
-http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_AIR_SLIDE_SWITCH_DUAL_2_4G_MODE_PIN and/or
-look up AIR_SLIDE_SWITCH_DUAL_2_4G_MODE_PIN in the menuconfig/guiconfig interface. The Application
-Development Primer, Setting Configuration Values, and Kconfig - Tips and Best Practices sections of
-the manual might be helpful too.
-
 Parsing /workdir/airoha/mcu/applications/Keychron_LM7_design_mouse/Kconfig
-Loaded configuration '/workdir/airoha/mcu/boards/airoha/ab1623m_evk/ab1623m_evk_defconfig'
-Merged configuration '/workdir/airoha/mcu/applications/Keychron_LM7_design_mouse/config/ab1623m_evk/hid_device_ref_design_mouse_m20_pro.conf'
+Loaded configuration '/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/.config'
 Merged configuration '/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/.config.sysbuild'
 No change to configuration in '/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/.config'
 No change to Kconfig header in '/workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/include/generated/zephyr/autoconf.h'
@@ -350,8 +280,8 @@ Successfully merge 34 NVKEYs and generate a NVS image of 40 KBytes
 [7/17] Generating misc/generated/syscalls.json, misc/generated/struct_tags.json
 [8/17] Generating linker_zephyr_pre0.cmd
 [9/17] Building C object modules/airoha/subsys/airoha/version/CMakeFiles/..__airoha__mcu__subsys__airoha__version.dir/misc/generated/air_version.c.obj
-[10/17] Building C object CMakeFiles/app.dir/src/app/app_output/app_argb_test.c.obj
-[11/17] Linking C static library modules/airoha/subsys/airoha/version/lib..__airoha__mcu__subsys__airoha__version.a
+[10/17] Linking C static library modules/airoha/subsys/airoha/version/lib..__airoha__mcu__subsys__airoha__version.a
+[11/17] Building C object CMakeFiles/app.dir/src/app/app_output/app_argb.c.obj
 [12/17] Linking C static library app/libapp.a
 [13/17] Linking CXX executable zephyr/zephyr_pre0.elf
 [14/17] Generating linker.cmd
@@ -550,10 +480,10 @@ Memory region         Used Size  Region Size  %age Used
 [16/17] Building C object zephyr/CMakeFiles/zephyr_final.dir/__/riscv/mouse_ref_design/hid_ref_mouse_m20_pro/mouse_ref_design.c.obj
 [17/17] Linking CXX executable zephyr/zephyr.elf
 Memory region         Used Size  Region Size  %age Used
-           FLASH:      751400 B       948 KB     77.40%
-            SRAM:      301436 B       384 KB     76.66%
+           FLASH:      751904 B       948 KB     77.46%
+            SRAM:      317820 B       384 KB     80.83%
          SRAM_BT:       15856 B        16 KB     96.78%
-  ROM_LOG_STRING:      366561 B        32 MB      1.09%
+  ROM_LOG_STRING:      366821 B        32 MB      1.09%
         IDT_LIST:          0 GB         2 KB      0.00%
 Generating files from /workdir/out/ab1623m_evk/keychron_mouse_LM7/Keychron_LM7_design_mouse/zephyr/zephyr.elf for board: ab1623m_evk
 [1/12] Performing build step for 'mcuboot'
@@ -604,5 +534,5 @@ Generating files from /workdir/out/ab1623m_evk/keychron_mouse_LM7/mcuboot/zephyr
 [11/12] [Airoha] check sysbuild result, especially the address defined by the cross core variable
 [Airoha][SysBuild Check] time: 0 min 1 seconds
 [12/12] [Airoha][Build] print sysbuild time
-[Airoha][Build] Real Build Time: 0 min 15 s
-[Airoha][Build] Total Build Time: 0 min 16 s
+[Airoha][Build] Real Build Time: 0 min 11 s
+[Airoha][Build] Total Build Time: 0 min 12 s

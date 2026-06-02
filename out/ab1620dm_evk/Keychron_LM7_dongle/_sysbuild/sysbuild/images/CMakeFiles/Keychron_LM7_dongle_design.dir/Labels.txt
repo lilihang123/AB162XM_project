@@ -1,0 +1,13 @@
+# Target labels
+ Keychron_LM7_dongle_design
+# Source files and their labels
+/workdir/out/ab1620dm_evk/Keychron_LM7_dongle/_sysbuild/sysbuild/images/CMakeFiles/Keychron_LM7_dongle_design
+/workdir/out/ab1620dm_evk/Keychron_LM7_dongle/_sysbuild/sysbuild/images/CMakeFiles/Keychron_LM7_dongle_design.rule
+/workdir/out/ab1620dm_evk/Keychron_LM7_dongle/_sysbuild/sysbuild/images/CMakeFiles/Keychron_LM7_dongle_design-complete.rule
+/workdir/out/ab1620dm_evk/Keychron_LM7_dongle/_sysbuild/sysbuild/images/Keychron_LM7_dongle_design-prefix/src/Keychron_LM7_dongle_design-stamp/Keychron_LM7_dongle_design-build.rule
+/workdir/out/ab1620dm_evk/Keychron_LM7_dongle/_sysbuild/sysbuild/images/Keychron_LM7_dongle_design-prefix/src/Keychron_LM7_dongle_design-stamp/Keychron_LM7_dongle_design-configure.rule
+/workdir/out/ab1620dm_evk/Keychron_LM7_dongle/_sysbuild/sysbuild/images/Keychron_LM7_dongle_design-prefix/src/Keychron_LM7_dongle_design-stamp/Keychron_LM7_dongle_design-download.rule
+/workdir/out/ab1620dm_evk/Keychron_LM7_dongle/_sysbuild/sysbuild/images/Keychron_LM7_dongle_design-prefix/src/Keychron_LM7_dongle_design-stamp/Keychron_LM7_dongle_design-install.rule
+/workdir/out/ab1620dm_evk/Keychron_LM7_dongle/_sysbuild/sysbuild/images/Keychron_LM7_dongle_design-prefix/src/Keychron_LM7_dongle_design-stamp/Keychron_LM7_dongle_design-mkdir.rule
+/workdir/out/ab1620dm_evk/Keychron_LM7_dongle/_sysbuild/sysbuild/images/Keychron_LM7_dongle_design-prefix/src/Keychron_LM7_dongle_design-stamp/Keychron_LM7_dongle_design-patch.rule
+/workdir/out/ab1620dm_evk/Keychron_LM7_dongle/_sysbuild/sysbuild/images/Keychron_LM7_dongle_design-prefix/src/Keychron_LM7_dongle_design-stamp/Keychron_LM7_dongle_design-update.rule

@@ -1104,7 +1104,7 @@
 #define DT_N_S_soc_S_argb_42180000_P_pat_cnt_EXISTS 1
 #define DT_N_S_soc_S_argb_42180000_P_bit_nonrev 1
 #define DT_N_S_soc_S_argb_42180000_P_bit_nonrev_EXISTS 1
-#define DT_N_S_soc_S_argb_42180000_P_ed_big 1
+#define DT_N_S_soc_S_argb_42180000_P_ed_big 0
 #define DT_N_S_soc_S_argb_42180000_P_ed_big_EXISTS 1
 #define DT_N_S_soc_S_argb_42180000_P_nonalign 1
 #define DT_N_S_soc_S_argb_42180000_P_nonalign_EXISTS 1

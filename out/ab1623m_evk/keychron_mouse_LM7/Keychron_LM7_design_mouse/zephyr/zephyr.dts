@@ -404,7 +404,7 @@
 			zero_l_value = < 0x12c >;
 			reset_value = < 0x186a0 >;
 			bit_nonrev = < 0x1 >;
-			ed_big = < 0x1 >;
+			ed_big = < 0x0 >;
 			nonalign = < 0x1 >;
 		};
 		pwm_dma0: pwm_dma@42190000 {

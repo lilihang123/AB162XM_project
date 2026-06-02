@@ -1,0 +1,25 @@
+# Available runners configured by board.cmake.
+runners:
+- airoha_coda
+
+# Default flash runner if --runner is not given.
+flash-runner: airoha_coda
+
+# Common runner configuration values.
+config:
+  board_dir: /workdir/airoha/mcu/boards/airoha/ab1620dm_evk
+  # Build outputs:
+  elf_file: zephyr.elf
+  hex_file: /workdir/out/ab1620dm_evk/Keychron_LM7_dongle/Keychron_LM7_dongle_design/zephyr/zephyr.signed.hex
+  bin_file: /workdir/out/ab1620dm_evk/Keychron_LM7_dongle/Keychron_LM7_dongle_design/zephyr/zephyr.signed.bin
+  # Host tools:
+  gdb: /opt/toolchains/zephyr-sdk-0.16.9/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb-py
+  openocd: /opt/toolchains/zephyr-sdk-0.16.9/sysroots/x86_64-pokysdk-linux/usr/bin/openocd
+  openocd_search:
+    - /opt/toolchains/zephyr-sdk-0.16.9/sysroots/x86_64-pokysdk-linux/usr/share/openocd/scripts
+
+# Runner specific arguments
+args:
+  airoha_coda:
+    []
+

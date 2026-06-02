@@ -120,7 +120,7 @@
 		<Field name="power_saving_idle1_timeout" type="uint16_t" value="0x000A" description="Power Saving Idle1 Timeout"/>
 		<Field name="power_saving_idle2_timeout" type="uint16_t" value="0x000A" description="Power Saving Idle2 Timeout"/>
 		<Field name="power_saving_standby_timeout" type="uint16_t" value="0x0000" description="Power Saving Standby Timeout"/>
-		<Field name="2_4G_pairing_timeout" type="uint16_t" value="0x003C" description="2.4G Pairing Timeout"/>
+		<Field name="2_4G_pairing_timeout" type="uint16_t" value="0x00B4" description="2.4G Pairing Timeout"/>
 		<Field name="2_4G_reconnect_timeout" type="uint16_t" value="0x000A" description="2.4G Reconnect Timeout"/>
 		<Field name="BT_pairing_timeout" type="uint16_t" value="0x003C" description="BT Pairing Timeout"/>
 		<Field name="BT_reconnect_timeout" type="uint16_t" value="0x001E" description="BT Reconnect Timeout"/>

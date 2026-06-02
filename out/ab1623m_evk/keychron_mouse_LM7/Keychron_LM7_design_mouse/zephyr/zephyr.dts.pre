@@ -733,15 +733,13 @@ zephyr_udc0: &usbd {
  status = "okay";
  argb_channel = <34>;
  pat_cnt = <3>;
-
-
  one_h_value = <300>;
  one_l_value = <600>;
  zero_h_value = <600>;
  zero_l_value = <300>;
  reset_value = <100000>;
  bit_nonrev = <1>;
- ed_big = <1>;
+ ed_big = <0>;
  nonalign = <1>;
 };
 
@@ -818,7 +816,7 @@ zephyr_udc0: &usbd {
    pinmux = <(24 << 5 | 12 << 0)>;
    bias-pull-up;
   };
-# 174 "./config/ab1623m_evk/hid_device_ref_design_mouse_m20_pro.overlay"
+# 172 "./config/ab1623m_evk/hid_device_ref_design_mouse_m20_pro.overlay"
   gpio45{
    pinmux = <(45 << 5 | 12 << 0)>;
    bias-pull-up;

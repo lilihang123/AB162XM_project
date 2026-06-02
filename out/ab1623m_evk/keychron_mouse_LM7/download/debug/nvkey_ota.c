@@ -9,7 +9,7 @@ const uint8_t NVID_0x6000_VALUE[] = {
     0x0a, 0x00, /* Power Saving Idle1 Timeout (little endian)  */
     0x0a, 0x00, /* Power Saving Idle2 Timeout (little endian)  */
     0x00, 0x00, /* Power Saving Standby Timeout (little endian)  */
-    0x3c, 0x00, /* 2.4G Pairing Timeout (little endian)  */
+    0xb4, 0x00, /* 2.4G Pairing Timeout (little endian)  */
     0x0a, 0x00, /* 2.4G Reconnect Timeout (little endian)  */
     0x3c, 0x00, /* BT Pairing Timeout (little endian)  */
     0x1e, 0x00, /* BT Reconnect Timeout (little endian)  */
