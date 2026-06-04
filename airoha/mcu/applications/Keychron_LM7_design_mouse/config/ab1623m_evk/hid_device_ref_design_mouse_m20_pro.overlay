@@ -215,9 +215,14 @@
 			pinmux = <GPIO_47_GPIO47>;
 			bias-pull-up;
 		};
-		/* HELL EN */
+		/* HELL POWER EN */
 		gpio17{
 			pinmux = <GPIO_17_GPIO17>;
+			bias-pull-down;
+		};
+		/* VDD HELL EN */
+		gpio28{
+			pinmux = <GPIO_28_GPIO28>;
 			bias-pull-down;
 		};
 	};
