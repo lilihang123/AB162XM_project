@@ -70,7 +70,7 @@ int app_argb_init(void);
  * @brief Stop ARGB LED effects and turn off all LEDs.
  * @return 0 on success, negative error code on failure.
  */
-int app_argb_demo_stop(void);
+int app_argb_stop(void);
 
 /**
  * @brief Trigger a status LED effect (charging/pairing/reconnection).

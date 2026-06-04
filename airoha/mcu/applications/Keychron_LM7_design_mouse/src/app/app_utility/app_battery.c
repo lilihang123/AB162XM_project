@@ -671,7 +671,7 @@ bool app_battery_init()
 
     #if defined (AIR_BATTERY_MANAGEMENT_ENABLE)
     bm_init();
-    bm_timer_start(BATTERY_MANAGERMENT_INTERVAL);
+    bm_timer_start(BATTERY_MANAGERMENT_INTERVAL); //30S间隔
 
     app_battery_update_var();
     app_battery__check_low_battery();

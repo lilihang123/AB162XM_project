@@ -98,7 +98,7 @@ typedef enum {
 
 /** @brief The combo key event type mask of the airokey framework. */
 #define AK_COMBO_HOLD_LV1_TYPE_MASK             0xB0
-
+#define AK_COMBO_HOLD_LV2_TYPE_MASK             0xC0
 
 
 
@@ -107,7 +107,7 @@ typedef enum {
 /** @brief All the supported events of the airokey framework. */
 typedef enum {
     // Events triggered when a key is released.
-    AK_RELEASE              = 0x00,                                       /**< A key is hardware released.*/
+AK_RELEASE              = 0x00,                                       /**< A key is hardware released.*/
 
     AK_SHORT_CLICK          = AK_CLICK_TYPE_MASK  | 1,              /**< A key is short-clicked. */
     AK_DOUBLE_CLICK         = AK_CLICK_TYPE_MASK  | 2,              /**< A key is double-clicked */
@@ -134,7 +134,7 @@ typedef enum {
     AK_9LONG_RELEASE        = AK_CLICK_AND_LONG_PRESS_RELEASE_TYPE_MASK | 9,                                       /**< A special event, a key is released after AK_9LONG.*/
 
     // Events triggered when a key is pressed.
-    AK_PRESS                = AK_PRESS_MASK | 0,                                       /**< A key is hardware pressed.*/
+    AK_PRESS                = AK_PRESS_MASK | 0,                                       /**0x80 128 < A key is hardware pressed.*/
     //AK_REPEAT               = 0x81,                                       /**< A key remains pressed after the last long press event is issued. */
 
     AK_LONG_PRESS_LV_1         = AK_LONG_PRESS_TYPE_MASK | 1,          /**< A key is long pressed. */
@@ -150,7 +150,7 @@ typedef enum {
     AK_7LONG                = AK_CLICK_AND_LONG_PRESS_TYPE_MASK | 7,                                       /**< A key is 7-clicked and then long pressed. */
     AK_8LONG                = AK_CLICK_AND_LONG_PRESS_TYPE_MASK | 8,                                       /**< A key is 8-clicked and then long pressed. */
     AK_9LONG                = AK_CLICK_AND_LONG_PRESS_TYPE_MASK | 9,                                       /**< A key is 9-clicked and then long pressed. */
-
+    /*1级100MS触发*/
     AK_COMBO_HOLD_LV1_0         = AK_COMBO_HOLD_LV1_TYPE_MASK  | 0,      /**< A combo key event corresponse to the 1st combo in combo_key_list */
     AK_COMBO_HOLD_LV1_1         = AK_COMBO_HOLD_LV1_TYPE_MASK  | 1,      /**< A combo key event corresponse to the 2nd combo in combo_key_list */
     AK_COMBO_HOLD_LV1_2         = AK_COMBO_HOLD_LV1_TYPE_MASK  | 2,      /**< A combo key event corresponse to the 3rd combo in combo_key_list */
@@ -161,7 +161,18 @@ typedef enum {
     AK_COMBO_HOLD_LV1_7         = AK_COMBO_HOLD_LV1_TYPE_MASK  | 7,      /**< A combo key event corresponse to the 8th combo in combo_key_list */
     AK_COMBO_HOLD_LV1_8         = AK_COMBO_HOLD_LV1_TYPE_MASK  | 8,      /**< A combo key event corresponse to the 9th combo in combo_key_list */
     AK_COMBO_HOLD_LV1_9         = AK_COMBO_HOLD_LV1_TYPE_MASK  | 9,      /**< A combo key event corresponse to the 10th combo in combo_key_list */
- 
+    /*2级3S触发*/
+    AK_COMBO_HOLD_LV2_0         = AK_COMBO_HOLD_LV2_TYPE_MASK  | 0,      /**< A combo key event corresponse to the 1st combo in combo_key_list */
+    AK_COMBO_HOLD_LV2_1         = AK_COMBO_HOLD_LV2_TYPE_MASK  | 1,      /**< A combo key event corresponse to the 2nd combo in combo_key_list */
+    AK_COMBO_HOLD_LV2_2         = AK_COMBO_HOLD_LV2_TYPE_MASK  | 2,      /**< A combo key event corresponse to the 3rd combo in combo_key_list */
+    AK_COMBO_HOLD_LV2_3         = AK_COMBO_HOLD_LV2_TYPE_MASK  | 3,      /**< A combo key event corresponse to the 4th combo in combo_key_list */
+    AK_COMBO_HOLD_LV2_4         = AK_COMBO_HOLD_LV2_TYPE_MASK  | 4,      /**< A combo key event corresponse to the 5th combo in combo_key_list */
+    AK_COMBO_HOLD_LV2_5         = AK_COMBO_HOLD_LV2_TYPE_MASK  | 5,      /**< A combo key event corresponse to the 6th combo in combo_key_list */
+    AK_COMBO_HOLD_LV2_6         = AK_COMBO_HOLD_LV2_TYPE_MASK  | 6,      /**< A combo key event corresponse to the 7th combo in combo_key_list */
+    AK_COMBO_HOLD_LV2_7         = AK_COMBO_HOLD_LV2_TYPE_MASK  | 7,      /**< A combo key event corresponse to the 8th combo in combo_key_list */
+    AK_COMBO_HOLD_LV2_8         = AK_COMBO_HOLD_LV2_TYPE_MASK  | 8,      /**< A combo key event corresponse to the 9th combo in combo_key_list */
+    AK_COMBO_HOLD_LV2_9         = AK_COMBO_HOLD_LV2_TYPE_MASK  | 9,      /**< A combo key event corresponse to the 10th combo in combo_key_list */
+
     AK_INVALID              = 0xFF,                                       /**< A key is pressed but it does not match any event.*/
 } airoha_key_event_t;
 

@@ -298,6 +298,28 @@ static void argb_restore_charging_if_needed(void)
 }
 
 /* ══════════════════════════════════════════════════════════════════════════ */
+/*  LED 电源管理（省电：灯全灭时关闭 POWER_EN）                                */
+/* ══════════════════════════════════════════════════════════════════════════ */
+
+static bool g_power_on = false;  /* LED_POWER_EN_PIN 当前状态 */
+
+static inline void argb_power_on(void)
+{
+    if (!g_power_on) {
+        g_power_on = true;
+        hal_gpio_set_output(LED_POWER_EN_PIN, HAL_GPIO_DATA_HIGH);
+    }
+}
+
+static inline void argb_power_off(void)
+{
+    if (g_power_on) {
+        g_power_on = false;
+        hal_gpio_set_output(LED_POWER_EN_PIN, HAL_GPIO_DATA_LOW);
+    }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════ */
 /*  高层灯效 API                                                              */
 /* ══════════════════════════════════════════════════════════════════════════ */
 
@@ -308,6 +330,7 @@ void app_argb_status_evt(argb_evt_status_t evt)
     {
     case ARGB_EVT_CHARGING:
         LOG_INF("[LED] CHARGING RED");
+        argb_power_on();
         g_charging_active = true;
         g_was_charging_before_pairing = false;
         /* 对码优先：如果正在对码/回连，不覆盖 */
@@ -317,6 +340,7 @@ void app_argb_status_evt(argb_evt_status_t evt)
         break;
     case ARGB_EVT_CHARGED:
         LOG_INF("[LED] CHARGED GREEN");
+        argb_power_on();
         g_charging_active = true;
         g_was_charging_before_pairing = false;
         if (e->act && (e->type == EFF_SLOW_BLINK || e->type == EFF_FAST_BLINK))
@@ -325,6 +349,7 @@ void app_argb_status_evt(argb_evt_status_t evt)
         break;
     case ARGB_EVT_PAIRING_START:
         LOG_INF("[LED] PAIRING SLOW");
+        argb_power_on();
         /* 记下充电状态，对码优先 */
         if (g_charging_active && e->act)
             g_was_charging_before_pairing = true;
@@ -332,6 +357,7 @@ void app_argb_status_evt(argb_evt_status_t evt)
         break;
     case ARGB_EVT_PAIRING_OK:
         LOG_INF("[LED] PAIRING OK 3s");
+        argb_power_on();
         e_timed(e, C_GREEN, 3000);
         break;
     case ARGB_EVT_PAIRING_TIMEOUT:
@@ -339,25 +365,30 @@ void app_argb_status_evt(argb_evt_status_t evt)
         for (int i = 0; i < LED_COUNT; i++)
             e_off(&g_eff[i]);
         g_was_charging_before_pairing = false;
+        argb_power_off();
         break;
     case ARGB_EVT_RECONNECT_START:
         LOG_INF("[LED] RECONN FAST");
+        argb_power_on();
         if (g_charging_active && e->act)
             g_was_charging_before_pairing = true;
         e_fast(e, C_GREEN);
         break;
     case ARGB_EVT_RECONNECT_OK:
         LOG_INF("[LED] RECONN OK 3s");
+        argb_power_on();
         e_timed(e, C_GREEN, 3000);
         break;
     case ARGB_EVT_FORCE_PAIRING:
         LOG_INF("[LED] FORCE PAIRING SLOW");
+        argb_power_on();
         if (g_charging_active && e->act)
             g_was_charging_before_pairing = true;
         e_slow(e, C_GREEN);
         break;
     case ARGB_EVT_FACTORY_RESET:
         LOG_INF("[LED] FACTORY RESET flash 3");
+        argb_power_on();
         for (int i = 0; i < LED_COUNT; i++)
             e_blink_n(&g_eff[i], C_WHITE, 3, 400);
         g_charging_active = false;
@@ -368,6 +399,7 @@ void app_argb_status_evt(argb_evt_status_t evt)
         for (int i = 0; i < LED_COUNT; i++)
             e_off(&g_eff[i]);
         g_was_charging_before_pairing = false;
+        argb_power_off();
         break;
     }
 }
@@ -377,6 +409,7 @@ void app_argb_dpi_evt(argb_evt_dpi_t evt, uint8_t dpi_idx)
     if ((evt == ARGB_DPI_EVT_CHANGE || evt == ARGB_DPI_EVT_FIRST_CONNECT) && dpi_idx < 5)
     {
         LOG_INF("[LED] DPI idx=%d on 3s", dpi_idx);
+        argb_power_on();
         /* 3灯同色覆盖 3s，不破坏底层状态灯效 */
         g_override_active = true;
         g_override_color = g_dpi_colors[dpi_idx];
@@ -390,6 +423,7 @@ void app_argb_rr_evt(argb_evt_rr_t evt, uint16_t hz)
     {
         uint8_t idx = rr_idx(hz);
         LOG_INF("[LED] RR %dHz (idx=%d) on 3s", hz, idx);
+        argb_power_on();
         /* 3灯同色覆盖 3s，不破坏底层状态灯效 */
         g_override_active = true;
         g_override_color = g_rr_colors[idx];
@@ -492,6 +526,11 @@ static void refresh(void *a, void *b, void *c)
         } else {
             c = e_eval(&g_eff[0]);
         }
+        /* 灯全黑时关电省电（不改变点灯逻辑，仅电源管理） */
+        if (c.r == 0 && c.g == 0 && c.b == 0 && g_power_on) {
+            argb_power_off();
+        }
+
         if (c.r != prev.r || c.g != prev.g || c.b != prev.b) {
             prev = c;
             for (int i = 0; i < LED_COUNT; i++)
@@ -613,6 +652,7 @@ int app_argb_init(void)
 {
     hal_gpio_init(LED_POWER_EN_PIN);
     hal_gpio_set_output(LED_POWER_EN_PIN, HAL_GPIO_DATA_HIGH);
+    g_power_on = true;
     LOG_INF("POWER_EN ON");
     
 #if ARGB_TEST_WHITE_ONLY == 0
@@ -634,7 +674,7 @@ int app_argb_init(void)
     return 0;
 }
 
-int app_argb_demo_stop(void)
+int app_argb_stop(void)
 {
     g_running = false;
     k_sleep(K_MSEC(REFRESH_MS + 50));
@@ -644,6 +684,7 @@ int app_argb_demo_stop(void)
 #endif
     memset(argb_buf, 0, sizeof(argb_buf));
     argb_send_frame();
+    g_power_on = false;
     hal_gpio_set_output(LED_POWER_EN_PIN, HAL_GPIO_DATA_LOW);
     bsp_argb_disable();
     LOG_INF("ARGB stopped");

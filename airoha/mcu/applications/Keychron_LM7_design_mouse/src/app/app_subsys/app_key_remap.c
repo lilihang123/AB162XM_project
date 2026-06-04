@@ -197,7 +197,7 @@ uint8_t app_key_remap_check(uint8_t key_idx)
         case REMAP_TO_MIDDLE_KEY:         return M_KEY_M;
         case REMAP_TO_FOURTH_KEY:         return M_KEY_NK;
         case REMAP_TO_FIFTH_KEY:          return M_KEY_PK;
-        case REMAP_TO_REPORT_RATE_SWITCH: return M_KEY_RR;
+        // case REMAP_TO_REPORT_RATE_SWITCH: return M_KEY_RR;
         #ifdef M_KEY_DPI
         case REMAP_TO_DPI_CONTROL:        return M_KEY_DPI;
         #endif

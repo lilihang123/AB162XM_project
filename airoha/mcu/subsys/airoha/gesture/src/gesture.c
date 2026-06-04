@@ -78,7 +78,7 @@ static K_WORK_DEFINE(job_gesture, gesture_key_changed);
         printk("[I]["module_name"]"format, ## __VA_ARGS__)
 #endif
 
-#define MIN_HOLD_TIMEOUT            500   //ms
+#define MIN_HOLD_TIMEOUT            500   //ms  如果 PRESS_AND_HOLE_LV_0_TO_1触发小于这个，就会触发断言，芯片卡死，卡死位置在airo_key_init
 #define MAX_HOLD_TIMEOUT          10000   //ms
 
 #define MIN_MULTI_CLICK_TIMEOUT      100  //ms
