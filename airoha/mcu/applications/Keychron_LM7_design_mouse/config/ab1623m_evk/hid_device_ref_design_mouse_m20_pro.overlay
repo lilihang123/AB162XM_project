@@ -181,10 +181,10 @@
 		};
 
 		/** Slide Switch Gaming Mode */
-		gpio47{
-			pinmux = <GPIO_47_EINT47>;
-			bias-pull-up;
-		};
+		// gpio47{
+		// 	pinmux = <GPIO_47_EINT47>;
+		// 	bias-pull-up;
+		// };
 
 		/** QDEC Input */
 		gpio0{

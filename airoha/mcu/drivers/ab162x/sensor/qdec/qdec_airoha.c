@@ -63,8 +63,8 @@ struct qdec_airoha_cfg
 {
     hal_qdec_config_t qdec_conifg;
     struct qdec_airoha_pin qdec_pin;
-#if IS_ENABLED(CONFIG_AIR_PINCTRL)
-    const struct pinctrl_dev_config *pincfg;
+#if defined(CONFIG_AIR_PINCTRL)
+    const struct pinctrl_dev_config *pincfg; //这里应该不会对功耗产生影响，因为之前直接关掉CONFIG_AIR_QDEC
 #endif
 };
 

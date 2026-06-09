@@ -128,7 +128,7 @@ static inline void argb_write_led(uint8_t *buf, uint8_t idx, argb_color_t c)
 /* ══════════════════════════════════════════════════════════════════════════ */
 /*  预设颜色                                                                  */
 /* ══════════════════════════════════════════════════════════════════════════ */
-#if ARGB_TEST_WHITE_ONLY == 0
+#if ARGB_TEST_WHITE_ONLY == 0 && defined(CONFIG_AIR_MIDDLE_ARGB)
 
 static const argb_color_t C_OFF = {0, 0, 0};
 static const argb_color_t C_RED = {255, 0, 0};
@@ -164,7 +164,7 @@ static uint8_t rr_idx(uint16_t hz)
 /* ══════════════════════════════════════════════════════════════════════════ */
 /*  灯效引擎                                                                  */
 /* ══════════════════════════════════════════════════════════════════════════ */
-#if ARGB_TEST_WHITE_ONLY == 0
+#if ARGB_TEST_WHITE_ONLY == 0 && defined(CONFIG_AIR_MIDDLE_ARGB)
 
 typedef enum
 {
@@ -456,6 +456,7 @@ void app_argb_wakeup(void) {}
 /* ══════════════════════════════════════════════════════════════════════════ */
 /*  DMA 硬件层                                                                */
 /* ══════════════════════════════════════════════════════════════════════════ */
+#if defined(CONFIG_AIR_MIDDLE_ARGB)
 
 static uint8_t argb_buf[ARGB_BUF_SIZE] __aligned(4); /* DMA需要4字节对齐 */
 static bool g_running;
@@ -543,6 +544,8 @@ static void refresh(void *a, void *b, void *c)
 #endif
 }
 
+#endif /* defined(CONFIG_AIR_MIDDLE_ARGB) */
+
 /* ══════════════════════════════════════════════════════════════════════════ */
 /*  Application Framework 事件处理                                            */
 /* ══════════════════════════════════════════════════════════════════════════ */
@@ -574,7 +577,7 @@ static bool on_state(const struct af_evt_header *h)
         else if (g_prev_state == APP_STATE_2_4G_RECONNECT)
             app_argb_status_evt(ARGB_EVT_RECONNECT_OK);
         /* 连接后恢复充电灯（如果之前在充电） */
-        #if ARGB_TEST_WHITE_ONLY==0
+        #if ARGB_TEST_WHITE_ONLY == 0 && defined(CONFIG_AIR_MIDDLE_ARGB)
         argb_restore_charging_if_needed();
         #endif
         break;
@@ -650,6 +653,7 @@ AF_EVT_SUBSCRIBE_FUN(thisMODULE, evt_rr_status, on_rr);
 
 int app_argb_init(void)
 {
+#if defined(CONFIG_AIR_MIDDLE_ARGB)
     hal_gpio_init(LED_POWER_EN_PIN);
     hal_gpio_set_output(LED_POWER_EN_PIN, HAL_GPIO_DATA_HIGH);
     g_power_on = true;
@@ -671,11 +675,13 @@ int app_argb_init(void)
     g_running = true;
     k_thread_create(&rth, rstk, STK, refresh, NULL, NULL, NULL, PRI, 0, K_NO_WAIT);
     LOG_INF("ARGB LED system ready");
+#endif
     return 0;
 }
 
 int app_argb_stop(void)
 {
+#if defined(CONFIG_AIR_MIDDLE_ARGB)
     g_running = false;
     k_sleep(K_MSEC(REFRESH_MS + 50));
 #if ARGB_TEST_WHITE_ONLY == 0
@@ -688,6 +694,7 @@ int app_argb_stop(void)
     hal_gpio_set_output(LED_POWER_EN_PIN, HAL_GPIO_DATA_LOW);
     bsp_argb_disable();
     LOG_INF("ARGB stopped");
+#endif /* defined(CONFIG_AIR_MIDDLE_ARGB) */
     return 0;
 }
 #else /*测试 */
